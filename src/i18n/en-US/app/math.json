@@ -13,6 +13,14 @@
     "finished": "Quiz finished! Score:",
     "timeout": "Time ran out — the quiz was submitted automatically.",
     "stillHave": "You still have",
-    "unanswered": "unanswered question(s). Submit anyway?"
+    "unanswered": "unanswered question(s). Submit anyway?",
+    "correct": "Correct",
+    "correctAnswer": "Correct answer: {answer}",
+    "submitCount": "Submit quiz ({answered}/{total})",
+    "submitted": "Quiz submitted.",
+    "timeUp": "Time’s up! The quiz was submitted automatically.",
+    "exit": "Back to quiz list",
+    "nvoSection": "NVO 7th grade practice",
+    "nvoNote": "Modelled on the national external assessment (НВО) in mathematics for 7th grade, 19 June 2026. Numbers change on every attempt."
   }
 }

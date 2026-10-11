@@ -45,7 +45,7 @@ function makeEasyQuestion(id) {
     id,
     question: `${question} = ?`,
     correctAnswer,
-    options: buildOptions(correctAnswer)
+    options: buildOptions(correctAnswer),
   }
 }
 
@@ -104,7 +104,7 @@ function makeHardQuestion(id) {
     id,
     question: `${question} = ?`,
     correctAnswer,
-    options: buildOptions(correctAnswer)
+    options: buildOptions(correctAnswer),
   }
 }
 

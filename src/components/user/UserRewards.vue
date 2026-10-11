@@ -1,4 +1,3 @@
-constm
 <script setup>
 import { ref, computed } from 'vue'
 
@@ -12,13 +11,14 @@ import chainlinkIcon from 'src/assets/icons/chainlink.png'
 import dogecoinIcon from 'src/assets/icons/dogecoin.png'
 import xrpIcon from 'src/assets/icons/xrp.png'
 import { useLocalized } from 'src/composables/useLocalized'
+import ICON from 'src/helpers/icons'
 
 const { t } = useLocalized()
 
 const sectionState = ref({
   crypto: true,
   math: true,
-  chess: true,
+  trading: true,
 })
 
 const toggleSection = (section) => {
@@ -205,31 +205,245 @@ const cryptoRewards = ref([
   },
 ])
 
-const cryptoUnlockedCount = computed(
-  () => cryptoRewards.value.filter((reward) => reward.unlocked).length,
-)
+const tradingRewards = ref([
+  {
+    id: 'firstOrder',
+    get title() {
+      return t('app.user.rewards.trading.firstOrder.title')
+    },
+    get aim() {
+      return t('app.user.rewards.trading.firstOrder.aim')
+    },
+    get details() {
+      return t('app.user.rewards.trading.firstOrder.details')
+    },
+    iconName: 'shopping_cart',
+    color: 'blue',
+    unlocked: true,
+  },
+  {
+    id: 'activeTrader',
+    get title() {
+      return t('app.user.rewards.trading.activeTrader.title')
+    },
+    get aim() {
+      return t('app.user.rewards.trading.activeTrader.aim')
+    },
+    get details() {
+      return t('app.user.rewards.trading.activeTrader.details')
+    },
+    iconName: 'swap_horiz',
+    color: 'sky',
+    unlocked: true,
+    badge: 25,
+  },
+  {
+    id: 'greenWeek',
+    get title() {
+      return t('app.user.rewards.trading.greenWeek.title')
+    },
+    get aim() {
+      return t('app.user.rewards.trading.greenWeek.aim')
+    },
+    get details() {
+      return t('app.user.rewards.trading.greenWeek.details')
+    },
+    iconName: 'trending_up',
+    color: 'green',
+    unlocked: false,
+  },
+  {
+    id: 'safetyNet',
+    get title() {
+      return t('app.user.rewards.trading.safetyNet.title')
+    },
+    get aim() {
+      return t('app.user.rewards.trading.safetyNet.aim')
+    },
+    get details() {
+      return t('app.user.rewards.trading.safetyNet.details')
+    },
+    iconName: 'shield',
+    color: 'grey',
+    unlocked: true,
+  },
+  {
+    id: 'targetHit',
+    get title() {
+      return t('app.user.rewards.trading.targetHit.title')
+    },
+    get aim() {
+      return t('app.user.rewards.trading.targetHit.aim')
+    },
+    get details() {
+      return t('app.user.rewards.trading.targetHit.details')
+    },
+    iconName: 'flag',
+    color: 'gold',
+    unlocked: false,
+  },
+  {
+    id: 'onePercentRule',
+    get title() {
+      return t('app.user.rewards.trading.onePercentRule.title')
+    },
+    get aim() {
+      return t('app.user.rewards.trading.onePercentRule.aim')
+    },
+    get details() {
+      return t('app.user.rewards.trading.onePercentRule.details')
+    },
+    iconName: 'balance',
+    color: 'teal',
+    unlocked: true,
+    badge: 20,
+  },
+  {
+    id: 'autopilot',
+    get title() {
+      return t('app.user.rewards.trading.autopilot.title')
+    },
+    get aim() {
+      return t('app.user.rewards.trading.autopilot.aim')
+    },
+    get details() {
+      return t('app.user.rewards.trading.autopilot.details')
+    },
+    iconName: 'smart_toy',
+    color: 'indigo',
+    unlocked: false,
+  },
+  {
+    id: 'onSchedule',
+    get title() {
+      return t('app.user.rewards.trading.onSchedule.title')
+    },
+    get aim() {
+      return t('app.user.rewards.trading.onSchedule.aim')
+    },
+    get details() {
+      return t('app.user.rewards.trading.onSchedule.details')
+    },
+    iconName: 'event_repeat',
+    color: 'purple',
+    unlocked: false,
+  },
+  {
+    id: 'journalKeeper',
+    get title() {
+      return t('app.user.rewards.trading.journalKeeper.title')
+    },
+    get aim() {
+      return t('app.user.rewards.trading.journalKeeper.aim')
+    },
+    get details() {
+      return t('app.user.rewards.trading.journalKeeper.details')
+    },
+    iconName: 'menu_book',
+    color: 'orange',
+    unlocked: true,
+    badge: 10,
+  },
+  {
+    id: 'strategist',
+    get title() {
+      return t('app.user.rewards.trading.strategist.title')
+    },
+    get aim() {
+      return t('app.user.rewards.trading.strategist.aim')
+    },
+    get details() {
+      return t('app.user.rewards.trading.strategist.details')
+    },
+    iconName: 'insights',
+    color: 'red',
+    unlocked: false,
+  },
+  {
+    id: 'comeback',
+    get title() {
+      return t('app.user.rewards.trading.comeback.title')
+    },
+    get aim() {
+      return t('app.user.rewards.trading.comeback.aim')
+    },
+    get details() {
+      return t('app.user.rewards.trading.comeback.details')
+    },
+    iconName: 'restart_alt',
+    color: 'green',
+    unlocked: false,
+  },
+  {
+    id: 'patientHolder',
+    get title() {
+      return t('app.user.rewards.trading.patientHolder.title')
+    },
+    get aim() {
+      return t('app.user.rewards.trading.patientHolder.aim')
+    },
+    get details() {
+      return t('app.user.rewards.trading.patientHolder.details')
+    },
+    iconName: 'hourglass_bottom',
+    color: 'gold',
+    unlocked: false,
+  },
+])
+
+const sections = computed(() => [
+  {
+    key: 'crypto',
+    icon: ICON.CRYPTO,
+    iconClass: 'text-orange-5',
+    title: t('app.user.sections.crypto'),
+    rewards: cryptoRewards.value,
+  },
+  {
+    key: 'trading',
+    icon: ICON.TRADING,
+    iconClass: 'text-purple-5',
+    title: t('app.user.sections.trading'),
+    rewards: tradingRewards.value,
+  },
+])
+
+const unlockedCount = (rewards) => rewards.filter((reward) => reward.unlocked).length
 </script>
 
 <template>
   <div class="user-rewards">
     <div class="rewards-container">
-      <!-- Crypto Block -->
-      <section class="reward-block">
-        <div class="block-banner" @click="toggleSection('crypto')">
+      <section v-for="section in sections" :key="section.key" class="reward-block">
+        <div
+          class="block-banner"
+          role="button"
+          tabindex="0"
+          :aria-expanded="sectionState[section.key]"
+          @click="toggleSection(section.key)"
+          @keydown.enter.prevent="toggleSection(section.key)"
+          @keydown.space.prevent="toggleSection(section.key)"
+        >
           <div class="banner-title row items-center no-wrap">
-            <q-icon name="currency_bitcoin" size="22px" class="q-mr-xs text-orange-5" />
-            <span class="text-bold">{{ t('app.user.achievements') }}</span>
-            <span class="banner-count">({{ cryptoUnlockedCount }}/{{ cryptoRewards.length }})</span>
+            <q-icon :name="section.icon" size="22px" class="q-mr-xs" :class="section.iconClass" />
+            <span class="text-bold">{{ section.title }}</span>
+            <span class="banner-count"
+              >({{ unlockedCount(section.rewards) }}/{{ section.rewards.length }})</span
+            >
           </div>
           <q-icon
-            :name="sectionState.crypto ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
+            :name="sectionState[section.key] ? 'keyboard_arrow_up' : 'keyboard_arrow_down'"
             size="24px"
             class="text-grey-5"
           />
         </div>
 
-        <div v-show="sectionState.crypto" class="reward-grid">
-          <div v-for="reward in cryptoRewards" :key="reward.title" class="achievement-item">
+        <div v-show="sectionState[section.key]" class="reward-grid">
+          <div
+            v-for="(reward, index) in section.rewards"
+            :key="reward.id || `${section.key}-${index}`"
+            class="achievement-item"
+          >
             <div
               class="badge-box"
               :class="
@@ -261,7 +475,7 @@ const cryptoUnlockedCount = computed(
                   :class="reward.unlocked ? 'text-green-4' : 'text-grey-5'"
                   class="text-caption text-bold"
                 >
-                  {{ reward.unlocked ? 'UNLOCKED' : 'LOCKED' }}
+                  {{ reward.unlocked ? t('app.user.unlocked') : t('app.user.locked') }}
                 </div>
                 <div class="text-caption text-amber-4 q-mt-xs">{{ reward.aim }}</div>
                 <div class="text-caption text-grey-4">{{ reward.details }}</div>
@@ -395,7 +609,7 @@ const cryptoUnlockedCount = computed(
   }
 }
 
-/* Unlocked color themes matching chess.com badge palettes */
+/* Unlocked badge colour themes */
 .badge-box--blue {
   background: linear-gradient(135deg, #1e6ad2, #124ea4);
 }
@@ -447,7 +661,8 @@ const cryptoUnlockedCount = computed(
   line-height: 1.25;
   text-align: center;
   color: #c3c1c0;
-  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .badge-title--locked {

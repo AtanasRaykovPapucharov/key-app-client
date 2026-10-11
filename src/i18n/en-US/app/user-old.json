@@ -1,0 +1,108 @@
+{
+  "avatar": "User avatar",
+  "editAvatar": "Edit avatar",
+  "userId": "User ID",
+  "imageUrl": "Image URL or data URL",
+  "useCustom": "Use custom avatar",
+  "clearImage": "Clear image",
+  "generated": "Generated avatar",
+  "hideBuilder": "Hide avatar builder",
+  "hair": "Hair",
+  "eyes": "Eyes",
+  "nose": "Nose",
+  "mouth": "Mouth",
+  "hat": "Hat / accessory",
+  "ears": "Ears",
+  "useAvatar": "Use avatar",
+  "saveProfile": "Save profile",
+  "opt": {
+    "short": "Short",
+    "wave": "Wave",
+    "long": "Long",
+    "bald": "Bald",
+    "calm": "Calm",
+    "bright": "Bright",
+    "focus": "Focus",
+    "soft": "Soft",
+    "round": "Round",
+    "sharp": "Sharp",
+    "smile": "Smile",
+    "line": "Line",
+    "open": "Open",
+    "cap": "Cap",
+    "halo": "Halo",
+    "glasses": "Glasses"
+  },
+  "admin": "Admin",
+  "authenticated": "Authenticated",
+  "profileFields": "Profile fields",
+  "avatarImage": "Avatar image",
+  "builder": "Avatar builder",
+  "builderIntro": "Customize the generated avatar, then save it to your profile.",
+  "skin": "Skin",
+  "background": "Background",
+  "dailyPnl": "Daily PNL",
+  "achievements": "Crypto Achievements",
+  "rewards": {
+    "selfTrader": {
+      "title": "Self-Trader",
+      "aim": "Complete 1st trade",
+      "details": "Execute your first crypto buy or sell order."
+    },
+    "btcBoss": {
+      "title": "BTC Boss",
+      "aim": "Hold 1 BTC",
+      "details": "Reach a full Bitcoin balance in your portfolio."
+    },
+    "ethArchitect": {
+      "title": "ETH Architect",
+      "aim": "Hold 10 ETH",
+      "details": "Build a strong Ethereum position."
+    },
+    "stableCaptain": {
+      "title": "Stable Captain",
+      "aim": "Save 10,000 USDC",
+      "details": "Keep a stable reserve ready for opportunities."
+    },
+    "altcoinScout": {
+      "title": "Altcoin Scout",
+      "aim": "Own 5 crypto assets",
+      "details": "Diversify across multiple tracked coins."
+    },
+    "solSprinter": {
+      "title": "SOL Sprinter",
+      "aim": "Hold 25 SOL",
+      "details": "Grow a dedicated Solana position."
+    },
+    "bnbBuilder": {
+      "title": "BNB Builder",
+      "aim": "Hold 15 BNB",
+      "details": "Accumulate a Binance ecosystem stake."
+    },
+    "adaScholar": {
+      "title": "ADA Scholar",
+      "aim": "Hold 1,000 ADA",
+      "details": "Commit to a long-term Cardano target."
+    },
+    "linkOracle": {
+      "title": "LINK Oracle",
+      "aim": "Hold 100 LINK",
+      "details": "Reach a Chainlink oracle allocation."
+    },
+    "riskTamer": {
+      "title": "Risk Tamer",
+      "aim": "Stay 7 days positive",
+      "details": "Finish a full week with positive daily PNL."
+    },
+    "marketExplorer": {
+      "title": "Market Explorer",
+      "aim": "Watch 10 coins",
+      "details": "Create a wide crypto watchlist."
+    },
+    "xrpPioneer": {
+      "title": "XRP Pioneer",
+      "aim": "Hold 500 XRP",
+      "details": "Build a solid cross-border payments position."
+    }
+  }
+}

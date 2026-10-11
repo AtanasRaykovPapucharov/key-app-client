@@ -4,7 +4,7 @@
 //   media: { type: 'svg', content: '<svg>...</svg>' }
 //   media: { type: 'image', content: 'https://example.com/diagram.png' }
 
-import { randInt, shuffle, buildOptions } from './quizUtils.js'
+import { randInt, shuffle, buildOptions, L } from './quizUtils.js'
 import { generateHardArithmetic } from './arithmeticQuestions.js'
 
 const STROKE = '#90caf9'
@@ -28,10 +28,13 @@ function svgRightTriangleArea(id) {
 
   return {
     id,
-    question: 'Find the area of this right triangle (not to scale).',
+    question: L(
+      'Find the area of this right triangle (not to scale).',
+      'Намерете лицето на този правоъгълен триъгълник (чертежът не е в мащаб).',
+    ),
     correctAnswer,
     options: buildOptions(correctAnswer),
-    media: { type: 'svg', content }
+    media: { type: 'svg', content },
   }
 }
 
@@ -53,10 +56,13 @@ function svgMissingAngle(id) {
 
   return {
     id,
-    question: 'What is the missing angle in this triangle?',
+    question: L(
+      'What is the missing angle in this triangle?',
+      'Колко е неизвестният ъгъл в този триъгълник?',
+    ),
     correctAnswer,
     options: buildOptions(correctAnswer),
-    media: { type: 'svg', content }
+    media: { type: 'svg', content },
   }
 }
 
@@ -77,10 +83,13 @@ function svgRectanglePerimeter(id) {
 
   return {
     id,
-    question: 'Find the perimeter of this rectangle.',
+    question: L(
+      'Find the perimeter of this rectangle.',
+      'Намерете периметъра на този правоъгълник.',
+    ),
     correctAnswer,
     options: buildOptions(correctAnswer),
-    media: { type: 'svg', content }
+    media: { type: 'svg', content },
   }
 }
 

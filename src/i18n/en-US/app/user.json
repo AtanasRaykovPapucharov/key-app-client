@@ -103,6 +103,74 @@
       "title": "XRP Pioneer",
       "aim": "Hold 500 XRP",
       "details": "Build a solid cross-border payments position."
+    },
+    "trading": {
+      "firstOrder": {
+        "title": "First order",
+        "aim": "Place 1 order",
+        "details": "Place your first buy or sell order in the trading simulator."
+      },
+      "activeTrader": {
+        "title": "Active trader",
+        "aim": "Complete 25 trades",
+        "details": "Close 25 trades in the simulator."
+      },
+      "greenWeek": {
+        "title": "Green week",
+        "aim": "7 profitable days in a row",
+        "details": "End seven days in a row with a positive daily P&L."
+      },
+      "safetyNet": {
+        "title": "Safety net",
+        "aim": "Exit at your stop-loss",
+        "details": "Close a losing trade exactly at the stop-loss you planned."
+      },
+      "targetHit": {
+        "title": "Target hit",
+        "aim": "Exit at take-profit 5 times",
+        "details": "Close five trades at the take-profit level you set in advance."
+      },
+      "onePercentRule": {
+        "title": "1% rule",
+        "aim": "Risk ≤ 1% on 20 trades",
+        "details": "Use the position sizing calculator and keep the risk at or below 1% of the account on 20 trades."
+      },
+      "autopilot": {
+        "title": "Autopilot",
+        "aim": "Create an auto-trading rule",
+        "details": "Set up your first auto-sell or auto-buy rule."
+      },
+      "onSchedule": {
+        "title": "On schedule",
+        "aim": "Run 10 scheduled events",
+        "details": "Let the scheduler trigger ten events for you."
+      },
+      "journalKeeper": {
+        "title": "Trading journal",
+        "aim": "Write 10 trade notes",
+        "details": "Record the reason for your trades in ten notes."
+      },
+      "strategist": {
+        "title": "Strategist",
+        "aim": "Test a strategy",
+        "details": "Build a strategy in the strategy builder and test its condition."
+      },
+      "comeback": {
+        "title": "Comeback",
+        "aim": "Recover a 10% drawdown",
+        "details": "Bring the portfolio back to break-even after a 10% drop."
+      },
+      "patientHolder": {
+        "title": "Patient holder",
+        "aim": "Hold a position 30 days",
+        "details": "Keep one position open for 30 days without selling."
+      }
     }
-  }
+  },
+  "sections": {
+    "crypto": "Crypto achievements",
+    "trading": "Trading achievements"
+  },
+  "unlocked": "Unlocked",
+  "locked": "Locked"
 }

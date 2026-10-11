@@ -4,8 +4,15 @@
     <q-card flat bordered dark class="bg-dark text-white q-mb-md sticky-header">
       <q-card-section class="row items-center justify-between q-py-sm">
         <div class="row items-center q-gutter-sm">
-          <q-btn flat round dense icon="arrow_back" @click="$emit('exit')" />
-          <div class="text-h6">{{ quiz.title }}</div>
+          <q-btn
+            flat
+            round
+            dense
+            icon="arrow_back"
+            :aria-label="t('app.math.quiz.exit')"
+            @click="$emit('exit')"
+          />
+          <div class="text-h6">{{ tx(quiz.title) }}</div>
         </div>
 
         <div class="row items-center q-gutter-sm">
@@ -93,7 +100,7 @@
           <q-chip square color="primary" text-color="white" class="q-mr-sm" size="sm">
             {{ index + 1 }}
           </q-chip>
-          <div class="text-subtitle1 q-mt-xs">{{ q.question }}</div>
+          <div class="text-subtitle1 q-mt-xs question-text">{{ tx(q.question) }}</div>
         </div>
 
         <!-- Optional media: image or inline SVG -->
@@ -130,7 +137,11 @@
             class="text-caption q-ml-xs"
             :class="isCorrect(index) ? 'text-positive' : 'text-negative'"
           >
-            {{ isCorrect(index) ? 'Correct' : `Correct answer: ${q.correctAnswer}` }}
+            {{
+              isCorrect(index)
+                ? t('app.math.quiz.correct')
+                : t('app.math.quiz.correctAnswer', { answer: correctLabel(q) })
+            }}
           </span>
         </div>
       </q-carousel-slide>
@@ -173,7 +184,9 @@
       <q-btn
         v-if="!submitted"
         color="primary"
-        :label="`Submit Quiz (${answeredCount}/${questions.length})`"
+        :label="
+          t('app.math.quiz.submitCount', { answered: answeredCount, total: questions.length })
+        "
         @click="submitQuiz(false)"
         unelevated
       />
@@ -216,7 +229,7 @@ import { useQuasar } from 'quasar'
 import { createQuiz } from './quizFactory.js'
 import { useLocalized } from 'src/composables/useLocalized'
 
-const { t } = useLocalized()
+const { t, tx } = useLocalized()
 
 const props = defineProps({
   quizId: { type: String, required: true },
@@ -233,8 +246,20 @@ let quiz = createQuiz(props.quizId)
 const questions = reactive(quiz.questions)
 const answers = reactive(Array(questions.length).fill(null))
 
+/** Options are either primitives (older generators) or { value, label } with a bilingual label. */
+function normalizeOption(opt) {
+  return typeof opt === 'object' && opt !== null && 'value' in opt
+    ? opt
+    : { value: opt, label: String(opt) }
+}
+
 function optionList(q) {
-  return q.options.map((opt) => ({ label: String(opt), value: opt }))
+  return q.options.map(normalizeOption).map((opt) => ({ value: opt.value, label: tx(opt.label) }))
+}
+
+function correctLabel(q) {
+  const match = q.options.map(normalizeOption).find((opt) => opt.value === q.correctAnswer)
+  return match ? tx(match.label) : String(q.correctAnswer)
 }
 
 /* -------------------------------------------------------------------- */
@@ -317,7 +342,7 @@ function submitQuiz(fromTimeout = false, skipConfirm = false) {
   if (timerHandle) clearInterval(timerHandle)
 
   $q.notify({
-    message: fromTimeout ? "Time's up! Quiz submitted automatically." : 'Quiz submitted.',
+    message: fromTimeout ? t('app.math.quiz.timeUp') : t('app.math.quiz.submitted'),
     color: fromTimeout ? 'negative' : 'positive',
     icon: fromTimeout ? 'alarm' : 'check_circle',
     position: 'top-left',
@@ -359,6 +384,10 @@ function optionClass(q, index, optionValue) {
   position: sticky;
   top: 0;
   z-index: 10;
+}
+.question-text {
+  white-space: pre-line;
+  overflow-wrap: anywhere;
 }
 .text-strike {
   text-decoration: line-through;
