@@ -288,7 +288,7 @@ watch(
   <q-page class="bg-grey-10">
     <!-- <span>{{ t('hi') }}</span> -->
     <q-splitter v-model="splitterModel" :limits="[23, 65]">
-      <template #:before>
+      <template #before>
         <div class="q-pa-md items-center" style="position: relative; left: -7px">
           <div class="row q-ml-md">
             <q-avatar size="lg" class="bg-secondary q-mr-lg" style="border: 1px solid grey">
@@ -342,12 +342,12 @@ watch(
                 ]"
                 class="bg-grey-8"
               >
-                <template #:cells>
+                <template #cells>
                   <div class="row items-center no-wrap q-pl-sm">
                     <q-icon left name="border_all" />
                   </div>
                 </template>
-                <template #:table>
+                <template #table>
                   <div class="row items-center no-wrap q-pr-sm">
                     <q-icon right name="table_rows" />
                   </div>

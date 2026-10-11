@@ -658,7 +658,7 @@ function qRadioColor(i, max) {
     </q-card>
 
     <q-splitter v-model="splitterModel" style="height: 750px">
-      <template #:before>
+      <template #before>
         <q-tabs v-model="tab" vertical class="text-green-5" dense no-caps>
           <q-tab
             v-for="t in tabs"

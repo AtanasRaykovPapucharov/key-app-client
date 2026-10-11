@@ -57,7 +57,7 @@ onMounted(() => {
     v-model:pagination="pagination"
     :rows-per-page-options="[5, 10, 20, 0]"
   >
-    <template #:body-cell-date="props">
+    <template #body-cell-date="props">
       <q-td :props="props">
         <div>
           <!-- <span>{{ new Date(props.row.date)?.toDateString()?.split(' ')?.[0] }}</span>

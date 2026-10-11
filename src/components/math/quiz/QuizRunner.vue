@@ -41,7 +41,7 @@
       :class="scorePercent >= 50 ? 'bg-green-10' : 'bg-red-10'"
       rounded
     >
-      <template #:avatar>
+      <template #avatar>
         <q-icon
           :name="scorePercent >= 50 ? 'emoji_events' : 'sentiment_dissatisfied'"
           :color="scorePercent >= 50 ? 'green-4' : 'red-4'"

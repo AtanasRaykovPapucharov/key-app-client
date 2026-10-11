@@ -39,7 +39,7 @@ const cryptosymbol = computed({
     style="background-color: #0e0e0e; min-width: 360px"
   >
     <!-- Selected item display -->
-    <template #:selected-item="scope">
+    <template #selected-item="scope">
       <q-avatar class="bg-secondary q-mr-lg" size="md">
         <q-img
           :src="cryptoMapper[scope.opt.symbol?.replace('USDC', '')]?.logo"

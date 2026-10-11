@@ -332,7 +332,7 @@ const updateStrategyCandles = (candles) => {
 <template>
   <div class="bg-grey-10">
     <q-splitter v-model="splitterModel" :horizontal="$q.screen.lt.sm" :limits="[43, 75]">
-      <template #:before>
+      <template #before>
         <div>
           <q-card class="col-12 bg-grey-9">
             <crypto-chart

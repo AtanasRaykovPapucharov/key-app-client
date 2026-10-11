@@ -119,7 +119,7 @@ watch(
             style="max-width: 400px"
           >
             <q-tab name="user">
-              <template #:default>
+              <template #default>
                 <q-icon name="person" size="lg" color="secondary" />
               </template>
             </q-tab>

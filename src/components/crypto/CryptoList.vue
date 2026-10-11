@@ -159,7 +159,7 @@ async function saveList() {
       class="text-secondary"
       :style="{ height: `${$q.screen.height - 102}px` }"
     >
-      <template #:top-right>
+      <template #top-right>
         <q-btn
           :disable="!hasChanged"
           flat

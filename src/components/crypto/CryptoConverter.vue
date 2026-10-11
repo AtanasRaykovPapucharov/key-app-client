@@ -271,7 +271,7 @@ onMounted(async () => {
             @blur="commitAmountInput"
             @update:model-value="updateAmountInput"
           >
-            <template #:prepend>
+            <template #prepend>
               <q-icon name="warning" color="negative" v-if="amountValue < 0" />
             </template>
           </q-input>

@@ -200,7 +200,7 @@ function inputType(dataType) {
     :style="{ maxWidth: `${parseInt($q.screen.width - 75)}px` }"
   >
     <!-- keep top slot re-exposed -->
-    <template #:top>
+    <template #top>
       <slot name="top" />
     </template>
 
