@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 
 import { getLocalUser } from 'src/services/storage/local'
 
-const server = 'http://localhost:3000'
+const server = import.meta.env.QCLI_SERVER_URL || 'http://localhost:3000'
 const MAX_CONNECTION_ATTEMPTS = 5
 
 export const useBinanceStore = defineStore('binance', {
