@@ -55,7 +55,7 @@
     "marketCap": "Market cap",
     "dividend": "Dividend %",
     "volume": "Volume",
-    "top100Stocks": "Top 100 stocks",
+    "top100Stocks": "Top stocks",
     "keyMetricsForLeading": "Key metrics for leading companies ranked by the selected criterion.",
     "couldNotLoadStock": "Could not load stock rankings.",
     "searchBySymbolOr": "Search by symbol or name",

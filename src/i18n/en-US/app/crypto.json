@@ -255,7 +255,7 @@
     "marketCap": "Market cap",
     "volume": "Volume",
     "unlocked": "Unlocked",
-    "top100Crypto": "Top 100 crypto",
+    "top100Crypto": "Top crypto",
     "keyMetricsForLeading": "Key metrics for leading coins ranked by the selected criterion.",
     "couldNotLoadCoin": "Could not load coin rankings.",
     "searchBySymbolOr": "Search by symbol or name",
