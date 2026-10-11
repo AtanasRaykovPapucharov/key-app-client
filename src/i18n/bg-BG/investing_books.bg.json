@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "name": "The Intelligent Investor",
+      "author": "Benjamin Graham",
+      "description": "Библията на value investing-а от 1949 г., за която Уорън Бъфет казва, че е най-добрата книга за инвестиране, писана някога. Греъм въвежда идеите за \"Mr. Market\" и \"margin of safety\" — рамка за разграничаване на цената от стойността и за защита от собствените ни емоционални грешки на пазара.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780060555665-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Intelligent+Investor+Benjamin+Graham"
+    },
+    {
+      "name": "Security Analysis",
+      "author": "Benjamin Graham, David Dodd",
+      "description": "Основополагащият текст на фундаменталния анализ от 1934 г., написан от учителя на Бъфет и негов колега. Книгата поставя систематичните основи на value investing-а — как да се оценява бизнес по неговите фундаментали, а не по пазарните настроения — и остава задължително четиво за професионални анализатори повече от 90 години по-късно.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780071592536-L.jpg",
+      "link": "https://www.amazon.com/s?k=Security+Analysis+Graham+Dodd"
+    },
+    {
+      "name": "Common Stocks and Uncommon Profits",
+      "author": "Philip Fisher",
+      "description": "Бъфет посочва тази книга от 1958 г. като ключова за разбирането му за \"конкурентния ров\" на един бизнес. Фишър представя качествения, а не количествения подход към инвестирането — как да се преценят мениджмънт, продукти и дългосрочен растеж на компания чрез неговия метод \"scuttlebutt\" (директно проучване извън финансовите отчети).",
+      "image": "https://covers.openlibrary.org/b/isbn/9780471445500-L.jpg",
+      "link": "https://www.amazon.com/s?k=Common+Stocks+and+Uncommon+Profits+Philip+Fisher"
+    },
+    {
+      "name": "One Up on Wall Street",
+      "author": "Peter Lynch",
+      "description": "Легендарният мениджър на Fidelity Magellan Fund, постигнал 29% средна годишна доходност, обяснява как обикновените инвеститори могат да откриват \"tenbagger\" акции чрез наблюдения от собствения си живот, преди Wall Street да ги забележи. Практично ръководство за разпознаване на бизнеси, растящи компании и цикличности.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780743200400-L.jpg",
+      "link": "https://www.amazon.com/s?k=One+Up+on+Wall+Street+Peter+Lynch"
+    },
+    {
+      "name": "The Essays of Warren Buffett",
+      "author": "Warren Buffett, съставено от Lawrence Cunningham",
+      "description": "Книгата, която Бъфет най-често подписва и харесва най-много — подбрани и тематично организирани откъси от годишните му писма до акционерите на Berkshire Hathaway. Дава директен достъп до философията на Бъфет за стойностно инвестиране, корпоративно управление и разпределение на капитал, без нужда да се четат десетилетия писма поотделно.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780966446142-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Essays+of+Warren+Buffett+Cunningham"
+    }
+  ]
+}

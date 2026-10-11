@@ -1,0 +1,58 @@
+{
+    "coordinate_plane":  {
+                             "x":  20,
+                             "y":  130,
+                             "width":  1220,
+                             "height":  1330,
+                             "tileSize":  380
+                         },
+    "x_axis":  {
+                   "x":  420,
+                   "y":  130,
+                   "width":  1220,
+                   "height":  1330,
+                   "tileSize":  380
+               },
+    "y_axis":  {
+                   "x":  820,
+                   "y":  130,
+                   "width":  1220,
+                   "height":  1330,
+                   "tileSize":  380
+               },
+    "coordinates":  {
+                        "x":  20,
+                        "y":  530,
+                        "width":  1220,
+                        "height":  1330,
+                        "tileSize":  380
+                    },
+    "distance_between_points":  {
+                                    "x":  420,
+                                    "y":  530,
+                                    "width":  1220,
+                                    "height":  1330,
+                                    "tileSize":  380
+                                },
+    "midpoint":  {
+                     "x":  820,
+                     "y":  530,
+                     "width":  1220,
+                     "height":  1330,
+                     "tileSize":  380
+                 },
+    "slope":  {
+                  "x":  20,
+                  "y":  930,
+                  "width":  1220,
+                  "height":  1330,
+                  "tileSize":  380
+              },
+    "equation_of_a_line":  {
+                               "x":  420,
+                               "y":  930,
+                               "width":  1220,
+                               "height":  1330,
+                               "tileSize":  380
+                           }
+}

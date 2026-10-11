@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "name": "The Bond Book",
+      "author": "Annette Thau",
+      "description": "Widely regarded as the practical bible for individual bond investors. Thau, a former bond analyst, explains Treasuries, munis, corporates, zero-coupon bonds, and bond funds in plain English, along with how to assess risk and return without excessive math.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780071664707-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Bond+Book+Annette+Thau"
+    },
+    {
+      "name": "Security Analysis",
+      "author": "Benjamin Graham, David Dodd",
+      "description": "The 1934 classic of fundamental analysis that lays the systematic groundwork for valuing not just stocks but bonds and corporate debt. It teaches investors to judge securities by the underlying business's real value rather than market sentiment — an approach that underpins modern fixed-income analysis.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780071592536-L.jpg",
+      "link": "https://www.amazon.com/s?k=Security+Analysis+Graham+Dodd"
+    },
+    {
+      "name": "Inside the Yield Book",
+      "author": "Sidney Homer, Martin L. Leibowitz",
+      "description": "First published in 1972, this book revolutionized the fixed-income industry and created the mathematical language of bond analysis — price, yield, duration, convexity. It is considered the foundational text every bond professional is expected to know.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781118390139-L.jpg",
+      "link": "https://www.amazon.com/s?k=Inside+the+Yield+Book+Homer+Leibowitz"
+    },
+    {
+      "name": "Bonds: The Unbeaten Path to Secure Investment Growth",
+      "author": "Hildy Richelson, Stan Richelson",
+      "description": "A husband-and-wife investment team debunks the myth that stocks always outperform and lays out a full strategy for building an all-bond portfolio. A practical, case-study-driven guide to how wealthy investors use bonds for capital security and predictable income.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781118004463-L.jpg",
+      "link": "https://www.amazon.com/s?k=Bonds+Unbeaten+Path+Richelson"
+    },
+    {
+      "name": "The Handbook of Fixed Income Securities",
+      "author": "Frank J. Fabozzi, Steven V. Mann",
+      "description": "The massive professional reference the industry has relied on for decades — over 1,800 pages written by leading experts covering every corner of the fixed-income market, from structured products and credit derivatives to risk management and portfolio valuation. Essential library reference for practitioners, not a beginner's guide.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780071768467-L.jpg",
+      "link": "https://www.amazon.com/s?k=Handbook+of+Fixed+Income+Securities+Fabozzi"
+    }
+  ]
+}

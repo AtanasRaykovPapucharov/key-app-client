@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "name": "The Intelligent Investor",
+      "author": "Benjamin Graham",
+      "description": "The 1949 bible of value investing, which Warren Buffett has called the best book on investing ever written. Graham introduces the ideas of \"Mr. Market\" and \"margin of safety\" — a framework for separating price from value and protecting yourself from your own emotional mistakes in the market.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780060555665-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Intelligent+Investor+Benjamin+Graham"
+    },
+    {
+      "name": "Security Analysis",
+      "author": "Benjamin Graham, David Dodd",
+      "description": "The foundational 1934 text of fundamental analysis, written by Buffett's teacher and his colleague. The book lays the systematic groundwork of value investing — how to value a business by its fundamentals rather than market sentiment — and remains required reading for professional analysts more than 90 years later.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780071592536-L.jpg",
+      "link": "https://www.amazon.com/s?k=Security+Analysis+Graham+Dodd"
+    },
+    {
+      "name": "Common Stocks and Uncommon Profits",
+      "author": "Philip Fisher",
+      "description": "Buffett has credited this 1958 book with shaping his understanding of a business's competitive \"moat.\" Fisher presents a qualitative rather than quantitative approach to investing — how to judge a company's management, products, and long-term growth through his \"scuttlebutt\" method of research outside the financial statements.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780471445500-L.jpg",
+      "link": "https://www.amazon.com/s?k=Common+Stocks+and+Uncommon+Profits+Philip+Fisher"
+    },
+    {
+      "name": "One Up on Wall Street",
+      "author": "Peter Lynch",
+      "description": "The legendary manager of the Fidelity Magellan Fund, who averaged 29% annual returns, explains how ordinary investors can spot \"tenbagger\" stocks through observations from their own everyday lives before Wall Street catches on. A practical guide to reading businesses, growth companies, and cyclicals.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780743200400-L.jpg",
+      "link": "https://www.amazon.com/s?k=One+Up+on+Wall+Street+Peter+Lynch"
+    },
+    {
+      "name": "The Essays of Warren Buffett",
+      "author": "Warren Buffett, compiled by Lawrence Cunningham",
+      "description": "The book Buffett autographs most and likes best — curated, thematically organized excerpts from his annual letters to Berkshire Hathaway shareholders. It gives direct access to Buffett's philosophy on value investing, corporate governance, and capital allocation, without having to read decades of letters individually.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780966446142-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Essays+of+Warren+Buffett+Cunningham"
+    }
+  ]
+}

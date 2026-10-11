@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "name": "The Disciplined Trader",
+      "author": "Mark Douglas",
+      "description": "Класическа книга от 1990 г., която за пръв път разглежда трейдинга като психологическа дисциплина, а не технически занаят. Дъглас обяснява защо пазарната несигурност влиза в конфликт с нуждата на ума от контрол и как страхът, желанието за отмъщение и прекалената увереност саботират дори добри стратегии.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780132157575-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Disciplined+Trader+Mark+Douglas"
+    },
+    {
+      "name": "Mindset Secrets for Winning",
+      "author": "Mark Minervini",
+      "description": "Двукратен шампион по трейдинг споделя как успешното търгуване е форма на високо представяне под натиск, сходна с елитния спорт. Книгата разглежда самообраза, изграждането на рутини и възстановяването след загуби, за да помогне на трейдъри с работеща стратегия да преминат отвъд собствения си таван.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780996307970-L.jpg",
+      "link": "https://www.amazon.com/s?k=Mindset+Secrets+for+Winning+Mark+Minervini"
+    },
+    {
+      "name": "Trade Your Way to Financial Freedom",
+      "author": "Van Tharp",
+      "description": "Психолог, работил с професионални трейдъри още от началото на 80-те, обяснява, че всеки търгува собствените си вярвания за пазара, а не самия пазар. Книгата въвежда R-multiples, expectancy и идеята, че управлението на позицията е по-важно от стратегията за вход и изход.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780071478717-L.jpg",
+      "link": "https://www.amazon.com/s?k=Trade+Your+Way+to+Financial+Freedom+Van+Tharp"
+    },
+    {
+      "name": "Unlimited Power",
+      "author": "Tony Robbins",
+      "description": "Книга, изградена около принципите на NLP, която изследва какво точно правят хората с изключителни резултати и как техните модели на поведение могат да бъдат научени. Инструментите за управление на вътрешното състояние и убежденията имат пряко приложение при трейдъри, губещи концентрация под натиск.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780743409391-L.jpg",
+      "link": "https://www.amazon.com/s?k=Unlimited+Power+Tony+Robbins"
+    },
+    {
+      "name": "Your Erroneous Zones",
+      "author": "Wayne Dyer",
+      "description": "Дайър описва самосаботиращите мисловни модели — нуждата от одобрение, чувството за вина, страха от неизвестното и перфекционизма — универсалните механизми, които пазарът просто усилва и разкрива у трейдъра. Практична рамка за разпознаване на собствените мисловни капани.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780308102286-L.jpg",
+      "link": "https://www.amazon.com/s?k=Your+Erroneous+Zones+Wayne+Dyer"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+    "length":  {
+                   "x":  20,
+                   "y":  130,
+                   "width":  1220,
+                   "height":  1330,
+                   "tileSize":  380
+               },
+    "mass":  {
+                 "x":  420,
+                 "y":  130,
+                 "width":  1220,
+                 "height":  1330,
+                 "tileSize":  380
+             },
+    "time":  {
+                 "x":  820,
+                 "y":  130,
+                 "width":  1220,
+                 "height":  1330,
+                 "tileSize":  380
+             },
+    "area":  {
+                 "x":  20,
+                 "y":  530,
+                 "width":  1220,
+                 "height":  1330,
+                 "tileSize":  380
+             },
+    "volume":  {
+                   "x":  420,
+                   "y":  530,
+                   "width":  1220,
+                   "height":  1330,
+                   "tileSize":  380
+               },
+    "speed":  {
+                  "x":  820,
+                  "y":  530,
+                  "width":  1220,
+                  "height":  1330,
+                  "tileSize":  380
+              },
+    "temperature":  {
+                        "x":  20,
+                        "y":  930,
+                        "width":  1220,
+                        "height":  1330,
+                        "tileSize":  380
+                    }
+}

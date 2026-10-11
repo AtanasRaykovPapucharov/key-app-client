@@ -1,0 +1,58 @@
+{
+    "statement":  {
+                      "x":  20,
+                      "y":  130,
+                      "width":  1220,
+                      "height":  1330,
+                      "tileSize":  380
+                  },
+    "proof":  {
+                  "x":  420,
+                  "y":  130,
+                  "width":  1220,
+                  "height":  1330,
+                  "tileSize":  380
+              },
+    "theorem":  {
+                    "x":  820,
+                    "y":  130,
+                    "width":  1220,
+                    "height":  1330,
+                    "tileSize":  380
+                },
+    "lemma":  {
+                  "x":  20,
+                  "y":  530,
+                  "width":  1220,
+                  "height":  1330,
+                  "tileSize":  380
+              },
+    "corollary":  {
+                      "x":  420,
+                      "y":  530,
+                      "width":  1220,
+                      "height":  1330,
+                      "tileSize":  380
+                  },
+    "direct_proof":  {
+                         "x":  820,
+                         "y":  530,
+                         "width":  1220,
+                         "height":  1330,
+                         "tileSize":  380
+                     },
+    "proof_by_contradiction":  {
+                                   "x":  20,
+                                   "y":  930,
+                                   "width":  1220,
+                                   "height":  1330,
+                                   "tileSize":  380
+                               },
+    "mathematical_induction":  {
+                                   "x":  420,
+                                   "y":  930,
+                                   "width":  1220,
+                                   "height":  1330,
+                                   "tileSize":  380
+                               }
+}

@@ -1,0 +1,65 @@
+{
+    "cube":  {
+                 "x":  20,
+                 "y":  130,
+                 "width":  1220,
+                 "height":  1330,
+                 "tileSize":  380
+             },
+    "cuboid":  {
+                   "x":  420,
+                   "y":  130,
+                   "width":  1220,
+                   "height":  1330,
+                   "tileSize":  380
+               },
+    "prism":  {
+                  "x":  820,
+                  "y":  130,
+                  "width":  1220,
+                  "height":  1330,
+                  "tileSize":  380
+              },
+    "pyramid":  {
+                    "x":  20,
+                    "y":  530,
+                    "width":  1220,
+                    "height":  1330,
+                    "tileSize":  380
+                },
+    "cylinder":  {
+                     "x":  420,
+                     "y":  530,
+                     "width":  1220,
+                     "height":  1330,
+                     "tileSize":  380
+                 },
+    "cone":  {
+                 "x":  820,
+                 "y":  530,
+                 "width":  1220,
+                 "height":  1330,
+                 "tileSize":  380
+             },
+    "sphere":  {
+                   "x":  20,
+                   "y":  930,
+                   "width":  1220,
+                   "height":  1330,
+                   "tileSize":  380
+               },
+    "surface_area":  {
+                         "x":  420,
+                         "y":  930,
+                         "width":  1220,
+                         "height":  1330,
+                         "tileSize":  380
+                     },
+    "volume":  {
+                   "x":  820,
+                   "y":  930,
+                   "width":  1220,
+                   "height":  1330,
+                   "tileSize":  380
+               }
+}

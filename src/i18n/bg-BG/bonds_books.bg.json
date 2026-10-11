@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "name": "The Bond Book",
+      "author": "Annette Thau",
+      "description": "Смятана за практическата библия за индивидуалния инвеститор в облигации. Тау, бивш анализатор на облигации, обяснява на разбираем език държавни, общински и корпоративни облигации, зерокупонни книжа, бонд фондове и как да оценяваш риска и доходността — без излишна математика.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780071664707-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Bond+Book+Annette+Thau"
+    },
+    {
+      "name": "Security Analysis",
+      "author": "Benjamin Graham, David Dodd",
+      "description": "Класика от 1934 г. на фундаменталния анализ, която полага систематичните основи на оценяването не само на акции, но и на облигации и корпоративен дълг. Учи инвеститорите да разглеждат ценните книжа през призмата на реалната стойност на бизнеса, а не пазарните настроения — подход, който стои в основата на модерния анализ на фиксирана доходност.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780071592536-L.jpg",
+      "link": "https://www.amazon.com/s?k=Security+Analysis+Graham+Dodd"
+    },
+    {
+      "name": "Inside the Yield Book",
+      "author": "Sidney Homer, Martin L. Leibowitz",
+      "description": "Публикувана за пръв път през 1972 г., тази книга революционизира индустрията на фиксираната доходност и създава математическия език на анализа на облигации — цена, доходност, дюрация, изпъкналост. Считана за фундаменталния текст, който всеки професионалист в областта на облигациите трябва да познава.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781118390139-L.jpg",
+      "link": "https://www.amazon.com/s?k=Inside+the+Yield+Book+Homer+Leibowitz"
+    },
+    {
+      "name": "Bonds: The Unbeaten Path to Secure Investment Growth",
+      "author": "Hildy Richelson, Stan Richelson",
+      "description": "Съпружески инвестиционен екип разбива мита, че акциите винаги носят по-висока възвращаемост, и представя цялостна стратегия за изграждане на портфейл предимно от облигации. Практическо ръководство с реални казуси за начина, по който заможните инвеститори използват облигации за сигурност на капитала и предвидим доход.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781118004463-L.jpg",
+      "link": "https://www.amazon.com/s?k=Bonds+Unbeaten+Path+Richelson"
+    },
+    {
+      "name": "The Handbook of Fixed Income Securities",
+      "author": "Frank J. Fabozzi, Steven V. Mann",
+      "description": "Обемният професионален справочник, на който индустрията разчита от десетилетия — над 1800 страници, писани от водещи експерти по всеки аспект на пазара на фиксирана доходност: от структурирани продукти и кредитни деривативи до управление на риска и оценка на портфейли. Задължителна библиотека за професионалисти, а не за начинаещи.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780071768467-L.jpg",
+      "link": "https://www.amazon.com/s?k=Handbook+of+Fixed+Income+Securities+Fabozzi"
+    }
+  ]
+}

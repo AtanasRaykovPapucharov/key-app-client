@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "name": "The Bitcoin Standard",
+      "author": "Saifedean Ammous",
+      "description": "Икономист проследява историята на парите — от раковини и метали до златния стандарт и модерния фиатен дълг — за да обясни защо Bitcoin притежава свойствата на стабилни пари: оскъдност, издръжливост и децентрализация. Най-влиятелната икономическа защита на Bitcoin като алтернатива на централното банкиране.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781119473862-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Bitcoin+Standard+Saifedean+Ammous"
+    },
+    {
+      "name": "Mastering Bitcoin",
+      "author": "Andreas M. Antonopoulos, David A. Harding",
+      "description": "Техническото ръководство номер едно за Bitcoin — обяснява децентрализираната мрежа, криптографията, жизнения цикъл на транзакциите и принципите на сигурност достъпно както за нетехнически инвеститори, така и в детайли за разработчици. Трето издание, обновено с Taproot, Schnorr подписи и Lightning Network.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781098150099-L.jpg",
+      "link": "https://www.amazon.com/s?k=Mastering+Bitcoin+Antonopoulos"
+    },
+    {
+      "name": "Digital Gold",
+      "author": "Nathaniel Popper",
+      "description": "Журналист на New York Times разказва увлекателната история на ранните дни на Bitcoin през погледа на цветните му герои — от анархисти до милионери — и как една подигравана идея прерасна в технология на стойност милиарди долари. Отличена от Financial Times за бизнес книга на годината.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780062362506-L.jpg",
+      "link": "https://www.amazon.com/s?k=Digital+Gold+Nathaniel+Popper"
+    },
+    {
+      "name": "Cryptoassets",
+      "author": "Chris Burniske, Jack Tatar",
+      "description": "Ръководство от двама инсайдери на индустрията за третирането на крипто активите като нов клас инвестиции — рамка за фундаментален анализ, управление на портфейл и техники за оценка на стотиците токени отвъд Bitcoin. Практичен инструментариум за сериозни инвеститори, а не спекулативна хайп книга.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781260026672-L.jpg",
+      "link": "https://www.amazon.com/s?k=Cryptoassets+Burniske+Tatar"
+    },
+    {
+      "name": "The Basics of Bitcoins and Blockchains",
+      "author": "Antony Lewis",
+      "description": "Ясно и достъпно въведение за начинаещи — обяснява как работят Bitcoin, блокчейн технологията, останалите криптовалути и ICO-та без технически жаргон. Често препоръчвана като първата книга, която трябва да прочете всеки, който е нов в темата за криптовалутите.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781642506730-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Basics+of+Bitcoins+and+Blockchains+Antony+Lewis"
+    }
+  ]
+}

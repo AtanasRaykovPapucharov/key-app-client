@@ -1,0 +1,58 @@
+{
+    "data":  {
+                 "x":  20,
+                 "y":  130,
+                 "width":  1220,
+                 "height":  1330,
+                 "tileSize":  380
+             },
+    "mean":  {
+                 "x":  420,
+                 "y":  130,
+                 "width":  1220,
+                 "height":  1330,
+                 "tileSize":  380
+             },
+    "median":  {
+                   "x":  820,
+                   "y":  130,
+                   "width":  1220,
+                   "height":  1330,
+                   "tileSize":  380
+               },
+    "mode":  {
+                 "x":  20,
+                 "y":  530,
+                 "width":  1220,
+                 "height":  1330,
+                 "tileSize":  380
+             },
+    "range":  {
+                  "x":  420,
+                  "y":  530,
+                  "width":  1220,
+                  "height":  1330,
+                  "tileSize":  380
+              },
+    "frequency":  {
+                      "x":  820,
+                      "y":  530,
+                      "width":  1220,
+                      "height":  1330,
+                      "tileSize":  380
+                  },
+    "charts":  {
+                   "x":  20,
+                   "y":  930,
+                   "width":  1220,
+                   "height":  1330,
+                   "tileSize":  380
+               },
+    "histogram":  {
+                      "x":  420,
+                      "y":  930,
+                      "width":  1220,
+                      "height":  1330,
+                      "tileSize":  380
+                  }
+}

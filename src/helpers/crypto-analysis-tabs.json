@@ -1,0 +1,344 @@
+[
+  {
+    "id": 1,
+    "name": "supply",
+    "label": "Supply distribution",
+    "labelBg": "Разпределение на предлагането",
+    "sources": [
+      "coingecko.com",
+      "rootdata.com",
+      "skynet.certik.com",
+      "icodrops.com",
+      "etherscan.io",
+      "cryptorank.io",
+      "defillama.com"
+    ],
+    "rows": [
+      {
+        "id": 1,
+        "label": "Circulation Supply",
+        "wanted": "> 50% Total Supply",
+        "real": false,
+        "labelBg": "Предлагане в обръщение",
+        "max": 3,
+        "vote": 1,
+        "sources": ["coingecko.com"]
+      },
+      {
+        "id": 2,
+        "label": "Min. insiders distribution",
+        "wanted": "< 20%",
+        "real": false,
+        "labelBg": "Минимлно разпределение към вътрешни хора",
+        "max": 3,
+        "vote": 1,
+        "sources": ["icodrops.com"]
+      },
+      {
+        "id": 3,
+        "label": "Clear and transparent tokens distribution",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Ясна и прозрачна разбивка за разпределението на токените",
+        "max": 3,
+        "vote": 1,
+        "sources": ["etherscan.io"]
+      },
+      {
+        "id": 4,
+        "label": "Large volume of locked tokens to be released into circulation",
+        "wanted": false,
+        "real": true,
+        "labelBg": "Големи обеми заключени/блокирани токени, които могат да \"наводнят\" пазара",
+        "max": 3,
+        "vote": 1,
+        "sources": ["cryptorank.io"]
+      },
+      {
+        "id": 5,
+        "label": "Gradual and predictable token release schedule",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Постепен и предвидим график за пискането на токените в обръщение",
+        "max": 3,
+        "vote": 1,
+        "sources": ["cryptorank.io", "defillama.com"]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "tokenomics",
+    "label": "Tokenomics",
+    "labelBg": "Токеномика",
+    "sources": ["project whitepaper", "official website"],
+    "rows": [
+      {
+        "id": 1,
+        "label": "Clear mechanism for accumulating value",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Ясен механизъм за натрупване на стойност",
+        "max": 5,
+        "vote": 1,
+        "sources": ["project whitepaper", "official website"]
+      },
+      {
+        "id": 2,
+        "label": "Deflationary model or token burning",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Дефлационен модел или изгаряне на токени",
+        "max": 5,
+        "vote": 1,
+        "sources": ["project whitepaper", "official website"]
+      },
+      {
+        "id": 3,
+        "label": "Direct utility in the ecosystem",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Пряка полезност в екосистемата",
+        "max": 5,
+        "vote": 1,
+        "sources": ["project whitepaper", "official website"]
+      },
+      {
+        "id": 4,
+        "label": "Sustainable token economic model",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Устойчив икономически модел на токените",
+        "max": 5,
+        "vote": 1,
+        "sources": ["project whitepaper", "official website"]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "metrics",
+    "label": "Fundamental metrics",
+    "labelBg": "Фундаментални метрики",
+    "sources": ["tokenterminal.com", "defillama.com"],
+    "rows": [
+      {
+        "id": 1,
+        "label": "Trading Volume",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Постоянен обем на търговията",
+        "max": 5,
+        "vote": 1,
+        "sources": ["tokenterminal.com"]
+      },
+      {
+        "id": 2,
+        "label": "Growing Income Flows",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Растящи потоци от приходи",
+        "max": 5,
+        "vote": 1,
+        "sources": ["tokenterminal.com", "defillama.com"]
+      },
+      {
+        "id": 3,
+        "label": "Increasing of Total Value Locked (TVL)",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Увеличаване на общата заключена стойност (TVL)",
+        "max": 5,
+        "vote": 1,
+        "sources": ["defillama.com"]
+      },
+      {
+        "id": 4,
+        "label": "Positive on-chain metrics",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Положителни on-chain метрики",
+        "max": 5,
+        "vote": 1,
+        "sources": ["tokenterminal.com", "defillama.com"]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "strength",
+    "label": "Nerrative strength & Value proposition",
+    "labelBg": "Пазарен потенциал и Добавена сройност",
+    "sources": ["tokenterminal.com", "defillama.com"],
+    "rows": [
+      {
+        "id": 1,
+        "label": "Keeping up with current market trends",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Съобразяване с текущите пазарни тенденции",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      },
+      {
+        "id": 2,
+        "label": "Unique market positioning",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Уникално пазарно позициониране",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      },
+      {
+        "id": 3,
+        "label": "A strong, compelling use case",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Силен, убедителен случай на използване",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      },
+      {
+        "id": 4,
+        "label": "Potential for mass adoption",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Потенциал за масово приемане",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      },
+      {
+        "id": 5,
+        "label": "Clear differentiation from the competition",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Ясно разграничаване от конкуренцията",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "team",
+    "label": "Team & Governance",
+    "labelBg": "Екип и Управление",
+    "sources": ["tokenterminal.com", "defillama.com"],
+    "rows": [
+      {
+        "id": 1,
+        "label": "Proven experience in the field of blockchain technologies",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Доказан опит в областта на блокчейн технологиите",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      },
+      {
+        "id": 2,
+        "label": "Transparent team background",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Прозрачен бекграунд на екипа",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      },
+      {
+        "id": 3,
+        "label": "Regular project updates",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Редовни актуализации на проекта",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      },
+      {
+        "id": 4,
+        "label": "Active community participation",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Активно участие на общността",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      },
+      {
+        "id": 5,
+        "label": "A clear management model",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Ясен модел на управление",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "price",
+    "label": "Price action",
+    "labelBg": "Ценова динамика",
+    "sources": ["tokenterminal.com", "defillama.com"],
+    "rows": [
+      {
+        "id": 1,
+        "label": "Positive performance against USD ",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Положително представяне спрямо амер. долар",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      },
+      {
+        "id": 2,
+        "label": "Stable/positive performance against BTC",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Стабилно/положително представяне спрямо биткойн",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      },
+      {
+        "id": 3,
+        "label": "Constant trading volume",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Постоянен обем на търговията",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      },
+      {
+        "id": 4,
+        "label": "Healthy price support levels",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Здрави нива на подкрепа на цената",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      },
+      {
+        "id": 5,
+        "label": "Reasonable volatility",
+        "wanted": true,
+        "real": false,
+        "labelBg": "Разумна волатилност",
+        "max": 3,
+        "vote": 1,
+        "sources": [""]
+      }
+    ]
+  }
+]

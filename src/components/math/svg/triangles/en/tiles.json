@@ -1,0 +1,65 @@
+{
+    "equilateral_triangle":  {
+                                 "x":  20,
+                                 "y":  130,
+                                 "width":  1220,
+                                 "height":  1330,
+                                 "tileSize":  380
+                             },
+    "isosceles_triangle":  {
+                               "x":  420,
+                               "y":  130,
+                               "width":  1220,
+                               "height":  1330,
+                               "tileSize":  380
+                           },
+    "scalene_triangle":  {
+                             "x":  820,
+                             "y":  130,
+                             "width":  1220,
+                             "height":  1330,
+                             "tileSize":  380
+                         },
+    "right_triangle":  {
+                           "x":  20,
+                           "y":  530,
+                           "width":  1220,
+                           "height":  1330,
+                           "tileSize":  380
+                       },
+    "pythagorean_theorem":  {
+                                "x":  420,
+                                "y":  530,
+                                "width":  1220,
+                                "height":  1330,
+                                "tileSize":  380
+                            },
+    "triangle_inequality":  {
+                                "x":  820,
+                                "y":  530,
+                                "width":  1220,
+                                "height":  1330,
+                                "tileSize":  380
+                            },
+    "altitude":  {
+                     "x":  20,
+                     "y":  930,
+                     "width":  1220,
+                     "height":  1330,
+                     "tileSize":  380
+                 },
+    "median":  {
+                   "x":  420,
+                   "y":  930,
+                   "width":  1220,
+                   "height":  1330,
+                   "tileSize":  380
+               },
+    "angle_bisector":  {
+                           "x":  820,
+                           "y":  930,
+                           "width":  1220,
+                           "height":  1330,
+                           "tileSize":  380
+                       }
+}

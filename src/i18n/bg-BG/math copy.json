@@ -1,0 +1,1482 @@
+{
+  "math": {
+    "title": "Математика",
+    "description": "Най-важните теми от математиката",
+    "themes": [
+      {
+        "id": "numbers",
+        "title": "Числа и изчисления",
+        "description": "Числа и основни аритметични действия.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Естествени числа",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/bg/natural_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Цели числа",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/bg/integers.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Рационални числа",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/bg/rational_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Реални числа",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/bg/real_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Дроби",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/bg/fractions.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Десетични дроби",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/bg/decimals.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Проценти",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/bg/percentages.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Абсолютна стойност",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/bg/absolute_value.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Ред на действията",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/bg/order_of_operations.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Степени",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/bg/powers.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Корени",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/bg/roots.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Научен запис",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/bg/scientific_notation.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "arithmetic",
+        "title": "Аритметика",
+        "description": "Основни действия и свойства на числата.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Събиране",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/bg/addition.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Изваждане",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/bg/subtraction.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Умножение",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/bg/multiplication.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Деление",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/bg/division.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Делимост",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/bg/divisibility.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Прости числа",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/bg/prime_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Делители",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/bg/factors.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Кратни",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/bg/multiples.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Най-голям общ делител",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/bg/greatest_common_divisor.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Най-малко общо кратно",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/bg/least_common_multiple.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Отношения",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/bg/ratios.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Пропорции",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/bg/proportions.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "algebra",
+        "title": "Алгебра",
+        "description": "Изрази, уравнения, неравенства и алгебрични структури.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Променливи",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/bg/variables.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Алгебрични изрази",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/bg/algebraic_expressions.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Опростяване на изрази",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/bg/simplifying_expressions.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Линейни уравнения",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/bg/linear_equations.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Квадратни уравнения",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/bg/quadratic_equations.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Системи уравнения",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/bg/systems_of_equations.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Неравенства",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/bg/inequalities.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Полиноми",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/bg/polynomials.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Разлагане на множители",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/bg/factorization.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Тъждествени равенства",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/bg/algebraic_identities.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Редици",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/bg/sequences.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Аритметична прогресия",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/bg/arithmetic_sequence.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Геометрична прогресия",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/bg/geometric_sequence.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "functions",
+        "title": "Функции",
+        "description": "Функции, техните свойства и графики.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Функция",
+            "description": "",
+            "formula": "",
+            "image": "./functions/bg/function.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Дефиниционна област",
+            "description": "",
+            "formula": "",
+            "image": "./functions/bg/domain.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Множество от стойности",
+            "description": "",
+            "formula": "",
+            "image": "./functions/bg/range.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Линейна функция",
+            "description": "",
+            "formula": "",
+            "image": "./functions/bg/linear_function.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Квадратична функция",
+            "description": "",
+            "formula": "",
+            "image": "./functions/bg/quadratic_function.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Експоненциална функция",
+            "description": "",
+            "formula": "",
+            "image": "./functions/bg/exponential_function.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Графика",
+            "description": "",
+            "formula": "",
+            "image": "./functions/bg/graph.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Наклон",
+            "description": "",
+            "formula": "",
+            "image": "./functions/bg/slope.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Пресечна точка",
+            "description": "",
+            "formula": "",
+            "image": "./functions/bg/intercept.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Нули на функцията",
+            "description": "",
+            "formula": "",
+            "image": "./functions/bg/zeros_of_a_function.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "geometry",
+        "title": "Геометрия",
+        "description": "Фигури, ъгли, измервания и геометрични свойства.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Точки",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/bg/points.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Прави",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/bg/lines.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Отсечки",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/bg/line_segments.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Ъгли",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/bg/angles.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Триъгълници",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/bg/triangles.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Четириъгълници",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/bg/quadrilaterals.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Многоъгълници",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/bg/polygons.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Окръжности",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/bg/circles.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Периметър",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/bg/perimeter.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Лице",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/bg/area.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Обем",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/bg/volume.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Еднаквост",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/bg/congruence.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Подобие",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/bg/similarity.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Симетрия",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/bg/symmetry.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "golden_ratio",
+        "title": "Златно сечение",
+        "description": "Специалната пропорция φ ≈ 1.618, която се среща в геометрията, природата и изкуството.",
+        "formula": "φ = (1 + √5) / 2",
+        "image": "",
+        "list": [
+          {
+            "id": "what_is_the_golden_ratio",
+            "title": "Какво е златно сечение?",
+            "description": "Отсечка, разделена така, че цялото да се отнася към по-голямата част както по-голямата се отнася към по-малката.",
+            "formula": "(a + b) : a = a : b = φ",
+            "image": "./golden-ratio/bg/what_is_the_golden_ratio.svg",
+            "list": []
+          },
+          {
+            "id": "golden_rectangle",
+            "title": "Златният правоъгълник",
+            "description": "Правоъгълник, чиито страни са в съотношение φ : 1 и повторя структурата си след отрязване на квадрат.",
+            "formula": "φ : 1 = 1 : (φ − 1)",
+            "image": "./golden-ratio/bg/golden_rectangle.svg",
+            "list": []
+          },
+          {
+            "id": "golden_spiral",
+            "title": "Златната спирала",
+            "description": "Спирала, построена от четвърт кръгове в вложени квадрати, които растат с коефициент φ.",
+            "formula": "радиус × φ на всяка четвърт завъртане",
+            "image": "./golden-ratio/bg/golden_spiral.svg",
+            "list": []
+          },
+          {
+            "id": "fibonacci_numbers",
+            "title": "Числата на Фибоначи",
+            "description": "Редицата, чиито отношения се доближават до φ с нарастването на числата.",
+            "formula": "F(n) = F(n−1) + F(n−2)",
+            "image": "./golden-ratio/bg/fibonacci_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "golden_ratio_in_a_face",
+            "title": "Златното сечение в лице",
+            "description": "Художниците използват φ, за да подреждат ключовите черти на лицето в портрет.",
+            "formula": "b : a ≈ φ",
+            "image": "./golden-ratio/bg/golden_ratio_in_a_face.svg",
+            "list": []
+          },
+          {
+            "id": "composition_in_painting",
+            "title": "Композиция в живописта",
+            "description": "Разделянето на платно по φ дава силни линии за поставяне на централните елементи.",
+            "formula": "ширина ÷ φ маркира силната линия",
+            "image": "./golden-ratio/bg/composition_in_painting.svg",
+            "list": []
+          },
+          {
+            "id": "golden_triangle",
+            "title": "Златният триъгълник",
+            "description": "Равнобедрен триъгълник с ъгли 36°, 72° и 72°, чиито равни страни са в златно съотношение с основата.",
+            "formula": "крак : основа = φ",
+            "image": "./golden-ratio/bg/golden_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "the_number_phi",
+            "title": "Числото φ",
+            "description": "Положителното решение на x² = x + 1, което може да се запише като (1 + √5) / 2.",
+            "formula": "φ² = φ + 1",
+            "image": "./golden-ratio/bg/the_number_phi.svg",
+            "list": []
+          },
+          {
+            "id": "golden_angle",
+            "title": "Златният ъгъл",
+            "description": "Пълният оборот, разделен в златното сечение, дава ъгъл около 137,5°.",
+            "formula": "360° ÷ φ² ≈ 137,5°",
+            "image": "./golden-ratio/bg/golden_angle.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "triangles",
+        "title": "Триъгълници",
+        "description": "Видове и свойства на триъгълниците.",
+        "formula": "a² + b² = c²",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Равностранен триъгълник",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/bg/equilateral_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Равнобедрен триъгълник",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/bg/isosceles_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Разностранен триъгълник",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/bg/scalene_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Правоъгълен триъгълник",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/bg/right_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Питагорова теорема",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/bg/pythagorean_theorem.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Неравенство на триъгълника",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/bg/triangle_inequality.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Височина",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/bg/altitude.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Медиана",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/bg/median.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Ъглополовяща",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/bg/angle_bisector.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "quadrilaterals",
+        "title": "Четириъгълници",
+        "description": "Геометрични фигури с четири страни.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Квадрат",
+            "description": "",
+            "formula": "",
+            "image": "./quadrilaterals/bg/square.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Правоъгълник",
+            "description": "",
+            "formula": "",
+            "image": "./quadrilaterals/bg/rectangle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Успоредник",
+            "description": "",
+            "formula": "",
+            "image": "./quadrilaterals/bg/parallelogram.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Ромб",
+            "description": "",
+            "formula": "",
+            "image": "./quadrilaterals/bg/rhombus.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Трапец",
+            "description": "",
+            "formula": "",
+            "image": "./quadrilaterals/bg/trapezoid.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Делтоид",
+            "description": "",
+            "formula": "",
+            "image": "./quadrilaterals/bg/kite.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "circle",
+        "title": "Окръжност и кръг",
+        "description": "Свойства и измервания на окръжности и кръгове.",
+        "formula": "C = 2πr, A = πr²",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Радиус",
+            "description": "",
+            "formula": "",
+            "image": "./circle/bg/radius.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Диаметър",
+            "description": "",
+            "formula": "",
+            "image": "./circle/bg/diameter.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Дължина на окръжността",
+            "description": "",
+            "formula": "",
+            "image": "./circle/bg/circumference.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Лице",
+            "description": "",
+            "formula": "",
+            "image": "./circle/bg/area.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Дъга",
+            "description": "",
+            "formula": "",
+            "image": "./circle/bg/arc.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Хорда",
+            "description": "",
+            "formula": "",
+            "image": "./circle/bg/chord.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Централен ъгъл",
+            "description": "",
+            "formula": "",
+            "image": "./circle/bg/central_angle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Вписан ъгъл",
+            "description": "",
+            "formula": "",
+            "image": "./circle/bg/inscribed_angle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Число π",
+            "description": "",
+            "formula": "",
+            "image": "./circle/bg/pi.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "solid_geometry",
+        "title": "Стереометрия",
+        "description": "Пространствени фигури и техните измервания.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Куб",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/bg/cube.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Правоъгълен паралелепипед",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/bg/cuboid.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Призма",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/bg/prism.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Пирамида",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/bg/pyramid.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Цилиндър",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/bg/cylinder.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Конус",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/bg/cone.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Сфера",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/bg/sphere.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Повърхнина",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/bg/surface_area.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Обем",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/bg/volume.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "coordinate_geometry",
+        "title": "Координатна геометрия",
+        "description": "Геометрия чрез координати и уравнения.",
+        "formula": "d = √((x₂-x₁)² + (y₂-y₁)²)",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Координатна равнина",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/bg/coordinate_plane.svg",
+            "list": []
+          },
+          {
+            "id": "x",
+            "title": "Ос x",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/bg/x_axis.svg",
+            "list": []
+          },
+          {
+            "id": "y",
+            "title": "Ос y",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/bg/y_axis.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Координати",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/bg/coordinates.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Разстояние между точки",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/bg/distance_between_points.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Среда на отсечка",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/bg/midpoint.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Наклон",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/bg/slope.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Уравнение на права",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/bg/equation_of_a_line.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "trigonometry",
+        "title": "Тригонометрия",
+        "description": "Връзки между ъгли и страни.",
+        "formula": "sin²x + cos²x = 1",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Синус",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/bg/sine.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Косинус",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/bg/cosine.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Тангенс",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/bg/tangent.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Котангенс",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/bg/cotangent.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Тригонометрични функции",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/bg/trigonometric_ratios.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Единична окръжност",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/bg/unit_circle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Тригонометрични тъждества",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/bg/trigonometric_identities.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Теорема за синусите",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/bg/law_of_sines.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Теорема за косинусите",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/bg/law_of_cosines.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "statistics",
+        "title": "Статистика",
+        "description": "Събиране, организиране и анализиране на данни.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Данни",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/bg/data.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Средно аритметично",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/bg/mean.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Медиана",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/bg/median.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Мода",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/bg/mode.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Размах",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/bg/range.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Честота",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/bg/frequency.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Диаграми",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/bg/charts.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Хистограма",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/bg/histogram.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "probability",
+        "title": "Вероятности",
+        "description": "Измерване на вероятността на събития.",
+        "formula": "P(A) = благоприятни изходи / всички изходи",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Вероятност",
+            "description": "",
+            "formula": "",
+            "image": "./probability/bg/probability.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Изход",
+            "description": "",
+            "formula": "",
+            "image": "./probability/bg/outcome.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Събитие",
+            "description": "",
+            "formula": "",
+            "image": "./probability/bg/event.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Пространство от изходи",
+            "description": "",
+            "formula": "",
+            "image": "./probability/bg/sample_space.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Независими събития",
+            "description": "",
+            "formula": "",
+            "image": "./probability/bg/independent_events.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Условна вероятност",
+            "description": "",
+            "formula": "",
+            "image": "./probability/bg/conditional_probability.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "calculus",
+        "title": "Основи на математическия анализ",
+        "description": "Основни понятия за граници, производни и интеграли.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Граници",
+            "description": "",
+            "formula": "",
+            "image": "./calculus/bg/limits.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Производни",
+            "description": "",
+            "formula": "",
+            "image": "./calculus/bg/derivatives.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Производна",
+            "description": "",
+            "formula": "",
+            "image": "./calculus/bg/derivative.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Интеграли",
+            "description": "",
+            "formula": "",
+            "image": "./calculus/bg/integrals.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Интеграл",
+            "description": "",
+            "formula": "",
+            "image": "./calculus/bg/integral.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Скорост на изменение",
+            "description": "",
+            "formula": "",
+            "image": "./calculus/bg/rate_of_change.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Лице под графика",
+            "description": "",
+            "formula": "",
+            "image": "./calculus/bg/area_under_the_curve.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "logic_and_proofs",
+        "title": "Логика и доказателства",
+        "description": "Математическо мислене и методи за доказване.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Твърдение",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/bg/statement.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Доказателство",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/bg/proof.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Теорема",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/bg/theorem.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Лема",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/bg/lemma.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Следствие",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/bg/corollary.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Директно доказателство",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/bg/direct_proof.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Доказателство чрез противоречие",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/bg/proof_by_contradiction.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Математическа индукция",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/bg/mathematical_induction.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "units",
+        "title": "Мерни единици",
+        "description": "Основни мерни единици и величини.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Дължина",
+            "description": "",
+            "formula": "",
+            "image": "./units/bg/length.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Маса",
+            "description": "",
+            "formula": "",
+            "image": "./units/bg/mass.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Време",
+            "description": "",
+            "formula": "",
+            "image": "./units/bg/time.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Лице",
+            "description": "",
+            "formula": "",
+            "image": "./units/bg/area.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Обем",
+            "description": "",
+            "formula": "",
+            "image": "./units/bg/volume.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Скорост",
+            "description": "",
+            "formula": "",
+            "image": "./units/bg/speed.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Температура",
+            "description": "",
+            "formula": "",
+            "image": "./units/bg/temperature.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "problem_solving",
+        "title": "Решаване на задачи",
+        "description": "Методи за решаване на математически задачи.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Текстови задачи",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/bg/word_problems.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Стъпка по стъпка",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/bg/step_by_step.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Дадени величини",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/bg/known_values.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Търсена величина",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/bg/unknown_value.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Формула",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/bg/formula.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Решение",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/bg/solution.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Отговор",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/bg/answer.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Проверка",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/bg/check.svg",
+            "list": []
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,72 @@
+{
+    "function":  {
+                     "x":  20,
+                     "y":  130,
+                     "width":  1220,
+                     "height":  1730,
+                     "tileSize":  380
+                 },
+    "domain":  {
+                   "x":  420,
+                   "y":  130,
+                   "width":  1220,
+                   "height":  1730,
+                   "tileSize":  380
+               },
+    "range":  {
+                  "x":  820,
+                  "y":  130,
+                  "width":  1220,
+                  "height":  1730,
+                  "tileSize":  380
+              },
+    "linear_function":  {
+                            "x":  20,
+                            "y":  530,
+                            "width":  1220,
+                            "height":  1730,
+                            "tileSize":  380
+                        },
+    "quadratic_function":  {
+                               "x":  420,
+                               "y":  530,
+                               "width":  1220,
+                               "height":  1730,
+                               "tileSize":  380
+                           },
+    "exponential_function":  {
+                                 "x":  820,
+                                 "y":  530,
+                                 "width":  1220,
+                                 "height":  1730,
+                                 "tileSize":  380
+                             },
+    "graph":  {
+                  "x":  20,
+                  "y":  930,
+                  "width":  1220,
+                  "height":  1730,
+                  "tileSize":  380
+              },
+    "slope":  {
+                  "x":  420,
+                  "y":  930,
+                  "width":  1220,
+                  "height":  1730,
+                  "tileSize":  380
+              },
+    "intercept":  {
+                      "x":  820,
+                      "y":  930,
+                      "width":  1220,
+                      "height":  1730,
+                      "tileSize":  380
+                  },
+    "zeros_of_a_function":  {
+                                "x":  20,
+                                "y":  1330,
+                                "width":  1220,
+                                "height":  1730,
+                                "tileSize":  380
+                            }
+}

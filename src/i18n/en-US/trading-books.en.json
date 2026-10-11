@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "name": "The Disciplined Trader",
+      "author": "Mark Douglas",
+      "description": "A 1990 classic that was among the first to frame trading as a psychological discipline rather than a technical craft. Douglas explains why the market's uncertainty clashes with the mind's need for control, and how fear, revenge trading, and overconfidence sabotage even sound strategies.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780132157575-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Disciplined+Trader+Mark+Douglas"
+    },
+    {
+      "name": "Mindset Secrets for Winning",
+      "author": "Mark Minervini",
+      "description": "A two-time US Investing Championship winner argues that consistent trading performance is a form of high performance under pressure, much like elite sport. The book covers self-image, building routines, and recovering from losing streaks to help traders with a working strategy break through their own ceiling.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780996307970-L.jpg",
+      "link": "https://www.amazon.com/s?k=Mindset+Secrets+for+Winning+Mark+Minervini"
+    },
+    {
+      "name": "Trade Your Way to Financial Freedom",
+      "author": "Van Tharp",
+      "description": "A psychologist who has worked with professional traders since the early 1980s argues that no one trades the market directly — everyone trades their own beliefs about it. The book introduces R-multiples, expectancy, and the idea that position sizing matters more than entry and exit strategy.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780071478717-L.jpg",
+      "link": "https://www.amazon.com/s?k=Trade+Your+Way+to+Financial+Freedom+Van+Tharp"
+    },
+    {
+      "name": "Unlimited Power",
+      "author": "Tony Robbins",
+      "description": "Built around NLP principles, this book examines what people with consistently outstanding results actually do and how those patterns can be modeled and learned. Its tools for managing internal state and beliefs apply directly to traders who lose focus under pressure.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780743409391-L.jpg",
+      "link": "https://www.amazon.com/s?k=Unlimited+Power+Tony+Robbins"
+    },
+    {
+      "name": "Your Erroneous Zones",
+      "author": "Wayne Dyer",
+      "description": "Dyer describes self-defeating thought patterns — the need for approval, guilt, fear of the unknown, and perfectionism — the universal mechanisms that markets simply amplify and expose in a trader. A practical framework for spotting one's own mental traps.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780308102286-L.jpg",
+      "link": "https://www.amazon.com/s?k=Your+Erroneous+Zones+Wayne+Dyer"
+    }
+  ]
+}

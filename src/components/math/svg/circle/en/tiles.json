@@ -1,0 +1,65 @@
+{
+    "radius":  {
+                   "x":  20,
+                   "y":  130,
+                   "width":  1220,
+                   "height":  1330,
+                   "tileSize":  380
+               },
+    "diameter":  {
+                     "x":  420,
+                     "y":  130,
+                     "width":  1220,
+                     "height":  1330,
+                     "tileSize":  380
+                 },
+    "circumference":  {
+                          "x":  820,
+                          "y":  130,
+                          "width":  1220,
+                          "height":  1330,
+                          "tileSize":  380
+                      },
+    "area":  {
+                 "x":  20,
+                 "y":  530,
+                 "width":  1220,
+                 "height":  1330,
+                 "tileSize":  380
+             },
+    "arc":  {
+                "x":  420,
+                "y":  530,
+                "width":  1220,
+                "height":  1330,
+                "tileSize":  380
+            },
+    "chord":  {
+                  "x":  820,
+                  "y":  530,
+                  "width":  1220,
+                  "height":  1330,
+                  "tileSize":  380
+              },
+    "central_angle":  {
+                          "x":  20,
+                          "y":  930,
+                          "width":  1220,
+                          "height":  1330,
+                          "tileSize":  380
+                      },
+    "inscribed_angle":  {
+                            "x":  420,
+                            "y":  930,
+                            "width":  1220,
+                            "height":  1330,
+                            "tileSize":  380
+                        },
+    "pi":  {
+               "x":  820,
+               "y":  930,
+               "width":  1220,
+               "height":  1330,
+               "tileSize":  380
+           }
+}

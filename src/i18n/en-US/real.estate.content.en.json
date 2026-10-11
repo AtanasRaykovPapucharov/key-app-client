@@ -1,0 +1,1674 @@
+{
+  "reasons_to_invest": {
+    "title": "Core reasons to invest in real estate",
+    "overview": "The ten fundamental reasons that make real estate a strong asset class.",
+    "description": "The path of a property investor breaks down into 6 steps: (1) understanding the power of the market, (2) property types, (3) building a team, (4) finding the underpriced property and choosing a strategy, (5) flawless analysis, (6) scaling the portfolio. This theme covers step 1 through ten separate arguments for why real estate is a strong asset class.",
+    "key_points": [
+      "1. Appreciation - equity grows without active effort; real estate is the only asset class whose value can be raised deliberately through improvements (forced appreciation)",
+      "2. Cash flow - the difference between rental income and all expenses; stocks and bonds typically return 3-10%, real estate 8-12%, and with leverage 15-20% and more",
+      "3. Tax advantages - deduction of interest, property tax, insurance and maintenance, plus depreciation as a non-cash expense",
+      "4. Diversification - low correlation with other assets, plus diversification within the class (property type, market, strategy, financing, management style)",
+      "5. Control and flexibility - control over rents, tenants, maintenance and ownership structure",
+      "6. Tangible asset - physical, useful in itself and accepted as loan collateral",
+      "7. Inflation hedge - limited supply, rising construction costs, rents that index upward",
+      "8. Leverage - the mortgage as a hedge: the asset appreciates while the nominal debt stays fixed and devalues in real terms",
+      "9. Market stability - the lowest volatility among the five asset groups",
+      "10. Retirement planning and wealth transfer - passive income in later life and a lasting legacy",
+      "Real estate offers the highest level of market stability; crypto is the least suitable for a low risk tolerance. There is no universally correct answer - there is only an educated investor."
+    ],
+    "example": "Tax example: a property bought for EUR 500,000 yields roughly EUR 20,000 of annual depreciation. With rental income of EUR 22,000 the taxable income drops to EUR 2,000, and since depreciation is a non-cash expense the remaining EUR 20,000 effectively stays as profit.\n\nInflation example: bread at EUR 1 becomes EUR 1.10 - you eat it and pay 10% more. A property at EUR 100,000 becomes EUR 110,000 - you live in it and gain EUR 10,000 at the same time.\n\nLeverage example: a EUR 100,000 loan at 3% interest with 10% inflation produces a real 7% gap in the borrower's favour.",
+    "data_points": [
+      "Bulgaria: over 100% appreciation over the 2002-2022 period (Trading Economics / Eurostat)",
+      "USA: +48% in the median price of existing homes 2000-2020 (National Association of Realtors)",
+      "Bulgaria: bubble in 2004-2008, correction through roughly 2014, steady growth since, with the 2008 peak surpassed",
+      "Historical inflation-hedge examples: the USA in the 1970s; hyperinflation in Weimar Germany"
+    ],
+    "blocks": [
+      {
+        "title": "Asset groups by size",
+        "items": [
+          "Bonds",
+          "Real estate",
+          "Stocks",
+          "Commodities",
+          "Cryptocurrencies"
+        ]
+      },
+      {
+        "title": "Asset groups by volatility",
+        "items": [
+          "Cryptocurrencies",
+          "Commodities",
+          "Stocks",
+          "Bonds",
+          "Real estate"
+        ]
+      }
+    ]
+  },
+  "building_your_team": {
+    "title": "Building a real estate investment team",
+    "overview": "Which specialists you need, how to select them and what exactly each one does.",
+    "description": "No investor runs the whole process alone - it is neither possible nor efficient. Building a permanent team of trusted specialists is what enables a series of deals rather than a single success.",
+    "key_points": [
+      "The difference between an incidental agent and a personal agent is the difference between a one-off deal and a steady flow of deals",
+      "Every role on the team has a clearly measurable function - do not hire 'just in case'",
+      "A prepared list of specific questions for each candidate minimises selection mistakes"
+    ],
+    "subsections": {
+      "broker_personal_broker": {
+        "title": "Agent / personal agent",
+        "overview": "The distinction between an agent you met by chance and a specialist working deliberately for you.",
+        "description": "An agent is the person who picked up the phone when you called about a listing - they show you the property and try to sell it to you. A personal agent is engaged in advance, knows your goals and criteria and assists you through the entire process. In Bulgaria the profession is lightly regulated: there is no licensing regime and in practice anyone can start brokering.",
+        "key_points": [
+          "In the USA the process is strictly defined state by state: pre-licensing education, background check, licensing exam, errors and omissions insurance, continuing education",
+          "Bulgaria has more standardised training, but no real barrier to entry",
+          "An agent's services are not mandatory, but the market is built around them - the right person delivers outsized value",
+          "An agent on the ground is especially valuable when investing remotely"
+        ],
+        "example": "You call about a listing and a stranger shows you the property - that is an agent. You reach out in advance, explain your investment criteria and they start sending you filtered deals - that is a personal agent."
+      },
+      "finding_a_good_broker": {
+        "title": "How do I find a good agent?",
+        "overview": "A selection method borrowed from the world's largest property investors.",
+        "description": "imot.bg lists over 3,000 brokerage agencies - from firms with 100-200+ staff to single-person operations. Agency size does not matter: a capable agent can be in any of them. Large firms invest in training, small ones select every employee carefully.",
+        "key_points": [
+          "Step 1: build a detailed list of the best agents in the area through your own research",
+          "Step 2: contact them all - but by email, not by phone, so you cover a large volume quickly",
+          "Step 3: the content of the email is decisive - it must make the most valuable agents pay attention",
+          "The market carries a general suspicion that an agent takes a commission without adding value - your message must signal that you are a serious buyer"
+        ],
+        "example": "Instead of calling 60 agents individually (weeks of work), you send one well-structured copy-paste message that clearly states your investment criteria, and then filter the replies."
+      },
+      "mortgage_broker": {
+        "title": "Mortgage broker / credit consultant",
+        "overview": "The specialist who finds not just an approval, but the best terms for your profile.",
+        "description": "The official title is credit intermediary; the Bulgarian National Bank maintains a public register of all active intermediaries. The consultant specialises in bank lending and knows which cases are solvable and which are doomed, which saves weeks of wasted time.",
+        "key_points": [
+          "Critical for complicated profiles: income of unclear origin, living abroad, many existing loans",
+          "Critical for complicated structures: 100% financing, longer terms, financing at Act 14 stage",
+          "Banks are more careful with an intermediary, because they bring many clients rather than one one-off buyer",
+          "BNB register: https://www.bnb.bg/BankSupervision/BSCreditIntermed/BSCIRegister/index.htm"
+        ],
+        "example": "A technique for buying time: sign a preliminary contract with a clause stating it takes effect once the deposit is transferred within 14 days. Those two weeks are your window to arrange financing; if the bank talks fall through, you pay no deposit and the contract is void."
+      },
+      "property_lawyer": {
+        "title": "Property law attorney",
+        "overview": "The backbone of legal due diligence and sometimes a weapon in negotiations.",
+        "description": "An attorney specialised in property law and specifically in real estate transactions (not a general practitioner) sits at the core of the legal analysis of the deal and its documents. They are also what makes complicated deals accessible to you while other buyers run from them.",
+        "key_points": [
+          "Indispensable for properties with multiple mortgages, seizures, claims and debts to several creditors",
+          "Those very complications are the reason the property is priced attractively",
+          "Participation in negotiations is a separate paid service - and requires negotiating skill, not just legal expertise",
+          "You decide whether the attorney is on the front line or plays a supporting role"
+        ],
+        "example": "A buyer signs a preliminary contract for an off-plan property; months later the developer announces the deal will only proceed at a higher price. Having an attorney in the negotiation leads to a compromise price acceptable to both sides."
+      },
+      "notary": {
+        "title": "Notary",
+        "overview": "The mandatory figure in every transaction, plus several practices you should know.",
+        "description": "The notary is a judicial officer who certifies the authenticity of legal acts and documents with a signature and seal; they hold public office but operate as a private practice. De jure the choice of notary should not matter - de facto it does.",
+        "key_points": [
+          "The encumbrance check is not automatic - request it explicitly",
+          "Under the Notaries Act, if the notary also drafts the deed, the total fee should be double",
+          "In practice many notaries do not charge for drafting the deed because of competition - a practice that is not lawful, but nobody complains",
+          "If you have no legally literate person behind you, consider paying the double fee in exchange for more personal assistance"
+        ],
+        "example": "Since notaries compete for clients, it is common to state that the deed was drafted by someone else - your attorney, the agent's attorney or the agent - and to pay only for the certification."
+      },
+      "property_manager": {
+        "title": "Property manager",
+        "overview": "When to delegate operations and how to recognise a good manager.",
+        "description": "Once the portfolio reaches several rented properties, you must decide whether to run letting and maintenance yourself or delegate. The right test in selection is whether the manager holds their own standards, rather than telling you what you want to hear.",
+        "key_points": [
+          "Red flag: a manager who promises high occupancy in an obviously problematic area",
+          "Green flag: a manager who advises you against a problematic property - and holds their own standards",
+          "Compare the answers of several managers to the same question",
+          "For short-term rentals in Bulgaria, management companies charge roughly 15-20% of revenue for a full service"
+        ],
+        "example": "You ask a manager about a property in a difficult area with unreliable tenants. A confident promise of high occupancy is a warning sign, not a selling point."
+      },
+      "other_specialists": {
+        "title": "Other specialists",
+        "overview": "The secondary but often decisive members of the team.",
+        "description": "The secondary specialists whose services you will need at one point or another along the investment path.",
+        "key_points": [
+          "Accountant - assists with financial due diligence and provides a plan for legally reducing taxes and fees",
+          "Trusted tradespeople who work well, fast and at a fair price - the real wealth of any investor in Bulgaria",
+          "Finding such tradespeople takes time but is not impossible, and once the relationship is built it pays off for years"
+        ],
+        "example": "A good accountant turns the tax side from a source of surprises into a predictable, optimised cost planned before the deal is even signed."
+      }
+    }
+  },
+  "fundamentals": {
+    "title": "The fundamentals behind property investing",
+    "overview": "Property types, the importance of location and - most important of all - the valuation methods.",
+    "description": "After 'why' comes 'what we work with'. This theme covers property types with an emphasis on those most common in the Bulgarian market, the role of location, and then the most important part of the whole process: the valuation methods, without which you cannot judge whether a property deserves your investment.",
+    "key_points": [
+      "Without valuation methods every deal is guesswork",
+      "The aim is to maximise profit while minimising risk and saving time",
+      "In Bulgaria buy only properties below market value and ones whose value you can raise"
+    ],
+    "subsections": {
+      "property_types": {
+        "title": "Understanding the types of real estate",
+        "overview": "The main property categories and how each behaves as an investment in the Bulgarian context.",
+        "description": "Understanding the different types is a precondition for informed decisions and for orientation in the wider market picture.",
+        "subsections": {
+          "apartments": {
+            "title": "Apartments",
+            "overview": "The most common transaction type in Bulgaria - and the three construction types you will encounter.",
+            "description": "Because Bulgarians live predominantly in apartments, the vast majority of your deals will involve them - whether you flip, buy off-plan or build a portfolio through refinancing. By construction there are three options: prefab panel, large-panel formwork (EPK) and brick; the first two are no longer built.",
+            "key_points": [
+              "Panel buildings are the riskiest for long-term holding because of the age of the stock",
+              "In strong neighbourhoods, however, panel flats hold high prices and are excellent for renovation and resale at a good entry price",
+              "Panel blocks are between 4 and 8 storeys",
+              "Aspect: south is most sought after; east offers good value - be careful with overpriced south-facing units and look for well-priced east-facing ones",
+              "High and top floors are undervalued for cultural reasons; the real risk is roof leaks",
+              "Parking is becoming an increasingly important pricing factor in cities like Sofia"
+            ],
+            "example": "A two-room panel apartment in an attractive district, negotiated at an investment price, can deliver exceptional returns through renovation and resale - even though the same property is a poor choice for a 20-year hold.",
+            "data_points": [
+              "Around 1.6 million Bulgarians live in panel housing - roughly one in four",
+              "The country has more than 20,000 panel blocks"
+            ]
+          },
+          "houses": {
+            "title": "Single-family and multi-family houses",
+            "overview": "The harder and less liquid segment of the Bulgarian market.",
+            "description": "Single-family houses are detached buildings for one family, usually with a yard and garage. As investments in Bulgaria they are significantly less liquid than apartments and harder to rent out, which makes this a segment for advanced investors.",
+            "key_points": [
+              "Buying houses for investment purposes is an advanced activity",
+              "Multi-family formats (duplex, triplex, fourplex) are popular in the USA but not in Bulgaria",
+              "The advantage of multi-family is distributed risk: when one tenant leaves, income does not drop by 100%",
+              "Multi-family properties require solid resources but spread risk across several tenants"
+            ],
+            "example": "The 2009-2010 period: after the crash some buyers acquired houses at exceptionally attractive prices and profited from the subsequent appreciation. During the covid crisis rural houses saw a boom resembling the Western European trend of leaving the big city."
+          },
+          "commercial_properties": {
+            "title": "Commercial properties",
+            "overview": "High cash flow against materially higher risk and mandatory lower leverage.",
+            "description": "This covers every property whose tenants use it for business rather than living - shops, offices, warehouses. Cash flow potential is very good, but risk is considerably higher and demands a different capital structure.",
+            "key_points": [
+              "Where serious residential investors run at around 60% leverage, commercial should be about half of that - roughly 30%",
+              "Tenants are businesses, and close to 90% of businesses fail within a few years",
+              "Finding a new tenant takes longer than usual",
+              "Warehouses are interesting but 'exotic' - analyse them, but with clear awareness of the risk",
+              "If you look only at returns and ignore risk, you are preparing to fail"
+            ],
+            "example": "Offices have been uncertain since covid. Occupancy in the USA is below 40%; in Europe it was 55% as of February 2023 (up from 43% in June 2022); Bulgaria is an outlier with a surprising 91% as of February 2022."
+          }
+        }
+      },
+      "location": {
+        "title": "The importance of location in real estate",
+        "overview": "Location on two levels: which city, and where within the city.",
+        "description": "'Location, location, location' - the question splits into a macro level (settlement) and a micro level (position within the city), because the logic of each is different.",
+        "subsections": {
+          "choosing_the_city": {
+            "title": "Location by settlement",
+            "overview": "How the city is chosen - by criteria, not by habit.",
+            "description": "The most attractive markets are large cities with high purchasing power and liquid trading. Sofia, Plovdiv and Varna best meet the conditions: positive population growth and strong economic activity.",
+            "key_points": [
+              "Large cities mean liquidity and a constant flow of deals, but also high competition and a need to react instantly",
+              "Smaller markets have less investor competition and give you more time to react",
+              "If you know a small town well (for example, you grew up there), prioritise it - that is a serious edge",
+              "With experience, confidence and capital there is no need to limit yourself to Bulgaria"
+            ],
+            "example": "Pleven: an exceptionally favourable price-to-rent ratio, a growing university that attracts people, and the prospect of a new faculty - exactly the factors an experienced investor looks for before the market prices them in."
+          },
+          "location_within_city": {
+            "title": "Location within the city itself",
+            "overview": "Micro-location and the subjectivity that creates investment opportunities.",
+            "description": "The second half of the question is exactly where in the chosen city the property sits. Central here is the idea that everything is subjective - and that subjectivity is precisely what unlocks deals.",
+            "key_points": [
+              "Always view the situation through the eyes of the person you expect returns from - the future buyer or tenant",
+              "Something you dislike may be perfectly acceptable to part of the market",
+              "Do not assume the seller has grounds to ask the top price per square metre in the area"
+            ],
+            "example": "An apartment overlooking a cemetery: unsettling for most people, but some see quiet, calm and a guarantee the view will never be built over. The investor buys at a reduced price because of that feature, yet achieves a strong rent and an excellent return."
+          }
+        }
+      },
+      "valuation_methods": {
+        "title": "Minimise risk, maximise profit and save your time! Property valuation methods",
+        "overview": "The valuation toolkit: quick rules, GRM, market comparison and income capitalisation.",
+        "description": "Valuation is the process of determining a property's value in a given market - for purchase, sale, letting or lending. Each method has unique strengths and weaknesses and is used in a different context.",
+        "key_points": [
+          "No single metric completes an analysis",
+          "Margin of safety (a term from Warren Buffett): we will not always be right, so we buy with a buffer",
+          "The only reliable buffer in investing is buying the asset at a lower price",
+          "Real estate and stocks can break the 'higher risk = higher return' mantra - with correct analysis you take less risk and receive more"
+        ],
+        "subsections": {
+          "one_percent_rule": {
+            "title": "The 1% rule",
+            "overview": "A quick test of whether the property will produce positive cash flow.",
+            "description": "One of the best-known rules in property investing: the monthly gross rent should be roughly 1% of the property price. It serves as a fast first-pass screen, not a final decision.",
+            "key_points": [
+              "If the rule is satisfied, you will most likely have positive cash flow after all expenses and the mortgage payment"
+            ],
+            "formula": "Monthly gross rent ≈ 1% × property price",
+            "example": "A property at EUR 200,000 → required gross rent of EUR 2,000/month. A property at EUR 150,000 → EUR 1,500/month."
+          },
+          "two_percent_rule": {
+            "title": "The 2% rule",
+            "overview": "A classic rule from the literature that is practically inapplicable today.",
+            "description": "It requires the monthly rent to be about 2% of the property's value. It appears in several of the biggest real estate books, but today it is broadly inapplicable not only in Bulgaria but in almost every market worldwide.",
+            "key_points": [
+              "It requires both a heavily underpriced property and very high rents relative to prices",
+              "A good moment to address greed: the highest yield comes hand in hand with problems, risks and future pitfalls"
+            ],
+            "formula": "Monthly rent ≈ 2% × property price",
+            "example": "A property at EUR 200,000 would have to produce EUR 4,000 of monthly rent - realistic almost only in places comparable to ghettos or extremely poor areas."
+          },
+          "seventy_percent_rule": {
+            "title": "The 70% rule",
+            "overview": "At what price to buy at all - the primary defensive rule of any purchase.",
+            "description": "Buy the property at a maximum of 70% of its value. The rule rests on ARV (After Repair Value) and is used heavily in fix and flip. It provides a stable cushion against price declines and makes recovering your capital through refinancing easier, effectively 'removing the risk'.",
+            "key_points": [
+              "The renovation figure is always an assumption - be conservative and apply a margin of safety",
+              "Some established investors work with 75% - less conservative",
+              "For beginners 70% is more suitable than 75%: greater profit and lower risk while you lack experience and a portfolio"
+            ],
+            "formula": "Maximum purchase price = (market price × 0.7) − renovation cost\nWithout renovation: Maximum purchase price = market price × 0.7",
+            "example": "(EUR 200,000 × 0.7) − EUR 30,000 renovation = EUR 110,000 maximum purchase price.\nWithout renovation: EUR 200,000 × 0.7 = EUR 140,000."
+          },
+          "grm_method": {
+            "title": "The GRM method",
+            "overview": "Gross Rent Multiplier - a simple, fast indicator for income-producing property.",
+            "description": "GRM shows how many times the annual gross rent the property sells for. The lower the figure, the better the investment at first glance - but only at first glance.",
+            "key_points": [
+              "The optimal global level is considered to be roughly 4 to 7",
+              "In Bulgaria a GRM of 7 is a needle in a haystack and is not scalable; a level of 10-12 counts among the best deals",
+              "Applicable only to rent-producing property - land and undeveloped plots cannot be valued this way",
+              "A strongly market-specific indicator - GRM in a high-rent area is usually better"
+            ],
+            "formula": "GRM = property price / annual gross rental income",
+            "example": "A GRM of 10 means the property sells for 10 times the annual rent it generates. Between two properties with identical gross annual rent, the lower GRM is the better investment because it indicates higher potential return."
+          },
+          "market_comparison": {
+            "title": "The market comparison method",
+            "overview": "Valuation by comparison with recently sold similar properties in the same area.",
+            "description": "Also known as the sales comparison approach - one of the most widely used valuation methods. It rests on the principle that a property's value is determined by what buyers are willing to pay for similar properties in the same market area.",
+            "example": "A 500 sq m single-family house in a suburban area. The appraiser finds three comparable houses recently sold for EUR 300,000, EUR 310,000 and EUR 320,000. After adjustments for location, age and condition the value is set at EUR 310,000 - valid only if the properties are genuinely comparable and the sales fall within the last quarter.",
+            "subsections": {
+              "value_factors": {
+                "title": "Factors affecting property values",
+                "overview": "The four groups of factors accounted for in a comparative analysis.",
+                "description": "A market comparison analysis considers a wide range of factors, grouped into four main categories.",
+                "key_points": [
+                  "1. Location - properties in desirable areas with transport links, amenities and schools hold higher prices",
+                  "2. Property characteristics - size, condition, age, unique amenities; the most important is the number of rooms",
+                  "3. Market conditions - supply and demand dynamics; strong demand plus limited supply drives values up",
+                  "4. Market trends - the direction and pace of change in the market"
+                ],
+                "example": "Two 90 sq m apartments, both two-room. If one can be reconfigured into a three-room unit, adding a room produces a solid price increase because the property is now valued as a three-room. This is also the easiest way for an investor to raise a property's value."
+              },
+              "comparative_market_analysis": {
+                "title": "Running a full comparative market analysis",
+                "overview": "How the full comparative analysis is actually performed.",
+                "description": "The process compares the target property with recent sales and adjusts for every material difference in order to reach a defensible value on which the purchase decision rests.",
+                "key_points": [
+                  "Use only recent sales - ideally within the last quarter",
+                  "Compared properties must be genuinely similar in age, room count, aspect and location",
+                  "Adjustments account for differences in location, age and condition",
+                  "The result helps professionals, investors and owners make informed decisions"
+                ],
+                "example": "If three comparable properties sold for EUR 300,000, EUR 310,000 and EUR 320,000, the average of EUR 310,000 is defensible only after adjustments and only with confirmed comparability and recency."
+              }
+            }
+          },
+          "increasing_property_value": {
+            "title": "How do we raise the value of an investment property?",
+            "overview": "For a single property there is only one lever: functionality.",
+            "description": "To raise the value of a single investment property reliably, you again use the comparative method. For an individual unit there is no option other than making it more functional than its peers.",
+            "key_points": [
+              "A new bathroom, an extra room, a renovated kitchen, incorporating a terrace to increase living area",
+              "The analysis happens BEFORE the purchase: is the current price fair against comparable sales, and is there untapped potential",
+              "For a building or a portfolio, entirely different levers open up (see the capitalisation method)"
+            ],
+            "example": "A 90 sq m property priced fairly against other two-room units in the area, but with the option of adding a room - that untapped potential is exactly what makes the property worth buying."
+          },
+          "cap_rate_method": {
+            "title": "The income capitalisation method - Cap Rate",
+            "overview": "The core method for income-producing property and the key to scaling a portfolio.",
+            "description": "The capitalisation rate is a widely used method for valuing income-producing property - rentals, commercial buildings, hotels. It rests on the principle that a property's value equals the present value of expected future income - the same logic used to value a company.",
+            "key_points": [
+              "NOI excludes debt service - this is critical when comparing properties",
+              "Used by appraisers, investors and lenders",
+              "Considered reliable because it accounts for income potential - the key driver of value"
+            ],
+            "formula": "Cap Rate = NOI / property acquisition price\nProperty value = NOI / target capitalisation rate\nNOI (net operating income) = gross income − operating expenses",
+            "example": "Cap Rate = 10,000 / 130,000 = 0.0769 × 100 = 7.69%. If another property offers a 5% cap rate, it is the worse investment on this metric.",
+            "subsections": {
+              "cap_rate_steps": {
+                "title": "Steps in the income capitalisation method",
+                "overview": "The two calculation steps that precede the valuation.",
+                "description": "The method involves determining gross income and then deriving net operating income.",
+                "key_points": [
+                  "Step 1: determine gross income - the total annual amount before any expenses",
+                  "Gross income is not only rent: advertising banners, vending machines, renting household items, cleaning",
+                  "Step 2: calculate NOI = gross income − operating expenses",
+                  "Operating expenses: property tax, management, insurance, maintenance, utilities - but NOT debt payments"
+                ],
+                "example": "Gross income EUR 50,000 − operating expenses EUR 20,000 = NOI EUR 30,000."
+              },
+              "choosing_the_cap_rate": {
+                "title": "Choosing the capitalisation rate - what should the cap rate be?",
+                "overview": "How the required return is set and how it is shaped by the interest rate environment.",
+                "description": "The capitalisation rate is the rate of return used to convert NOI into a value estimate. The choice of target cap rate is yours, but it must always account for the alternatives.",
+                "key_points": [
+                  "7% on NOI is a good starting point - this is not your entire return from the property",
+                  "In a high-rate environment, invest for positive cash flow - these are harder times and you want more safety",
+                  "In a low-rate environment, you can pursue growth aimed at capital gains from rising prices",
+                  "Catching the trend of rising rates and bond yields can be extremely profitable"
+                ],
+                "formula": "Property value = NOI / Cap Rate",
+                "example": "Gross income EUR 50,000, operating expenses EUR 20,000 → NOI EUR 30,000. At an 8% cap rate: 30,000 / 0.08 = EUR 375,000 in value."
+              },
+              "sources_of_profit": {
+                "title": "Where does the profit in a property investment come from?",
+                "overview": "The four sources of profit, ordered by importance.",
+                "description": "A breakdown of where the money is actually made in a property investment - and why the first source matters incomparably more than the last.",
+                "key_points": [
+                  "1. Buying below market value - the most important source; it simultaneously raises return and lowers risk. The target is 25-30% below market",
+                  "2. Rental cash flow",
+                  "3. Property classification A to D - class D (poor condition, poor areas) offers the highest potential yield because of low competition, but also the most problems, work and risk; best avoided",
+                  "4. Appreciation over time - a bonus, not a reason to buy"
+                ],
+                "example": "If you invest mainly for appreciation you fall into the category of speculators, not investors. Respected property investors assume around 3% annual price growth in their models - and if you want to be conservative, strip that assumption out and check whether the numbers still work.",
+                "data_points": [
+                  "Housing sits at the base of human needs alongside food and water - a top priority for everyone",
+                  "Average historical property appreciation slightly exceeds the average rate of inflation"
+                ]
+              },
+              "instant_portfolio_value": {
+                "title": "How can we raise the value of our portfolio IMMEDIATELY?",
+                "overview": "The NOI → value relationship applied instantly.",
+                "description": "Because value is derived from NOI, every increase in net operating income translates immediately into a higher valuation - without waiting for market appreciation.",
+                "key_points": [
+                  "The two levers are increasing income and holding or reducing expenses",
+                  "This is why experienced investors treat a property as a business with revenue and costs"
+                ],
+                "formula": "Value = NOI / Cap Rate → ↑NOI at a constant cap rate = ↑value",
+                "example": "A property with NOI of EUR 30,000 at an 8% cap rate is worth EUR 375,000. Raise the NOI and the value rises proportionally - at that very moment, with the market unchanged."
+              },
+              "gains_from_scale": {
+                "title": "How do we multiply gains with scale and a larger portfolio?",
+                "overview": "The beauty of scale: two consecutive gains from the same operation.",
+                "description": "For a large portfolio, a building or a hotel, valuation rests mainly on NOI and the target cap rate. That unlocks two mechanisms: raising NOI and compressing the cap rate at exit.",
+                "key_points": [
+                  "An 8% yield is very good and a large number of investors would buy at it",
+                  "The calculation excludes the potential growth of rents and prices over time",
+                  "Always think in scale"
+                ],
+                "example": "20 properties × EUR 6,000 annual NOI = EUR 120,000 total NOI.\nAt an 8% cap rate: 120,000 / 0.08 = EUR 1,500,000.\nRaise rents by 10% at the same costs → NOI EUR 132,000 → EUR 1,650,000.\nFind a buyer willing to accept a 6% yield: 132,000 / 0.06 = EUR 2,200,000.\nResult: over 33% increase in asset value with no change whatsoever to the properties - purely because you found a buyer who wants 6% instead of 8%."
+              },
+              "cap_rate_pros_and_cons": {
+                "title": "Advantages and disadvantages of the method",
+                "overview": "Where cap rate is irreplaceable and where it misleads.",
+                "description": "An assessment of the strengths and weaknesses of the income capitalisation method.",
+                "key_points": [
+                  "Advantage: it reflects the property's income potential - the key driver of its value",
+                  "Advantage: especially useful for income-producing assets - rentals, commercial buildings, hotels, portfolios",
+                  "Advantage: it accounts for market conditions through the chosen capitalisation rate",
+                  "Limitation: inapplicable to properties without rental income",
+                  "Limitation: the result is only as good as the NOI assumptions and the chosen rate"
+                ],
+                "example": "The same property is valued at EUR 375,000 at 8% and EUR 500,000 at 6% - the choice of capitalisation rate changes the valuation dramatically, which is why it cannot be made arbitrarily."
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "strategies": {
+    "title": "Strategies for investing in real estate",
+    "overview": "The eight proven approaches to generating income and capital gains - from the most passive to the most active.",
+    "description": "After the fundamentals comes the question of how profit is actually made. Having a well-defined strategy is decisive; the choice depends on your financial goals, risk tolerance and experience.",
+    "key_points": [
+      "Buy and hold - time works for you",
+      "Fix and Flip - a quick strike through renovation and resale",
+      "BRRRR - buy, rehab, rent, refinance, repeat",
+      "Off-plan - a favourable price in exchange for construction risk",
+      "Short-term rental - the highest yield against the heaviest operations",
+      "Wholesaling - profit from a contract, without owning the property",
+      "Crowdfunding - a share in a project with small capital",
+      "REITs / ADSIC - liquid exposure through the stock exchange"
+    ],
+    "subsections": {
+      "buy_and_hold": {
+        "title": "The buy and hold strategy",
+        "overview": "The simplest strategy - but not the most effective for accumulating wealth.",
+        "description": "Buying an asset and holding it for years or decades regardless of short-term fluctuations. The main advantage is simplicity: once you identify the asset, no constant monitoring or trading is required, which saves time, reduces transaction costs and avoids the emotional stress of selling.",
+        "key_points": [
+          "Long-term growth potential: the property generates rent and appreciates at the same time",
+          "Possible tax relief - long-term capital gains rates are usually lower than short-term ones",
+          "If the goal is capital protection plus bonus rental yield, the strategy fits",
+          "If the goal is accumulating significant net worth, it is not optimal"
+        ],
+        "subsections": {
+          "required_return": {
+            "title": "How do we judge how high our return should be?",
+            "overview": "The benchmark against which every investment is measured.",
+            "description": "Return is always compared against the lowest-risk investment in the world, which at present is the 10-year US Treasury bond. That is the benchmark for judging whether a property deal is worth the risk at all.",
+            "key_points": [
+              "The good investor has one job: to determine where their capital will work best at the lowest risk",
+              "Every investment is compared with a lower-risk alternative and the return it offers",
+              "Bonds are the largest and least understood asset group, and all assets are interconnected"
+            ],
+            "example": "A bond is a loan that can be bought and sold to third parties. A bank mortgage is a loan but not a bond, because it cannot easily be resold. A state issues bonds when it says: 'I need 1 billion to build a motorway and three hospitals, and I offer 5% annual interest over 10 years.'"
+          },
+          "price_vs_value": {
+            "title": "What is the difference between price and value?",
+            "overview": "The conceptual core of the strategy: price rises because of currency, value only because of utility.",
+            "description": "In the long run nominal property prices will always rise, because currency devalues and you simply need more paper for the same amount of asset. Value itself, however, does not grow automatically - it derives from the benefits the asset delivers.",
+            "key_points": [
+              "A 100 sq m property houses as many people today as it did 50 years ago and shelters them from rain and wind just as well - its value is the same",
+              "Price is based on the amount of currency in circulation: more currency = higher property prices",
+              "Value only rises when the population of the area grows while properties are in short supply",
+              "The fiat system began after 1971, when Nixon made an emergency televised address promising to defend the strength of the dollar"
+            ],
+            "example": "The correct way to compute real value is to remove currency from the equation by changing the unit of measure. If a property costs EUR 200,000 today and a loaf of bread costs EUR 1, the ratio is 1:200,000. If next year bread is EUR 1.50 and the property EUR 220,000, the property's real value has actually fallen.",
+            "data_points": [
+              "Over more than 50 years the dollar has lost 98% of its value",
+              "The same is happening to the euro, the lev, the Japanese yen, the British pound, the Brazilian real and the Russian rouble"
+            ]
+          }
+        }
+      },
+      "fix_and_flip": {
+        "title": "The quick resale / flipping strategy (Fix and Flip)",
+        "overview": "The favourite strategy of beginners: buy, renovate, sell.",
+        "description": "A property is bought, improvements are made and it is sold at a price exceeding all purchase and improvement costs. Unlike long-term strategies, this allows quick strikes that build capital for the next deals.",
+        "key_points": [
+          "The entire model depends on a favourable entry price - without it there is no chance of profit",
+          "The aim of the renovation is minimum spend for maximum added value",
+          "The strategy works in a flat market too, but a rising one helps"
+        ],
+        "subsections": {
+          "setting_the_goal": {
+            "title": "Setting the goal",
+            "overview": "First decide what return you are chasing and what property type you are looking for - then act.",
+            "description": "Before any action you must know what you want. There is no single right answer, but the standard logic is: the newer you are, the more conservative the target should be.",
+            "key_points": [
+              "A few low-return deals give you practical skills and confidence after facing real cases",
+              "From there you can set higher targets",
+              "Look for the most liquid properties - the ones more people can afford",
+              "If you have no predefined criteria and simply scan for anything 'cheap', you have no focus"
+            ],
+            "example": "In Bulgaria the most liquid units are one-room, two-room and small three-room apartments in mid-to-high priced districts of Sofia, Plovdiv and Varna. High prices are a sign of high demand."
+          },
+          "purchase_and_financing": {
+            "title": "Purchase and financing",
+            "overview": "How leverage multiplies the return on your own capital.",
+            "description": "The property is sourced through the standard channels - brokerage agencies, online platforms, bank-repossessed properties. If you are starting out you will most likely use credit, which raises risk but dramatically raises profit potential too.",
+            "key_points": [
+              "Do not rely on yourself alone - share your criteria with an agent who has access to deals you cannot find",
+              "With a smaller percentage return on total investment you realise a far higher percentage on your own invested capital",
+              "After a successful flip you will want to repay the loan early and will pay a penalty rate",
+              "The bank does not want penalty interest but regular payments - after 2-3 quickly repaid flips its attitude changes"
+            ],
+            "example": "Total investment EUR 100,000, of which EUR 80,000 from the bank and EUR 20,000 your own contribution. Profit is measured against your contribution, not the total - that is the power of leverage when the deal goes to plan."
+          },
+          "renovation_forced_appreciation": {
+            "title": "The renovation - Forced Appreciation",
+            "overview": "Forced appreciation - the only asset class that allows it.",
+            "description": "There are two kinds of appreciation: market-driven (a natural process fuelled by demand and money printing) and forced. Only in real estate can you create appreciation through your own actions. The ideal scenario is forced appreciation while the area also enjoys market appreciation - but the latter is outside your control and should not be relied upon.",
+            "key_points": [
+              "The main goal: the money spent on improvements must raise total value by more than it cost",
+              "Renovation is not simply 'some improvements' - if you spend EUR 20,000 and do not sell for more than EUR 20,000 extra, you are at a loss",
+              "Layout changes (an extra room), a modernised kitchen or bathroom, higher-spec finishes",
+              "Do the 'tedious' work that buyers find most burdensome - that is where you gain most",
+              "Leave furnishing and decor to the new owner - that is the pleasant part and everyone has their own taste"
+            ],
+            "example": "In cheaper districts go for low-cost appliances; in expensive ones always use the best-known brands. A kitchenette with appliances and cabinets can be added at your discretion."
+          },
+          "the_sale": {
+            "title": "Time to flip. The sale",
+            "overview": "How the finished property is prepared and sold.",
+            "description": "You bought at 70% of market value, renovated, and now it is time to sell. If the property is at least turnkey, it is already in sellable condition.",
+            "key_points": [
+              "Remove all old items and furniture you consider unnecessary - empty space sells better than furniture due for replacement",
+              "Consider a professional or semi-professional photographer - the service is inexpensive and makes the listing markedly stronger",
+              "Few people do it, the logic is visible, and it sets your listing apart",
+              "Use a quality agent - listen to the approach proposed and whether the marketing plan sounds compelling",
+              "Compare the offers of several agents or agencies"
+            ],
+            "example": "Professional photos are a trivial cost relative to the transaction, yet they decide whether your listing gets opened among dozens of others."
+          },
+          "flipping_risks": {
+            "title": "Risks. What can go wrong",
+            "overview": "There is no investment without risk - and flipping is no exception.",
+            "description": "When you know the possible negative scenarios you are better prepared to adapt and minimise damage.",
+            "key_points": [
+              "Properties suitable for flipping often need serious restoration, whose cost is hard to estimate precisely",
+              "Something unforeseen is highly likely to surface (electrical, plumbing)",
+              "Flippers can be hurt by a falling market",
+              "Property trends are characterised by smoothness and duration - a decline will not be abrupt, but it will last years",
+              "The strategy works in more than just a rising market, but the direction of the district matters"
+            ],
+            "example": "A real case: a EUR 20,000 renovation estimated at two months. During the works, significant electrical and plumbing problems surface that were not identified in the initial inspection. Costs swell by 30% to EUR 26,000, the timeline extends by 1 month, the property reaches the market later and the deal is no longer as attractive."
+          }
+        }
+      },
+      "brrrr": {
+        "title": "The BRRRR strategy (Buy, Rehab, Rent, Refinance, Repeat)",
+        "overview": "Widely regarded as the best long-term strategy for property investing.",
+        "description": "BRRRR = Buy, Rehab, Rent, Refinance, Repeat. It enables wealth accumulation and passive income by repeatedly recycling the same capital.",
+        "key_points": [
+          "Money in real estate is made over time - and BRRRR compresses that time",
+          "It allows a portfolio of income-producing properties to be built many times faster than any other strategy"
+        ],
+        "subsections": {
+          "brrrr_history": {
+            "title": "What is the history of BRRRR and where does the strategy come from?",
+            "overview": "How the 2008 crisis produced the modern version of a very old idea.",
+            "description": "The strategy gained prominence in the early 21st century as a response to the fallout from the housing crash in the USA and worldwide in 2008. Many investors faced forced repossession, which brought a large number of distressed properties to the market.",
+            "key_points": [
+              "Opportunistic investors recognised the potential: acquisition at reduced prices, renovation, letting with positive cash flow, refinancing",
+              "The concept of buying distressed property, renovating and letting it has existed for centuries",
+              "A century ago mortgage financing was hard to obtain and investing was reserved for wealthy individuals and institutions",
+              "The absence of standardised mortgage products and stricter lending made the strategy unreachable for the average investor",
+              "Popularised through books, podcasts and online forums; figures such as Brandon Turner and David Greene played an important role"
+            ],
+            "example": "The community around the strategy formed when successful investors began sharing their results publicly and inspired others to adopt it."
+          },
+          "how_brrrr_works": {
+            "title": "How EXACTLY does the BRRRR strategy work?",
+            "overview": "The four steps of the cycle in concrete numbers.",
+            "description": "It is generally accepted that the strategy starts once you have saved enough to buy the first property outright. From there the cycle repeats using the same capital.",
+            "key_points": [
+              "The cycle recycles the same capital instead of locking it into one property",
+              "The key is the gap between purchase price and market valuation"
+            ],
+            "example": "Step 1: Ivan buys a property for EUR 120,000 in cash, with a market valuation of EUR 150,000 (in this example Ivan did not manage to find a property at 70% of market, only at 80%).\nStep 2: Ivan rents the property out.\nStep 3: Ivan refinances at 80% of value - the bank releases EUR 120,000 and the monthly payments are effectively covered by the tenant. Ivan recovers all the capital he put at risk.\nStep 4: Ivan has the same EUR 120,000 in his pocket, plus one property with a tenant paying off the loan. He can find a second such property and repeat the process up to 10, 100 or more properties.\n(Additional bank and agent fees are stripped out of the example for simplicity.)"
+          },
+          "removing_the_risk": {
+            "title": "How can you remove the risk and profit directly from the BRRRR strategy?",
+            "overview": "The most unique feature: withdrawing more capital than you put in.",
+            "description": "You can not only pull out all your capital along with the risk of the deal - you can pull out more capital than you originally invested and still keep a property that pays for itself and appreciates in your favour over time.",
+            "key_points": [
+              "If you bought far enough below market value, the refinancing returns more than you invested",
+              "The property stays yours while your invested capital becomes zero",
+              "With zero invested capital, any subsequent profit makes the return mathematically infinite"
+            ],
+            "example": "The closer you buy to 70% of market value, the larger the gap that an 80% refinancing returns to you in cash."
+          },
+          "brrrr_risks": {
+            "title": "Where are the risks and what can go wrong?",
+            "overview": "The two risks that collapse the whole scheme.",
+            "description": "The strategy looks magical, but it rests on two assumptions that must hold true.",
+            "key_points": [
+              "Risk #1: an incorrect market valuation of the property - hence the need for experience or access to good appraisers",
+              "Risk #2: negative cash flow you cannot cover. This is common in Bulgaria, where monthly payments often exceed gross rent net of expenses",
+              "Treat every property as a separate business: if costs exceed income, it is at risk long term",
+              "If you want to scale to 10 or 100 properties, positive cash flow on most of them is mandatory",
+              "Banks will not finance a portfolio where the bulk of properties runs at a loss - that is their profit too"
+            ],
+            "example": "If you hold a pile of bricks with no cash flow you go under - and so does the logic of the bank behind you."
+          },
+          "brrrr_profit_sources": {
+            "title": "Where do you profit when using BRRRR?",
+            "overview": "Three overlapping sources of profit.",
+            "description": "BRRRR profits simultaneously at entry, over time and through the tenant.",
+            "key_points": [
+              "1. Buying below market value - money in real estate is made at purchase; you are richer the moment you buy",
+              "2. Future appreciation - you recover your money and remove the risk, but the property stays yours, so all the upside is yours",
+              "3. Principal paydown - rent covers the payments; interest is the bank's profit, but the principal accrues to you",
+              "The financing level falls every month as principal is repaid and as prices rise"
+            ],
+            "example": "You buy a property valued at EUR 150,000 for EUR 120,000, refinance at 80% and owe EUR 120,000. If the property is worth EUR 200,000 after 5 years, that EUR 50,000 of appreciation is entirely yours at zero cash invested - an INFINITE return."
+          },
+          "credit_potential": {
+            "title": "What is good credit potential?",
+            "overview": "The three things the bank looks at - and the specific thresholds in Bulgaria.",
+            "description": "Credit potential determines whether you can run the BRRRR cycle at all, so it must be managed deliberately.",
+            "key_points": [
+              "1. DTI (Debt to Income) - most banks want 30 to 60% depending on loan size",
+              "2. LTV (Loan to Value) - for panel buildings a maximum of 70 to 75%",
+              "3. The borrower's prior credit history",
+              "The purpose of these requirements is to give the bank confidence that repayment will not be a struggle"
+            ],
+            "example": "DTI: at a 30% cap and a EUR 3,000 salary, monthly payments must not exceed EUR 900. At a bank with a 60% threshold - up to EUR 1,800.\nLTV: a panel property worth EUR 100,000 usually receives no more than EUR 70,000-75,000 of financing."
+          }
+        }
+      },
+      "off_plan": {
+        "title": "Investing in off-plan property",
+        "overview": "A favourable price in exchange for taking on construction risk - a strategy extremely popular in Bulgaria.",
+        "description": "Acquiring a home before construction has started or before it is finished. The buyer negotiates a favourable price but takes on part of the construction risk, because capital is locked up and completion cannot be guaranteed.",
+        "key_points": [
+          "'Developer' in this material means the legal entity building the project; the builder may be the same entity or hired contractors",
+          "As a buyer you deal only with the developer",
+          "Trend: with a reputable developer, much of the stock sells out before completion",
+          "Cash buyers take the best apartments earliest; then come credit buyers; at the end only the least attractive remain - north-facing, poor layout, sloped ceilings",
+          "Rapid sell-outs show growing market confidence, but the strategy has not become risk-free"
+        ],
+        "example": "Tax example on resale: a net profit of EUR 34,000 after EUR 4,000 of profit tax. If the property is mortgaged and repaid early, a 1% penalty fee applies.",
+        "subsections": {
+          "construction_stages": {
+            "title": "Stages of the construction process",
+            "overview": "The certificates that determine when you can buy, finance and move in.",
+            "description": "Understanding the stages is fundamental to reading the situation and the risk profile at each point in the transaction.",
+            "key_points": [
+              "Building permit - the project takes effect; a 3-year window follows for construction to begin",
+              "Act 2 - opening of the construction site; further delay here is a red flag",
+              "Act 14 - shell stage: enclosing walls and roof are complete. After signing, the municipal administration issues a certificate and this is the earliest point for a notarised transaction",
+              "Act 15 - the building is fully completed and ready for commissioning; the works pass from builder to developer",
+              "Act 16 - the units are fit for use; the building is commissioned and owners take possession"
+            ],
+            "example": "At Act 15 the major claims of compensated owners typically begin - sometimes justified, sometimes not - and they delay the commissioning of the building."
+          },
+          "off_plan_advantages": {
+            "title": "Advantages of buying off-plan",
+            "overview": "Price, choice, flexible schedules, warranty and liquidity.",
+            "description": "The favourable entry price unlocks a range of yield opportunities. The reason for it is clear: you take on risk by buying something that is not yet finished.",
+            "key_points": [
+              "Wide choice: preferred floor, aspect, layout - freedom that finished properties do not offer",
+              "Flexible payment schedules - developers use a template, but you have full freedom to negotiate",
+              "A brand-new apartment with no wear",
+              "Warranty period: the construction firm must remedy defects that appear within it",
+              "New properties are the most liquid - a fast sale is achievable",
+              "Immediately after Act 16 the value usually rises, because the biggest risk has been cleared",
+              "A high chance of higher rent than competing units in the area",
+              "If everything goes smoothly you build a relationship with the developer and enter their future projects even earlier"
+            ],
+            "example": "You can pick exactly the unit that matches your strategy - fast resale, full furnishing and sale, or long-term letting."
+          },
+          "off_plan_risks": {
+            "title": "Risks with off-plan property",
+            "overview": "The preferential price is precisely the price of risk - and it grows the earlier you enter.",
+            "description": "By paying for a property before completion you take on part of the risk of the construction process.",
+            "key_points": [
+              "The earlier the purchase stage, the greater the risk taken on",
+              "This is also a lever in price negotiations",
+              "Main risk: the building may not be completed",
+              "Risk of delayed commissioning, including through claims by compensated owners",
+              "Risk of poor execution by subcontractors"
+            ],
+            "example": "If the developer does not own the land but will compensate owners, the contract establishing the right to build must be reviewed without fail."
+          },
+          "off_plan_due_diligence": {
+            "title": "Minimising risk through detailed due diligence",
+            "overview": "Exactly what to check before paying for something that does not yet exist.",
+            "description": "Due diligence is always key, but with off-plan property it is an absolute priority. If you are a beginner, do not act alone - you need a competent property attorney and ideally a good agent.",
+            "key_points": [
+              "Check the developer: completed past projects, build quality, current condition, delays with permits",
+              "Experienced agents know most developers in the market well",
+              "Check the contractors (builders) and the designer too - subcontractors are often numerous: one pours concrete, another does the installations, a third the formwork",
+              "Is the developer building on their own land or compensating owners",
+              "How the project will be financed - is there a bank behind it",
+              "A tax-code certificate confirming the legal entity has no liabilities - you are fully entitled to request it"
+            ],
+            "example": "Some developers are not enthusiastic about providing extra documentation, but since you are protecting your own interest you are fully entitled to ask for it."
+          },
+          "off_plan_financing": {
+            "title": "Financing an off-plan deal",
+            "overview": "When the bank steps in and how the payment schedule decides whether it steps in at all.",
+            "description": "You can use entirely your own funds or a bank loan, but banks are generally willing to finance only after a certain construction stage.",
+            "key_points": [
+              "Most banks finance after Act 14; some only after Act 15, others after Act 16",
+              "Act 14 does not guarantee the loan - the bank runs its own review of the developer's reliability and the odds of completion",
+              "The bank then assesses your personal financial position",
+              "A credit consultant helps you find a lender matching your needs",
+              "The total paid up to Act 14 should ideally not exceed 70% - otherwise too much risk sits with the buyer and the bank will most likely stay out"
+            ],
+            "example": "A typical developer-friendly schedule is 70-20-10: 70% at Act 14, 20% at Act 15, 10% at Act 16. If you entered with 20% before the shell stage, the bank supplies 50% at Act 14."
+          }
+        }
+      },
+      "short_term_rental": {
+        "title": "Investing in property for short-term rental",
+        "overview": "The highest yield against the heaviest operational workload - the Airbnb model.",
+        "description": "Acquiring a property and letting it for a few nights at a time. The opportunity is created by platforms such as Airbnb, Vrbo and Booking.com acting as intermediaries. The yield can significantly exceed that of standard long-term letting.",
+        "key_points": [
+          "The benchmark to measure against is always the long-term rental yield of the same property",
+          "4 proven cities in Bulgaria: Sofia, Plovdiv, Varna, Burgas",
+          "Sofia is the clear leader - properties in the wider centre can be occupied almost year-round",
+          "Plovdiv attracts tourists and business travellers in the centre",
+          "Varna and Burgas are seasonal, but high summer yields can offset empty dates"
+        ],
+        "subsections": {
+          "choosing_the_platform": {
+            "title": "Which platform should we choose?",
+            "overview": "The short answer: Airbnb.",
+            "description": "Airbnb is the best platform for short-term rentals. Its systems are built to protect both guests and owners as far as possible: incorrect behaviour simply results in loss of access.",
+            "key_points": [
+              "The host commission is favourable - 3%",
+              "Booking.com is the weaker alternative - recommended only if occupancy from Airbnb alone is poor",
+              "Booking.com has a weaker guest filter, a less convenient interface and a weaker review form",
+              "Booking.com's commission is significantly higher than 3%, which pushes nightly rates up",
+              "Extra visibility: list on Google Maps via Google Business (https://www.google.com/business/)"
+            ],
+            "example": "On Google Business upload photos, an engaging title and description and contact details; since your pricing is dynamic through the year, set an indicative rate."
+          },
+          "airbnb_first_steps": {
+            "title": "First steps on Airbnb",
+            "overview": "Publishing the listing - and why photos decide everything.",
+            "description": "The publishing process is similar across platforms, so the logic applies elsewhere too.",
+            "key_points": [
+              "The first thing to take seriously is the photography",
+              "Have a 'cover' - the main image that appears in search results",
+              "Once the listing is selected, the guest sees the remaining photos",
+              "If you shoot it yourself: bright images taken on reasonably good equipment - a phone with a very good camera"
+            ],
+            "example": "The cover is the only thing competing against dozens of other listings in search results - the remaining photos only matter once it has done its job."
+          },
+          "dynamic_pricing": {
+            "title": "A mandatory condition for success. Dynamic pricing",
+            "overview": "A fixed price across the whole year dooms you to failure.",
+            "description": "One of the most critical stages. The property cannot sit at one price year-round; prices move with market conditions, season and demand.",
+            "key_points": [
+              "At the start the property is new on the platform - keep prices lower to accumulate stays and reviews and build trust"
+            ],
+            "formula": "Guest booking total = (number of nights × nightly rate) + cleaning fee",
+            "example": "On that total Airbnb charges the guest a 17% commission and withholds 3% from the amount due to us. Total intermediary commissions come to 20%.\n\nThe wrong scenario: you calculate that EUR 30 a night at 80% occupancy gives a good average annual yield, set EUR 30 and forget about pricing.",
+            "blocks": [
+              {
+                "title": "Pricing elements",
+                "items": [
+                  "Nightly rate (set by us)",
+                  "Cleaning fee (set by us)",
+                  "Host commission (charged to us by Airbnb)",
+                  "Guest commission (charged to the guest by Airbnb)"
+                ]
+              }
+            ]
+          },
+          "guest_satisfaction": {
+            "title": "Happy guests and positive reviews",
+            "overview": "Long-term success comes down to one thing: did the guests leave satisfied.",
+            "description": "Once bookings start, everything depends on satisfaction. If Airbnb receives confirmation through ratings and reviews, the property performs better and better.",
+            "key_points": [
+              "The platform 'filters' guests - a very large share of users are correct and well-intentioned",
+              "Two-way rating is a key mechanism: the host rates the guest too",
+              "After accumulated negative feedback Airbnb bans access to the platform outright",
+              "This is no guarantee against problem guests - a well-performing property will produce situations that test your nerves",
+              "Guest types: tourists, domestic business travellers and a range now too broad to define narrowly"
+            ],
+            "example": "Keeping a spreadsheet of the property's metrics is recommended so you can track what it actually generates - a tool the most experienced investors in the sector use."
+          },
+          "cleaning_cost": {
+            "title": "Optimising the cleaning cost",
+            "overview": "A constant cost open to optimisation - and an absolute priority on quality.",
+            "description": "There are two options: a company (cleaning or Airbnb management) or your own housekeeper. An external company is expensive, coordination is harder and different cleaners keep arriving, so you explain your requirements from scratch each time.",
+            "key_points": [
+              "A company only makes sense with a large number of properties - and even then it is not necessarily the best approach",
+              "Standard cleaning companies are not specialised in Airbnb properties",
+              "The better option is a housekeeper you find yourself",
+              "Write a very detailed briefing on exactly how cleaning should be done",
+              "Cleanliness is an absolute priority with no compromise",
+              "Early on (1-2 properties) pay per clean; as you scale, move to monthly pay and extra duties - restocking toilet paper, kitchen rolls, shampoo, soap"
+            ],
+            "example": "For Sofia and Plovdiv, fair pay is around EUR 20 to 25 per clean. The housekeeper will most likely also carry linen and towels to the laundry or wash them, so the commitment is around 4 hours.\n\nA tip on neighbours: give them your phone number and assure them they can reach you if anything troubles them - the activity is entirely legal and requires no extra permits."
+          },
+          "rental_arbitrage": {
+            "title": "Yield with minimal investment - rental arbitrage",
+            "overview": "Entering the model with no property and no mortgage.",
+            "description": "Taking a property on a long-term lease and re-letting it short term. Suitable for those who want to try Airbnb but have no property and do not want to take on a mortgage.",
+            "key_points": [
+              "Written permission from the owner to sublet is mandatory",
+              "Generating yield here is a harder task",
+              "It depends mainly on securing an attractive property at a relatively low rent",
+              "At a standard rent or with a mediocre property the chance the numbers work is low",
+              "The contract is drafted by a trusted attorney, with the sublet clause attached"
+            ],
+            "example": "A sample clause: 'The Landlord consents to the Tenant subletting the property to third parties via the online platform Airbnb.com.' The consent also covers other similar apps and subletting to third parties generally."
+          },
+          "short_term_taxes": {
+            "title": "Taxes",
+            "overview": "A complex area depending on your legal status and the basis of VAT registration.",
+            "description": "The scenarios depend mainly on whether you operate as an individual or a legal entity and on which basis you are registered for VAT.",
+            "key_points": [
+              "Tourist tax is due in all cases",
+              "It is calculated as: number of nights × number of guests × the rate, every month",
+              "The rate is voted by the municipal council of the relevant municipality (local taxes and fees)",
+              "Mandatory prior registration of the property in the Unified Tourist Information System (ESTI)",
+              "As an individual with 1 to 3 properties, do not rush into premature registrations",
+              "Registration under Art. 97a of the VAT Act is required because you receive a service from a foreign platform",
+              "Airbnb does not charge VAT on its commission - it is your obligation to self-charge the 20% rate"
+            ],
+            "example": "The platform is an intermediary and you as landlord use its service - hence registration under Art. 97a of the VAT Act, after which you self-charge 20% on the commission you pay it."
+          }
+        }
+      },
+      "wholesaling": {
+        "title": "The wholesaling strategy",
+        "overview": "Profit from the contract rather than the property - popular in the USA, still rare in Bulgaria.",
+        "description": "An underpriced property is put under a contract giving that specific person the exclusive right to sell it at a set price within a set period. The aim is profit on the spread, without holding the property and without significant renovation. Since the strategy has no established Bulgarian name, the Anglo-American term is used.",
+        "key_points": [
+          "Sourcing methods: networking with other investors, searching for distressed properties online, walking neighbourhoods",
+          "Full execution is not easy: you must both find an underpriced property and get the owner to sign",
+          "The single most important thing is the contract and its correctness",
+          "Drafting such a contract with a good attorney costs between EUR 50 and EUR 150"
+        ],
+        "blocks": [
+          {
+            "title": "Participants in the deal",
+            "items": [
+              "Wholesaler - finds underpriced properties that can be sold quickly at a profit",
+              "Seller - an individual or legal entity wanting to sell quickly and with minimal effort",
+              "Buyer - the party who ultimately takes the property from the wholesaler under the contract"
+            ]
+          }
+        ],
+        "subsections": {
+          "persuasion_tactics": {
+            "title": "How do we become more persuasive?",
+            "overview": "Tactics that make the proposal irresistible to the owner.",
+            "description": "The key problem is convincing the owner to sign the contract. The solution is to give them something in exchange for waiting.",
+            "key_points": [
+              "A penalty clause: if you find no buyer within the term (1, 2 or 3 months), you pay the owner a penalty",
+              "That way the owner either sells with no extra effort, or earns something extra",
+              "Alternative: offer a monthly rent for the duration of the contract while no sale is concluded",
+              "You can present yourself as an agent whom the seller pays for the service"
+            ],
+            "example": "You tell Ana that within this 1 month, if there is no sale, you will pay her EUR 750 in rent. She is then easily convinced the deal is favourable for her."
+          },
+          "wholesaling_advantages": {
+            "title": "Advantages of wholesaling",
+            "overview": "Minimum capital, maximum speed.",
+            "description": "The approach has three clear advantages, all stemming from the fact that you neither hold nor renovate the property.",
+            "key_points": [
+              "It requires significantly less capital than the alternatives - no large upfront investment is needed",
+              "A fast and easy way to realise profit - deals often close within weeks or even days",
+              "Income comes relatively quickly, without waiting months or years for a return",
+              "Valuable networking opportunities - working with other investors leads to future opportunities and partnerships"
+            ],
+            "example": "While the flipper waits months for renovation and sale, the wholesaler can turn a deal in days without investing capital in the property."
+          },
+          "wholesaling_disadvantages": {
+            "title": "Disadvantages of selling property through wholesaling",
+            "overview": "Competition, knowledge requirements and legal-ethical boundaries.",
+            "description": "Despite the advantages there are material limitations that must be understood.",
+            "key_points": [
+              "The method can be highly competitive - as more investors enter, finding underpriced properties gets harder",
+              "It requires strong knowledge of the market and local conditions",
+              "You must value properties accurately and anticipate trends",
+              "Without that knowledge you may end up unprofitable or the sale may take longer than expected",
+              "Legal and ethical considerations: do not engage in fraudulent or misleading practices",
+              "Be transparent with both sellers and buyers about the nature of the deal and all fees and commissions"
+            ],
+            "example": "If the contract term expires without a buyer while you have promised a penalty or rent, the cost is yours even though no deal took place."
+          },
+          "wholesaling_vs_flipping": {
+            "title": "What is the difference between wholesaling and fix and flip?",
+            "overview": "Two strategies that look similar but differ in risk, capital and time frame.",
+            "description": "Wholesaling involves finding underpriced properties and quickly reselling them to other investors. The wholesaler usually performs no renovation and focuses directly on finding a buyer willing to take the property as is.",
+            "example": "In wholesaling you profit because you found the deal. In fix and flip you profit because you added value to the property.",
+            "blocks": [
+              {
+                "title": "Wholesaling",
+                "items": [
+                  "No renovation or reconstruction is performed",
+                  "Low investment of time and money",
+                  "Considered a lower-risk strategy",
+                  "A very short time frame"
+                ]
+              },
+              {
+                "title": "Fix and Flip",
+                "items": [
+                  "Significant renovation and improvement is performed to raise value",
+                  "Requires a greater investment of time and money",
+                  "Higher risk due to possible unexpected costs and complications during renovation",
+                  "A considerably longer time frame"
+                ]
+              }
+            ]
+          }
+        }
+      },
+      "crowdfunding": {
+        "title": "Investing through crowdfunding",
+        "overview": "Pooling funds from many investors to finance a property project.",
+        "description": "Crowdfunding uses the power of the internet and technology platforms to connect investors with developers or operators seeking capital. In essence it is equity crowdfunding: investors buy a share of the project rather than lending to the developers, which entitles them to benefit from its success.",
+        "key_points": [
+          "The method emerged in the USA around 2010 and is widespread there today",
+          "In Bulgaria it is still uncommon, but will gain traction thanks to the low entry point and liquidity",
+          "The key advantage is accessibility: property investing was once reserved for wealthy individuals and institutions with capital and connections",
+          "Today an internet connection and a few hundred euros are enough to participate in a project"
+        ],
+        "example": "Pooling funds from multiple investors to invest collectively in property projects, facilitated through online platforms - access to property investment with lower capital requirements and diversification across properties."
+      },
+      "reits": {
+        "title": "Investing in property funds - REITs",
+        "overview": "Liquid, exchange-traded exposure to real estate without direct ownership or management.",
+        "description": "REITs (Real Estate Investment Trusts) are publicly traded companies that own and operate income-producing real estate - apartments, office buildings, shopping centres, hotels and industrial property. Their purpose is to give investors access to the income and capital growth of real estate while offering liquidity and diversification unavailable through direct ownership.",
+        "key_points": [
+          "The idea dates back to the early 20th century; the first modern REIT was created in the USA in 1960 under the Real Estate Investment Trust Act",
+          "The law requires distribution of at least 90% of taxable income as dividends to shareholders every year",
+          "Three main types: equity, mortgage and hybrid",
+          "Then 12 more granular subcategories by property type",
+          "Each type has its own investment focus, structure and risk profile"
+        ],
+        "data_points": [
+          "Total return of the FTSE NAREIT All Equity REITs index from 1972 to 2021: 10.6% annually - exceeding that of the S&P 500 (per NAREIT data)"
+        ],
+        "subsections": {
+          "equity_reits": {
+            "title": "Equity REITs",
+            "overview": "The most common type - owning and operating physical income-producing property.",
+            "description": "Focused on owning and operating income-producing property: apartments, office buildings, shopping centres, hotels, industrial facilities. They generate rental income and distribute part of it as dividends.",
+            "key_points": [
+              "The first modern equity REIT was created in 1961 with a focus on residential buildings",
+              "Hundreds of publicly traded funds of this type exist today",
+              "They offer a diversified portfolio with stable rental income and long-term capital growth potential"
+            ],
+            "example": "Best known: Simon Property Group, Prologis, Equity Residential. Prologis is the largest publicly traded equity REIT in the world."
+          },
+          "mortgage_reits": {
+            "title": "Mortgage REITs",
+            "overview": "Investments in mortgages and loans rather than physical property.",
+            "description": "Focused on investing in mortgages and other real estate loans. They generate income from interest and distribute part of it as dividends.",
+            "key_points": [
+              "The history dates back to the 1970s",
+              "They became especially popular in the 2000s, when the housing market was booming and rates were low",
+              "They can generate higher yields than equity REITs",
+              "They carry more specific and larger risks: interest rate risk, credit risk and prepayment risk",
+              "The requirement to distribute at least 90% of taxable income applies here too"
+            ],
+            "example": "Best known: Annaly Capital Management (around USD 10 billion market cap), AGNC Investment Corp, Two Harbors Investment Corp."
+          },
+          "hybrid_reits": {
+            "title": "Hybrid REITs",
+            "overview": "A combination of physical property and mortgages in one portfolio.",
+            "description": "They combine the characteristics of equity and mortgage REITs: investing in both physical property and mortgages, generating both rental and interest income.",
+            "key_points": [
+              "The history is relatively recent - the first appeared in the 2000s",
+              "Created in response to demand for alternatives offering both income and growth potential",
+              "Suitable for investors seeking a balance of income and growth",
+              "They carry risks from both sides: interest rate, credit and prepayment risk"
+            ],
+            "example": "Best known: Starwood Property Trust (over USD 5 billion market cap as of 2023), Two Harbors Investment Corp, Chimera Investment Corp."
+          },
+          "retail_reits": {
+            "title": "Retail REITs",
+            "overview": "Shopping centres and retail property.",
+            "description": "The first of the 12 subcategories. They generate income from rents paid by retail tenants.",
+            "key_points": [
+              "Risks tied to the retail industry: changing consumer habits and competition from e-commerce",
+              "They offer exposure to a diversified portfolio of retail property with stable rental income"
+            ],
+            "example": "Best known: Simon Property Group, Realty Income, Federal Realty Investment Trust. Realty Income exceeds USD 40 billion in market capitalisation as of 2023."
+          },
+          "office_reits": {
+            "title": "Office REITs",
+            "overview": "Office buildings and commercial property.",
+            "description": "They generate income from rents paid by office tenants.",
+            "key_points": [
+              "Risks tied to the business cycle - changes in demand for office space during a downturn"
+            ],
+            "example": "Best known: Boston Properties (portfolio in New York, Boston and San Francisco), Vornado Realty Trust, SL Green Realty Corp."
+          },
+          "industrial_reits": {
+            "title": "Industrial REITs",
+            "overview": "Warehouses, distribution centres and manufacturing facilities.",
+            "description": "They generate income from rents paid by industrial tenants.",
+            "key_points": [
+              "Risks tied to the business cycle - changes in demand for industrial property during a downturn",
+              "They offer stable rental income from a diversified portfolio"
+            ],
+            "example": "Best known: Prologis (portfolio in the USA, Europe and Asia), Duke Realty, Rexford Industrial Realty."
+          },
+          "residential_reits": {
+            "title": "Residential REITs",
+            "overview": "Apartments, single-family homes and student housing.",
+            "description": "Among the more traditional property funds; they generate income from rents paid by residential tenants.",
+            "key_points": [
+              "Risks tied to changes in the housing market - shifts in rental demand during an economic downturn"
+            ],
+            "example": "Best known: Equity Residential (portfolio in New York, Boston, San Francisco), AvalonBay Communities, American Homes 4 Rent."
+          },
+          "healthcare_reits": {
+            "title": "Healthcare REITs",
+            "overview": "Hospitals, medical office buildings and senior housing.",
+            "description": "Focused on owning property in the healthcare sector.",
+            "key_points": [
+              "Risks tied to changes in the sector: government regulation and demographic trends",
+              "The accelerating ageing of Western societies opens an interesting angle for analysing such funds"
+            ],
+            "example": "Best known: Welltower (the largest in the world, over USD 30 billion market cap as of 2023, portfolio in the USA, Canada and the UK), Ventas, HCP."
+          },
+          "hotel_and_resort_reits": {
+            "title": "Hotel and resort REITs",
+            "overview": "Hotel and resort property.",
+            "description": "They generate income from hotel guests and from other sources such as food and beverage sales.",
+            "key_points": [
+              "Risks tied to changes in the travel industry",
+              "Competition from alternative accommodation options such as Airbnb"
+            ],
+            "example": "Best known: Host Hotels & Resorts, Inc. (portfolio in the USA, Canada and Europe), Marriott Vacations Worldwide Corp., Park Hotels & Resorts Inc."
+          },
+          "data_center_reits": {
+            "title": "Data center REITs",
+            "overview": "Property providing space and infrastructure for data storage and processing.",
+            "description": "They generate income from rents paid by data centre tenants.",
+            "key_points": [
+              "Risks tied to changes in the technology industry",
+              "Competition from alternative technologies such as cloud storage",
+              "Exposure to the growing market for data infrastructure"
+            ],
+            "example": "Best known: Equinix (portfolio in the USA, Europe and Asia), Digital Realty Trust, CyrusOne."
+          },
+          "infrastructure_reits": {
+            "title": "Infrastructure REITs",
+            "overview": "Airports, toll roads and communication towers.",
+            "description": "Focused on owning and operating infrastructure assets.",
+            "key_points": [
+              "Risks tied to changes in government regulation",
+              "Risks from changes in demand for infrastructure services"
+            ],
+            "example": "Best known: Crown Castle International Corp. (portfolio in the USA and Australia), American Tower Corp., Global Net Lease, Inc."
+          },
+          "timber_reits": {
+            "title": "Timber REITs",
+            "overview": "Timberland supplying raw material to the forest products industry.",
+            "description": "They generate income through sales of timber and other forest products.",
+            "key_points": [
+              "Risks from changes in the forest products industry",
+              "Changes in timber demand and competition from alternative sources"
+            ],
+            "example": "Best known: Weyerhaeuser Company (portfolio in the USA and Canada), Rayonier Inc., PotlatchDeltic Corporation."
+          },
+          "specialty_reits": {
+            "title": "Specialty REITs",
+            "overview": "Property that does not fit the other subcategories.",
+            "description": "Self-storage facilities, billboard assets and prisons. They generate rental income.",
+            "key_points": [
+              "Risks tied to the specific industry or property type",
+              "For example changes in demand for storage space or government regulation of prison property"
+            ],
+            "example": "Best known: Public Storage (the world's largest with self-storage property in the USA and Europe), Lamar Advertising Company, CoreCivic Inc."
+          },
+          "diversified_reits": {
+            "title": "Diversified REITs",
+            "overview": "A combination of retail, office and industrial property.",
+            "description": "They generate income from rents paid by tenants across different property types.",
+            "key_points": [
+              "They offer exposure to a mix of property types and industries",
+              "They provide a diversified source of rental income",
+              "The risk profile depends on the specific mix in the portfolio"
+            ],
+            "example": "Best known: Prologis, Alexandria Real Estate Equities, Brookfield Property REIT Inc."
+          },
+          "bulgarian_reits_adsic": {
+            "title": "The Bulgarian property fund market - ADSIC",
+            "overview": "The Bulgarian equivalent of a REIT - a joint-stock company with a special investment purpose.",
+            "description": "A look at the specific Bulgarian property funds that give the local investor exchange-based access to the property market with small capital.",
+            "key_points": [
+              "ADSIC = joint-stock company with a special investment purpose, the Bulgarian term for a REIT",
+              "Some funds specialise in agricultural land, others in urban property",
+              "They allow exposure to the property market without direct ownership or management"
+            ],
+            "example": "Bulgarian Real Estate Fund (BREF) is an ADSIC headquartered in Sofia, founded in October 2004 and among the first registered ADSICs in Bulgaria; its history dates from April 2005. It specialises in strategic purchases and investments in property with good returns."
+          }
+        }
+      }
+    }
+  },
+  "finding_and_analyzing": {
+    "title": "Finding and analysing investment properties",
+    "overview": "Where deals come from, how to negotiate and how to verify everything before you sign.",
+    "description": "Understanding the principles of deal sourcing is decisive for beginners and experienced investors alike. This material covers deal channels, negotiation, SWOT analysis and due diligence in its three dimensions - legal, technical and financial.",
+    "key_points": [
+      "It is best when deals come to you rather than you chasing them - but that takes time",
+      "SWOT analysis is mandatory for assessing the viability of any deal",
+      "Due diligence is not a cost but insurance - yet you must include it in your cost base"
+    ],
+    "subsections": {
+      "deal_channels": {
+        "title": "Deal channels",
+        "overview": "Six channels for sourcing deals - from a broker network to knocking on doors.",
+        "description": "A mix of modern channels (broker network, social media) and traditional ones (door to door, flyers), plus the skill that converts them into deals - negotiation.",
+        "subsections": {
+          "personal_brokers": {
+            "title": "Personal agents",
+            "overview": "A small group of agents who understand the investment metrics and bring you a steady deal flow.",
+            "description": "The goal is not many agents but a small group who genuinely know what they are doing and understand the investment metrics - people who can grasp what you are actually looking for.",
+            "key_points": [
+              "Their job is to build a steady deal flow that passes through you regularly",
+              "Skip the opening small talk and start with a check: does the agent know what a cap rate is",
+              "Be as specific as possible about criteria - districts, budget, required yield",
+              "You do not want agents flooding you with unsuitable listings that waste their time and yours",
+              "If you want to work with the best agents, you must be disciplined and reliable yourself - reply to offers and give direction"
+            ],
+            "example": "For Sofia, using the 50% rule for quick analysis, the agent must know that you require a minimum 3% cap rate and aim to buy at no more than 70% of value. As long as the offer meets those criteria, the odds you act are very high."
+          },
+          "social_networks": {
+            "title": "The power of social media",
+            "overview": "Attention is the new gold of the 21st century.",
+            "description": "All of people's attention is on social media. The new gold of the 21st century is not gold or cash but attention - and alongside it, trust.",
+            "key_points": [
+              "If you hold people's attention and trust, the money comes to you",
+              "You must present an opportunity with visible logic for why they should follow you",
+              "In the property market there are plenty of Facebook pages where property deals are shared"
+            ],
+            "example": "If you look deliberately, you will find groups and pages through which real deals pass before they ever reach the big portals."
+          },
+          "negotiation_basics": {
+            "title": "Negotiation basics",
+            "overview": "Price anchoring, mirroring, concessions, power and emotional control.",
+            "description": "Mastering negotiation requires practice, patience and a willingness to adapt. The aim is to achieve your goals while building strong, lasting relationships.",
+            "key_points": [
+              "Price anchoring: a lower opening anchor gives you room to raise and still land in a favourable position",
+              "Building rapport: finding common ground, empathy, active listening",
+              "The mirroring technique - repeating the last few words of the other side, which shows you are listening and understanding",
+              "Clear and assertive communication: be honest about your needs but open to the other side's perspective",
+              "Concessions are compromises - trading one benefit for another",
+              "Where power is unequal, emphasise the value you bring, seek allies and cite a comparable property that sold for far less",
+              "Be ready to walk away if the terms do not meet your criteria",
+              "Emotional control: avoid personal attacks, stay calm",
+              "If agreement is reached, summarise the main points and confirm each side's understanding"
+            ],
+            "example": "If a property is worth EUR 120,000, offer EUR 70,000 or EUR 80,000. That sets a very low anchor, and as you raise from there it looks like you are conceding - while in fact you are doing exactly what gets you the better deal."
+          },
+          "active_deal_hunting": {
+            "title": "Active deal hunting",
+            "overview": "Traditional methods still carry real value - plus one aggressive tactic.",
+            "description": "Although online marketing and listings keep growing, traditional methods such as door knocking and flyer distribution retain their value. Applied creatively they expand your network and uncover untapped opportunities.",
+            "key_points": [
+              "What price works for you? 70% of the property's real value",
+              "If you find a property at that price, do not hesitate - act immediately",
+              "A 'shadow offer' tactic: ask two or three friends to call with far lower offers over the course of a week, after which you offer more than theirs but still below real value",
+              "Spread the calls over days rather than one day - unless the property was just listed and the deal is attractive",
+              "This tactic works for properties listed close to their real value"
+            ],
+            "example": "Warren Buffett's golden rule: investing is not like baseball - you have far more than three strikes before you are out. There is nothing to worry about even if you miss a few deals. The biggest mistakes happen in haste and in panic buying without proper analysis."
+          },
+          "door_to_door": {
+            "title": "Door to door techniques",
+            "overview": "Targeted research, a personalised approach and value-added information.",
+            "description": "Before starting a campaign it is essential to research the target neighbourhood thoroughly - the local market, recent sales, property values, demographics and current projects.",
+            "key_points": [
+              "Research helps you identify high-potential areas and narrow your target audience",
+              "A personalised approach: introduce yourself, show genuine interest and explain the purpose of your visit clearly",
+              "Tailor your pitch to the specific needs or concerns of the owners",
+              "Demonstrating knowledge of the local market builds trust",
+              "Value-added information: provide current market data, recent sales in the area and information about upcoming projects that could negatively affect value"
+            ],
+            "example": "By positioning yourself as a source of useful information rather than yet another buyer, you increase the chance of finding motivated sellers."
+          },
+          "flyer_campaigns": {
+            "title": "Flyer distribution strategies",
+            "overview": "A traditional channel with surviving potential when applied creatively.",
+            "description": "Part of the same set of traditional methods - suited to expanding your network, uncovering untapped opportunities and building connections with potential buyers and sellers outside the online channels.",
+            "key_points": [
+              "It works in combination with prior neighbourhood research",
+              "The goal is the same as door to door: reaching owners who have not yet listed",
+              "Off-market deals are where competition is lowest"
+            ],
+            "example": "Combining flyers with personal visits in a pre-analysed neighbourhood gives access to offers that never reach the public portals."
+          }
+        }
+      },
+      "swot_analysis": {
+        "title": "SWOT analysis of real estate deals",
+        "overview": "A strategic planning tool applied to a specific property deal.",
+        "description": "A thorough SWOT analysis is decisive for assessing the viability of any investment deal - long term or short term. By carefully examining strengths, weaknesses, opportunities and threats you can judge whether the property matches your goals and risk tolerance.",
+        "key_points": [
+          "Overestimating the potential resale value leads to direct losses or lower-than-expected profit",
+          "Underestimating renovation costs is the second grossest mistake in flipping",
+          "Building a relationship with a reliable general contractor brings discounts on labour and materials"
+        ],
+        "blocks": [
+          {
+            "title": "Strengths",
+            "items": [
+              "Purchase price",
+              "Renovation potential",
+              "Desirable location"
+            ]
+          },
+          {
+            "title": "Weaknesses",
+            "items": [
+              "High carrying costs",
+              "Overestimating the ARV",
+              "Underestimating renovation costs"
+            ]
+          },
+          {
+            "title": "Opportunities",
+            "items": [
+              "Market timing - buying in a rising market or one with low inventory leads to higher resale values and shorter holding periods",
+              "Developing industry expertise - relationships with contractors and agents lead to more efficient processes, lower costs and access to off-market deals"
+            ]
+          },
+          {
+            "title": "Threats",
+            "items": [
+              "Market downturns - a property bought at the peak can lose value before the renovation is complete",
+              "Regulatory changes - changes to building codes, zoning rules or permitting can delay works and raise costs",
+              "Unforeseen problems - structural damage, mould or pest infestations extend timelines and increase costs"
+            ]
+          }
+        ]
+      },
+      "due_diligence": {
+        "title": "Due diligence. Legal, technical and financial analysis",
+        "overview": "The process by which you protect yourself - before you sign, not after.",
+        "description": "Once you find a property at an investment price, never jump straight into the deal. You must establish every fact about the property that is not yet known to you before signing a final contract. It is amateurish to enter an apparently attractive deal and only discover the problems after acquisition.",
+        "key_points": [
+          "Nearly every step requires a paid specialist - add those amounts to your cost base and factor them into your offer",
+          "Sacrificing due diligence to cut costs is an amateur approach",
+          "The point of due diligence is not extra burden but avoiding far more serious trouble later",
+          "The outcome is one of three: you escape a bad deal, you resolve the issues in time, or you confirm there are no hidden traps"
+        ],
+        "subsections": {
+          "when_to_run_dd": {
+            "title": "When should I run due diligence?",
+            "overview": "Before the final contract - and with a mechanism that protects your deposit.",
+            "description": "Your protection must begin before acquisition. The practical solution is to set the conditions in a deposit receipt and run the checks within that window.",
+            "key_points": [
+              "You set the conditions under which you will acquire the property",
+              "If problems with documentation or encumbrances emerge, the deposit amount must be returned",
+              "The only exception is if you decide to deal with the issue anyway"
+            ],
+            "example": "A deposit receipt with clear conditions buys you the time to run the checks without losing the deal - and without risking the deposit."
+          },
+          "legal_analysis": {
+            "title": "Legal analysis",
+            "overview": "Two key checks: is the seller the true owner and is the property free of encumbrances.",
+            "description": "The first aspect of due diligence. It requires an attorney - which in practice makes an attorney a mandatory member of your team, because without one it is hard to obtain all the necessary information. Legal analysis has the potential to uncover many treacherous traps.",
+            "key_points": [
+              "Check 1 - ownership: research covering at least the previous 10 years; who owned the property, on what terms, whether all legal transactions are valid, whether claims were filed",
+              "Check 2 - encumbrances: is there a mortgage, are there seizures arising from the seller's debts, are there claims from third parties",
+              "A seizure certificate is issued by the Property Register at the Registry Agency",
+              "A mortgage continues to burden the property even after a change of ownership",
+              "For investment land, the urban planning status is reviewed - what may be built and the key construction parameters under the General Development Plan and the Spatial Planning Act",
+              "For off-plan property, the building permit, the approved architectural design and the use permit / commissioning certificate are reviewed"
+            ],
+            "example": "As an investor hunting for attractive deals you will frequently encounter properties with documentary irregularities or debts - precisely because sellers are pressed by circumstance and therefore accept a lower price. Let regular buyers run from such deals; you must be ready to solve them."
+          },
+          "technical_analysis": {
+            "title": "Technical analysis",
+            "overview": "The physical condition of the property and its compliance with building rules.",
+            "description": "The second part of due diligence - verifying whether the building and the property comply with the building codes and paperwork, and what the real technical condition is.",
+            "key_points": [
+              "Verification of the construction documents and the match between what was built and the approved designs",
+              "For planned improvements (for example a pool in the yard of a house), the documentation is reviewed to see whether such an improvement is permitted at all",
+              "Hidden technical problems are among the main threats in a flipping SWOT analysis"
+            ],
+            "example": "You want a house with a large yard and plan to add a pool - the relevant documentation must be reviewed in advance to know whether the improvement is allowed."
+          },
+          "financial_analysis": {
+            "title": "Financial analysis",
+            "overview": "The full picture of income, expenses and liabilities attached to the property.",
+            "description": "The third aspect of due diligence, where an accountant is useful - verifying every financial circumstance around the property and calculating whether the deal works on real rather than presented numbers.",
+            "key_points": [
+              "The cost of the analyses themselves also belongs in the cost base of the deal",
+              "Often a deposit paid on a preliminary contract goes toward clearing debts attached to the property, because the owner is insolvent",
+              "Working through complex deals brings invaluable experience that pays off later"
+            ],
+            "example": "If your deposit effectively goes toward repaying the seller's debts, that must be clear, documented and calculated before signing."
+          },
+          "contract_terms": {
+            "title": "Contract terms",
+            "overview": "Why an understated price in the title deed is a trap, not a saving.",
+            "description": "The closing part covers what goes into the documents and the consequences of attempting to 'optimise' through under-the-table payments.",
+            "key_points": [
+              "In an eviction (judicial removal in favour of a third true owner) you can only claim the amount stated in the title deed",
+              "Anything paid 'under the table' is not recoverable",
+              "In the title deed you declare that the stated price is the actual one; if that is untrue you bear criminal liability under Art. 313 of the Criminal Code",
+              "So you neither recover the real amount nor escape criminal liability"
+            ],
+            "example": "The question 'are the saved taxes and fees worth it now?' has one unambiguous answer: no."
+          }
+        }
+      }
+    }
+  },
+  "financing": {
+    "title": "Financing real estate investments",
+    "overview": "Mortgage lending in depth, the alternative instruments and every cost in the transaction.",
+    "description": "In a large share of deals investors use other people's money. Since 95% of externally financed transactions in Bulgaria run through a bank mortgage, that is the method carrying the most weight, followed by the alternatives common in more developed markets.",
+    "key_points": [
+      "In Bulgaria financing is offered on identical terms to everyone - there are no products tailored to investors",
+      "In developed markets there are BTL ('buy to let') loans with investor-specific terms",
+      "The market is the way it is because of its youth and the consequences of the mistakes exposed in 2008"
+    ],
+    "subsections": {
+      "mortgage_lending": {
+        "title": "Mortgage lending",
+        "overview": "The cheapest and most preferred way to finance a purchase in Bulgaria.",
+        "description": "A mortgage loan is a bank loan secured against property. The security means the pledged property backs the financing, and if servicing stops the lender has the right to take it. Every mortgage in Bulgaria is created in notarised form.",
+        "key_points": [
+          "Most common term: between 15 and 30 years",
+          "35 years is the upper limit in Bulgaria, and few banks will go there",
+          "Banks typically lend 80-90% of the property price",
+          "In the USA 40-year mortgages are now appearing because of growing affordability pressure"
+        ],
+        "subsections": {
+          "mortgage_types": {
+            "title": "Types of mortgage loans",
+            "overview": "Purpose-bound versus unrestricted, contractual versus statutory mortgage.",
+            "description": "The main split is by the intended use of the funds, and within purpose-bound loans by how the mortgage is created, which directly affects the notary fee.",
+            "key_points": [
+              "Unrestricted mortgages - a type of consumer loan with no requirements on how the money is used; higher interest, but better terms than an unsecured consumer loan",
+              "An investor uses only purpose-bound loans - your intentions must be transparent and you need the better terms",
+              "Banks love predictability - that is exactly what justifies better terms",
+              "Purpose-bound mortgages split into contractual and statutory",
+              "With a statutory mortgage the entire amount goes to the seller - the sole purpose is the purchase; the notary fee is lower",
+              "With a contractual mortgage part of the amount goes elsewhere, which makes it contractual and the fee higher",
+              "If a property other than the one being bought is pledged, the mortgage is always contractual"
+            ],
+            "example": "You borrow EUR 70,000 and the whole amount goes to the seller - a statutory mortgage. You borrow EUR 70,000 but EUR 65,000 goes to the seller and the remainder elsewhere - a contractual mortgage and a higher notary fee.\n\nDuring the 2008 crisis there were plenty of bad loans taken by imprudent clients who drew unrestricted mortgage loans they eventually could not service."
+          },
+          "interest_rate_types": {
+            "title": "Types of interest - fixed and floating",
+            "overview": "How the floating rate is formed and why fixed rates in Bulgaria are capped at 5 years.",
+            "description": "The floating rate consists of a variable component (the reference rate) and a fixed margin. The contract describes the methodology for applying the reference rate with a clear calculation procedure specifying the quantities, type and relative weight of components such as market indices and indicators.",
+            "key_points": [
+              "The methodology written into the contract cannot be changed unilaterally by the lender",
+              "Each bank chooses how to form the floating component - which creates competitive differences in terms",
+              "Until around the end of 2021 Bulgaria offered fixing for long periods or the whole term - no longer",
+              "Banks currently offer a maximum of 5 years fixed (other common options are 1 and 3 years), after which it becomes floating",
+              "The reason: it is hard for banks to make economic forecasts beyond 5 years",
+              "The floating rate carries risk: if central banks raise policy rates it can rise significantly and even exceed fixed offerings",
+              "Always account for interest rate risk - every change in the cost base affects the investment"
+            ],
+            "example": "As of 2023, leading credit consultants estimate that close to 65% of Bulgarians choose floating-rate mortgages and 35% fixed. The latter expect sharp rate rises and want a period of predictability."
+          },
+          "installment_types": {
+            "title": "Types of mortgage instalments",
+            "overview": "Annuity, decreasing and grace-period payments.",
+            "description": "Three repayment schemes, each suited to a different situation.",
+            "key_points": [
+              "Annuity - equal in size; early on they contain more interest and less principal, with the ratio reversing over time. The most common type",
+              "Decreasing - an equal monthly amount of principal plus interest on the remaining balance; each instalment is smaller than the last",
+              "Grace period - for a set period you pay only the interest due, with no principal"
+            ],
+            "example": "Grace-period instalments are negotiated when renovation or reconfiguration is needed: they reduce costs in the first months, and by the time full payments begin the property has already started producing rental income."
+          },
+          "the_best_loan": {
+            "title": "Which is the most favourable loan?",
+            "overview": "There is no universal answer - only criteria, different for every investor.",
+            "description": "Any consultant will tell you no such thing exists, because everything is defined by the requirements of the specific investor, and those are never identical. A low rate is far from the only condition.",
+            "key_points": [
+              "One investor wants the lowest APR and interest rate",
+              "Another wants a minimal payment through the longest possible term - in Bulgaria the maximum is 35 years, but as of 2023 few banks will go there; the common ceiling is 30 years",
+              "A third wants the loan approved as fast as possible to capture a good deal - here what matters is which bank can halve the standard 30-day approval",
+              "A fourth wants minimal own contribution and maximum financing",
+              "There is no universal formula for ranking loans from best to worst"
+            ],
+            "example": "If your deal is competitive and you must be first, a bank that approves in 15 days at a slightly higher rate beats one with the lowest rate and a 30-day process."
+          },
+          "early_repayment": {
+            "title": "Save interest through early repayment",
+            "overview": "When and how early repayment genuinely saves money.",
+            "description": "If you decide to sharply reduce the outstanding amount on an existing loan, you can make a full or partial early repayment. This is exactly where you can save on interest.",
+            "key_points": [
+              "The effect is strongest with annuity instalments - the most standard type",
+              "The penalty fee for early repayment usually applies only in the first period; after that there is none",
+              "For partial early repayment you must have at least 6 monthly instalments ready",
+              "The bank amends your repayment schedule",
+              "That amendment is usually free once a year",
+              "More frequent requests trigger fees - plan your actions and do not repay more than once a year"
+            ],
+            "example": "If you accumulate funds for partial repayment twice in a year, it is smarter to combine them into one payment so you use the free schedule amendment."
+          },
+          "refinancing": {
+            "title": "Refinancing and loan management",
+            "overview": "A loan is not a one-time decision - it is managed.",
+            "description": "Since every bank sets its own floating component, some offer better terms as part of a more aggressive client acquisition policy. That creates opportunities for the borrower even after a contract has been signed.",
+            "key_points": [
+              "Refinancing replaces an existing loan with a new one on better terms",
+              "The goals can be saving money, reducing monthly payments or obtaining better loan terms",
+              "It can also be used to buy a new property - this is the mechanism at the heart of the BRRRR strategy",
+              "Keep watching the market after signing - competition between banks works in your favour"
+            ],
+            "example": "Refinancing is exactly what turns a one-off purchase into a repeating cycle: you recover your invested capital and direct it into the next property."
+          },
+          "currency_risk": {
+            "title": "Currency risk",
+            "overview": "The Swiss franc episode as a warning.",
+            "description": "A classic example of risk that does not appear in the initial calculations. Borrowers ended up trapped: the payment rose because of the currency while the collateral devalued because of the burst property bubble.",
+            "key_points": [
+              "Does it make sense to service a loan that keeps growing on a property losing value? Yet if you stop, the collateral does not cover the debt and you remain a debtor",
+              "The situation was also unfavourable for the banks, which risked a large volume of bad loans with devalued collateral",
+              "Some borrowers negotiated lower rates, others conversion into levs",
+              "An agreement was reached between the Consumer Protection Commission and one of the three banks: the increase is split 80:20",
+              "Many people went to court arguing the contracts lacked clauses explaining currency risk and contained unfair terms",
+              "Such offers no longer exist in Bulgaria - deals are in euro and the lev is pegged to the euro at a fixed rate, so there is no currency risk"
+            ],
+            "example": "Under the 80:20 scheme, a loan increase of BGN 50,000 means BGN 40,000 is covered by the bank and BGN 10,000 remains with the borrower.\n\nIn Hungary and Poland, Swiss franc mortgages made up close to 40-50% of all loans in the years before the financial crisis, forcing state intervention - in Hungary the so-called 'Orbanomics' relief scheme, largely paid for by the banks.\n\nTip: use loan calculators to 'stress test' different scenarios - periods of negative cash flow or rate increases."
+          }
+        }
+      },
+      "alternative_financing": {
+        "title": "Alternative financing options",
+        "overview": "Hard money loans and private lenders - standard in more developed markets.",
+        "description": "Although 95% of financing in Bulgaria runs through banks, alternative instruments are common in more developed markets. Hard money loans are short-term, asset-based loans provided by private lenders rather than banks or credit unions.",
+        "key_points": [
+          "The main difference from conventional loans lies in the underwriting process",
+          "Lenders focus on the value of the collateral rather than the borrower's creditworthiness, income or DTI",
+          "They provide fast access to funds, but at higher interest rates and fees because of the elevated risk",
+          "They are used for property investments, business expansion and other situations requiring short-term financing",
+          "They allow borrowers who cannot qualify for traditional financing to act",
+          "Limitations: higher rates and fees, short terms and the possibility of losing the property"
+        ],
+        "subsections": {
+          "bridge_loans": {
+            "title": "Bridge loans",
+            "overview": "Short-term financing that covers the gap between two transactions.",
+            "description": "The first type of hard money loan - a short-term instrument for the moment when your funds are locked in one property while the next opportunity requires capital now.",
+            "key_points": [
+              "Approval rests on the value of the collateral rather than the credit profile",
+              "Fast access to funds at a higher cost of capital",
+              "Suitable for time-sensitive deals"
+            ],
+            "example": "A bridge loan lets you acquire a new property before realising the current one, instead of missing the opportunity."
+          },
+          "fix_and_flip_loans": {
+            "title": "Fix and flip loans",
+            "overview": "A product built specifically for fix and flip investors.",
+            "description": "Designed for investors who buy properties, renovate them and then sell at a profit. They provide funds for the purchase, the renovation costs and even the carrying costs during the rehab process.",
+            "key_points": [
+              "They cover all three cost categories of a flip at once",
+              "The cost of capital is higher, but the time frame is short",
+              "They enable work on distressed properties a bank would not finance"
+            ],
+            "example": "An investor finds a distressed property in an up-and-coming neighbourhood with a purchase price of EUR 100,000, needing further funds for renovation before it can be sold."
+          },
+          "construction_loans": {
+            "title": "Construction loans",
+            "overview": "Financing the construction process itself.",
+            "description": "A type of hard money loan aimed at projects where value is created through building rather than through buying an existing asset.",
+            "key_points": [
+              "The collateral is the project and the land beneath it",
+              "Short terms aligned with the construction stages",
+              "Exit from the loan: selling the finished units or refinancing with a conventional loan"
+            ],
+            "example": "A construction loan covers the build, and repayment comes from the sale of the completed units."
+          },
+          "land_loans": {
+            "title": "Land loans",
+            "overview": "Financing plots with development potential.",
+            "description": "They allow the acquisition of land that traditional lenders usually avoid, secured against the plot itself.",
+            "key_points": [
+              "Suitable when planning to subdivide or develop",
+              "Repayment comes from selling the plots or the built units",
+              "Higher risk and therefore a higher cost of capital"
+            ],
+            "example": "An investor identifies a 10-acre plot with development potential, secures a land loan to buy it and plans to subdivide and build several single-family homes. After construction they sell the individual plots or houses to repay the loan and take a profit."
+          },
+          "owner_occupied_loans": {
+            "title": "Owner-occupied loans",
+            "overview": "Hard money for people who will live in the property.",
+            "description": "Although hard money loans target investors and developers, some lenders offer loans to owners who plan to live in the property they buy.",
+            "key_points": [
+              "Used by borrowers who cannot qualify for traditional financing due to poor credit, a recent bankruptcy or other financial challenges",
+              "Usually short term",
+              "They require the borrower to refinance with a conventional loan or sell the property within a set period"
+            ],
+            "example": "A borrower with a recent bankruptcy does not qualify for a traditional mortgage but obtains a hard money loan to buy a home. They then work on improving their credit position in order to refinance conventionally or sell within the loan term."
+          },
+          "private_money_lenders": {
+            "title": "Private money lenders",
+            "overview": "An alternative when traditional institutions have overly strict criteria.",
+            "description": "Investors often need alternative financing solutions because traditional financial institutions can impose strict criteria that limit their access to capital. Private lenders offer flexible loan products and personalised service.",
+            "key_points": [
+              "Understanding the different hard money loan types - bridge, fix and flip, construction, land, refinance and cash-out, owner-occupied - allows an informed choice",
+              "Hard money loans are a valuable tool for investors, developers and owners seeking flexible, fast financing",
+              "It is essential to weigh the benefits and drawbacks - they are not suitable for every borrower or project"
+            ],
+            "example": "When the emphasis is on collateral value rather than creditworthiness, opportunities open for borrowers a bank would refuse."
+          },
+          "working_with_private_lenders": {
+            "title": "Understanding private lenders for real estate investors",
+            "overview": "Who they are, what the advantages are and how to work with them.",
+            "description": "Private lenders are non-institutional entities providing loans to individuals and legal entities. They can be individuals, groups or, rarely, companies with access to a substantial capital pool. They are often specialised in specific industries or loan products.",
+            "key_points": [
+              "1. Flexibility - often more flexible lending criteria than traditional institutions; more willing to approve investors with unusual financial situations or non-traditional income sources",
+              "2. Speed - approval is usually faster than with banks, which can be decisive for time-sensitive property investments",
+              "3. Customisation - they adapt products to specific needs: interest-only payments, longer repayment periods",
+              "4. Relationship-based lending - the long-term relationship is part of the product itself"
+            ],
+            "example": "For an investor with a non-standard income profile but a strong deal, a private lender may be the only route to financing within the required timeframe."
+          }
+        }
+      },
+      "transaction_costs": {
+        "title": "Additional costs in a property purchase transaction",
+        "overview": "All the costs that must enter your calculation - otherwise the analysis is wrong.",
+        "description": "You cannot assess the potential of your investment without knowing exactly what it will cost. The costs of a transaction - with or without a mortgage - are not small, and miscalculating them is a gross mistake to avoid at all costs.",
+        "key_points": [
+          "These three costs are due whether you buy with a mortgage or with your own funds",
+          "With a mortgage, further costs related to the loan and the creation of the mortgage are added",
+          "A specific case may involve something extra, but the listed items cover the vast majority of the cost base"
+        ],
+        "example": "On a EUR 100,000 purchase in Sofia the local tax alone is EUR 3,000, plus EUR 100 in registration fees, plus notary fees - costs that must be in the calculation before you decide whether the price is an investment price.",
+        "blocks": [
+          {
+            "title": "Mandatory costs",
+            "items": [
+              "Municipal/local tax (property acquisition tax) - the largest additional cost, set by the municipality where the deal takes place: a floor of 0.1% and a ceiling of 3%. In Sofia it is 3%. Each municipality sets and may change this rate itself",
+              "Registration fee to the Registry Agency - 0.10% of the transaction value",
+              "Notary fees - depending on the certified material interest and any additional services; see point 8 of the Notary Fees Tariff. Payment varies because of Bulgarian notary practices (avoiding the double fee, offering free services to attract clients), so it is best to consult"
+            ]
+          }
+        ]
+      },
+      "glossary": {
+        "title": "Key terms",
+        "overview": "A glossary of the core concepts in property investing.",
+        "description": "A closing reference section with definitions of the main terms in property investing - from basic roles to financial metrics and strategies.",
+        "glossary": [
+          {
+            "term": "Agent",
+            "definition": "A licensed professional who facilitates the purchase, sale or letting of property on behalf of clients; an intermediary between buyers and sellers."
+          },
+          {
+            "term": "Mortgage",
+            "definition": "A loan taken to finance the purchase of a property, where the property itself serves as collateral; repaid over time, usually with interest."
+          },
+          {
+            "term": "Leverage",
+            "definition": "The use of borrowed funds (for example a mortgage) to finance a property investment."
+          },
+          {
+            "term": "Refinancing",
+            "definition": "Replacing an existing loan with a new one on better terms - to save money, reduce payments or buy a new property."
+          },
+          {
+            "term": "Inflation",
+            "definition": "A general rise in the price level over a period; it measures the decline in the purchasing power of the currency."
+          },
+          {
+            "term": "Hedging",
+            "definition": "A strategy to offset or reduce the risk of potential losses from adverse price movements."
+          },
+          {
+            "term": "Capital appreciation",
+            "definition": "An increase in a property's value over time, driven by market conditions and other factors."
+          },
+          {
+            "term": "Forced appreciation",
+            "definition": "Raising value through your own deliberate actions - improvements and renovation - rather than through market movement."
+          },
+          {
+            "term": "Depreciation",
+            "definition": "An accounting method for allocating the cost of tangible assets over time; in real estate, a non-cash expense with a tax effect."
+          },
+          {
+            "term": "Real Estate Investment Trust (REIT)",
+            "definition": "A company that owns, operates or finances income-producing real estate and distributes at least 90% of its taxable income as dividends."
+          },
+          {
+            "term": "ADSIC",
+            "definition": "The Bulgarian term for a REIT - a joint-stock company with a special investment purpose."
+          },
+          {
+            "term": "Vacancy rate",
+            "definition": "The percentage of vacant (unlet) properties or units in the portfolio."
+          },
+          {
+            "term": "Gross Rent Multiplier (GRM)",
+            "definition": "A financial metric: property price / annual gross rent."
+          },
+          {
+            "term": "Cash flow",
+            "definition": "The amount remaining after deducting all expenses, including mortgage, taxes and insurance."
+          },
+          {
+            "term": "Equity",
+            "definition": "The difference between the market value of the property and the outstanding mortgage balance."
+          },
+          {
+            "term": "Net Operating Income (NOI)",
+            "definition": "The income generated by a property after operating expenses but before debt payments."
+          },
+          {
+            "term": "Capital expenditure (CapEx)",
+            "definition": "Spending on significant improvements, repairs or replacements to maintain the property."
+          },
+          {
+            "term": "Cash on Cash Return",
+            "definition": "A measure of the annual return relative to the equity actually invested."
+          },
+          {
+            "term": "Capitalisation rate (Cap Rate)",
+            "definition": "A core metric in property investment analysis: NOI / acquisition price."
+          },
+          {
+            "term": "Crowdfunding",
+            "definition": "A method of raising capital by pooling funds from multiple investors."
+          },
+          {
+            "term": "Wholesaling",
+            "definition": "A strategy where an underpriced property is put under contract and the rights under it are resold to an end buyer."
+          },
+          {
+            "term": "BRRRR",
+            "definition": "An acronym for 'buy, rehab, rent, refinance, repeat'."
+          },
+          {
+            "term": "Debt-to-Income ratio (DTI)",
+            "definition": "A metric lenders use to assess a borrower's ability to service debt."
+          },
+          {
+            "term": "Loan-to-Value ratio (LTV)",
+            "definition": "A metric lenders use to assess loan risk relative to the value of the collateral."
+          },
+          {
+            "term": "Flipping",
+            "definition": "A strategy of buying, renovating and quickly reselling a property at a profit."
+          },
+          {
+            "term": "Base interest rate",
+            "definition": "The reference rate against which other interest rates in the economy are set."
+          },
+          {
+            "term": "SWOT analysis",
+            "definition": "A strategic planning tool: strengths, weaknesses, opportunities and threats."
+          }
+        ]
+      }
+    }
+  }
+}

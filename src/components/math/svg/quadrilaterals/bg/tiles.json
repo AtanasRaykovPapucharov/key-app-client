@@ -1,0 +1,44 @@
+{
+    "square":  {
+                   "x":  20,
+                   "y":  130,
+                   "width":  1220,
+                   "height":  930,
+                   "tileSize":  380
+               },
+    "rectangle":  {
+                      "x":  420,
+                      "y":  130,
+                      "width":  1220,
+                      "height":  930,
+                      "tileSize":  380
+                  },
+    "parallelogram":  {
+                          "x":  820,
+                          "y":  130,
+                          "width":  1220,
+                          "height":  930,
+                          "tileSize":  380
+                      },
+    "rhombus":  {
+                    "x":  20,
+                    "y":  530,
+                    "width":  1220,
+                    "height":  930,
+                    "tileSize":  380
+                },
+    "trapezoid":  {
+                      "x":  420,
+                      "y":  530,
+                      "width":  1220,
+                      "height":  930,
+                      "tileSize":  380
+                  },
+    "kite":  {
+                 "x":  820,
+                 "y":  530,
+                 "width":  1220,
+                 "height":  930,
+                 "tileSize":  380
+             }
+}

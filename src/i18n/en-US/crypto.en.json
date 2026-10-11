@@ -1,0 +1,899 @@
+{
+  "foundations": {
+    "title": "Blockchain foundations",
+    "overview": "What a blockchain is, how decentralization became possible, and where it sits in the evolution of the internet.",
+    "description": "The starting point: the technology, its history, and the difference between a blockchain and a cryptocurrency. A cryptocurrency is the combination of blockchain technology and an economically successful consensus mechanism - the two are not the same thing.",
+    "key_points": [
+      "A blockchain is a database stored simultaneously on many computers (nodes)",
+      "There are two main kinds of blockchain - centralized and decentralized",
+      "Decentralization only becomes possible once economically successful consensus mechanisms appear",
+      "Technological evolution runs in two directions: ever greater decentralization and an ever tighter merging of the physical and digital worlds"
+    ],
+    "subsections": {
+      "introduction": {
+        "title": "Introduction",
+        "overview": "The map of the subject - from blockchain mechanics to the practical valuation of projects.",
+        "description": "The path runs through blockchain technology and its history, the technological developments of the 1990s that led to Bitcoin, the many consensus mechanisms, Ethereum and its radically different mechanics, and then the types of tokens and cryptocurrencies.",
+        "key_points": [
+          "Particular attention goes to stablecoins, DeFi, NFTs and the metaverse - both the mechanics and the history behind them",
+          "Key technologies are covered: oracles, layer-two scaling, forks, wrapped tokens, DAOs, crypto index funds, tokenization",
+          "The practical part covers how to measure the potential of the crypto market and the value of a decentralized network",
+          "It closes with qualitative and quantitative metrics for evaluating specific crypto projects"
+        ]
+      },
+      "blockchain_structure_history": {
+        "title": "Structure and history of blockchain technology",
+        "overview": "From the 1991 idea of protecting data to the first decentralized blockchain in 2009.",
+        "description": "The most basic explanation is that a blockchain is a database stored on many computers. Every device holds the same information; when something changes, a new copy is made and automatically distributed to all the others - that is a blockchain update. A node is any computer participating in the network.",
+        "key_points": [
+          "The beginning was laid in 1991 by Stuart Haber and Scott Stornetta",
+          "The first decentralized blockchain arrived with the first cryptocurrency - Bitcoin, in 2009",
+          "The earliest blockchains were not decentralized: control over the nodes belonged entirely to a single institution",
+          "A blockchain is transparent - everything is visible, from the number of transactions to the size of the data",
+          "Once added, information cannot be changed, only appended to",
+          "Merkle trees make a blockchain more efficient by letting a block fill up instead of attaching a new block for every small change"
+        ],
+        "example": "If company A keeps valuable data on a single computer and something happens to it, the information is lost. That is where the idea of a blockchain comes from - distributing the information through copies held by many nodes.\n\nMerkle trees work like the folders on your computer: you do not drop everything loose on the desktop, you sort it, which makes the process more organised and more efficient."
+      },
+      "decentralized_mechanics": {
+        "title": "Decentralized blockchain mechanics",
+        "overview": "Why simple voting fails and how economic penalties solve it.",
+        "description": "The original idea was simple: store the information across many nodes and settle the truth by vote, usually at 51% agreement. The problem was sybil attacks - one person or group spins up enough nodes to outnumber the originals and wins the vote.",
+        "key_points": [
+          "The difference between a consensus mechanism and an economically successful consensus mechanism is decisive",
+          "Simple consensus is free voting with no economic consequence for those who lie",
+          "An economically successful consensus penalises the malicious actor and so removes the possibility of spam attacks",
+          "The best-known examples are Proof of Work and Proof of Stake",
+          "An attack on the consensus mechanism is called a '51% attack'",
+          "In 1997 Adam Back created the Proof of Work concept; in 1999 Markus Jakobsson built on it"
+        ],
+        "example": "Adam Back's idea was that before sending an email, the computer had to spend time and energy - it had to 'do work'. That deters spam, because sending 1,000 emails now costs real resources. This is exactly the concept that inspired Satoshi Nakamoto when creating Bitcoin in 2009."
+      },
+      "internet_evolution": {
+        "title": "The phases of internet evolution",
+        "overview": "From Web 1.0 to Web 3.0 and why decentralization is the next step.",
+        "description": "The history of the internet starts in 1974 with the first wireless attempts and the birth of the TCP/IP protocol. In 1991 HTTP was created on top of TCP/IP, allowing different file types to be sent. Once those core layers existed, commercialisation of the industry began.",
+        "key_points": [
+          "Internet 1.0 began in 1994/1995 - the stage where you could only read what was served to you, and centralization was highest",
+          "Internet 2.0 began in 2004/2005 with social networks - now you could create content too",
+          "Internet 3.0 is the decentralized phase, whose beginning Ethereum sets in motion",
+          "Two parallel trends are visible: ever greater decentralization and an ever sharper merging of the physical and digital worlds"
+        ],
+        "example": "The companies of the first wave: Yahoo and Amazon were founded in 1994, eBay in 1995, Google in 1998."
+      },
+      "industrial_revolution_stages": {
+        "title": "The four stages of the industrial revolution",
+        "overview": "The move to a more digital world as the fourth industrial revolution.",
+        "description": "Humanity's transition to a more digital world constitutes the fourth industrial revolution. Video games and the metaverse are directly connected, which is exactly why many people say the first metaverses were games.",
+        "key_points": [
+          "Every industrial revolution changes society's primary productive resource",
+          "The fourth is digital: value shifts toward data, networks and virtual assets",
+          "Gaming is among the fastest-growing business segments globally"
+        ],
+        "example": "The gaming market is around USD 148.5 billion, and by 2030 it is expected to grow more than tenfold - to USD 1.5 trillion. That equates to average annual growth of 29.5%.",
+        "data_points": [
+          "Gaming sector: ~USD 148.5bn today → projected USD 1.5trn in 2030",
+          "Average annual sector growth: 29.5%"
+        ]
+      }
+    }
+  },
+  "networks_and_consensus": {
+    "title": "Networks and consensus mechanisms",
+    "overview": "How Bitcoin and Ethereum work, what the alternative consensus models are, and how networks scale.",
+    "description": "Every network picks a trade-off between security, decentralization and speed. This theme covers the two dominant consensus mechanisms, the seven better-known variations, Ethereum's competitors, oracles and the scaling solutions.",
+    "key_points": [
+      "Without decentralization and security, nothing else matters",
+      "The scalability trilemma: security, decentralization and scalability cannot all be maximised at once",
+      "The more nodes a network has, the more decentralized and secure it is - but also the slower"
+    ],
+    "subsections": {
+      "bitcoin_mechanics": {
+        "title": "How Bitcoin works and why it resists fraud and hacks",
+        "overview": "Proof of Work - the consensus mechanism that removes the middleman from the equation.",
+        "description": "Satoshi Nakamoto built on the original model so as to eliminate the chance of hacking and manipulation without needing a third party to supervise the process. Removing intermediation while raising security sits at the heart of crypto ideology.",
+        "key_points": [
+          "Mining is the process in which nodes solve complex mathematical algorithms",
+          "The node that guesses the right numbers earns the right to validate the next block and collect its rewards",
+          "This happens once every 10 minutes; each node in a PoW system is called a 'miner'",
+          "The more miners a network has, the more decentralized and secure it is",
+          "The main problem is speed: before a block is finalised, every node has to 'have its say'",
+          "Bitcoin sacrifices speed and scalability in exchange for security and stability",
+          "The energy question is settled by economics - renewable energy is cheaper, so miners migrate toward it"
+        ],
+        "example": "Ivan wants to send one Bitcoin to Peter. He presses 'send', which creates a request. The request goes into an imaginary pool of requests called the mempool. On the other side are the miners, who every 10 minutes guess the equation and pull requests from the mempool into the next block."
+      },
+      "ethereum_mechanics": {
+        "title": "How the Ethereum network works",
+        "overview": "Proof of Stake - the second most used consensus mechanism and how it differs from Proof of Work.",
+        "description": "Ethereum launched on Proof of Work, but the team has been working for years on moving the network to Proof of Stake. The new model offers the same economically backed security, except the penalty no longer comes from money spent on electricity but from staked capital.",
+        "key_points": [
+          "The model was first proposed in 2011 on the Bitcointalk forum by a user with the pseudonym Quantum Mechanic",
+          "Not all cryptocurrencies compete with one another - they split into subcategories such as Store of Value and Smart Contract",
+          "A cryptocurrency and a crypto token are fundamentally different things",
+          "Validators stake their own funds, which guarantees they will not cheat",
+          "Staking through a centralized exchange is the easiest route, but the fees are highest and are taken indirectly - as a lower yield"
+        ],
+        "example": "Instead of an 8% annual yield, an exchange such as Binance or Coinbase may pay you 4-5%. For people with low technical literacy or small capital, this is still a good passive income opportunity."
+      },
+      "other_networks": {
+        "title": "How the other crypto blockchain networks work",
+        "overview": "The seven better-known consensus variations and their trade-offs.",
+        "description": "Proof of Stake is the principal kind of consensus mechanism, but it has many variations. Each seeks more speed and lower fees, usually at a discount to decentralization.",
+        "key_points": [
+          "Terminology differs by model: 'miner' in PoW, 'validator' in PoS, 'delegate' in DPoS",
+          "Gas fees rise when a network is congested - those in a hurry pay more and set off a domino effect",
+          "Reducing the number of validating nodes speeds things up and lowers fees, but sacrifices decentralization",
+          "The scalability trilemma describes exactly this trade-off"
+        ],
+        "subsections": {
+          "dpos": {
+            "title": "Delegated Proof of Stake",
+            "overview": "A faster, more democratic model with a limited set of delegates.",
+            "description": "Created in 2014 by Dan Larimer, with one of its first applications in his EOS project. Any node can vote for delegates of its choosing - the nodes that take part in reaching consensus.",
+            "key_points": [
+              "The more staked funds a node holds, the more votes it can cast",
+              "The number of elected delegates is usually between 20 and 100",
+              "If a delegate loses power, their computer shuts down or they attempt to cheat, they are penalised (slashing)",
+              "Those who voted for honest delegates also earn in proportion to the votes they contributed",
+              "Consensus is reached faster, which speeds up finality and lowers gas fees"
+            ],
+            "example": "Under PoW and PoS the winning node validates the requests, but thousands of nodes then have to reach consensus. DPoS shrinks that circle to 20-100 delegates and so accelerates the whole system."
+          },
+          "npos": {
+            "title": "Nominated Proof of Stake",
+            "overview": "A DPoS variation where the voters also carry financial risk.",
+            "description": "The consensus model devised and used by the Polkadot network. Almost identical to DPoS: anyone who stakes a certain amount of DOT can become a node and cast votes for chosen delegates.",
+            "key_points": [
+              "The key difference: DPoS penalises only delegates, NPoS penalises the voters too",
+              "If the delegate you voted for cheats or goes offline, part of your funds is also seized",
+              "This adds a further layer of security and makes everyone in the system more careful",
+              "Money now stands behind each vote, which raises trust - but decentralization is again reduced"
+            ],
+            "example": "A nominator no longer merely endorses a validator - they risk their own capital alongside them, which makes picking a quality validator a matter of self-interest."
+          },
+          "lpos": {
+            "title": "Liquid Proof of Stake",
+            "overview": "DPoS with very short staking periods.",
+            "description": "The consensus model used by the Tezos blockchain. The mechanics are almost identical to DPoS, with one key difference.",
+            "key_points": [
+              "Staking periods are very short",
+              "The system is more liquid - hence the name",
+              "The remaining mechanics repeat the DPoS model"
+            ],
+            "example": "Shorter staking periods mean your capital is not locked up for long and can react to market changes."
+          },
+          "poa": {
+            "title": "Proof of Authority",
+            "overview": "A model without anonymity, suited to corporate blockchains.",
+            "description": "Devised by Ethereum co-founder and Polkadot founder Gavin Wood. The mechanics are almost identical to DPoS, but anonymity is absent - one of the key differences.",
+            "key_points": [
+              "Besides staked funds, nodes also supply personal information about themselves",
+              "Validating nodes are not customarily rotated often, which makes the model extremely centralized",
+              "Because of this dynamic its main application is with large corporations running their own blockchain projects"
+            ],
+            "example": "When you know the identity of every validator, reputational risk supplements economic risk - but the price is lost anonymity and high centralization."
+          },
+          "po_space": {
+            "title": "Proof of Space",
+            "overview": "The most energy-efficient model - it uses free hard drive space.",
+            "description": "Free space on your hard drive is used to store the information. Like a lottery, you receive a large quantity of numbers - the more free space you have, the more numbers you collect.",
+            "key_points": [
+              "At fixed intervals a number is drawn and whoever holds it wins the right to validate the next block",
+              "After validation the work is checked by the other nodes and the block is finalised only on consensus",
+              "No electricity is burned and no powerful hardware is required",
+              "This is the most capital-light form of participating in consensus"
+            ],
+            "example": "Exactly as in a lottery - the more tickets you buy, the greater your chance of winning. Under Proof of Space the 'tickets' are the numbers you collect according to your free disk space."
+          },
+          "po_burn": {
+            "title": "Proof of Burn",
+            "overview": "The right to validate is bought by destroying your own funds.",
+            "description": "A rather different model in which lying becomes economically pointless - not because you paid for electricity or hardware, but because you burned a certain amount of your own funds.",
+            "key_points": [
+              "Burning happens by sending to an 'eater address', from which the funds can never be used again",
+              "The model is deflationary: instead of creating new coins, it constantly burns from circulating supply",
+              "Reducing supply supports a rising price",
+              "The more you have burned, the greater your chance of validating the next block",
+              "The model has not been seriously tested or proven over time, unlike PoW, PoS and largely DPoS"
+            ],
+            "example": "Rewards under this model come in the form of the gas fees paid, not newly created coins."
+          },
+          "po_activity": {
+            "title": "Proof of Activity",
+            "overview": "A hybrid of Proof of Work and Proof of Stake.",
+            "description": "Not widely adopted, but interesting. The winning node is chosen as in PoW - electricity is burned and powerful computers are needed to guess the equation.",
+            "key_points": [
+              "After validation the system switches to Proof of Stake",
+              "A small group of nodes is chosen, usually five, who have staked their funds",
+              "They vote on whether the winning node did its job correctly - at least three of five must agree",
+              "The model is greener and faster, but the number of checking nodes is limited",
+              "The idea is to fix the problems of the two main models, but the lack of security and decentralization creates new ones"
+            ],
+            "example": "Combining two mechanisms brings the advantages of both - but also inherits the limitations each was trying to sidestep."
+          }
+        }
+      },
+      "ethereum_competitors": {
+        "title": "Who are Ethereum's competitors",
+        "overview": "How to measure which Smart Contract network is genuinely developed.",
+        "description": "The main competitors are other Smart Contract blockchain platforms. Who counts as a real competitor is checked mainly through Total Value Locked (TVL) - the larger that figure, the larger the network.",
+        "key_points": [
+          "The most prominent competitors are Terra, Binance, Solana, Avalanche and Fantom",
+          "TVL does not mean literally locked money - funds can move; the figure reflects the decentralized applications in the network",
+          "On paper Ethereum has other competitors such as Cardano, Polkadot and Cosmos, but their TVL is closer to zero",
+          "The money committed on Ethereum is many times greater than on any other network"
+        ],
+        "example": "In January 2021 Ethereum's dominance in the Smart Contract sector was 97-98%; a year and three months later it was below 60%. That shows the network carries real competitive risk."
+      },
+      "oracles": {
+        "title": "Blockchain oracles - the backbone of the crypto industry",
+        "overview": "The bridge between real-world information and the blockchain.",
+        "description": "Oracles connect the off-chain and on-chain worlds and are the third most important part of crypto after Store of Value and Smart Contract networks. Oracles themselves are not cryptocurrencies but projects. On-chain covers what can be established in advance; off-chain covers what cannot be predicted.",
+        "key_points": [
+          "Chainlink is the first successful blockchain oracle and the undisputed dominant player",
+          "Software oracles pull information from websites and online platforms; hardware oracles from cameras, thermometers and sensors",
+          "Inbound oracles bring outside information into the blockchain; outbound oracles push information out of it",
+          "Security again rests on an economically successful consensus mechanism",
+          "If the external information is controlled by one party, the point of decentralization disappears"
+        ],
+        "example": "A builder insures his building against earthquakes through a decentralized application. How does the site know an earthquake actually happened? Nobody controls it, and a single party cannot simply declare the event, because that opens the door to fraud.\n\nA simpler analogy: the kitchen and the cooks are the on-chain information, the customer at the table is off-chain, and the waiter carrying the order is the blockchain oracle."
+      },
+      "scaling": {
+        "title": "How the crypto industry will scale",
+        "overview": "Layer two - state channels, side chains and optimistic rollups.",
+        "description": "Scalability is solved on a second layer above the main blockchain. The different approaches strike different balances between speed, cost and security.",
+        "key_points": [
+          "State channel technology gives a great deal of anonymity: what happens inside the channel is visible only to its participants",
+          "Side chains are separate blockchain systems with their own consensus mechanisms - they take traffic off Ethereum but are far less secure because of their small node count",
+          "Optimistic rollups take transactions, compress them and pass them to the main Ethereum blockchain",
+          "Those doing the compressing stake Ethereum, which guarantees their honesty; anyone can flag suspected fraud",
+          "If the flag turns out to be false, the flagger's funds are seized - which protects the system from spam",
+          "Optimistic rollups are a drastic improvement over side chains, because the main blockchain participates directly"
+        ],
+        "example": "Thanks to the Bitcoin Lightning Network, tens of thousands of people in El Salvador transact - Bitcoin is legal tender there, and buying water or chewing gum requires gas fees of fractions of a cent.\n\nOn Ethereum the most used solutions are Optimism and Arbitrum (optimistic rollups) and Polygon (a side chain)."
+      },
+      "forks": {
+        "title": "What it means to split a blockchain",
+        "overview": "Soft and hard forks, and how a new cryptocurrency is born.",
+        "description": "A fork in the programming world means the code of a piece of software changes. In blockchain there are two main kinds - soft and hard. Soft forks are optional, hard forks are mandatory.",
+        "key_points": [
+          "Because everything is decentralized, opinions on a mandatory change can diverge",
+          "If a group refuses to accept the hard fork, the blockchain can split",
+          "A new currency is created - a copy of the existing one, but without that mandatory fork"
+        ],
+        "example": "Imagine a message that your operating system needs an update. If you can postpone it - that is a soft fork. If your computer cannot keep working without it - that is a hard fork.\n\nThe best-known case is 1 August 2017, when the Bitcoin blockchain split and Bitcoin Cash was created. The cause was the wish of a large group of nodes and developers to solve Bitcoin's problems of the time."
+      }
+    }
+  },
+  "coins_and_tokens": {
+    "title": "Cryptocurrencies and tokens",
+    "overview": "The types of cryptocurrency, how they differ from tokens, and the main token categories.",
+    "description": "A cryptocurrency rests on its own blockchain, while a crypto token is built on somebody else's. This theme covers the two main kinds of cryptocurrency, the token standards and the most important token categories - from stablecoins to meme tokens.",
+    "key_points": [
+      "The two main kinds of cryptocurrency are Store of Value and Smart Contract",
+      "Only Smart Contract blockchains can host tokens and applications",
+      "A cryptocurrency has greater long-term potential than a token, because its price depends on the growth of the entire network"
+    ],
+    "subsections": {
+      "crypto_types": {
+        "title": "The main types of cryptocurrency",
+        "overview": "Store of Value versus Smart Contract - two fundamentally different purposes.",
+        "description": "Cryptocurrencies are a blend of blockchain technology and an economically successful consensus model, but different projects have different goals. Store of Value preserves purchasing power; Smart Contract exists to build the decentralized world.",
+        "key_points": [
+          "Bitcoin is the first cryptocurrency in history, created in 2009",
+          "Satoshi Nakamoto's idea was a digital decentralized currency for transactions without an intermediary - without banks",
+          "Bitcoin was born after the 2008 financial crisis, when many people stopped trusting banking institutions",
+          "Fiat currencies are those with nothing behind them, continuously issued, which erodes their purchasing power"
+        ],
+        "example": "Transferring funds with Bitcoin happens in a very short time, whereas an intercontinental bank transfer would take several days and cost considerably more."
+      },
+      "bitcoin_unique": {
+        "title": "What makes Bitcoin unique",
+        "overview": "Limited supply, rising difficulty and the halving.",
+        "description": "The Bitcoin blockchain runs on Proof of Work. Once every 10 minutes one of the miners guesses the equation and earns the right to validate the next block, which can hold up to 1MB of information.",
+        "key_points": [
+          "The code is designed so that the more people mine, the more energy is needed and the harder the equation becomes",
+          "This process is tracked through the network's hash rate",
+          "Bitcoin is the king of the crypto market and dictates its movements - when it rises, the whole market follows",
+          "Supply is capped at 21 million; almost 19 million have been mined so far",
+          "The code is written so that the last Bitcoin will be mined in 2140",
+          "After 2140 miners will earn from the gas fees in each block, which remain",
+          "An additional deflationary factor: between 3 and 6 million of the mined Bitcoin are considered lost"
+        ],
+        "example": "The next Bitcoin halving is in 2024. Typically the price starts rising significantly a few months after a halving - but despite the logic and past experience, nothing is guaranteed."
+      },
+      "ethereum_unique": {
+        "title": "What makes the Ethereum network unique",
+        "overview": "The oil of the crypto world - fuel that is burned in use.",
+        "description": "If Store of Value cryptocurrencies have their analogue in gold, Smart Contract has its analogue in oil. Oil serves to build many products and is burned in processing, which gives it a permanently deflationary character. Decentralized applications, NFTs, tokens and DAOs are all built on Ethereum.",
+        "key_points": [
+          "The idea dates to 2013, when Vitalik Buterin, then 19, wrote up the concept",
+          "In that document Vitalik noted that Bitcoin's only functions are payment and inflation protection",
+          "The intent was a multifunctional blockchain resembling a Swiss army knife",
+          "Smart Contract networks are called money legos - easy to build on and entirely open source",
+          "Ethereum is the most congested network, which makes gas fees extremely expensive",
+          "Fees are fixed and do not depend on the size of the amount, which penalises small users",
+          "This is why many people migrate to networks with fees of USD 1-2 or less"
+        ],
+        "example": "Sending USD 10 on Ethereum can cost between USD 50 and USD 100 in fees. On a USD 10,000 transfer the same fee is acceptable, but most people hold under USD 1,000 and a few transactions would consume all of it."
+      },
+      "coin_vs_token": {
+        "title": "The difference between a cryptocurrency and a crypto token",
+        "overview": "Its own blockchain versus being built on someone else's.",
+        "description": "Behind a cryptocurrency stands an original blockchain, while crypto tokens are built on top of someone else's. Since only Smart Contract blockchains allow tokens and applications, every crypto token lives on one of those networks.",
+        "key_points": [
+          "The two main kinds of blockchain are Store of Value and Smart Contract",
+          "Since Ethereum is the dominant network, a huge share of everything built sits on it",
+          "A cryptocurrency's price movement depends on the growth of the whole network",
+          "A token's price movement is limited to its own functionality and applicability"
+        ],
+        "example": "For a token to exist, someone first had to build the network beneath it - which is why the long-term potential of the network itself exceeds that of any single token on it."
+      },
+      "token_standards": {
+        "title": "The most important crypto token standards",
+        "overview": "ERC-20, ERC-721, ERC-1155 and ERC-998.",
+        "description": "A token standard means the code framework through which a given token is built. ERC stands for Ethereum Request for Contract. Other networks have their own names - Binance Smart Chain, for instance, calls them BEP20, BEP721 and so on.",
+        "key_points": [
+          "ERC-20 is the standard for fungible tokens - identical and fully interchangeable",
+          "ERC-721 is the standard for non-fungible tokens (NFTs)",
+          "ERC-1155 merges ERC-20 and ERC-721 - both kinds can be built on it",
+          "ERC-1155 allows many NFTs to be bundled into one transaction, drastically cutting gas fees; the Enjin protocol uses it",
+          "ERC-998 is the least recognised - it acts as a layer for composite NFT concepts",
+          "Many platforms support only one of the two main standards, because their systems are programmed for it",
+          "If the wrong public key is used when sending, the funds are lost forever"
+        ],
+        "example": "With ERC-998 you can build one picture and then split it into 100 separate NFTs - each piece is its own NFT, and whoever owns all the pieces assembles the whole puzzle. The same logic applies to a digital avatar with a hat, glasses, jacket and trousers."
+      },
+      "wrapped_tokens": {
+        "title": "How to pay low fees with wrapped tokens",
+        "overview": "The answer to the problem of communication between different blockchain networks.",
+        "description": "Wrapped tokens let a cryptocurrency from one network be used on another. This is the most widely used technical solution to blockchain interoperability - the lack of communication and interaction between two different blockchain networks.",
+        "key_points": [
+          "Wrapping lets an asset from one network be represented as a token on another",
+          "This gives access to cheaper fees and to the applications of the receiving network",
+          "The REN protocol lets various cryptocurrencies be wrapped and issued as tokens on Ethereum",
+          "More and more opportunities for passive income are created through wrapped assets"
+        ],
+        "example": "Imagine being underwater with an oxygen mask - everything is fine, you swim and you breathe. Wrapping works the same way: the asset gets a 'mask' that lets it function in an environment other than its native one."
+      },
+      "stablecoins": {
+        "title": "How stablecoins work",
+        "overview": "The bridge between the fiat and crypto worlds.",
+        "description": "Stablecoins are crypto tokens pegged in some way, which prevents price fluctuation. Most often they track the dollar. No financial system can exist without a stable unit of exchange - that is their role.",
+        "key_points": [
+          "They solve the problem of traditional bank transfers, which take days and cost a great deal",
+          "With a stablecoin you know exactly how much you are transferring and that the amount will not change",
+          "They often act as a 'parking space' for investors and traders",
+          "Without them, a new financial world could not be built"
+        ],
+        "example": "If an investor expects a market crash, they can buy stablecoins to protect themselves - and afterwards buy back at lower prices.",
+        "data_points": [
+          "All fiat money is worth around USD 90 trillion (Multicoin Capital data for 2021)",
+          "During 2021 the stablecoin market jumped from USD 17 billion to USD 116 billion"
+        ]
+      },
+      "stablecoin_types": {
+        "title": "The types of stablecoin",
+        "overview": "Four kinds, and the trilemma none of them fully solves.",
+        "description": "The stablecoin trilemma, formulated by Multicoin, describes the impossibility of having stability, capital efficiency and decentralization all at once.",
+        "key_points": [
+          "Fiat-backed - the largest kind: stable and capital-efficient, but heavily centralized",
+          "Crypto-backed - decentralized, but requiring over-collateralization because of volatility",
+          "Commodity-backed - decentralization is absent, because the commodities must be stored by a third party",
+          "Algorithmic - no collateral at all, with stability maintained entirely by code",
+          "The largest fiat-backed stablecoin is Tether, followed by Coinbase's USDC"
+        ],
+        "example": "The UXD protocol has been proposed as a model that satisfies every criterion of the trilemma: you deposit 1 ETH worth USD 1,000, the code opens a short position of the same size, the two positions neutralise each other and the price of the created token stays at 1.",
+        "blocks": [
+          {
+            "title": "Elements of the stablecoin trilemma",
+            "items": [
+              "Decentralization",
+              "Capital efficiency",
+              "Stability"
+            ]
+          }
+        ]
+      },
+      "meme_tokens": {
+        "title": "Can jokes make money - meme tokens",
+        "overview": "The riskiest token category and why a low price misleads.",
+        "description": "Meme tokens are crypto tokens inspired by a meme - an online image or video that mocks something. The first such currency in history is Dogecoin.",
+        "key_points": [
+          "The mania started after the meme stock saga around GameStop and AMC Entertainment in late 2020",
+          "In early 2021, backed by Reddit traders and Elon Musk's tweets, the Dogecoin price rose sharply",
+          "Dogecoin peaked in May 2021 at USD 0.73",
+          "Shiba Inu, DogeElon Mars, Akita Inu, Floki Inu and Safemoon followed",
+          "These projects carry the highest risk and are extremely dangerous - an investor must be ready to lose their money",
+          "The concept is most often used for scams: create, market, wait for new investors, then steal or dump en masse",
+          "Never let a low price mislead you - watch market capitalisation instead"
+        ],
+        "example": "Market capitalisation by itself also says nothing meaningful about the project, its competitors or its prospects - it is scale, not quality."
+      },
+      "tokenization": {
+        "title": "How tokenization is changing the investment world",
+        "overview": "Turning illiquid assets into liquid, accessible ones.",
+        "description": "Tokenization makes owning any asset far more accessible and makes participating in companies cheaper and safer. The asset is split into tokens, each representing a small piece of ownership.",
+        "key_points": [
+          "The model turns illiquid assets into fully liquid ones, on a par with shares",
+          "It solves both the high capital barrier to entry and the liquidity problem",
+          "The process itself is simplified: exposure in a few clicks",
+          "It opens access to alternative assets - rare art, luxury cars, expensive property",
+          "If the asset generates cash flow, that can be distributed through the token"
+        ],
+        "example": "The top class of property - above USD 10 million, in cities such as New York, Paris, London, Munich, Miami, Los Angeles and Hong Kong - used to be reserved for the ultra-wealthy. Through tokenization such a property can be divided, with each token carrying a share of ownership and of the rent."
+      }
+    }
+  },
+  "nft_and_metaverse": {
+    "title": "NFTs and the metaverse",
+    "overview": "Non-fungible tokens, their uses beyond art, and the digital worlds being built on them.",
+    "description": "An NFT is unique content attached to a blockchain, which gives it strong security and transparently provable ownership. On this technology rest the economies of metaverses and of content creators.",
+    "key_points": [
+      "The unique content can be anything - from digital paintings through photographs to songs",
+      "The technology applies to gaming, the public sector, medicine and many other industries",
+      "Metaverses can be centralized, decentralized or hybrid"
+    ],
+    "subsections": {
+      "nft_revolution": {
+        "title": "What the NFT revolution is",
+        "overview": "Provable ownership and a royalty built into every resale.",
+        "description": "An NFT is unique content uploaded to a blockchain, which means nobody can falsely claim to own it - everything is transparent and permanently recorded. This transforms industries that have long suffered from counterfeiting and stolen work.",
+        "key_points": [
+          "Identity documents could become NFTs, reducing identity fraud to zero",
+          "A unique national ID as an NFT would make voting manipulation impossible - who voted, when and for whom would always be known",
+          "A property register as NFTs would reduce property fraud and theft to zero",
+          "The ticketing industry suffers from counterfeits and secondary resale - NFT tickets solve both",
+          "A royalty commission is built into the NFT technology and triggers on every resale",
+          "For artists, NFTs solve the copying problem: who created the work and when is permanently recorded"
+        ],
+        "example": "Person A buys an NFT ticket from the organiser's site for 100 and later resells it for 200. In the traditional world the difference goes entirely to the reseller. With an NFT ticket, 10% of every resale can go to the organisers."
+      },
+      "nft_history": {
+        "title": "The earliest NFT history",
+        "overview": "The projects where it all started - and the record sale that legitimised it.",
+        "description": "Many people consider Curio Cards one of the first NFTs, though the concept overlaps with others. The project consists of 30 different cards drawn by seven artists and attached to the Ethereum blockchain.",
+        "key_points": [
+          "Each Curio card has between 11 and 2,000 copies; the full collection is 29,700, of which around 4,000 are considered lost",
+          "Moon Cats were built on the ERC-20 standard, before ERC-721 even existed",
+          "Moon Cats is the first generative art project in history - the images were drawn by code at random",
+          "Randomness is highly valued because it adds honesty and reduces the scope for manipulation",
+          "Ethereum addresses are public, but they do not reveal the real identities behind them"
+        ],
+        "example": "Out of 4 billion possible combinations, the total number of Moon Cats is 25,440. Of those, 25,344 are Non-genesis Cats, while the genuinely rare Genesis Cats number 96 black-and-white cats. The floor price for ordinary ones is 0.65 ETH, for the rare ones at least 100 ETH.\n\nBeeple painted one picture every day for 13 years - from May 2007 to 21 February 2021. The project sold for 42,329 ETH, or USD 69.3 million, through Christie's."
+      },
+      "nftfi": {
+        "title": "Digital pawn shops - NFTfi",
+        "overview": "A loan against an NFT as collateral.",
+        "description": "NFTfi merges the NFT world with DeFi. The concept lets you pledge your NFT and take a loan against that pledge.",
+        "key_points": [
+          "Nexo, for example, allows a collateralised loan with a maximum LTV of 20%",
+          "If the pledged NFT rises in price, that accrues to the owner, who reclaims it only after repaying the loan with interest",
+          "Such loans are offered only against NFTs from the most desirable collections - CryptoPunks or Bored Ape Yacht Club",
+          "The low loan-to-collateral level reflects the illiquidity of the NFT market",
+          "In a sharp decline, the correction in NFTs is far larger and faster in percentage terms than in the wider crypto market"
+        ],
+        "example": "If you pledge an NFT worth USD 100, you can draw a maximum of USD 20 as a loan - exactly as pawn shops in the traditional world lend against belongings."
+      },
+      "metaverse": {
+        "title": "What the metaverse is",
+        "overview": "A term born in science fiction three decades earlier.",
+        "description": "It comes from the ancient Greek 'meta' - 'beyond' or 'outside'. Literally translated it means 'beyond the real'. The term was first used by Neal Stephenson in his novel Snow Crash, published in 1992.",
+        "key_points": [
+          "Ernest Cline's Ready Player One also depicts an advanced virtual world decades before the concept became current",
+          "The topic exploded after Facebook renamed itself Meta in late 2021",
+          "At this stage there is no clear definition of what a metaverse actually is - it is all developing in front of us",
+          "Many argue metaverses have existed for two decades and that any video game qualifies",
+          "The problem with game worlds is that there is no unit of exchange and no real ownership of digital items"
+        ],
+        "example": "In a game you have a digital character (avatar) playing your role. You can buy a change of clothes and appearance, but you cannot resell them afterwards - which is why their value is severely limited. The logic is that you need real ownership in a world to feel it as real."
+      },
+      "metaverse_types": {
+        "title": "Types of metaverse",
+        "overview": "Centralized, decentralized and hybrid.",
+        "description": "A metaverse does not necessarily need crypto technology to be successful or functional. At this stage there are three main kinds.",
+        "key_points": [
+          "Facebook's metaverse would be centralized - control and development depend on the company",
+          "Hybrid ones will be able to interact with each other; they are the greyest area and the least established",
+          "The unit of exchange in decentralized metaverses will always be a cryptocurrency or token",
+          "If the unit is the dollar or the euro, the world cannot be truly decentralized, because those currencies are controlled by states and financial institutions"
+        ],
+        "example": "If Facebook integrates NFTs into its platform and Instagram, every uploaded photo or video could become an NFT and be sold on a centralized marketplace the company takes a cut from. If those NFTs can leave the Meta ecosystem - for instance through MetaMask integration - the metaverse becomes hybrid."
+      },
+      "leading_metaverses": {
+        "title": "How the two most developed metaverses work",
+        "overview": "Decentraland and Sandbox - comparing the two leading decentralized worlds.",
+        "description": "Decentralized metaverses are the most developed as concepts, because that is where the real innovation starts. Both leading projects are built on the Ethereum blockchain.",
+        "key_points": [
+          "Decentraland is the older - launched in 2017 with a USD 24 million ICO and opened to users in 2020",
+          "Decentraland runs on two tokens: MANA (the main one) and LAND (the virtual land); MANA is burned to create LAND",
+          "Sandbox is a company from 2012, bought in 2018 by Animoca, who integrated blockchain technology",
+          "Sandbox's ICO in August 2020 raised USD 3 million in ETH",
+          "Sandbox runs on SAND (ERC-20) and ASSET (ERC-1155)",
+          "5G connectivity is a key technology for the quality of the metaverse experience"
+        ],
+        "example": "Items and virtual land in Sandbox trade on OpenSea, while Decentraland users can only do so in the marketplace inside the protocol. Decentraland has just over 90,000 land parcels against Sandbox's 166,000-plus, which makes Decentraland's land rarer. Whether it will be more desirable depends on which world gains wider adoption."
+      },
+      "play_to_earn": {
+        "title": "How money is made from crypto video games",
+        "overview": "The play-to-earn model and the barrier holding it back.",
+        "description": "Gaming has a near 50-year history, and until recently only a tiny share of elite gamers made money from it. With blockchain and NFT technology, anyone above average can earn from playing.",
+        "key_points": [
+          "While playing you earn a token with real value, or an NFT whose price depends on rarity and demand",
+          "Developing your avatar and its items also produces NFTs that can later be sold",
+          "Sales happen on an in-game marketplace or on an intermediary such as OpenSea",
+          "The largest play-to-earn game is Axie Infinity, launched in 2018 in the style of Pokémon",
+          "The problem is that once a game becomes popular, entry gets expensive for new players - the starter NFT costs several hundred dollars",
+          "The Axie team responded with free starter axies with limited usage",
+          "GameFi merges DeFi with the play-to-earn model - DeFi Kingdoms is one example"
+        ],
+        "example": "In early 2022 Axie Infinity had 2.8 million daily active users. In countries such as the Philippines and Indonesia there are people supporting their families through the game. According to a co-founder, 50% of players had never used a crypto application before."
+      },
+      "creator_economy": {
+        "title": "What the creator economy is",
+        "overview": "Tokenization applied to the people who make content.",
+        "description": "The creator economy covers everyone building an audience on social networks - Instagram, TikTok, YouTube, Facebook. These people stand to benefit enormously from crypto technology and tokenization in particular.",
+        "key_points": [
+          "The scope is broad: gaming, fashion, vloggers, sports influencers",
+          "A token can be bootstrapped with discounts for those who pay with it",
+          "The more people transact with the token, the greater the potential for its price to rise",
+          "Long-term holders - the genuine fans - benefit from that rise",
+          "The creator economy can run on non-fungible tokens too, not only fungible ones"
+        ],
+        "example": "Ronaldo could issue a CR7 token (ERC-20 or equivalent). His fans could agree to accept payment for their own services and products in that token, which benefits the whole community behind it. In theory they could conduct all their transactions in CR7."
+      }
+    }
+  },
+  "defi": {
+    "title": "Decentralized finance",
+    "overview": "The categories of DeFi - from exchanges and banks to insurers, derivatives and autonomous organisations.",
+    "description": "A decentralized financial world cannot exist without something stable, which is why stablecoins are a foundational part of DeFi. The remaining categories reproduce the functions of the traditional financial system, but without a controlling institution.",
+    "key_points": [
+      "The core categories are stablecoins, decentralized exchanges and borrow-and-lend platforms",
+      "To these are added insurance, derivatives, yield aggregators and asset management platforms",
+      "Every DeFi application is a DAO, but not every DAO is a DeFi application"
+    ],
+    "subsections": {
+      "defi_components": {
+        "title": "What decentralized finance consists of",
+        "overview": "A map of the DeFi sector and its basic building blocks.",
+        "description": "After stablecoins, the core DeFi categories are decentralized exchanges (DEX) and decentralized banks - the borrow-and-lend platforms.",
+        "key_points": [
+          "Stablecoins are the precondition for everything else - without a stable unit of exchange there is no financial system",
+          "Decentralized exchanges allow trading without a third party",
+          "Lending platforms reproduce the banking function without a bank",
+          "Then come the insurance category, derivatives platforms, asset management platforms and yield aggregators"
+        ],
+        "example": "Each of these categories solves a function that in the traditional world requires a licensed institution - here the same function is performed by code and consensus."
+      },
+      "dex": {
+        "title": "Decentralized exchanges",
+        "overview": "Trading without a third party through liquidity pools.",
+        "description": "DEXs are a founding cornerstone of the whole DeFi ecosystem. They allow transactions and trading of crypto assets without a third party. To understand them you first need to know how centralized exchanges such as Binance, Kraken and Coinbase work.",
+        "key_points": [
+          "Liquidity means being able to buy or sell quickly without moving the price",
+          "On centralized exchanges, liquidity comes from user deposits and is controlled by the institution",
+          "The problem is that once your money is deposited there, you no longer control it",
+          "Uniswap is the largest DEX and the first successfully launched; it is built on Ethereum and trades only ERC-20 tokens",
+          "All decisions about the platform's future are made by vote with the UNI governance token",
+          "Anyone can place assets into a liquidity pool and so make trading of a given pair possible",
+          "Drawback: the model is hard to pick up unaided, and crypto cannot be bought directly with cash - a centralized exchange is needed first"
+        ],
+        "example": "The market share of DEXs grows steadily - reaching 13.44% in January 2022. That pace demonstrates how the model is being received and used."
+      },
+      "lending_platforms": {
+        "title": "Decentralized banks",
+        "overview": "Borrow-and-lend platforms with over-collateralization.",
+        "description": "Borrow-and-lend platforms are the banking industry of DeFi. The first such platform is AAVE, launched in 2017 and among the earliest implemented DeFi concepts.",
+        "key_points": [
+          "The original idea was a peer-to-peer model where people lend directly to each other",
+          "The problem is that at any moment someone on the other side must want exactly what you offer",
+          "In 2018 AAVE adopted Uniswap's model and started using liquidity pools",
+          "Crypto loans are safer than traditional ones because they are always collateralised - often above 100%",
+          "The AAVE token brings lower fees, better borrowing terms and governance rights",
+          "The passive income rate is set by the volume of tokens locked in the pool relative to demand"
+        ],
+        "example": "You deposit 10 ETH into AAVE. The maximum you can draw as a loan is 80% of the staked value - an LTV of 80%. If you do not want a loan, you can simply deposit and earn passive income.\n\nBanks profit the same way, but keep over 95% of the earnings and return around 5% as annual interest."
+      },
+      "decentralized_insurance": {
+        "title": "Decentralized insurers",
+        "overview": "Insurance without an institution deciding everything.",
+        "description": "The decentralized insurance category removes the institution that single-handedly decides whether and how much to pay out. Decisions are made by vote among token holders.",
+        "key_points": [
+          "With Nexus Mutual you must pass KYC, meaning you prove your identity",
+          "The NXM token can only be bought through the protocol's own site and nowhere else",
+          "Holders vote on whether a given claim should be paid",
+          "Holders also vote on the risk rating of a given protocol, which sets the premiums",
+          "NXM also acts as a governance token for future changes to the platform",
+          "Competitors to Nexus Mutual are Bridge Mutual and InsurAce"
+        ],
+        "example": "If holders judge that the risk at AAVE has risen, they can vote to raise the premium from, say, 2.6% to 3%."
+      },
+      "decentralized_derivatives": {
+        "title": "Decentralized derivatives",
+        "overview": "Synthetix and creating copies of traditional assets.",
+        "description": "Derivatives are financial instruments whose value derives from the value of an underlying asset. Synthetix is a platform launched in 2018 and built on the Ethereum blockchain.",
+        "key_points": [
+          "The process of creating these derivatives is called collateralization, and the derivatives themselves are called synths",
+          "A synth mimicking Bitcoin is sBTC; sAPPL and sTSLA are derivatives of Apple and Tesla shares",
+          "Derivatives of gold (sAu), silver (sAg) and other commodities can also be created",
+          "All prices are tracked with help from the Chainlink oracle",
+          "Every trade pays a 0.3% fee, which is redistributed to those staking SNX",
+          "SNX is also a governance token",
+          "The high collateral ratio makes the system resilient to volatility but capital-inefficient at scale"
+        ],
+        "example": "To create USD 100 in the form of McDonald's shares, you must stake USD 750 in SNX - that is, 750% collateral against the amount you are creating."
+      },
+      "yield_aggregators": {
+        "title": "Maximising DeFi yield",
+        "overview": "Automating the hunt for yield.",
+        "description": "Yield aggregator platforms serve people who want to do yield farming - earning passive income across various crypto applications. The concept emerged in the summer of 2020.",
+        "key_points": [
+          "It began when Compound implemented its COMP token, distributed automatically to everyone supporting the protocol",
+          "Offering a reward became standard practice, then effectively mandatory, for new projects",
+          "Without such a reward, projects failed to attract users and liquidity",
+          "This opened the door to people who drain protocols and move on to newer ones paying higher yields",
+          "Manual yield farming takes enormous time and accumulates gas fees",
+          "Aggregators automate the monitoring through code - always faster and more precise than a person",
+          "The largest such protocol is Yearn.Finance; rewards are paid in the YFI token, which is also a governance token"
+        ],
+        "example": "Instead of watching dozens of websites all day for the best yield, you stake your assets on the platform and the code distributes them across many applications, saving you a great deal in gas fees as well."
+      },
+      "decentralized_funds": {
+        "title": "Decentralized investment funds",
+        "overview": "The least developed DeFi sector with the greatest potential.",
+        "description": "Platforms acting as asset managers and hedge funds. In the traditional world of professional money management there are many fees and everything is controlled by a small group of elite bankers.",
+        "key_points": [
+          "That model can be inverted: all the money goes into one common basket",
+          "A selected, proven group of people manages the funds",
+          "All decisions are taken by vote and everyone earns equally",
+          "It would no longer be possible for a small group at the top to capture most of the gains"
+        ],
+        "example": "The sector is the least developed in all of DeFi, which is precisely why it carries the greatest growth potential."
+      },
+      "dao": {
+        "title": "Decentralized autonomous organisations",
+        "overview": "Code instead of management - and why that lowers prices.",
+        "description": "Decentralized means nobody controls the thing; autonomous means everything is code-based and automated; an organisation is a group of people with shared goals. Every DAO has a token that powers the system.",
+        "key_points": [
+          "Every DeFi application is a DAO, but not every DAO is a DeFi application",
+          "What makes a project a DAO is automation, decentralized control and decisions taken by vote through a governance token",
+          "Turning a centralized service into a DAO removes offices, salaries and executive compensation",
+          "That saves users money and raises the earnings of the people doing the work - everyone gains more",
+          "The beauty of the model is its flat structure"
+        ],
+        "example": "Picture a coffee machine that not only makes coffee by code, but orders its own beans when they run out and determines by itself that it needs cleaning.\n\n'Uber DAO': an identical application to today's, but with nobody controlling it; a token distributes the money generated and grants voting rights over the project's future. For drivers and passengers nothing changes.",
+        "data_points": [
+          "During 2021 the size of the DAO sector grew 40-fold",
+          "As of March 2022, USD 9.5 billion was committed in DAO projects - USD 8.2 billion on Ethereum and USD 1.3 billion on Solana"
+        ]
+      },
+      "cedefi": {
+        "title": "Centralized-decentralized finance",
+        "overview": "Crypto banks - the hybrid model between the two worlds.",
+        "description": "CeDeFi describes the reality that the move from centralized to fully decentralized finance cannot happen abruptly. Crypto banks are a new kind of centralized financial institution with a different distribution model.",
+        "key_points": [
+          "The model redistributes more of the profits back to people",
+          "This aligns with the crypto mentality that big institutions should not be the only ones earning",
+          "The platform's own token unlocks privileges for users",
+          "One example is the CRO cryptocurrency behind the Crypto.com platform",
+          "Some platforms evolve directly into crypto banks"
+        ],
+        "example": "The user gets better terms, lower fees and a share of the revenue - things a traditional bank keeps entirely for itself."
+      }
+    }
+  },
+  "security_and_valuation": {
+    "title": "Security and valuation",
+    "overview": "How assets are protected and how to assess the potential of the market, the network and a specific project.",
+    "description": "The practical part: protecting private keys, comparing Bitcoin with gold and fiat, the history of asset classes, the formula for network value and the concrete steps for analysing a project.",
+    "key_points": [
+      "Risk comes first, return second",
+      "Risk is lowest with Bitcoin, then Ethereum - the leaders in their respective niches",
+      "However many metrics you examine, you can never be 100% certain"
+    ],
+    "subsections": {
+      "protecting_assets": {
+        "title": "How to protect our crypto assets",
+        "overview": "Private key, public key and the two kinds of wallet.",
+        "description": "Any cryptocurrency can be lost if its owner forgets the private key to their crypto wallet. That is where the whole subject of security begins.",
+        "key_points": [
+          "Software wallets are also called 'hot wallets'; a well-known decentralized example is Electrum",
+          "A decentralized wallet means nobody controls it",
+          "The private key gives access to your funds and is always kept secret",
+          "The public key is the address others use to send you assets - it can be shown to anyone",
+          "The public key takes the form of automatically generated letters and numbers"
+        ],
+        "example": "Think of the public key as your account number and the private key as the password to the safe. The first is handed out, the second never."
+      },
+      "ten_factor_analysis": {
+        "title": "A 10-factor analysis - Bitcoin, gold, fiat currencies",
+        "overview": "Which of the three performs the function of money best.",
+        "description": "The comparison rests on which of the three can be called money and plays that role best. Ten properties of money are examined and scored on a low - medium - high scale.",
+        "key_points": [
+          "Fungibility: 1 Bitcoin in one wallet must equal 1 Bitcoin in another, just as one Maple Leaf ounce equals another",
+          "Durability: if something degrades easily, it easily loses purchasing power",
+          "Divisibility: you must be able to buy both chewing gum and far more expensive things with it",
+          "Bitcoin's strongest advantage over gold is inelastic supply",
+          "The quantity of newly supplied Bitcoin is fixed and predetermined by code that cannot be changed",
+          "With gold, a rising price prompts miners to expand output, supply increases, demand falls and the price corrects",
+          "Bitcoin is the first large-scale asset in history whose supply cannot expand as its price rises"
+        ],
+        "example": "Even if Bitcoin's price rises dramatically, no more of it can be mined - the exact opposite of the natural imbalance observed with gold.",
+        "blocks": [
+          {
+            "title": "The ten properties of money",
+            "items": [
+              "Fungibility",
+              "Portability",
+              "Durability",
+              "Divisibility",
+              "Security",
+              "Easy transactions",
+              "Scarcity",
+              "Immunity from state regulation",
+              "Decentralization",
+              "Programmability"
+            ]
+          }
+        ]
+      },
+      "ripple_stellar": {
+        "title": "What is the potential of Ripple and Stellar",
+        "overview": "The projects that do not fight banks but help them.",
+        "description": "Ripple is a company, Stellar a foundation. Behind them stand the cryptocurrencies XRP and XLM. They count as cryptocurrencies because the institutions own blockchains - which are not decentralized, but maintained and controlled by their own nodes.",
+        "key_points": [
+          "Their idea is to help traditional banks function better",
+          "The problems they target are banking networks, slow transfers and expensive transactions",
+          "Not every bank has a direct link to every other - an intermediary is needed",
+          "The role of banking networks is largest in intercontinental transfers",
+          "These projects lack a decentralized unit of exchange, which limits their potential"
+        ],
+        "example": "If someone in India wants to send money to someone in Cameroon, most likely no Indian bank has a direct link to a Cameroonian one. The transfer must first pass through a European or American bank, and in the worse case through several more intermediaries."
+      },
+      "market_potential": {
+        "title": "How to assess the potential of the crypto market",
+        "overview": "The history of asset classes and why a new one is rare.",
+        "description": "To understand crypto's potential as an asset class, you need the history of the other asset classes. Grasping how rarely one can catch an asset class in its infancy shows how much the opportunity is worth.",
+        "key_points": [
+          "It all begins with humans moving from nomads to farmers and specialising in crafts",
+          "The barter economy was highly inefficient - it took time to agree how much wool equalled a few axes",
+          "The solution came with money, the first true forms being gold and silver",
+          "The crypto sector is growing now because it is eating into the capital of every other asset class",
+          "There is no way to know when it will peak, but growth from these levels over the long run looks inevitable"
+        ],
+        "example": "Even the greatest investor in history, Warren Buffett, who avoids bonds, has said he made a mistake in the early 1980s by not putting larger sums into them - yields were 15-20% a year and inflation risk was starting to fall sharply.",
+        "blocks": [
+          {
+            "title": "Asset classes in order of emergence",
+            "items": [
+              "Commodities - oil, meat, milk, wool, timber, gold, silver, wheat, water",
+              "Real estate - already with the Sumerians and Egyptians, with rights recorded on stone tablets",
+              "Bonds - from 1100 in Venice; a loan that can be traded between people",
+              "Equities - from 17th-century Amsterdam; a micro-share of a business",
+              "Crypto - the newest asset class"
+            ]
+          }
+        ]
+      },
+      "network_value": {
+        "title": "What determines the potential of a cryptocurrency",
+        "overview": "Raoul Pal's formula and Metcalfe's law.",
+        "description": "The value of a network can be tracked through two easily obtained metrics. The model derives from Metcalfe's law, which holds that the value of a computer network is directly tied to the number of nodes in the system.",
+        "key_points": [
+          "The formula is: active users × traded volume",
+          "The model was first tested on Bitcoin and the correlation with price is visibly enormous",
+          "It tracks value development even for projects such as XRP and Polkadot",
+          "This demonstrates that market capitalisation is set by the number of users multiplied by trading volume",
+          "Crypto's growth is compared with the early growth of the internet"
+        ],
+        "example": "The internet grew at 78% a year early on and gathered 119 million users in its first 6 years. Over the same span the crypto market grew at 137% and by the end of 2021 had 295 million users. If adoption slows to 43% a year - the internet's rate - crypto would have 1.2 billion users by the end of 2026.",
+        "data_points": [
+          "The internet: 500 million users in its first 11 years - the fastest-growing technology in history to that point",
+          "The DeFi sector is USD 224 billion while the whole crypto sector is USD 2.1 trillion - nearly 9 times larger",
+          "If crypto grows tenfold, DeFi's potential relative to current levels is 100-fold"
+        ]
+      },
+      "bitcoin_one_million": {
+        "title": "How possible is it for Bitcoin to reach 1 million",
+        "overview": "The arithmetic showing what share of global wealth that would be.",
+        "description": "The criticism that 'Bitcoin cannot reach 1 million because nobody will let it take over the world' is not supported by facts. To judge, you first need to know the current size of global assets.",
+        "key_points": [
+          "According to McKinsey, global assets total USD 510 trillion (2020 data, published in late 2021)",
+          "The crypto market is USD 2.1 trillion, or about 0.5% of that, with Bitcoin roughly half of it",
+          "Gold's market capitalisation is estimated at USD 10-12 trillion",
+          "Bitcoin at USD 500,000 means a capitalisation of only USD 8 trillion",
+          "The only thing that would prevent this is central banks and governments banning it - and the opposite is currently happening"
+        ],
+        "example": "If we assume 3 million of the 19 million mined Bitcoin are lost, 16 million remain. Multiplied by USD 1 million, that gives USD 16 trillion - about 3.3% of all monetary wealth. That is a long way from 'taking over the world'."
+      },
+      "ethereum_risk": {
+        "title": "The risk in the Ethereum network",
+        "overview": "Falling dominance as the principal risk for Ether holders.",
+        "description": "The value of Ether is directly tied to the usage of the network. That makes Ethereum's declining share of the Smart Contract sector a measurable risk, even when everything appears fine on the surface.",
+        "key_points": [
+          "In early 2021 dominance was 97% - effectively a monopoly",
+          "By June 2021 it was 70%",
+          "In early January 2022 it was 62%",
+          "In early April 2022 it was 53%",
+          "The Smart Contract sector has greater potential than Bitcoin, but also considerably greater risk"
+        ],
+        "example": "As a golden rule, remember that risk comes first and return second. Risk is lowest with Bitcoin, then Ethereum, because those are the leaders in Store of Value and Smart Contract."
+      },
+      "btc_eth_ratio": {
+        "title": "How to judge whether to hold Bitcoin or Ether",
+        "overview": "The ETH/BTC ratio, by analogy with gold/silver.",
+        "description": "The ratio of Ether's price to Bitcoin's helps judge which of the two is the better choice at a given moment. The idea comes from the gold/silver ratio chart.",
+        "key_points": [
+          "With gold/silver, a level above 80 has historically been a good moment to buy silver",
+          "A level below 40 is a good moment to sell silver and buy gold with it",
+          "A level of 80 means 80 ounces of silver are needed for one ounce of gold",
+          "With ETH/BTC the historical spikes exceed 0.10 - once to 0.15, a second time to around 0.12",
+          "Above 0.10 Ether becomes overvalued relative to Bitcoin",
+          "'Altcoin' means everything except Bitcoin, and lately everything except Bitcoin and Ether"
+        ],
+        "example": "A level of 0.15 means one Ether costs 15% of one Bitcoin. If Bitcoin is at USD 100,000, Ether would be at USD 15,000."
+      },
+      "crypto_index_fund": {
+        "title": "What a crypto index fund is",
+        "overview": "Diversification across the whole market with minimised risk.",
+        "description": "The instrument that lets you profit from a rise in the whole market with reduced risk. The money is spread across many different crypto assets rather than just one or a few.",
+        "key_points": [
+          "If one asset fails, the large basket protects the portfolio from a severe loss",
+          "Indexing comes from traditional finance: on 1 May 1975 Jack Bogle created the Vanguard S&P 500",
+          "Investing in those 500 companies is a proven route to 8-10% annual returns with minimised risk",
+          "You do not need deep knowledge to earn from altcoin returns",
+          "Indexing usually covers the top 10 or 20 assets by market cap; if number 19 drops out, it is replaced",
+          "There are no minimum deposits, which helps investors with smaller capital",
+          "Drawbacks: fees of around 0.5% and a lack of decentralization in the most-used options"
+        ],
+        "example": "The first tokenised crypto index fund in history is Invictus Capital's, with the C20 token. It lets you buy the 20 largest crypto assets, with code rebalancing the portfolio weekly and no asset exceeding 10%. Stablecoins such as Tether, USDC and BinanceUSD are excluded from the selection."
+      },
+      "project_analysis": {
+        "title": "A step-by-step analysis of crypto projects",
+        "overview": "The steps and metrics that separate investing from speculation.",
+        "description": "The crypto world is still in its infancy and any assessment of a new technology's potential is uncertain. However many metrics you study, the risk remains enormous for anything outside the circle of Bitcoin and Ether.",
+        "key_points": [
+          "Following rules and precise metrics is what separates an investment from pure speculation",
+          "If something solves no problem, it rests on marketing or speculation and has no fundamentals behind it",
+          "Transaction volume is a key indicator of network value - but you must be sure it is not manipulated",
+          "The number of active wallets indirectly shows the user count; it always exceeds the real number of people",
+          "You want to see a steadily rising number of active wallets",
+          "Decentralization has two fronts: node count and distribution of ownership of the unlocked supply",
+          "Community strength is checked on Twitter, YouTube, Discord and Instagram"
+        ],
+        "example": "Profit redistribution mechanisms are decisive for a token's value: the inflationary model (new emission) pays rewards by creating new tokens and dilutes value; buyback and burn repurchases and destroys tokens, making the rest scarcer (the analogue of share repurchasing); buyback and distribute repurchases and sends the tokens to holders in proportion to their stake.",
+        "blocks": [
+          {
+            "title": "The steps in analysing a crypto project",
+            "items": [
+              "1. What problem the project solves, and why",
+              "2. Who the competitors are and how it compares",
+              "3. What the transaction volume is",
+              "4. What the number of active wallets is",
+              "5. How the project's accumulated income is paid out",
+              "6. How decentralized the network is - by node count and by ownership distribution",
+              "7. How strong and engaged the community around the project is"
+            ]
+          }
+        ]
+      },
+      "prelaunch_analysis": {
+        "title": "A detailed analysis of an unlaunched project",
+        "overview": "What to check before buying at an ICO or IDO.",
+        "description": "ICO and IDO mean buying tokens before they become public, which provides the project's initial funding. Assessment here is even more uncertain, which makes the steps even more important.",
+        "key_points": [
+          "Step one: what problem the project solves - if it solves none, there is no reason for people to fund it",
+          "Investing on euphoria, marketing or price manipulation is pure speculation",
+          "Step two: assess the competition and whether it is better than the project",
+          "Step three: who stands behind the project - developers and investors",
+          "An established figure in crypto circles is a good sign, but never a guarantee of anything",
+          "The funding method matters: the fairest is random distribution",
+          "Funding through venture capital firms or angel investors creates centralization and a corporate environment that committed crypto supporters avoid"
+        ],
+        "example": "In traditional mining, those who spend more energy earn more - a random but fair distribution mechanism, unlike pre-allocated stakes handed to funds."
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+    "limits":  {
+                   "x":  20,
+                   "y":  130,
+                   "width":  1220,
+                   "height":  1330,
+                   "tileSize":  380
+               },
+    "derivatives":  {
+                        "x":  420,
+                        "y":  130,
+                        "width":  1220,
+                        "height":  1330,
+                        "tileSize":  380
+                    },
+    "derivative":  {
+                       "x":  820,
+                       "y":  130,
+                       "width":  1220,
+                       "height":  1330,
+                       "tileSize":  380
+                   },
+    "integrals":  {
+                      "x":  20,
+                      "y":  530,
+                      "width":  1220,
+                      "height":  1330,
+                      "tileSize":  380
+                  },
+    "integral":  {
+                     "x":  420,
+                     "y":  530,
+                     "width":  1220,
+                     "height":  1330,
+                     "tileSize":  380
+                 },
+    "rate_of_change":  {
+                           "x":  820,
+                           "y":  530,
+                           "width":  1220,
+                           "height":  1330,
+                           "tileSize":  380
+                       },
+    "area_under_the_curve":  {
+                                 "x":  20,
+                                 "y":  930,
+                                 "width":  1220,
+                                 "height":  1330,
+                                 "tileSize":  380
+                             }
+}

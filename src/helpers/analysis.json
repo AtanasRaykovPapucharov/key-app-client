@@ -1,0 +1,242 @@
+{
+  "company_analysis_framework": {
+    "1_business_basics": {
+      "description": "Understand what the company does and its competitive position.",
+      "metrics": [
+        "industry",
+        "business_model",
+        "products_services",
+        "geographic_exposure",
+        "market_share",
+        "competitive_advantages_moat",
+        "management_quality",
+        "insider_ownership",
+        "institutional_ownership",
+        "esg_factors"
+      ]
+    },
+
+    "2_size_and_market_metrics": {
+      "description": "Measure company size and market perception.",
+      "metrics": {
+        "market_cap": "share_price * shares_outstanding",
+        "enterprise_value": "market_cap + total_debt - cash",
+        "free_float": "publicly_tradable_shares",
+        "shares_outstanding": "total_issued_shares",
+        "beta": "volatility_vs_market"
+      }
+    },
+
+    "3_revenue_and_growth": {
+      "description": "Evaluate growth trends.",
+      "metrics": {
+        "revenue_growth_yoy": "(revenue_t - revenue_t_minus_1) / revenue_t_minus_1",
+        "revenue_cagr": "compound_annual_growth_rate",
+        "organic_revenue_growth": null,
+        "segment_growth": null,
+        "geographic_growth": null,
+        "customer_growth": null,
+        "market_share_growth": null,
+        "eps_growth": null,
+        "fcf_growth": null
+      }
+    },
+
+    "4_profitability": {
+      "description": "Measure profitability and capital efficiency.",
+      "margins": {
+        "gross_margin": "gross_profit / revenue",
+        "operating_margin": "operating_income / revenue",
+        "ebitda_margin": "ebitda / revenue",
+        "net_margin": "net_income / revenue",
+        "fcf_margin": "free_cash_flow / revenue"
+      },
+      "returns": {
+        "roe": "net_income / shareholders_equity",
+        "roa": "net_income / total_assets",
+        "roic": "nopat / invested_capital",
+        "roce": "ebit / capital_employed"
+      }
+    },
+
+    "5_liquidity": {
+      "description": "Assess short-term financial health.",
+      "metrics": {
+        "current_ratio": "current_assets / current_liabilities",
+        "quick_ratio": "(cash + receivables) / current_liabilities",
+        "cash_ratio": "cash / current_liabilities"
+      }
+    },
+
+    "6_solvency_and_debt": {
+      "description": "Assess long-term financial stability.",
+      "metrics": {
+        "debt_to_equity": "total_debt / shareholders_equity",
+        "debt_to_assets": "total_debt / total_assets",
+        "debt_to_capital": "total_debt / (total_debt + equity)",
+        "net_debt": "total_debt - cash",
+        "net_debt_to_ebitda": "net_debt / ebitda",
+        "interest_coverage": "ebit / interest_expense",
+        "debt_service_coverage": "operating_income / debt_service"
+      }
+    },
+
+    "7_efficiency": {
+      "description": "Measure operational efficiency.",
+      "metrics": {
+        "asset_turnover": "revenue / total_assets",
+        "inventory_turnover": "cogs / average_inventory",
+        "receivables_turnover": "revenue / average_receivables",
+        "payables_turnover": "cogs / average_payables",
+        "working_capital_turnover": "revenue / working_capital",
+        "cash_conversion_cycle": "dio + dso - dpo",
+        "days_inventory_outstanding": null,
+        "days_sales_outstanding": null,
+        "days_payable_outstanding": null
+      }
+    },
+
+    "8_cash_flow": {
+      "description": "Evaluate cash generation quality.",
+      "metrics": {
+        "operating_cash_flow": null,
+        "operating_cash_flow_growth": null,
+        "operating_cash_flow_margin": "operating_cash_flow / revenue",
+        "free_cash_flow": "operating_cash_flow - capital_expenditures",
+        "free_cash_flow_growth": null,
+        "free_cash_flow_margin": "free_cash_flow / revenue",
+        "free_cash_flow_yield": "free_cash_flow / market_cap",
+        "cash_conversion": "operating_cash_flow / net_income",
+        "owner_earnings": "net_income + depreciation - capex - working_capital_changes"
+      }
+    },
+
+    "9_valuation": {
+      "description": "Determine how expensive or cheap the stock is.",
+      "earnings_based": {
+        "pe_ratio": "share_price / eps",
+        "forward_pe": null,
+        "peg_ratio": "pe_ratio / earnings_growth_rate",
+        "shiller_pe": null
+      },
+      "sales_based": {
+        "price_to_sales": "market_cap / revenue",
+        "ev_to_sales": "enterprise_value / revenue"
+      },
+      "cashflow_based": {
+        "price_to_fcf": "market_cap / free_cash_flow",
+        "ev_to_fcf": "enterprise_value / free_cash_flow",
+        "fcf_yield": "free_cash_flow / market_cap"
+      },
+      "asset_based": {
+        "price_to_book": "market_cap / book_value",
+        "price_to_tangible_book": "market_cap / tangible_book_value"
+      },
+      "enterprise_value_based": {
+        "ev_to_ebitda": "enterprise_value / ebitda",
+        "ev_to_ebit": "enterprise_value / ebit",
+        "ev_to_nopat": "enterprise_value / nopat"
+      }
+    },
+
+    "10_dividends": {
+      "description": "Analyze dividend sustainability and growth.",
+      "metrics": {
+        "dividend_yield": "annual_dividend_per_share / share_price",
+        "dividend_growth_rate": null,
+        "dividend_cagr": null,
+        "payout_ratio": "dividends / net_income",
+        "cash_payout_ratio": "dividends / free_cash_flow",
+        "dividend_coverage_ratio": "earnings / dividends"
+      }
+    },
+
+    "11_shareholder_returns": {
+      "description": "Measure total capital return to shareholders.",
+      "metrics": {
+        "buyback_yield": "share_reduction_value / market_cap",
+        "share_count_reduction": null,
+        "dividend_yield": null,
+        "total_shareholder_yield": "dividend_yield + buyback_yield - dilution_yield"
+      }
+    },
+
+    "12_earnings_quality": {
+      "description": "Assess reliability of reported earnings.",
+      "metrics": {
+        "accrual_ratio": null,
+        "cash_conversion_ratio": "operating_cash_flow / net_income",
+        "ocf_to_net_income": "operating_cash_flow / net_income",
+        "fcf_to_net_income": "free_cash_flow / net_income"
+      }
+    },
+
+    "13_growth_quality": {
+      "description": "Assess sustainability of growth.",
+      "metrics": {
+        "revenue_cagr": null,
+        "earnings_growth": null,
+        "eps_growth": null,
+        "fcf_growth": null,
+        "roic_trend": null,
+        "margin_expansion": null
+      }
+    },
+
+    "14_economic_moat": {
+      "description": "Indicators of durable competitive advantage.",
+      "metrics": {
+        "roic_above_15_percent": true,
+        "stable_gross_margin": true,
+        "low_debt": true,
+        "high_fcf_conversion": true,
+        "pricing_power": true,
+        "network_effects": true,
+        "brand_strength": true
+      }
+    },
+
+    "15_risk_analysis": {
+      "description": "Identify business and financial risks.",
+      "metrics": [
+        "beta",
+        "debt_maturity_schedule",
+        "customer_concentration",
+        "supplier_concentration",
+        "geographic_risk",
+        "regulatory_risk",
+        "foreign_exchange_exposure",
+        "commodity_exposure",
+        "litigation_risk",
+        "cybersecurity_risk"
+      ]
+    },
+
+    "16_advanced_metrics": {
+      "description": "Institutional-grade valuation and quality measures.",
+      "metrics": {
+        "nopat": "net_operating_profit_after_tax",
+        "economic_profit": "nopat - capital_charge",
+        "eva": "economic_value_added",
+        "invested_capital": null,
+        "roic_spread": "roic - wacc",
+        "wacc": "weighted_average_cost_of_capital",
+        "intrinsic_value": null,
+        "dcf_value": null,
+        "reverse_dcf": null,
+        "terminal_value": null,
+        "owner_earnings": null
+      }
+    },
+
+    "17_core_investor_checklist": {
+      "business": ["understand_business_model", "competitive_moat", "management_quality"],
+      "growth": ["revenue_cagr", "eps_cagr", "fcf_cagr"],
+      "profitability": ["gross_margin", "operating_margin", "roic", "roe"],
+      "balance_sheet": ["net_debt", "net_debt_to_ebitda", "interest_coverage"],
+      "cash_flow": ["operating_cash_flow", "free_cash_flow", "free_cash_flow_yield"],
+      "valuation": ["pe_ratio", "ev_to_ebitda", "ev_to_ebit", "price_to_fcf", "peg_ratio"],
+      "quality": ["earnings_quality", "share_dilution", "buybacks", "moat_durability"]
+    }
+  }
+}

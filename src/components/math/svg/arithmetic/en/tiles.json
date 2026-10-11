@@ -1,0 +1,86 @@
+{
+    "addition":  {
+                     "x":  20,
+                     "y":  130,
+                     "width":  1220,
+                     "height":  1730,
+                     "tileSize":  380
+                 },
+    "subtraction":  {
+                        "x":  420,
+                        "y":  130,
+                        "width":  1220,
+                        "height":  1730,
+                        "tileSize":  380
+                    },
+    "multiplication":  {
+                           "x":  820,
+                           "y":  130,
+                           "width":  1220,
+                           "height":  1730,
+                           "tileSize":  380
+                       },
+    "division":  {
+                     "x":  20,
+                     "y":  530,
+                     "width":  1220,
+                     "height":  1730,
+                     "tileSize":  380
+                 },
+    "divisibility":  {
+                         "x":  420,
+                         "y":  530,
+                         "width":  1220,
+                         "height":  1730,
+                         "tileSize":  380
+                     },
+    "prime_numbers":  {
+                          "x":  820,
+                          "y":  530,
+                          "width":  1220,
+                          "height":  1730,
+                          "tileSize":  380
+                      },
+    "factors":  {
+                    "x":  20,
+                    "y":  930,
+                    "width":  1220,
+                    "height":  1730,
+                    "tileSize":  380
+                },
+    "multiples":  {
+                      "x":  420,
+                      "y":  930,
+                      "width":  1220,
+                      "height":  1730,
+                      "tileSize":  380
+                  },
+    "greatest_common_divisor":  {
+                                    "x":  820,
+                                    "y":  930,
+                                    "width":  1220,
+                                    "height":  1730,
+                                    "tileSize":  380
+                                },
+    "least_common_multiple":  {
+                                  "x":  20,
+                                  "y":  1330,
+                                  "width":  1220,
+                                  "height":  1730,
+                                  "tileSize":  380
+                              },
+    "ratios":  {
+                   "x":  420,
+                   "y":  1330,
+                   "width":  1220,
+                   "height":  1730,
+                   "tileSize":  380
+               },
+    "proportions":  {
+                        "x":  820,
+                        "y":  1330,
+                        "width":  1220,
+                        "height":  1730,
+                        "tileSize":  380
+                    }
+}

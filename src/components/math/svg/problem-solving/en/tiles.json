@@ -1,0 +1,58 @@
+{
+    "word_problems":  {
+                          "x":  20,
+                          "y":  130,
+                          "width":  1220,
+                          "height":  1330,
+                          "tileSize":  380
+                      },
+    "step_by_step":  {
+                         "x":  420,
+                         "y":  130,
+                         "width":  1220,
+                         "height":  1330,
+                         "tileSize":  380
+                     },
+    "known_values":  {
+                         "x":  820,
+                         "y":  130,
+                         "width":  1220,
+                         "height":  1330,
+                         "tileSize":  380
+                     },
+    "unknown_value":  {
+                          "x":  20,
+                          "y":  530,
+                          "width":  1220,
+                          "height":  1330,
+                          "tileSize":  380
+                      },
+    "formula":  {
+                    "x":  420,
+                    "y":  530,
+                    "width":  1220,
+                    "height":  1330,
+                    "tileSize":  380
+                },
+    "solution":  {
+                     "x":  820,
+                     "y":  530,
+                     "width":  1220,
+                     "height":  1330,
+                     "tileSize":  380
+                 },
+    "answer":  {
+                   "x":  20,
+                   "y":  930,
+                   "width":  1220,
+                   "height":  1330,
+                   "tileSize":  380
+               },
+    "check":  {
+                  "x":  420,
+                  "y":  930,
+                  "width":  1220,
+                  "height":  1330,
+                  "tileSize":  380
+              }
+}

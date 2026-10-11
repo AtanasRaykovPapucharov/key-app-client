@@ -1,0 +1,65 @@
+{
+    "sine":  {
+                 "x":  20,
+                 "y":  130,
+                 "width":  1220,
+                 "height":  1330,
+                 "tileSize":  380
+             },
+    "cosine":  {
+                   "x":  420,
+                   "y":  130,
+                   "width":  1220,
+                   "height":  1330,
+                   "tileSize":  380
+               },
+    "tangent":  {
+                    "x":  820,
+                    "y":  130,
+                    "width":  1220,
+                    "height":  1330,
+                    "tileSize":  380
+                },
+    "cotangent":  {
+                      "x":  20,
+                      "y":  530,
+                      "width":  1220,
+                      "height":  1330,
+                      "tileSize":  380
+                  },
+    "trigonometric_ratios":  {
+                                 "x":  420,
+                                 "y":  530,
+                                 "width":  1220,
+                                 "height":  1330,
+                                 "tileSize":  380
+                             },
+    "unit_circle":  {
+                        "x":  820,
+                        "y":  530,
+                        "width":  1220,
+                        "height":  1330,
+                        "tileSize":  380
+                    },
+    "trigonometric_identities":  {
+                                     "x":  20,
+                                     "y":  930,
+                                     "width":  1220,
+                                     "height":  1330,
+                                     "tileSize":  380
+                                 },
+    "law_of_sines":  {
+                         "x":  420,
+                         "y":  930,
+                         "width":  1220,
+                         "height":  1330,
+                         "tileSize":  380
+                     },
+    "law_of_cosines":  {
+                           "x":  820,
+                           "y":  930,
+                           "width":  1220,
+                           "height":  1330,
+                           "tileSize":  380
+                       }
+}

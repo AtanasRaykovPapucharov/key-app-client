@@ -1,0 +1,86 @@
+{
+    "natural_numbers":  {
+                            "x":  20,
+                            "y":  130,
+                            "width":  1220,
+                            "height":  1730,
+                            "tileSize":  380
+                        },
+    "integers":  {
+                     "x":  420,
+                     "y":  130,
+                     "width":  1220,
+                     "height":  1730,
+                     "tileSize":  380
+                 },
+    "rational_numbers":  {
+                             "x":  820,
+                             "y":  130,
+                             "width":  1220,
+                             "height":  1730,
+                             "tileSize":  380
+                         },
+    "real_numbers":  {
+                         "x":  20,
+                         "y":  530,
+                         "width":  1220,
+                         "height":  1730,
+                         "tileSize":  380
+                     },
+    "fractions":  {
+                      "x":  420,
+                      "y":  530,
+                      "width":  1220,
+                      "height":  1730,
+                      "tileSize":  380
+                  },
+    "decimals":  {
+                     "x":  820,
+                     "y":  530,
+                     "width":  1220,
+                     "height":  1730,
+                     "tileSize":  380
+                 },
+    "percentages":  {
+                        "x":  20,
+                        "y":  930,
+                        "width":  1220,
+                        "height":  1730,
+                        "tileSize":  380
+                    },
+    "absolute_value":  {
+                           "x":  420,
+                           "y":  930,
+                           "width":  1220,
+                           "height":  1730,
+                           "tileSize":  380
+                       },
+    "order_of_operations":  {
+                                "x":  820,
+                                "y":  930,
+                                "width":  1220,
+                                "height":  1730,
+                                "tileSize":  380
+                            },
+    "powers":  {
+                   "x":  20,
+                   "y":  1330,
+                   "width":  1220,
+                   "height":  1730,
+                   "tileSize":  380
+               },
+    "roots":  {
+                  "x":  420,
+                  "y":  1330,
+                  "width":  1220,
+                  "height":  1730,
+                  "tileSize":  380
+              },
+    "scientific_notation":  {
+                                "x":  820,
+                                "y":  1330,
+                                "width":  1220,
+                                "height":  1730,
+                                "tileSize":  380
+                            }
+}

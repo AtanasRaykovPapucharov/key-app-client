@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "name": "Rich Dad Poor Dad",
+      "author": "Robert T. Kiyosaki",
+      "description": "With over 32 million copies sold, this isn't narrowly about real estate, but it's the reason most real estate investors get started at all. Through the contrast between two father figures, Kiyosaki explains the difference between assets and liabilities and why real estate became his primary vehicle for building wealth.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781612680194-L.jpg",
+      "link": "https://www.amazon.com/s?k=Rich+Dad+Poor+Dad+Kiyosaki"
+    },
+    {
+      "name": "The Millionaire Real Estate Investor",
+      "author": "Gary Keller, Dave Jenks, Jay Papasan",
+      "description": "Based on interviews with over 100 real estate millionaires, this book lays out the specific financial models and mental habits of successful investors — from goal-setting to deal analysis, structured around the stages of building a portfolio: think, buy, own, and receive a million.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780071446372-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Millionaire+Real+Estate+Investor+Gary+Keller"
+    },
+    {
+      "name": "The ABCs of Real Estate Investing",
+      "author": "Ken McElroy",
+      "description": "A practical guide from an experienced multifamily real estate investor on finding the hidden profit most investors miss — how to spot a property with real potential, negotiate based on the numbers, and grow your income through property management.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781937832032-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+ABCs+of+Real+Estate+Investing+Ken+McElroy"
+    },
+    {
+      "name": "The Book on Rental Property Investing",
+      "author": "Brandon Turner",
+      "description": "With over half a million copies sold, this is a practical guide from the BiggerPockets co-founder to building wealth through rental properties. It covers the four core wealth generators of real estate — appreciation, cash flow, tax benefits, and loan paydown — plus the BRRRR method.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780990711790-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Book+on+Rental+Property+Investing+Brandon+Turner"
+    },
+    {
+      "name": "What Every Real Estate Investor Needs to Know About Cash Flow",
+      "author": "Frank Gallinelli",
+      "description": "Widely considered the textbook on financial analysis for investment property — explaining the core metrics every serious investor should know: cap rate, cash-on-cash return, internal rate of return, and how to judge whether a deal is truly worth it before you sign.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781259586187-L.jpg",
+      "link": "https://www.amazon.com/s?k=What+Every+Real+Estate+Investor+Needs+to+Know+About+Cash+Flow+Gallinelli"
+    }
+  ]
+}

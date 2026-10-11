@@ -1,0 +1,1482 @@
+{
+  "math": {
+    "title": "School Mathematics",
+    "description": "The most important topics from school mathematics",
+    "themes": [
+      {
+        "id": "numbers",
+        "title": "Numbers and Calculations",
+        "description": "Numbers and basic operations.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "natural_numbers",
+            "title": "Natural Numbers",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/en/natural_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "integers",
+            "title": "Integers",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/en/integers.svg",
+            "list": []
+          },
+          {
+            "id": "rational_numbers",
+            "title": "Rational Numbers",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/en/rational_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "real_numbers",
+            "title": "Real Numbers",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/en/real_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "fractions",
+            "title": "Fractions",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/en/fractions.svg",
+            "list": []
+          },
+          {
+            "id": "decimals",
+            "title": "Decimals",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/en/decimals.svg",
+            "list": []
+          },
+          {
+            "id": "percentages",
+            "title": "Percentages",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/en/percentages.svg",
+            "list": []
+          },
+          {
+            "id": "absolute_value",
+            "title": "Absolute Value",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/en/absolute_value.svg",
+            "list": []
+          },
+          {
+            "id": "order_of_operations",
+            "title": "Order of Operations",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/en/order_of_operations.svg",
+            "list": []
+          },
+          {
+            "id": "powers",
+            "title": "Powers",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/en/powers.svg",
+            "list": []
+          },
+          {
+            "id": "roots",
+            "title": "Roots",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/en/roots.svg",
+            "list": []
+          },
+          {
+            "id": "scientific_notation",
+            "title": "Scientific Notation",
+            "description": "",
+            "formula": "",
+            "image": "./number-concepts/en/scientific_notation.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "arithmetic",
+        "title": "Arithmetic",
+        "description": "Basic mathematical operations and number properties.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "addition",
+            "title": "Addition",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/en/addition.svg",
+            "list": []
+          },
+          {
+            "id": "subtraction",
+            "title": "Subtraction",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/en/subtraction.svg",
+            "list": []
+          },
+          {
+            "id": "multiplication",
+            "title": "Multiplication",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/en/multiplication.svg",
+            "list": []
+          },
+          {
+            "id": "division",
+            "title": "Division",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/en/division.svg",
+            "list": []
+          },
+          {
+            "id": "divisibility",
+            "title": "Divisibility",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/en/divisibility.svg",
+            "list": []
+          },
+          {
+            "id": "prime_numbers",
+            "title": "Prime Numbers",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/en/prime_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "factors",
+            "title": "Factors",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/en/factors.svg",
+            "list": []
+          },
+          {
+            "id": "multiples",
+            "title": "Multiples",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/en/multiples.svg",
+            "list": []
+          },
+          {
+            "id": "greatest_common_divisor",
+            "title": "Greatest Common Divisor",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/en/greatest_common_divisor.svg",
+            "list": []
+          },
+          {
+            "id": "least_common_multiple",
+            "title": "Least Common Multiple",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/en/least_common_multiple.svg",
+            "list": []
+          },
+          {
+            "id": "ratios",
+            "title": "Ratios",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/en/ratios.svg",
+            "list": []
+          },
+          {
+            "id": "proportions",
+            "title": "Proportions",
+            "description": "",
+            "formula": "",
+            "image": "./arithmetic/en/proportions.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "algebra",
+        "title": "Algebra",
+        "description": "Expressions, equations, inequalities and algebraic structures.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "variables",
+            "title": "Variables",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/en/variables.svg",
+            "list": []
+          },
+          {
+            "id": "algebraic_expressions",
+            "title": "Algebraic Expressions",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/en/algebraic_expressions.svg",
+            "list": []
+          },
+          {
+            "id": "simplifying_expressions",
+            "title": "Simplifying Expressions",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/en/simplifying_expressions.svg",
+            "list": []
+          },
+          {
+            "id": "linear_equations",
+            "title": "Linear Equations",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/en/linear_equations.svg",
+            "list": []
+          },
+          {
+            "id": "quadratic_equations",
+            "title": "Quadratic Equations",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/en/quadratic_equations.svg",
+            "list": []
+          },
+          {
+            "id": "systems_of_equations",
+            "title": "Systems of Equations",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/en/systems_of_equations.svg",
+            "list": []
+          },
+          {
+            "id": "inequalities",
+            "title": "Inequalities",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/en/inequalities.svg",
+            "list": []
+          },
+          {
+            "id": "polynomials",
+            "title": "Polynomials",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/en/polynomials.svg",
+            "list": []
+          },
+          {
+            "id": "factorization",
+            "title": "Factorization",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/en/factorization.svg",
+            "list": []
+          },
+          {
+            "id": "algebraic_identities",
+            "title": "Algebraic Identities",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/en/algebraic_identities.svg",
+            "list": []
+          },
+          {
+            "id": "sequences",
+            "title": "Sequences",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/en/sequences.svg",
+            "list": []
+          },
+          {
+            "id": "arithmetic_sequence",
+            "title": "Arithmetic Sequence",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/en/arithmetic_sequence.svg",
+            "list": []
+          },
+          {
+            "id": "geometric_sequence",
+            "title": "Geometric Sequence",
+            "description": "",
+            "formula": "",
+            "image": "./algebra/en/geometric_sequence.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "functions",
+        "title": "Functions",
+        "description": "Functions, their properties and graphs.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "function",
+            "title": "Function",
+            "description": "",
+            "formula": "",
+            "image": "./functions/en/function.svg",
+            "list": []
+          },
+          {
+            "id": "domain",
+            "title": "Domain",
+            "description": "",
+            "formula": "",
+            "image": "./functions/en/domain.svg",
+            "list": []
+          },
+          {
+            "id": "range",
+            "title": "Range",
+            "description": "",
+            "formula": "",
+            "image": "./functions/en/range.svg",
+            "list": []
+          },
+          {
+            "id": "linear_function",
+            "title": "Linear Function",
+            "description": "",
+            "formula": "",
+            "image": "./functions/en/linear_function.svg",
+            "list": []
+          },
+          {
+            "id": "quadratic_function",
+            "title": "Quadratic Function",
+            "description": "",
+            "formula": "",
+            "image": "./functions/en/quadratic_function.svg",
+            "list": []
+          },
+          {
+            "id": "exponential_function",
+            "title": "Exponential Function",
+            "description": "",
+            "formula": "",
+            "image": "./functions/en/exponential_function.svg",
+            "list": []
+          },
+          {
+            "id": "graph",
+            "title": "Graph",
+            "description": "",
+            "formula": "",
+            "image": "./functions/en/graph.svg",
+            "list": []
+          },
+          {
+            "id": "slope",
+            "title": "Slope",
+            "description": "",
+            "formula": "",
+            "image": "./functions/en/slope.svg",
+            "list": []
+          },
+          {
+            "id": "intercept",
+            "title": "Intercept",
+            "description": "",
+            "formula": "",
+            "image": "./functions/en/intercept.svg",
+            "list": []
+          },
+          {
+            "id": "zeros_of_a_function",
+            "title": "Zeros of a Function",
+            "description": "",
+            "formula": "",
+            "image": "./functions/en/zeros_of_a_function.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "geometry",
+        "title": "Geometry",
+        "description": "Shapes, angles, measurements and geometric properties.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "points",
+            "title": "Points",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/en/points.svg",
+            "list": []
+          },
+          {
+            "id": "lines",
+            "title": "Lines",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/en/lines.svg",
+            "list": []
+          },
+          {
+            "id": "line_segments",
+            "title": "Line Segments",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/en/line_segments.svg",
+            "list": []
+          },
+          {
+            "id": "angles",
+            "title": "Angles",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/en/angles.svg",
+            "list": []
+          },
+          {
+            "id": "triangles",
+            "title": "Triangles",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/en/triangles.svg",
+            "list": []
+          },
+          {
+            "id": "quadrilaterals",
+            "title": "Quadrilaterals",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/en/quadrilaterals.svg",
+            "list": []
+          },
+          {
+            "id": "polygons",
+            "title": "Polygons",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/en/polygons.svg",
+            "list": []
+          },
+          {
+            "id": "circles",
+            "title": "Circles",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/en/circles.svg",
+            "list": []
+          },
+          {
+            "id": "perimeter",
+            "title": "Perimeter",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/en/perimeter.svg",
+            "list": []
+          },
+          {
+            "id": "area",
+            "title": "Area",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/en/area.svg",
+            "list": []
+          },
+          {
+            "id": "volume",
+            "title": "Volume",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/en/volume.svg",
+            "list": []
+          },
+          {
+            "id": "congruence",
+            "title": "Congruence",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/en/congruence.svg",
+            "list": []
+          },
+          {
+            "id": "similarity",
+            "title": "Similarity",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/en/similarity.svg",
+            "list": []
+          },
+          {
+            "id": "symmetry",
+            "title": "Symmetry",
+            "description": "",
+            "formula": "",
+            "image": "./geometry/en/symmetry.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "golden_ratio",
+        "title": "Golden Ratio",
+        "description": "The special proportion φ ≈ 1.618 that appears in geometry, nature, and art.",
+        "formula": "φ = (1 + √5) / 2",
+        "image": "",
+        "list": [
+          {
+            "id": "what_is_the_golden_ratio",
+            "title": "What Is the Golden Ratio?",
+            "description": "A line cut so that the whole is to the larger part as the larger is to the smaller.",
+            "formula": "(a + b) : a = a : b = φ",
+            "image": "./golden-ratio/en/what_is_the_golden_ratio.svg",
+            "list": []
+          },
+          {
+            "id": "golden_rectangle",
+            "title": "The Golden Rectangle",
+            "description": "A rectangle whose sides are in the ratio φ : 1 and whose layout repeats after a square is cut off.",
+            "formula": "φ : 1 = 1 : (φ − 1)",
+            "image": "./golden-ratio/en/golden_rectangle.svg",
+            "list": []
+          },
+          {
+            "id": "golden_spiral",
+            "title": "The Golden Spiral",
+            "description": "A spiral built from quarter-circles inside nested squares that grow by a factor of φ.",
+            "formula": "radius × φ every quarter turn",
+            "image": "./golden-ratio/en/golden_spiral.svg",
+            "list": []
+          },
+          {
+            "id": "fibonacci_numbers",
+            "title": "Fibonacci Numbers",
+            "description": "The sequence whose ratios approach φ as the numbers grow.",
+            "formula": "F(n) = F(n−1) + F(n−2)",
+            "image": "./golden-ratio/en/fibonacci_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "golden_ratio_in_a_face",
+            "title": "The Golden Ratio in a Face",
+            "description": "Artists use φ to guide the placement of key facial features in portraits.",
+            "formula": "b : a ≈ φ",
+            "image": "./golden-ratio/en/golden_ratio_in_a_face.svg",
+            "list": []
+          },
+          {
+            "id": "composition_in_painting",
+            "title": "Composition in Painting",
+            "description": "Dividing a canvas by φ gives strong lines for placing the focal elements.",
+            "formula": "width ÷ φ marks the strong line",
+            "image": "./golden-ratio/en/composition_in_painting.svg",
+            "list": []
+          },
+          {
+            "id": "golden_triangle",
+            "title": "The Golden Triangle",
+            "description": "An isosceles triangle with angles 36°, 72°, and 72° whose equal sides are in golden ratio to the base.",
+            "formula": "leg : base = φ",
+            "image": "./golden-ratio/en/golden_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "the_number_phi",
+            "title": "The Number φ",
+            "description": "The positive solution to x² = x + 1, also written as (1 + √5) / 2.",
+            "formula": "φ² = φ + 1",
+            "image": "./golden-ratio/en/the_number_phi.svg",
+            "list": []
+          },
+          {
+            "id": "golden_angle",
+            "title": "The Golden Angle",
+            "description": "A full turn split in the golden ratio gives an angle of about 137.5°.",
+            "formula": "360° ÷ φ² ≈ 137.5°",
+            "image": "./golden-ratio/en/golden_angle.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "triangles",
+        "title": "Triangles",
+        "description": "Types and properties of triangles.",
+        "formula": "a² + b² = c²",
+        "image": "",
+        "list": [
+          {
+            "id": "equilateral_triangle",
+            "title": "Equilateral Triangle",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/en/equilateral_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "isosceles_triangle",
+            "title": "Isosceles Triangle",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/en/isosceles_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "scalene_triangle",
+            "title": "Scalene Triangle",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/en/scalene_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "right_triangle",
+            "title": "Right Triangle",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/en/right_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "pythagorean_theorem",
+            "title": "Pythagorean Theorem",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/en/pythagorean_theorem.svg",
+            "list": []
+          },
+          {
+            "id": "triangle_inequality",
+            "title": "Triangle Inequality",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/en/triangle_inequality.svg",
+            "list": []
+          },
+          {
+            "id": "altitude",
+            "title": "Altitude",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/en/altitude.svg",
+            "list": []
+          },
+          {
+            "id": "median",
+            "title": "Median",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/en/median.svg",
+            "list": []
+          },
+          {
+            "id": "angle_bisector",
+            "title": "Angle Bisector",
+            "description": "",
+            "formula": "",
+            "image": "./triangles/en/angle_bisector.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "quadrilaterals",
+        "title": "Quadrilaterals",
+        "description": "Four-sided geometric figures.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "square",
+            "title": "Square",
+            "description": "",
+            "formula": "",
+            "image": "./quadrilaterals/en/square.svg",
+            "list": []
+          },
+          {
+            "id": "rectangle",
+            "title": "Rectangle",
+            "description": "",
+            "formula": "",
+            "image": "./quadrilaterals/en/rectangle.svg",
+            "list": []
+          },
+          {
+            "id": "parallelogram",
+            "title": "Parallelogram",
+            "description": "",
+            "formula": "",
+            "image": "./quadrilaterals/en/parallelogram.svg",
+            "list": []
+          },
+          {
+            "id": "rhombus",
+            "title": "Rhombus",
+            "description": "",
+            "formula": "",
+            "image": "./quadrilaterals/en/rhombus.svg",
+            "list": []
+          },
+          {
+            "id": "trapezoid",
+            "title": "Trapezoid",
+            "description": "",
+            "formula": "",
+            "image": "./quadrilaterals/en/trapezoid.svg",
+            "list": []
+          },
+          {
+            "id": "kite",
+            "title": "Kite",
+            "description": "",
+            "formula": "",
+            "image": "./quadrilaterals/en/kite.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "circle",
+        "title": "Circle",
+        "description": "Properties and measurements of circles.",
+        "formula": "C = 2πr, A = πr²",
+        "image": "",
+        "list": [
+          {
+            "id": "radius",
+            "title": "Radius",
+            "description": "",
+            "formula": "",
+            "image": "./circle/en/radius.svg",
+            "list": []
+          },
+          {
+            "id": "diameter",
+            "title": "Diameter",
+            "description": "",
+            "formula": "",
+            "image": "./circle/en/diameter.svg",
+            "list": []
+          },
+          {
+            "id": "circumference",
+            "title": "Circumference",
+            "description": "",
+            "formula": "",
+            "image": "./circle/en/circumference.svg",
+            "list": []
+          },
+          {
+            "id": "area",
+            "title": "Area",
+            "description": "",
+            "formula": "",
+            "image": "./circle/en/area.svg",
+            "list": []
+          },
+          {
+            "id": "arc",
+            "title": "Arc",
+            "description": "",
+            "formula": "",
+            "image": "./circle/en/arc.svg",
+            "list": []
+          },
+          {
+            "id": "chord",
+            "title": "Chord",
+            "description": "",
+            "formula": "",
+            "image": "./circle/en/chord.svg",
+            "list": []
+          },
+          {
+            "id": "central_angle",
+            "title": "Central Angle",
+            "description": "",
+            "formula": "",
+            "image": "./circle/en/central_angle.svg",
+            "list": []
+          },
+          {
+            "id": "inscribed_angle",
+            "title": "Inscribed Angle",
+            "description": "",
+            "formula": "",
+            "image": "./circle/en/inscribed_angle.svg",
+            "list": []
+          },
+          {
+            "id": "pi",
+            "title": "Pi",
+            "description": "",
+            "formula": "",
+            "image": "./circle/en/pi.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "solid_geometry",
+        "title": "Solid Geometry",
+        "description": "Three-dimensional shapes and measurements.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "cube",
+            "title": "Cube",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/en/cube.svg",
+            "list": []
+          },
+          {
+            "id": "cuboid",
+            "title": "Cuboid",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/en/cuboid.svg",
+            "list": []
+          },
+          {
+            "id": "prism",
+            "title": "Prism",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/en/prism.svg",
+            "list": []
+          },
+          {
+            "id": "pyramid",
+            "title": "Pyramid",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/en/pyramid.svg",
+            "list": []
+          },
+          {
+            "id": "cylinder",
+            "title": "Cylinder",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/en/cylinder.svg",
+            "list": []
+          },
+          {
+            "id": "cone",
+            "title": "Cone",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/en/cone.svg",
+            "list": []
+          },
+          {
+            "id": "sphere",
+            "title": "Sphere",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/en/sphere.svg",
+            "list": []
+          },
+          {
+            "id": "surface_area",
+            "title": "Surface Area",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/en/surface_area.svg",
+            "list": []
+          },
+          {
+            "id": "volume",
+            "title": "Volume",
+            "description": "",
+            "formula": "",
+            "image": "./solid-geometry/en/volume.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "coordinate_geometry",
+        "title": "Coordinate Geometry",
+        "description": "Geometry using coordinates and equations.",
+        "formula": "d = √((x₂-x₁)² + (y₂-y₁)²)",
+        "image": "",
+        "list": [
+          {
+            "id": "coordinate_plane",
+            "title": "Coordinate Plane",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/en/coordinate_plane.svg",
+            "list": []
+          },
+          {
+            "id": "x_axis",
+            "title": "x-axis",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/en/x_axis.svg",
+            "list": []
+          },
+          {
+            "id": "y_axis",
+            "title": "y-axis",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/en/y_axis.svg",
+            "list": []
+          },
+          {
+            "id": "coordinates",
+            "title": "Coordinates",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/en/coordinates.svg",
+            "list": []
+          },
+          {
+            "id": "distance_between_points",
+            "title": "Distance Between Points",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/en/distance_between_points.svg",
+            "list": []
+          },
+          {
+            "id": "midpoint",
+            "title": "Midpoint",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/en/midpoint.svg",
+            "list": []
+          },
+          {
+            "id": "slope",
+            "title": "Slope",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/en/slope.svg",
+            "list": []
+          },
+          {
+            "id": "equation_of_a_line",
+            "title": "Equation of a Line",
+            "description": "",
+            "formula": "",
+            "image": "./coordinate-geometry/en/equation_of_a_line.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "trigonometry",
+        "title": "Trigonometry",
+        "description": "Relationships between angles and sides.",
+        "formula": "sin²x + cos²x = 1",
+        "image": "",
+        "list": [
+          {
+            "id": "sine",
+            "title": "Sine",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/en/sine.svg",
+            "list": []
+          },
+          {
+            "id": "cosine",
+            "title": "Cosine",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/en/cosine.svg",
+            "list": []
+          },
+          {
+            "id": "tangent",
+            "title": "Tangent",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/en/tangent.svg",
+            "list": []
+          },
+          {
+            "id": "cotangent",
+            "title": "Cotangent",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/en/cotangent.svg",
+            "list": []
+          },
+          {
+            "id": "trigonometric_ratios",
+            "title": "Trigonometric Ratios",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/en/trigonometric_ratios.svg",
+            "list": []
+          },
+          {
+            "id": "unit_circle",
+            "title": "Unit Circle",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/en/unit_circle.svg",
+            "list": []
+          },
+          {
+            "id": "trigonometric_identities",
+            "title": "Trigonometric Identities",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/en/trigonometric_identities.svg",
+            "list": []
+          },
+          {
+            "id": "law_of_sines",
+            "title": "Law of Sines",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/en/law_of_sines.svg",
+            "list": []
+          },
+          {
+            "id": "law_of_cosines",
+            "title": "Law of Cosines",
+            "description": "",
+            "formula": "",
+            "image": "./trigonometry/en/law_of_cosines.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "statistics",
+        "title": "Statistics",
+        "description": "Collecting, organizing and analyzing data.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "data",
+            "title": "Data",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/en/data.svg",
+            "list": []
+          },
+          {
+            "id": "mean",
+            "title": "Mean",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/en/mean.svg",
+            "list": []
+          },
+          {
+            "id": "median",
+            "title": "Median",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/en/median.svg",
+            "list": []
+          },
+          {
+            "id": "mode",
+            "title": "Mode",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/en/mode.svg",
+            "list": []
+          },
+          {
+            "id": "range",
+            "title": "Range",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/en/range.svg",
+            "list": []
+          },
+          {
+            "id": "frequency",
+            "title": "Frequency",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/en/frequency.svg",
+            "list": []
+          },
+          {
+            "id": "charts",
+            "title": "Charts",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/en/charts.svg",
+            "list": []
+          },
+          {
+            "id": "histogram",
+            "title": "Histogram",
+            "description": "",
+            "formula": "",
+            "image": "./statistics/en/histogram.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "probability",
+        "title": "Probability",
+        "description": "Measuring the likelihood of events.",
+        "formula": "P(A) = favorable outcomes / total outcomes",
+        "image": "",
+        "list": [
+          {
+            "id": "probability",
+            "title": "Probability",
+            "description": "",
+            "formula": "",
+            "image": "./probability/en/probability.svg",
+            "list": []
+          },
+          {
+            "id": "outcome",
+            "title": "Outcome",
+            "description": "",
+            "formula": "",
+            "image": "./probability/en/outcome.svg",
+            "list": []
+          },
+          {
+            "id": "event",
+            "title": "Event",
+            "description": "",
+            "formula": "",
+            "image": "./probability/en/event.svg",
+            "list": []
+          },
+          {
+            "id": "sample_space",
+            "title": "Sample Space",
+            "description": "",
+            "formula": "",
+            "image": "./probability/en/sample_space.svg",
+            "list": []
+          },
+          {
+            "id": "independent_events",
+            "title": "Independent Events",
+            "description": "",
+            "formula": "",
+            "image": "./probability/en/independent_events.svg",
+            "list": []
+          },
+          {
+            "id": "conditional_probability",
+            "title": "Conditional Probability",
+            "description": "",
+            "formula": "",
+            "image": "./probability/en/conditional_probability.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "calculus",
+        "title": "Introduction to Calculus",
+        "description": "Basic concepts of limits, derivatives and integrals.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "limits",
+            "title": "Limits",
+            "description": "",
+            "formula": "",
+            "image": "./calculus/en/limits.svg",
+            "list": []
+          },
+          {
+            "id": "derivatives",
+            "title": "Derivatives",
+            "description": "",
+            "formula": "",
+            "image": "./calculus/en/derivatives.svg",
+            "list": []
+          },
+          {
+            "id": "derivative",
+            "title": "Derivative",
+            "description": "",
+            "formula": "",
+            "image": "./calculus/en/derivative.svg",
+            "list": []
+          },
+          {
+            "id": "integrals",
+            "title": "Integrals",
+            "description": "",
+            "formula": "",
+            "image": "./calculus/en/integrals.svg",
+            "list": []
+          },
+          {
+            "id": "integral",
+            "title": "Integral",
+            "description": "",
+            "formula": "",
+            "image": "./calculus/en/integral.svg",
+            "list": []
+          },
+          {
+            "id": "rate_of_change",
+            "title": "Rate of Change",
+            "description": "",
+            "formula": "",
+            "image": "./calculus/en/rate_of_change.svg",
+            "list": []
+          },
+          {
+            "id": "area_under_the_curve",
+            "title": "Area Under the Curve",
+            "description": "",
+            "formula": "",
+            "image": "./calculus/en/area_under_the_curve.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "logic_and_proofs",
+        "title": "Logic and Proofs",
+        "description": "Mathematical reasoning and proof techniques.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "statement",
+            "title": "Statement",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/en/statement.svg",
+            "list": []
+          },
+          {
+            "id": "proof",
+            "title": "Proof",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/en/proof.svg",
+            "list": []
+          },
+          {
+            "id": "theorem",
+            "title": "Theorem",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/en/theorem.svg",
+            "list": []
+          },
+          {
+            "id": "lemma",
+            "title": "Lemma",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/en/lemma.svg",
+            "list": []
+          },
+          {
+            "id": "corollary",
+            "title": "Corollary",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/en/corollary.svg",
+            "list": []
+          },
+          {
+            "id": "direct_proof",
+            "title": "Direct Proof",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/en/direct_proof.svg",
+            "list": []
+          },
+          {
+            "id": "proof_by_contradiction",
+            "title": "Proof by Contradiction",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/en/proof_by_contradiction.svg",
+            "list": []
+          },
+          {
+            "id": "mathematical_induction",
+            "title": "Mathematical Induction",
+            "description": "",
+            "formula": "",
+            "image": "./logic-and-proofs/en/mathematical_induction.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "units",
+        "title": "Units of Measurement",
+        "description": "Common mathematical units and measurements.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "length",
+            "title": "Length",
+            "description": "",
+            "formula": "",
+            "image": "./units/en/length.svg",
+            "list": []
+          },
+          {
+            "id": "mass",
+            "title": "Mass",
+            "description": "",
+            "formula": "",
+            "image": "./units/en/mass.svg",
+            "list": []
+          },
+          {
+            "id": "time",
+            "title": "Time",
+            "description": "",
+            "formula": "",
+            "image": "./units/en/time.svg",
+            "list": []
+          },
+          {
+            "id": "area",
+            "title": "Area",
+            "description": "",
+            "formula": "",
+            "image": "./units/en/area.svg",
+            "list": []
+          },
+          {
+            "id": "volume",
+            "title": "Volume",
+            "description": "",
+            "formula": "",
+            "image": "./units/en/volume.svg",
+            "list": []
+          },
+          {
+            "id": "speed",
+            "title": "Speed",
+            "description": "",
+            "formula": "",
+            "image": "./units/en/speed.svg",
+            "list": []
+          },
+          {
+            "id": "temperature",
+            "title": "Temperature",
+            "description": "",
+            "formula": "",
+            "image": "./units/en/temperature.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "problem_solving",
+        "title": "Problem Solving",
+        "description": "Methods for solving mathematical problems.",
+        "formula": "",
+        "image": "",
+        "list": [
+          {
+            "id": "word_problems",
+            "title": "Word Problems",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/en/word_problems.svg",
+            "list": []
+          },
+          {
+            "id": "step_by_step",
+            "title": "Step by Step",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/en/step_by_step.svg",
+            "list": []
+          },
+          {
+            "id": "known_values",
+            "title": "Known Values",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/en/known_values.svg",
+            "list": []
+          },
+          {
+            "id": "unknown_value",
+            "title": "Unknown Value",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/en/unknown_value.svg",
+            "list": []
+          },
+          {
+            "id": "formula",
+            "title": "Formula",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/en/formula.svg",
+            "list": []
+          },
+          {
+            "id": "solution",
+            "title": "Solution",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/en/solution.svg",
+            "list": []
+          },
+          {
+            "id": "answer",
+            "title": "Answer",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/en/answer.svg",
+            "list": []
+          },
+          {
+            "id": "check",
+            "title": "Check",
+            "description": "",
+            "formula": "",
+            "image": "./problem-solving/en/check.svg",
+            "list": []
+          }
+        ]
+      }
+    ]
+  }
+}

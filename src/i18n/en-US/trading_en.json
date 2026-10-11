@@ -1,0 +1,535 @@
+{
+  "r_multiples": {
+    "title": "R-multiples",
+    "overview": "Measuring every trade against the risk taken, rather than in currency.",
+    "description": "R is the amount you risk on a trade, and every result is expressed relative to it. This is what lets a strategy be judged independently of account size, market or instrument.",
+    "key_points": [
+      "R is defined before the trade is placed, not after it closes",
+      "A result of +2R means the profit was twice the amount risked",
+      "Two traders with the same R-result performed equally well, whatever their capital"
+    ],
+    "subsections": {
+      "what_is_r": {
+        "title": "What is R?",
+        "overview": "R is the amount you risk on a single trade.",
+        "description": "R comes out of the entry price, the stop loss and the number of units. Once those three are set, the risk on the trade is known in advance and becomes the unit everything else is measured in.",
+        "key_points": [
+          "Entry and stop together give the risk per unit",
+          "Risk per unit multiplied by position size gives the total risk — that is 1R",
+          "Everything after that is measured relative to this number"
+        ],
+        "formula": "Risk per unit = entry − stop\n1R = risk per unit × position size",
+        "example": "Entry = $100, stop loss = $95 → risk per share = $5.\nBuying 20 shares → total risk = $100.\nTherefore 1R = $100."
+      },
+      "r_examples": {
+        "title": "Reading results in R",
+        "overview": "The same $100 of risk, four different outcomes.",
+        "description": "Once 1R is fixed at $100, every outcome converts into a multiple of it — including partial losses, where the trade was closed before the stop was reached.",
+        "key_points": [
+          "A full stop-out is always −1R by definition",
+          "Winners are expressed as whatever multiple of the risk they returned",
+          "A trade cut early produces a fraction, such as −0.5R"
+        ],
+        "example": "With 1R = $100, a $200 profit is +2R and a $500 profit is +5R.",
+        "blocks": [
+          {
+            "title": "Four outcomes at 1R = $100",
+            "items": [
+              "Losing trade — stop loss hit → −1R",
+              "Winning trade — profit $200 → +2R",
+              "Bigger winner — profit $500 → +5R",
+              "Partial loss — loss $50 → −0.5R"
+            ]
+          }
+        ]
+      },
+      "why_professionals_use_r": {
+        "title": "Why professionals think in R",
+        "overview": "A result in R is comparable; a result in dollars is not.",
+        "description": "Instead of saying 'I made $300', a professional says 'I made 3R'. That single change makes performance comparable across accounts, markets and instruments, because the currency amount has been divided out.",
+        "key_points": [
+          "Comparable across different account sizes",
+          "Comparable across different markets",
+          "Comparable across different instruments",
+          "It removes account size from any judgement of skill"
+        ],
+        "example": "A trader making +3R on a $10,000 account performed exactly as well as a trader making +3R on a $1,000,000 account."
+      },
+      "average_r": {
+        "title": "Average R",
+        "overview": "The per-trade performance metric that falls out of a sequence of results.",
+        "description": "Summing the R-results of a series of trades and dividing by the number of trades gives the average R per trade — one of the most useful performance metrics available.",
+        "key_points": [
+          "Total R shows the outcome of the whole sequence",
+          "Average R shows what one trade was worth on average",
+          "The metric holds whatever the position sizes were, because each result is already normalised"
+        ],
+        "formula": "Average R = total R / number of trades",
+        "example": "Five trades summing to +5R give an average of +1R per trade.",
+        "blocks": [
+          {
+            "title": "A five-trade sequence",
+            "items": [
+              "Trade 1 → +2R",
+              "Trade 2 → −1R",
+              "Trade 3 → +4R",
+              "Trade 4 → −1R",
+              "Trade 5 → +1R",
+              "Total → +5R, average → +1R per trade"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "expectancy": {
+    "title": "Expectancy",
+    "overview": "What you should expect to make or lose per trade over the long run.",
+    "description": "Expectancy combines win rate with the size of the average winner and average loser. It is the reason a profitable trader can lose most of their trades and still come out ahead.",
+    "key_points": [
+      "Expectancy is expressed in R, so it is comparable across strategies",
+      "A positive expectancy means the edge is real; the rest is execution and repetition",
+      "Win rate alone says nothing about whether a strategy makes money"
+    ],
+    "subsections": {
+      "what_is_expectancy": {
+        "title": "The expectancy formula",
+        "overview": "Win rate and loss rate weighted by the size of the average winner and loser.",
+        "description": "Expectancy answers one question: how much should I expect to make or lose per trade over the long run? It is calculated from four inputs, with the winner and loser both measured in R.",
+        "key_points": [
+          "Win rate = the probability of winning",
+          "Loss rate = the probability of losing",
+          "Average winner and average loser are both measured in R",
+          "The result is the value of a single average trade"
+        ],
+        "formula": "E = (win rate × average winner) − (loss rate × average loser)",
+        "example": "A 40% win rate with a 3R average winner and a 1R average loser gives E = (0.40 × 3) − (0.60 × 1) = 1.2 − 0.6 = +0.6R per trade."
+      },
+      "worked_examples": {
+        "title": "Three worked examples",
+        "overview": "Very different win rates, all of them profitable.",
+        "description": "The three cases below show why win rate on its own is not the measure that matters. The strategy losing 70% of its trades has the strongest expectancy of the three.",
+        "key_points": [
+          "A 40% win rate at 3:1 returns +0.6R per trade",
+          "A 70% win rate at 1:1 returns +0.4R per trade",
+          "A 30% win rate at 5:1 returns +0.8R per trade — the best of the three",
+          "Over 100 trades, +0.6R per trade compounds to 60R"
+        ],
+        "example": "Example 3: win rate 30%, average winner 5R, average loser 1R.\nE = (0.30 × 5) − (0.70 × 1) = 1.5 − 0.7 = +0.8R.\nVery profitable despite losing 70% of trades.",
+        "blocks": [
+          {
+            "title": "The three cases side by side",
+            "items": [
+              "40% win rate, 3R winner, 1R loser → E = +0.6R",
+              "70% win rate, 1R winner, 1R loser → E = +0.4R",
+              "30% win rate, 5R winner, 1R loser → E = +0.8R"
+            ]
+          }
+        ]
+      },
+      "break_even_win_rate": {
+        "title": "Break-even win rate",
+        "overview": "The win rate a given reward-to-risk ratio needs just to stay level.",
+        "description": "For any reward-to-risk ratio there is a win rate below which the strategy loses money and above which it makes money. Knowing that threshold tells you what a setup actually has to achieve.",
+        "key_points": [
+          "The higher the reward-to-risk, the lower the win rate required",
+          "At 1:1 you must win more than half your trades",
+          "At 5:1 fewer than one trade in five needs to work",
+          "The threshold is a floor, not a target — clearing it is what produces positive expectancy"
+        ],
+        "formula": "Break-even win rate = 1 / (1 + reward/risk)",
+        "blocks": [
+          {
+            "title": "Break-even win rate by reward-to-risk",
+            "items": [
+              "1:1 → 50%",
+              "2:1 → 33.3%",
+              "3:1 → 25%",
+              "5:1 → 16.7%"
+            ]
+          }
+        ]
+      },
+      "why_expectancy_matters": {
+        "title": "Why expectancy matters",
+        "overview": "A high win rate can lose money; a low win rate can make money.",
+        "description": "Many traders focus on win rate because it feels like the measure of being right. Professionals focus on expectancy, because it is the only figure that accounts for how much is made when right and lost when wrong.",
+        "key_points": [
+          "A high win rate with large losers is a losing strategy",
+          "A low win rate with large winners can be highly profitable",
+          "Expectancy tells the truth where win rate flatters"
+        ],
+        "example": "A strategy winning 70% of the time but losing 3R on each loss and making 1R on each win has an expectancy of (0.70 × 1) − (0.30 × 3) = −0.2R — a losing strategy with an attractive-looking win rate."
+      }
+    }
+  },
+  "position_sizing": {
+    "title": "Position sizing based on risk",
+    "overview": "Deciding how much you can lose first, and letting that set the size.",
+    "description": "This is where many traders fail. The professional order of operations is to determine how much money can be lost on the trade, and only then calculate the position size that produces exactly that loss at the stop.",
+    "key_points": [
+      "Account risk comes first, position size second",
+      "The stop distance is a market decision; the position size is an arithmetic consequence",
+      "The same 1% rule adapts to shares, forex and futures without changing"
+    ],
+    "subsections": {
+      "account_risk": {
+        "title": "Step 1 — define account risk",
+        "overview": "What share of the account is at stake on a single trade.",
+        "description": "The first decision is a percentage of the account, chosen once and applied consistently. That percentage converts into a currency amount, and that amount is 1R.",
+        "key_points": [
+          "Conservative: 0.25–0.5% of the account",
+          "Standard: 1%",
+          "Aggressive: 2%",
+          "Whatever the choice, it defines 1R for every trade that follows"
+        ],
+        "formula": "Account risk = account size × risk percentage",
+        "example": "Account = $10,000, risk per trade = 1% → $10,000 × 1% = $100.\nSo 1R = $100."
+      },
+      "stop_distance": {
+        "title": "Step 2 — calculate stop distance",
+        "overview": "The distance between entry and stop, expressed per unit.",
+        "description": "The stop is placed where the trade idea is proven wrong, which is a decision about the market rather than about money. Its distance from the entry gives the risk carried by each unit.",
+        "key_points": [
+          "The stop location is decided by the setup, not by the amount you want to risk",
+          "The distance converts into risk per share, per pip or per point",
+          "A wider stop means a smaller position for the same account risk"
+        ],
+        "formula": "Risk per unit = entry − stop",
+        "example": "Entry = $100, stop = $95 → risk per share = $5."
+      },
+      "position_size": {
+        "title": "Step 3 — calculate position size",
+        "overview": "Account risk divided by risk per unit.",
+        "description": "With the account risk and the risk per unit both known, the position size is the one number that makes the loss at the stop equal exactly the amount decided in step one.",
+        "key_points": [
+          "The result is the largest size that keeps the loss within the defined risk",
+          "Round down rather than up when the result is not a whole number",
+          "The formula is identical whatever the instrument; only the unit changes"
+        ],
+        "formula": "Position size = account risk / risk per unit",
+        "example": "$100 of account risk ÷ $5 of risk per share = 20 shares."
+      },
+      "forex_example": {
+        "title": "Forex example",
+        "overview": "The same three steps, sized in value per pip.",
+        "description": "In forex the risk per unit is expressed per pip, so the calculation returns a value per pip, which is then matched to the nearest available lot size.",
+        "key_points": [
+          "The stop is set in pips rather than in price",
+          "Dividing the account risk by the stop in pips gives the value per pip",
+          "The lot size is chosen to approximate that value per pip"
+        ],
+        "formula": "Value per pip = account risk / stop in pips",
+        "example": "Account = $20,000, risk = 1% → $200.\nStop = 50 pips → $200 / 50 = $4 per pip.\nChoose the lot size closest to $4 per pip."
+      },
+      "futures_example": {
+        "title": "Futures example",
+        "overview": "The same three steps, sized in whole contracts.",
+        "description": "In futures the instrument fixes the value of one point, so the risk per contract is known before sizing. Because contracts are indivisible, the result is rounded down to a whole number.",
+        "key_points": [
+          "Risk per contract = stop in points × value per point",
+          "The account risk divided by the risk per contract gives the number of contracts",
+          "A fractional result is rounded down — taking 2 contracts where the maths says 1.25 breaks the risk rule"
+        ],
+        "formula": "Contracts = account risk / (stop in points × value per point)",
+        "example": "Account = $50,000, risk = 1% → $500.\nStop = 8 points, instrument = $50 per point → risk per contract = 8 × 50 = $400.\n$500 / $400 = 1.25 → trade 1 contract."
+      }
+    }
+  },
+  "putting_it_together": {
+    "title": "Putting it together",
+    "overview": "How the three concepts combine, and the numbers to record so you can tell whether a strategy has an edge.",
+    "description": "Position sizing, R-multiples and expectancy each answer a different question. Used together they turn trading results from a set of anecdotes into something that can be measured and judged.",
+    "key_points": [
+      "Position sizing controls survival",
+      "R-multiples standardise results",
+      "Expectancy measures the edge"
+    ],
+    "subsections": {
+      "combined_example": {
+        "title": "A worked example end to end",
+        "overview": "From a 1% rule to an expected annual return.",
+        "description": "Once risk per trade sets the value of 1R, and a measured expectancy sets the value of the average trade, the expected result over a number of trades follows arithmetically.",
+        "key_points": [
+          "Expectancy in R multiplied by the number of trades gives total expected R",
+          "Total R multiplied by the value of 1R gives the expected currency result",
+          "This is why performance is tracked in R rather than in dollars"
+        ],
+        "formula": "Expected profit = expectancy (R) × number of trades × value of 1R",
+        "example": "Account = $20,000, risk per trade = 1% → 1R = $200.\nExpectancy = +0.5R, over 100 trades → 100 × 0.5R = 50R.\n50 × $200 = $10,000 — an expected return of 50% on the account."
+      },
+      "trade_journal": {
+        "title": "What to record after every trade",
+        "overview": "The seven fields that make a result reviewable later.",
+        "description": "Recording the same fields after every trade is what makes the monthly numbers possible. Without the raw entries there is nothing to calculate expectancy from.",
+        "key_points": [
+          "Entry, stop and risk capture the trade as it was planned",
+          "The R result and win/loss capture how it actually ended",
+          "Setup type is what later lets you compare one kind of trade against another"
+        ],
+        "blocks": [
+          {
+            "title": "Trade journal fields, with an example row",
+            "items": [
+              "Entry — 100",
+              "Stop — 95",
+              "Risk ($) — 100",
+              "R result — +2.5R",
+              "Win / loss — Win",
+              "Setup type — Breakout",
+              "Notes — Good execution"
+            ]
+          }
+        ]
+      },
+      "monthly_review": {
+        "title": "The six numbers to calculate monthly",
+        "overview": "Know these and you can judge a strategy objectively.",
+        "description": "Every month the journal entries are aggregated into six figures. Together they answer whether the strategy has an edge, and whether the risk taken to capture it was survivable.",
+        "key_points": [
+          "The first five describe the edge; maximum drawdown describes what it cost to hold",
+          "Calculated monthly, they show whether results are stable or drifting",
+          "If you know these six numbers, judging a strategy stops being a matter of opinion"
+        ],
+        "blocks": [
+          {
+            "title": "The monthly figures",
+            "items": [
+              "Win rate",
+              "Average winner (R)",
+              "Average loser (R)",
+              "Expectancy",
+              "Total R gained or lost",
+              "Maximum drawdown"
+            ]
+          }
+        ]
+      },
+      "three_roles": {
+        "title": "The three roles, in one line each",
+        "overview": "Why all three concepts are needed, not just one.",
+        "description": "Each concept does a job the others cannot. Drop any one of them and the remaining two stop being reliable.",
+        "key_points": [
+          "Position sizing controls survival — it decides whether you are still trading after a losing run",
+          "R-multiples standardise results — they make outcomes comparable across accounts and instruments",
+          "Expectancy measures the edge — it says whether the strategy is worth repeating at all"
+        ],
+        "example": "If a strategy has positive expectancy and position sizing is disciplined, the trader's job becomes executing enough trades for that edge to play out."
+      }
+    }
+  },
+  "consolidations_breakouts": {
+    "title": "Consolidations and breakouts",
+    "overview": "Training the trader's eye to recognise in time when price breaks out.",
+    "description": "A correctly identified breakout is one of the strongest tools an active trader has. It offers an excellent balance between risk and reward, and it often unlocks explosive moves — short but highly profitable opportunities that separate a mediocre result from a genuinely impressive one.",
+    "key_points": [
+      "The skill being trained is recognition in time, not after the move has already run",
+      "Breakouts give a favourable risk-to-reward balance because the level that defines the entry also defines the risk",
+      "Reading breakouts and acting on them with discipline is what moves a trader into a higher league"
+    ],
+    "subsections": {
+      "the_traders_eye": {
+        "title": "The trader's eye",
+        "overview": "Why breakouts are worth learning to see.",
+        "description": "Price spends most of its time going nowhere in particular. A consolidation is that pause — a period where buyers and sellers are balanced and price moves inside a defined area. The breakout is the moment that balance ends, and it is one of the few moments where direction, entry and risk are all visible at once.",
+        "key_points": [
+          "A consolidation defines a boundary; the boundary is what makes the breakout identifiable",
+          "Correctly identified breakouts give an excellent risk-to-reward balance",
+          "They frequently precede explosive moves rather than gradual ones",
+          "The opportunity is often short-lived, which is why recognition has to be timely",
+          "Discipline around the level matters as much as spotting it"
+        ]
+      },
+      "horizontal_ranges": {
+        "title": "Horizontal consolidations",
+        "overview": "A flat ceiling that price tests repeatedly, then clears.",
+        "description": "The most readable form of consolidation: price stalls beneath a roughly horizontal level, building a series of highs at similar prices. Each test leaves the level more clearly defined on the chart, and the break above it is unambiguous.",
+        "key_points": [
+          "The level is drawn across the repeated highs, not through a single one",
+          "The longer and tighter the range, the cleaner the eventual break reads",
+          "Several of the examples break out with a marked expansion in volume",
+          "The same level frequently becomes support once price is above it"
+        ],
+        "example": "Broadcom consolidated in a narrow band through May 2025 before breaking out in early June and trending on toward $340.\nAlphabet held a flat level around $183 for weeks in June and July before clearing it and running to $255."
+      },
+      "trendline_breaks": {
+        "title": "Descending trendline breaks",
+        "overview": "A falling ceiling rather than a flat one.",
+        "description": "When each successive high is lower than the last, the consolidation has a sloping boundary instead of a horizontal one. The line is drawn across those declining highs, and the break happens when price closes decisively above it.",
+        "key_points": [
+          "Drawn across a series of lower highs rather than equal ones",
+          "The slope means the breakout price falls over time — waiting costs less than with a flat level",
+          "Such consolidations often form after a prior advance, as a pause rather than a reversal",
+          "A break can occur while price is still below prior highs, which is what makes it an early signal"
+        ],
+        "example": "Coinbase spent spring 2025 under a trendline falling from its February highs, broke above it in June and moved to $440.\nOklo paused under a descending line through September, broke out, and moved from around $80 to $140."
+      },
+      "chart_examples": {
+        "title": "The annotated examples",
+        "overview": "Twelve charts, each marking the consolidation and the point of the break.",
+        "description": "The examples span large caps, small caps and commodities on the daily timeframe, which is the point: the same two shapes appear regardless of instrument or price level. Each chart marks the boundary of the consolidation and arrows the bar where price cleared it.",
+        "key_points": [
+          "Both shapes appear across large caps, small caps and gold alike",
+          "Some instruments produce more than one clean setup in a single year",
+          "The 50-day and 200-day moving averages are on every chart as context for the prevailing trend",
+          "In several cases the breakout bar carries visibly heavier volume than the consolidation that preceded it"
+        ],
+        "blocks": [
+          {
+            "title": "Horizontal consolidations",
+            "items": [
+              "Broadcom — narrow band in May, break in early June, trend to $340+",
+              "Bitfarms — flat resistance near $1.40, break on a large volume expansion toward $3.20",
+              "Alphabet — level around $183 held for weeks, then a run to $255",
+              "Gold — months beneath roughly $3,450, then a break toward $3,750",
+              "NVIDIA — a level near $150 cleared in June",
+              "A flat ceiling near $500 cleared in July, price to $660"
+            ]
+          },
+          {
+            "title": "Descending trendline breaks",
+            "items": [
+              "Coinbase — line falling from the February highs, break in June, move to $440",
+              "Oklo — descending line through September, break from around $80 to $140",
+              "SuRo Capital — two separate trendline breaks, in June and again in September",
+              "NVIDIA — a second setup in September, this time a sloping boundary",
+              "A long descending line broken in September, price to $434",
+              "Gold, early 2024 — converging boundary, break in March"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "trend_vs_mean_reversion": {
+    "title": "Trend following vs mean reversion",
+    "overview": "A short guide to the strengths, weaknesses and the right choice between the two.",
+    "description": "The two approaches rest on opposite assumptions about what price does next. Trend following assumes a move in progress is more likely to continue than to reverse; mean reversion assumes price returns to its average. Both can make money, but they demand different temperaments and carry different risks.",
+    "key_points": [
+      "Trend following trades with the force of the market; mean reversion trades against it",
+      "Trend following wins rarely and large; mean reversion wins often and small",
+      "The choice determines where your losses come from, not whether you have them"
+    ],
+    "subsections": {
+      "what_is_trend_following": {
+        "title": "What is trend following?",
+        "overview": "Trading in the direction of a move that has already established itself.",
+        "description": "The strategy follows direction: it trades an existing trend rather than trying to anticipate one. Entries come on breakouts or on strong momentum, once the market has shown its hand.",
+        "key_points": [
+          "Following direction — trading a trend that is already established",
+          "Entries at breakouts or on strong impulse",
+          "The idea: a trend continues more often than it reverses"
+        ]
+      },
+      "what_is_mean_reversion": {
+        "title": "What is mean reversion?",
+        "overview": "Trading the return to fair value after a deviation.",
+        "description": "The strategy looks for a departure from the average price and positions for the return to it. Entries come at overbought or oversold levels — points where price has stretched furthest from its mean.",
+        "key_points": [
+          "Returning to fair value — looking for deviation from the average price",
+          "Entries at overbought or oversold levels",
+          "The idea: price always returns to its mean"
+        ]
+      },
+      "trend_following_pros": {
+        "title": "Trend following — strengths",
+        "overview": "Simple structure, broad applicability, and a comfortable psychological position.",
+        "description": "The appeal of trend following is that the rules are few and the same rules keep working in places they were not designed for.",
+        "key_points": [
+          "Simple structure — the rules are clear and straightforward",
+          "Universal — it works across all markets and all timeframes",
+          "Suitable for beginners as a starting point, yet used by the most experienced traders in the world",
+          "Psychology — you trade with the force of the market rather than against it"
+        ]
+      },
+      "trend_following_tradeoffs": {
+        "title": "Trend following — results and challenges",
+        "overview": "One large winner pays for a run of small losses, if you can sit through the run.",
+        "description": "The return profile is lopsided by design. That is the strength and the difficulty at once: the strategy is well documented historically, but living through the losing stretches is what most traders find hard.",
+        "key_points": [
+          "Compensation — one large profit offsets a series of small losses",
+          "Proven — a historically well-documented strategy",
+          "Frequent losses — many small losing trades",
+          "Patience — it takes discipline to wait for a trend to develop"
+        ]
+      },
+      "mean_reversion_pros": {
+        "title": "Mean reversion — strengths",
+        "overview": "More winners, shorter holding times, and excellent behaviour in ranges.",
+        "description": "Mean reversion is attractive because it produces frequent positive feedback. Trades resolve quickly and the win rate is high, which makes the equity curve feel smoother while conditions suit it.",
+        "key_points": [
+          "High frequency — there are more winning trades",
+          "Quick trades — short entries and exits",
+          "Range markets — it performs excellently while price is consolidating or ranging",
+          "Control — it gives a feeling of active control over the market"
+        ]
+      },
+      "mean_reversion_cons": {
+        "title": "Mean reversion — weaknesses",
+        "overview": "The losses are rare, large, and arrive exactly when the market trends.",
+        "description": "The mirror image of the strengths. Because the strategy positions against the prevailing move, a market that keeps going produces the losses it has no defence against.",
+        "key_points": [
+          "High risk — you are trying to catch falling knives",
+          "One bad trade can wipe out a month of profit",
+          "Strong trends lead to serious losses",
+          "Experience — it demands more experience and intuition"
+        ]
+      },
+      "famous_traders": {
+        "title": "Names on both sides",
+        "overview": "The track records behind each approach.",
+        "description": "Both approaches have produced well-known practitioners, which is part of the evidence that neither is inherently wrong.",
+        "blocks": [
+          {
+            "title": "Trend following legends",
+            "items": [
+              "Ed Seykota — pioneer of trend following, 60% CAGR",
+              "Richard Dennis — creator of the Turtle Traders programme",
+              "David Harding — Winton Capital, over $30 billion AUM"
+            ]
+          },
+          {
+            "title": "Mean reversion legends",
+            "items": [
+              "Larry Connors — author of short-term trading strategies",
+              "John Bollinger — creator of Bollinger Bands, built on mean reversion logic",
+              "Linda Raschke — professional discretionary trader"
+            ]
+          }
+        ]
+      },
+      "the_case_for_trend_following": {
+        "title": "The case for trend following",
+        "overview": "Why it is the preferred approach of the two.",
+        "description": "Presented as a position rather than a proof: across implementation, rules, market stance and long-run risk profile, trend following is argued to be the better default.",
+        "key_points": [
+          "Implementation — easier to apply and to automate",
+          "Rules — fewer complicated rules and exceptions",
+          "Position — you trade with the force of the market, not against it",
+          "Risk and return — a better profile for long-term growth"
+        ]
+      },
+      "key_facts": {
+        "title": "Key facts behind the preference",
+        "overview": "Where the large gains actually come from, and who the approach suits.",
+        "description": "Three observations that support the choice: the source of outsized returns, the historical record, and the range of traders the approach fits.",
+        "key_points": [
+          "Enormous profits come only from strong and sustained trends",
+          "Historical evidence — proven by dozens of successful fund managers and legendary traders",
+          "Suitability — best for beginners, intermediate traders and experienced traders alike"
+        ]
+      },
+      "conclusions": {
+        "title": "Conclusions",
+        "overview": "Mean reversion can be profitable, but.",
+        "description": "The closing comparison, stated plainly.",
+        "key_points": [
+          "Mean reversion can be profitable, but…",
+          "Trend following is more universal and more stable",
+          "It leads to larger and longer-lasting results",
+          "Execution — it is easier to execute and to manage risk with"
+        ]
+      }
+    }
+  }
+}

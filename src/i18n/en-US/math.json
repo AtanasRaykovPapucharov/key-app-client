@@ -1,0 +1,1482 @@
+{
+  "math": {
+    "title": "School Mathematics",
+    "description": "The most important topics from school mathematics",
+    "themes": [
+      {
+        "id": "numbers",
+        "title": "Numbers and Calculations",
+        "description": "Numbers and basic operations.",
+        "formula": "ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ",
+        "image": "",
+        "list": [
+          {
+            "id": "natural_numbers",
+            "title": "Natural Numbers",
+            "description": "The numbers we count with.",
+            "formula": "ℕ = {1, 2, 3, 4, …}",
+            "image": "./number-concepts/en/natural_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "integers",
+            "title": "Integers",
+            "description": "The natural numbers, zero and their opposites.",
+            "formula": "ℤ = {…, −2, −1, 0, 1, 2, …}",
+            "image": "./number-concepts/en/integers.svg",
+            "list": []
+          },
+          {
+            "id": "rational_numbers",
+            "title": "Rational Numbers",
+            "description": "Numbers that can be written as a quotient of two integers.",
+            "formula": "ℚ = { a/b | a, b ∈ ℤ, b ≠ 0 }",
+            "image": "./number-concepts/en/rational_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "real_numbers",
+            "title": "Real Numbers",
+            "description": "All rational and irrational numbers — the points on the number line.",
+            "formula": "ℝ = ℚ ∪ (irrational numbers)",
+            "image": "./number-concepts/en/real_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "fractions",
+            "title": "Fractions",
+            "description": "A notation a/b showing how many parts of a whole we take.",
+            "formula": "a/b + c/d = (a·d + b·c)/(b·d)",
+            "image": "./number-concepts/en/fractions.svg",
+            "list": []
+          },
+          {
+            "id": "decimals",
+            "title": "Decimals",
+            "description": "Numbers written with a decimal point, by powers of ten.",
+            "formula": "0.25 = 25/100 = 1/4",
+            "image": "./number-concepts/en/decimals.svg",
+            "list": []
+          },
+          {
+            "id": "percentages",
+            "title": "Percentages",
+            "description": "A part of a hundred: 1% is one hundredth of the whole.",
+            "formula": "p% of a = a · p/100",
+            "image": "./number-concepts/en/percentages.svg",
+            "list": []
+          },
+          {
+            "id": "absolute_value",
+            "title": "Absolute Value",
+            "description": "The distance of a number from zero — never negative.",
+            "formula": "|a| = a if a ≥ 0; |a| = −a if a < 0",
+            "image": "./number-concepts/en/absolute_value.svg",
+            "list": []
+          },
+          {
+            "id": "order_of_operations",
+            "title": "Order of Operations",
+            "description": "The order in which operations in an expression are carried out.",
+            "formula": "brackets → powers and roots → × and ÷ → + and −",
+            "image": "./number-concepts/en/order_of_operations.svg",
+            "list": []
+          },
+          {
+            "id": "powers",
+            "title": "Powers",
+            "description": "A short way to write repeated multiplication of the same number.",
+            "formula": "aⁿ = a · a · … · a (n times); aᵐ · aⁿ = aᵐ⁺ⁿ",
+            "image": "./number-concepts/en/powers.svg",
+            "list": []
+          },
+          {
+            "id": "roots",
+            "title": "Roots",
+            "description": "The operation that reverses raising to a power.",
+            "formula": "√a = b ⟺ b² = a, b ≥ 0",
+            "image": "./number-concepts/en/roots.svg",
+            "list": []
+          },
+          {
+            "id": "scientific_notation",
+            "title": "Scientific Notation",
+            "description": "A way to write very large or very small numbers using a power of ten.",
+            "formula": "a · 10ⁿ, where 1 ≤ |a| < 10",
+            "image": "./number-concepts/en/scientific_notation.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "arithmetic",
+        "title": "Arithmetic",
+        "description": "Basic mathematical operations and number properties.",
+        "formula": "a + b = b + a; a · b = b · a",
+        "image": "",
+        "list": [
+          {
+            "id": "addition",
+            "title": "Addition",
+            "description": "Combining two or more numbers into a sum.",
+            "formula": "a + b = c (addends → sum)",
+            "image": "./arithmetic/en/addition.svg",
+            "list": []
+          },
+          {
+            "id": "subtraction",
+            "title": "Subtraction",
+            "description": "The inverse of addition — it finds the difference.",
+            "formula": "a − b = c ⟺ c + b = a",
+            "image": "./arithmetic/en/subtraction.svg",
+            "list": []
+          },
+          {
+            "id": "multiplication",
+            "title": "Multiplication",
+            "description": "Repeated addition of equal addends.",
+            "formula": "a · b = c (factors → product)",
+            "image": "./arithmetic/en/multiplication.svg",
+            "list": []
+          },
+          {
+            "id": "division",
+            "title": "Division",
+            "description": "The inverse of multiplication.",
+            "formula": "a ÷ b = c ⟺ c · b = a, b ≠ 0",
+            "image": "./arithmetic/en/division.svg",
+            "list": []
+          },
+          {
+            "id": "divisibility",
+            "title": "Divisibility",
+            "description": "A number is divisible by another when the remainder is zero.",
+            "formula": "b | a ⟺ a = b · k, k ∈ ℤ",
+            "image": "./arithmetic/en/divisibility.svg",
+            "list": []
+          },
+          {
+            "id": "prime_numbers",
+            "title": "Prime Numbers",
+            "description": "Numbers greater than 1 divisible only by 1 and themselves.",
+            "formula": "2, 3, 5, 7, 11, 13, 17, …",
+            "image": "./arithmetic/en/prime_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "factors",
+            "title": "Factors",
+            "description": "The numbers that divide a given number without a remainder.",
+            "formula": "d | a ⟺ a = d · k, k ∈ ℤ",
+            "image": "./arithmetic/en/factors.svg",
+            "list": []
+          },
+          {
+            "id": "multiples",
+            "title": "Multiples",
+            "description": "The numbers obtained by multiplying a given number by an integer.",
+            "formula": "a, 2a, 3a, 4a, …",
+            "image": "./arithmetic/en/multiples.svg",
+            "list": []
+          },
+          {
+            "id": "greatest_common_divisor",
+            "title": "Greatest Common Divisor",
+            "description": "The largest number that divides all of the given numbers.",
+            "formula": "GCD(a, b) · LCM(a, b) = a · b",
+            "image": "./arithmetic/en/greatest_common_divisor.svg",
+            "list": []
+          },
+          {
+            "id": "least_common_multiple",
+            "title": "Least Common Multiple",
+            "description": "The smallest positive number that is a multiple of all the given numbers.",
+            "formula": "LCM(a, b) = a · b / GCD(a, b)",
+            "image": "./arithmetic/en/least_common_multiple.svg",
+            "list": []
+          },
+          {
+            "id": "ratios",
+            "title": "Ratios",
+            "description": "A comparison of two quantities by division.",
+            "formula": "a : b = a/b",
+            "image": "./arithmetic/en/ratios.svg",
+            "list": []
+          },
+          {
+            "id": "proportions",
+            "title": "Proportions",
+            "description": "An equality between two ratios.",
+            "formula": "a : b = c : d ⟺ a · d = b · c",
+            "image": "./arithmetic/en/proportions.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "algebra",
+        "title": "Algebra",
+        "description": "Expressions, equations, inequalities and algebraic structures.",
+        "formula": "ax + b = 0; ax² + bx + c = 0",
+        "image": "",
+        "list": [
+          {
+            "id": "variables",
+            "title": "Variables",
+            "description": "A letter standing for an unknown or changing number.",
+            "formula": "x, y, z, …",
+            "image": "./algebra/en/variables.svg",
+            "list": []
+          },
+          {
+            "id": "algebraic_expressions",
+            "title": "Algebraic Expressions",
+            "description": "A combination of numbers, variables and operations.",
+            "formula": "3x² − 2x + 5",
+            "image": "./algebra/en/algebraic_expressions.svg",
+            "list": []
+          },
+          {
+            "id": "simplifying_expressions",
+            "title": "Simplifying Expressions",
+            "description": "Rewriting an expression in a shorter but equal form.",
+            "formula": "3x + 5x = 8x",
+            "image": "./algebra/en/simplifying_expressions.svg",
+            "list": []
+          },
+          {
+            "id": "linear_equations",
+            "title": "Linear Equations",
+            "description": "An equation of the first degree in the unknown.",
+            "formula": "ax + b = 0 ⟹ x = −b/a (a ≠ 0)",
+            "image": "./algebra/en/linear_equations.svg",
+            "list": []
+          },
+          {
+            "id": "quadratic_equations",
+            "title": "Quadratic Equations",
+            "description": "An equation of the second degree in the unknown.",
+            "formula": "ax² + bx + c = 0; x₁,₂ = (−b ± √(b² − 4ac))/(2a)",
+            "image": "./algebra/en/quadratic_equations.svg",
+            "list": []
+          },
+          {
+            "id": "systems_of_equations",
+            "title": "Systems of Equations",
+            "description": "Several equations with shared unknowns, solved together.",
+            "formula": "{ a₁x + b₁y = c₁ ; a₂x + b₂y = c₂ }",
+            "image": "./algebra/en/systems_of_equations.svg",
+            "list": []
+          },
+          {
+            "id": "inequalities",
+            "title": "Inequalities",
+            "description": "A comparison of expressions using <, >, ≤ or ≥.",
+            "formula": "a < b ⟹ a + c < b + c; multiplying by a negative number flips the sign",
+            "image": "./algebra/en/inequalities.svg",
+            "list": []
+          },
+          {
+            "id": "polynomials",
+            "title": "Polynomials",
+            "description": "A sum of terms with whole-number powers of a variable.",
+            "formula": "P(x) = aₙxⁿ + … + a₁x + a₀",
+            "image": "./algebra/en/polynomials.svg",
+            "list": []
+          },
+          {
+            "id": "factorization",
+            "title": "Factorization",
+            "description": "Writing an expression as a product of factors.",
+            "formula": "a² − b² = (a − b)(a + b)",
+            "image": "./algebra/en/factorization.svg",
+            "list": []
+          },
+          {
+            "id": "algebraic_identities",
+            "title": "Algebraic Identities",
+            "description": "Equalities that hold for every value of the variables.",
+            "formula": "(a ± b)² = a² ± 2ab + b²",
+            "image": "./algebra/en/algebraic_identities.svg",
+            "list": []
+          },
+          {
+            "id": "sequences",
+            "title": "Sequences",
+            "description": "Numbers listed in order according to a rule.",
+            "formula": "a₁, a₂, a₃, …, aₙ",
+            "image": "./algebra/en/sequences.svg",
+            "list": []
+          },
+          {
+            "id": "arithmetic_sequence",
+            "title": "Arithmetic Sequence",
+            "description": "A sequence in which the difference between consecutive terms is constant.",
+            "formula": "aₙ = a₁ + (n − 1)d; Sₙ = n(a₁ + aₙ)/2",
+            "image": "./algebra/en/arithmetic_sequence.svg",
+            "list": []
+          },
+          {
+            "id": "geometric_sequence",
+            "title": "Geometric Sequence",
+            "description": "A sequence in which the ratio of consecutive terms is constant.",
+            "formula": "aₙ = a₁ · qⁿ⁻¹; Sₙ = a₁(qⁿ − 1)/(q − 1), q ≠ 1",
+            "image": "./algebra/en/geometric_sequence.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "functions",
+        "title": "Functions",
+        "description": "Functions, their properties and graphs.",
+        "formula": "y = f(x)",
+        "image": "",
+        "list": [
+          {
+            "id": "function",
+            "title": "Function",
+            "description": "A rule that assigns exactly one y to every x.",
+            "formula": "f: X → Y, y = f(x)",
+            "image": "./functions/en/function.svg",
+            "list": []
+          },
+          {
+            "id": "domain",
+            "title": "Domain",
+            "description": "The set of all allowed values of x.",
+            "formula": "D(f) = { x | f(x) is defined }",
+            "image": "./functions/en/domain.svg",
+            "list": []
+          },
+          {
+            "id": "range",
+            "title": "Range",
+            "description": "The set of all values the function takes.",
+            "formula": "R(f) = { f(x) | x ∈ D(f) }",
+            "image": "./functions/en/range.svg",
+            "list": []
+          },
+          {
+            "id": "linear_function",
+            "title": "Linear Function",
+            "description": "A function whose graph is a straight line.",
+            "formula": "y = ax + b",
+            "image": "./functions/en/linear_function.svg",
+            "list": []
+          },
+          {
+            "id": "quadratic_function",
+            "title": "Quadratic Function",
+            "description": "A second-degree function whose graph is a parabola.",
+            "formula": "y = ax² + bx + c; vertex at x₀ = −b/(2a)",
+            "image": "./functions/en/quadratic_function.svg",
+            "list": []
+          },
+          {
+            "id": "exponential_function",
+            "title": "Exponential Function",
+            "description": "A function in which the variable is the exponent.",
+            "formula": "y = aˣ, a > 0, a ≠ 1",
+            "image": "./functions/en/exponential_function.svg",
+            "list": []
+          },
+          {
+            "id": "graph",
+            "title": "Graph",
+            "description": "The set of points (x; f(x)) in the coordinate plane.",
+            "formula": "G = { (x; y) | y = f(x) }",
+            "image": "./functions/en/graph.svg",
+            "list": []
+          },
+          {
+            "id": "slope",
+            "title": "Slope",
+            "description": "A number showing how steeply a line rises or falls.",
+            "formula": "k = (y₂ − y₁)/(x₂ − x₁)",
+            "image": "./functions/en/slope.svg",
+            "list": []
+          },
+          {
+            "id": "intercept",
+            "title": "Intercept",
+            "description": "A point where the graph crosses an axis.",
+            "formula": "y-intercept: (0; f(0)); x-intercept: (x; 0) where f(x) = 0",
+            "image": "./functions/en/intercept.svg",
+            "list": []
+          },
+          {
+            "id": "zeros_of_a_function",
+            "title": "Zeros of a Function",
+            "description": "The values of x for which the function equals zero.",
+            "formula": "f(x) = 0",
+            "image": "./functions/en/zeros_of_a_function.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "geometry",
+        "title": "Geometry",
+        "description": "Shapes, angles, measurements and geometric properties.",
+        "formula": "α + β + γ = 180° (in a triangle)",
+        "image": "",
+        "list": [
+          {
+            "id": "points",
+            "title": "Points",
+            "description": "A basic idea in geometry — a position with no size.",
+            "formula": "A ∈ a (point A lies on line a)",
+            "image": "./geometry/en/points.svg",
+            "list": []
+          },
+          {
+            "id": "lines",
+            "title": "Lines",
+            "description": "An endlessly long straight line determined by two points.",
+            "formula": "AB; ax + by + c = 0",
+            "image": "./geometry/en/lines.svg",
+            "list": []
+          },
+          {
+            "id": "line_segments",
+            "title": "Line Segments",
+            "description": "The part of a line between two points.",
+            "formula": "|AB| = the distance between A and B",
+            "image": "./geometry/en/line_segments.svg",
+            "list": []
+          },
+          {
+            "id": "angles",
+            "title": "Angles",
+            "description": "A figure formed by two rays with a common endpoint.",
+            "formula": "∠AOB; right angle = 90°",
+            "image": "./geometry/en/angles.svg",
+            "list": []
+          },
+          {
+            "id": "triangles",
+            "title": "Triangles",
+            "description": "A figure with three vertices, three sides and three angles.",
+            "formula": "α + β + γ = 180°",
+            "image": "./geometry/en/triangles.svg",
+            "list": []
+          },
+          {
+            "id": "quadrilaterals",
+            "title": "Quadrilaterals",
+            "description": "A figure with four vertices and four sides.",
+            "formula": "α + β + γ + δ = 360°",
+            "image": "./geometry/en/quadrilaterals.svg",
+            "list": []
+          },
+          {
+            "id": "polygons",
+            "title": "Polygons",
+            "description": "A closed figure made of n line segments.",
+            "formula": "sum of interior angles = (n − 2) · 180°",
+            "image": "./geometry/en/polygons.svg",
+            "list": []
+          },
+          {
+            "id": "circles",
+            "title": "Circles",
+            "description": "The points of a plane at an equal distance from a centre.",
+            "formula": "C = 2πr; A = πr²",
+            "image": "./geometry/en/circles.svg",
+            "list": []
+          },
+          {
+            "id": "perimeter",
+            "title": "Perimeter",
+            "description": "The total length of the sides of a figure.",
+            "formula": "P = a + b + c + …",
+            "image": "./geometry/en/perimeter.svg",
+            "list": []
+          },
+          {
+            "id": "area",
+            "title": "Area",
+            "description": "A measure of how much of the plane a figure covers.",
+            "formula": "A(rectangle) = a · b",
+            "image": "./geometry/en/area.svg",
+            "list": []
+          },
+          {
+            "id": "volume",
+            "title": "Volume",
+            "description": "A measure of the space a solid occupies.",
+            "formula": "V(cuboid) = a · b · c",
+            "image": "./geometry/en/volume.svg",
+            "list": []
+          },
+          {
+            "id": "congruence",
+            "title": "Congruence",
+            "description": "Figures with the same shape and the same size.",
+            "formula": "△ABC ≅ △A₁B₁C₁",
+            "image": "./geometry/en/congruence.svg",
+            "list": []
+          },
+          {
+            "id": "similarity",
+            "title": "Similarity",
+            "description": "Figures with the same shape and proportional sides.",
+            "formula": "△ABC ∼ △A₁B₁C₁; a/a₁ = b/b₁ = c/c₁ = k",
+            "image": "./geometry/en/similarity.svg",
+            "list": []
+          },
+          {
+            "id": "symmetry",
+            "title": "Symmetry",
+            "description": "A figure maps onto itself under a reflection or a rotation.",
+            "formula": "reflection: the axis is the perpendicular bisector of AA′",
+            "image": "./geometry/en/symmetry.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "golden_ratio",
+        "title": "Golden Ratio",
+        "description": "The special proportion φ ≈ 1.618 that appears in geometry, nature, and art.",
+        "formula": "φ = (1 + √5) / 2",
+        "image": "",
+        "list": [
+          {
+            "id": "what_is_the_golden_ratio",
+            "title": "What Is the Golden Ratio?",
+            "description": "A line cut so that the whole is to the larger part as the larger is to the smaller.",
+            "formula": "(a + b) : a = a : b = φ",
+            "image": "./golden-ratio/en/what_is_the_golden_ratio.svg",
+            "list": []
+          },
+          {
+            "id": "golden_rectangle",
+            "title": "The Golden Rectangle",
+            "description": "A rectangle whose sides are in the ratio φ : 1 and whose layout repeats after a square is cut off.",
+            "formula": "φ : 1 = 1 : (φ − 1)",
+            "image": "./golden-ratio/en/golden_rectangle.svg",
+            "list": []
+          },
+          {
+            "id": "golden_spiral",
+            "title": "The Golden Spiral",
+            "description": "A spiral built from quarter-circles inside nested squares that grow by a factor of φ.",
+            "formula": "radius × φ every quarter turn",
+            "image": "./golden-ratio/en/golden_spiral.svg",
+            "list": []
+          },
+          {
+            "id": "fibonacci_numbers",
+            "title": "Fibonacci Numbers",
+            "description": "The sequence whose ratios approach φ as the numbers grow.",
+            "formula": "F(n) = F(n−1) + F(n−2)",
+            "image": "./golden-ratio/en/fibonacci_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "golden_ratio_in_a_face",
+            "title": "The Golden Ratio in a Face",
+            "description": "Artists use φ to guide the placement of key facial features in portraits.",
+            "formula": "b : a ≈ φ",
+            "image": "./golden-ratio/en/golden_ratio_in_a_face.svg",
+            "list": []
+          },
+          {
+            "id": "composition_in_painting",
+            "title": "Composition in Painting",
+            "description": "Dividing a canvas by φ gives strong lines for placing the focal elements.",
+            "formula": "width ÷ φ marks the strong line",
+            "image": "./golden-ratio/en/composition_in_painting.svg",
+            "list": []
+          },
+          {
+            "id": "golden_triangle",
+            "title": "The Golden Triangle",
+            "description": "An isosceles triangle with angles 36°, 72°, and 72° whose equal sides are in golden ratio to the base.",
+            "formula": "leg : base = φ",
+            "image": "./golden-ratio/en/golden_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "the_number_phi",
+            "title": "The Number φ",
+            "description": "The positive solution to x² = x + 1, also written as (1 + √5) / 2.",
+            "formula": "φ² = φ + 1",
+            "image": "./golden-ratio/en/the_number_phi.svg",
+            "list": []
+          },
+          {
+            "id": "golden_angle",
+            "title": "The Golden Angle",
+            "description": "A full turn split in the golden ratio gives an angle of about 137.5°.",
+            "formula": "360° ÷ φ² ≈ 137.5°",
+            "image": "./golden-ratio/en/golden_angle.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "triangles",
+        "title": "Triangles",
+        "description": "Types and properties of triangles.",
+        "formula": "a² + b² = c²",
+        "image": "",
+        "list": [
+          {
+            "id": "equilateral_triangle",
+            "title": "Equilateral Triangle",
+            "description": "A triangle with three equal sides and three 60° angles.",
+            "formula": "A = a²√3/4; h = a√3/2",
+            "image": "./triangles/en/equilateral_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "isosceles_triangle",
+            "title": "Isosceles Triangle",
+            "description": "A triangle with two equal sides and equal base angles.",
+            "formula": "a = b ⟹ α = β",
+            "image": "./triangles/en/isosceles_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "scalene_triangle",
+            "title": "Scalene Triangle",
+            "description": "A triangle whose three sides all have different lengths.",
+            "formula": "a ≠ b ≠ c ≠ a",
+            "image": "./triangles/en/scalene_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "right_triangle",
+            "title": "Right Triangle",
+            "description": "A triangle with one right angle.",
+            "formula": "a² + b² = c²; A = a · b/2",
+            "image": "./triangles/en/right_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "pythagorean_theorem",
+            "title": "Pythagorean Theorem",
+            "description": "The squares of the legs add up to the square of the hypotenuse.",
+            "formula": "a² + b² = c²",
+            "image": "./triangles/en/pythagorean_theorem.svg",
+            "list": []
+          },
+          {
+            "id": "triangle_inequality",
+            "title": "Triangle Inequality",
+            "description": "Each side is shorter than the sum of the other two.",
+            "formula": "a + b > c; |a − b| < c",
+            "image": "./triangles/en/triangle_inequality.svg",
+            "list": []
+          },
+          {
+            "id": "altitude",
+            "title": "Altitude",
+            "description": "A perpendicular from a vertex to the opposite side.",
+            "formula": "A = a · hₐ/2",
+            "image": "./triangles/en/altitude.svg",
+            "list": []
+          },
+          {
+            "id": "median",
+            "title": "Median",
+            "description": "A segment from a vertex to the midpoint of the opposite side.",
+            "formula": "mₐ = ½·√(2b² + 2c² − a²)",
+            "image": "./triangles/en/median.svg",
+            "list": []
+          },
+          {
+            "id": "angle_bisector",
+            "title": "Angle Bisector",
+            "description": "A ray that splits an angle into two equal parts.",
+            "formula": "BD : DC = c : b",
+            "image": "./triangles/en/angle_bisector.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "quadrilaterals",
+        "title": "Quadrilaterals",
+        "description": "Four-sided geometric figures.",
+        "formula": "P = a + b + c + d",
+        "image": "",
+        "list": [
+          {
+            "id": "square",
+            "title": "Square",
+            "description": "A quadrilateral with four equal sides and four right angles.",
+            "formula": "P = 4a; A = a²; d = a√2",
+            "image": "./quadrilaterals/en/square.svg",
+            "list": []
+          },
+          {
+            "id": "rectangle",
+            "title": "Rectangle",
+            "description": "A quadrilateral with four right angles.",
+            "formula": "P = 2(a + b); A = a · b",
+            "image": "./quadrilaterals/en/rectangle.svg",
+            "list": []
+          },
+          {
+            "id": "parallelogram",
+            "title": "Parallelogram",
+            "description": "A quadrilateral with two pairs of parallel sides.",
+            "formula": "P = 2(a + b); A = a · hₐ",
+            "image": "./quadrilaterals/en/parallelogram.svg",
+            "list": []
+          },
+          {
+            "id": "rhombus",
+            "title": "Rhombus",
+            "description": "A parallelogram with four equal sides.",
+            "formula": "A = a · h = d₁ · d₂/2",
+            "image": "./quadrilaterals/en/rhombus.svg",
+            "list": []
+          },
+          {
+            "id": "trapezoid",
+            "title": "Trapezoid",
+            "description": "A quadrilateral with a pair of parallel sides.",
+            "formula": "A = (a + b)/2 · h",
+            "image": "./quadrilaterals/en/trapezoid.svg",
+            "list": []
+          },
+          {
+            "id": "kite",
+            "title": "Kite",
+            "description": "A quadrilateral with two pairs of adjacent equal sides.",
+            "formula": "A = d₁ · d₂/2",
+            "image": "./quadrilaterals/en/kite.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "circle",
+        "title": "Circle",
+        "description": "Properties and measurements of circles.",
+        "formula": "C = 2πr, A = πr²",
+        "image": "",
+        "list": [
+          {
+            "id": "radius",
+            "title": "Radius",
+            "description": "A segment from the centre to a point on the circle.",
+            "formula": "r = d/2",
+            "image": "./circle/en/radius.svg",
+            "list": []
+          },
+          {
+            "id": "diameter",
+            "title": "Diameter",
+            "description": "A chord through the centre — the longest chord.",
+            "formula": "d = 2r",
+            "image": "./circle/en/diameter.svg",
+            "list": []
+          },
+          {
+            "id": "circumference",
+            "title": "Circumference",
+            "description": "The distance all the way around the circle.",
+            "formula": "C = 2πr = πd",
+            "image": "./circle/en/circumference.svg",
+            "list": []
+          },
+          {
+            "id": "area",
+            "title": "Area",
+            "description": "The area of the disc enclosed by the circle.",
+            "formula": "A = πr²",
+            "image": "./circle/en/area.svg",
+            "list": []
+          },
+          {
+            "id": "arc",
+            "title": "Arc",
+            "description": "A part of the circle between two of its points.",
+            "formula": "l = πrα/180° (α in degrees)",
+            "image": "./circle/en/arc.svg",
+            "list": []
+          },
+          {
+            "id": "chord",
+            "title": "Chord",
+            "description": "A segment joining two points on the circle.",
+            "formula": "AB = 2r · sin(α/2)",
+            "image": "./circle/en/chord.svg",
+            "list": []
+          },
+          {
+            "id": "central_angle",
+            "title": "Central Angle",
+            "description": "An angle with its vertex at the centre of the circle.",
+            "formula": "α = 2β (β is the inscribed angle on the same arc)",
+            "image": "./circle/en/central_angle.svg",
+            "list": []
+          },
+          {
+            "id": "inscribed_angle",
+            "title": "Inscribed Angle",
+            "description": "An angle with its vertex on the circle.",
+            "formula": "β = α/2",
+            "image": "./circle/en/inscribed_angle.svg",
+            "list": []
+          },
+          {
+            "id": "pi",
+            "title": "Pi",
+            "description": "The ratio of a circle's circumference to its diameter.",
+            "formula": "π = C/d ≈ 3.14159",
+            "image": "./circle/en/pi.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "solid_geometry",
+        "title": "Solid Geometry",
+        "description": "Three-dimensional shapes and measurements.",
+        "formula": "V = B · h (for a prism)",
+        "image": "",
+        "list": [
+          {
+            "id": "cube",
+            "title": "Cube",
+            "description": "A solid with six equal square faces.",
+            "formula": "V = a³; S = 6a²",
+            "image": "./solid-geometry/en/cube.svg",
+            "list": []
+          },
+          {
+            "id": "cuboid",
+            "title": "Cuboid",
+            "description": "A solid with six rectangular faces.",
+            "formula": "V = a · b · c; S = 2(ab + bc + ca)",
+            "image": "./solid-geometry/en/cuboid.svg",
+            "list": []
+          },
+          {
+            "id": "prism",
+            "title": "Prism",
+            "description": "A solid with two equal parallel bases and flat side faces.",
+            "formula": "V = B · h; S = 2B + P · h",
+            "image": "./solid-geometry/en/prism.svg",
+            "list": []
+          },
+          {
+            "id": "pyramid",
+            "title": "Pyramid",
+            "description": "A solid with a polygon base and a single apex.",
+            "formula": "V = B · h/3",
+            "image": "./solid-geometry/en/pyramid.svg",
+            "list": []
+          },
+          {
+            "id": "cylinder",
+            "title": "Cylinder",
+            "description": "A solid with two equal circular bases.",
+            "formula": "V = πr²h; S = 2πr(r + h)",
+            "image": "./solid-geometry/en/cylinder.svg",
+            "list": []
+          },
+          {
+            "id": "cone",
+            "title": "Cone",
+            "description": "A solid with a circular base and a single apex.",
+            "formula": "V = πr²h/3; S = πr(r + l)",
+            "image": "./solid-geometry/en/cone.svg",
+            "list": []
+          },
+          {
+            "id": "sphere",
+            "title": "Sphere",
+            "description": "The points in space at an equal distance from a centre.",
+            "formula": "V = 4πr³/3; S = 4πr²",
+            "image": "./solid-geometry/en/sphere.svg",
+            "list": []
+          },
+          {
+            "id": "surface_area",
+            "title": "Surface Area",
+            "description": "The total area of all the faces of a solid.",
+            "formula": "S = 2B + lateral area",
+            "image": "./solid-geometry/en/surface_area.svg",
+            "list": []
+          },
+          {
+            "id": "volume",
+            "title": "Volume",
+            "description": "A measure of the space a solid occupies.",
+            "formula": "V = B · h",
+            "image": "./solid-geometry/en/volume.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "coordinate_geometry",
+        "title": "Coordinate Geometry",
+        "description": "Geometry using coordinates and equations.",
+        "formula": "d = √((x₂-x₁)² + (y₂-y₁)²)",
+        "image": "",
+        "list": [
+          {
+            "id": "coordinate_plane",
+            "title": "Coordinate Plane",
+            "description": "A plane with two perpendicular axes and an origin O.",
+            "formula": "O(0; 0); point M(x; y)",
+            "image": "./coordinate-geometry/en/coordinate_plane.svg",
+            "list": []
+          },
+          {
+            "id": "x_axis",
+            "title": "x-axis",
+            "description": "The horizontal axis of the coordinate plane.",
+            "formula": "y = 0",
+            "image": "./coordinate-geometry/en/x_axis.svg",
+            "list": []
+          },
+          {
+            "id": "y_axis",
+            "title": "y-axis",
+            "description": "The vertical axis of the coordinate plane.",
+            "formula": "x = 0",
+            "image": "./coordinate-geometry/en/y_axis.svg",
+            "list": []
+          },
+          {
+            "id": "coordinates",
+            "title": "Coordinates",
+            "description": "A pair of numbers giving the position of a point.",
+            "formula": "M(x; y)",
+            "image": "./coordinate-geometry/en/coordinates.svg",
+            "list": []
+          },
+          {
+            "id": "distance_between_points",
+            "title": "Distance Between Points",
+            "description": "The length of the segment joining two points.",
+            "formula": "d = √((x₂ − x₁)² + (y₂ − y₁)²)",
+            "image": "./coordinate-geometry/en/distance_between_points.svg",
+            "list": []
+          },
+          {
+            "id": "midpoint",
+            "title": "Midpoint",
+            "description": "The point that divides a segment into two equal parts.",
+            "formula": "M((x₁ + x₂)/2; (y₁ + y₂)/2)",
+            "image": "./coordinate-geometry/en/midpoint.svg",
+            "list": []
+          },
+          {
+            "id": "slope",
+            "title": "Slope",
+            "description": "A measure of how steep a line is.",
+            "formula": "k = (y₂ − y₁)/(x₂ − x₁) = tan α",
+            "image": "./coordinate-geometry/en/slope.svg",
+            "list": []
+          },
+          {
+            "id": "equation_of_a_line",
+            "title": "Equation of a Line",
+            "description": "The relation between x and y for every point on the line.",
+            "formula": "y = kx + b; ax + by + c = 0",
+            "image": "./coordinate-geometry/en/equation_of_a_line.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "trigonometry",
+        "title": "Trigonometry",
+        "description": "Relationships between angles and sides.",
+        "formula": "sin²x + cos²x = 1",
+        "image": "",
+        "list": [
+          {
+            "id": "sine",
+            "title": "Sine",
+            "description": "The ratio of the opposite leg to the hypotenuse.",
+            "formula": "sin α = a/c",
+            "image": "./trigonometry/en/sine.svg",
+            "list": []
+          },
+          {
+            "id": "cosine",
+            "title": "Cosine",
+            "description": "The ratio of the adjacent leg to the hypotenuse.",
+            "formula": "cos α = b/c",
+            "image": "./trigonometry/en/cosine.svg",
+            "list": []
+          },
+          {
+            "id": "tangent",
+            "title": "Tangent",
+            "description": "The ratio of the opposite leg to the adjacent leg.",
+            "formula": "tan α = a/b = sin α / cos α",
+            "image": "./trigonometry/en/tangent.svg",
+            "list": []
+          },
+          {
+            "id": "cotangent",
+            "title": "Cotangent",
+            "description": "The reciprocal of the tangent.",
+            "formula": "cot α = b/a = 1/tan α",
+            "image": "./trigonometry/en/cotangent.svg",
+            "list": []
+          },
+          {
+            "id": "trigonometric_ratios",
+            "title": "Trigonometric Ratios",
+            "description": "The ratios that link an angle to the sides of a right triangle.",
+            "formula": "sin α = a/c; cos α = b/c; tan α = a/b",
+            "image": "./trigonometry/en/trigonometric_ratios.svg",
+            "list": []
+          },
+          {
+            "id": "unit_circle",
+            "title": "Unit Circle",
+            "description": "A circle of radius 1 centred at the origin.",
+            "formula": "x² + y² = 1; P(cos α; sin α)",
+            "image": "./trigonometry/en/unit_circle.svg",
+            "list": []
+          },
+          {
+            "id": "trigonometric_identities",
+            "title": "Trigonometric Identities",
+            "description": "Equalities that hold for every allowed angle.",
+            "formula": "sin²α + cos²α = 1",
+            "image": "./trigonometry/en/trigonometric_identities.svg",
+            "list": []
+          },
+          {
+            "id": "law_of_sines",
+            "title": "Law of Sines",
+            "description": "The sides are proportional to the sines of the opposite angles.",
+            "formula": "a/sin α = b/sin β = c/sin γ = 2R",
+            "image": "./trigonometry/en/law_of_sines.svg",
+            "list": []
+          },
+          {
+            "id": "law_of_cosines",
+            "title": "Law of Cosines",
+            "description": "A generalisation of the Pythagorean theorem for any triangle.",
+            "formula": "c² = a² + b² − 2ab · cos γ",
+            "image": "./trigonometry/en/law_of_cosines.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "statistics",
+        "title": "Statistics",
+        "description": "Collecting, organizing and analyzing data.",
+        "formula": "x̄ = (x₁ + x₂ + … + xₙ)/n",
+        "image": "",
+        "list": [
+          {
+            "id": "data",
+            "title": "Data",
+            "description": "The collected values that are organised and analysed.",
+            "formula": "x₁, x₂, …, xₙ",
+            "image": "./statistics/en/data.svg",
+            "list": []
+          },
+          {
+            "id": "mean",
+            "title": "Mean",
+            "description": "The sum of the values divided by how many there are.",
+            "formula": "x̄ = (x₁ + x₂ + … + xₙ)/n",
+            "image": "./statistics/en/mean.svg",
+            "list": []
+          },
+          {
+            "id": "median",
+            "title": "Median",
+            "description": "The middle value of the data once it is ordered.",
+            "formula": "Me = the middle term of the ordered list",
+            "image": "./statistics/en/median.svg",
+            "list": []
+          },
+          {
+            "id": "mode",
+            "title": "Mode",
+            "description": "The value that occurs most often.",
+            "formula": "Mo = the value with the highest frequency",
+            "image": "./statistics/en/mode.svg",
+            "list": []
+          },
+          {
+            "id": "range",
+            "title": "Range",
+            "description": "The difference between the largest and the smallest value.",
+            "formula": "R = xmax − xmin",
+            "image": "./statistics/en/range.svg",
+            "list": []
+          },
+          {
+            "id": "frequency",
+            "title": "Frequency",
+            "description": "How many times a value occurs in the data.",
+            "formula": "relative frequency = f/n",
+            "image": "./statistics/en/frequency.svg",
+            "list": []
+          },
+          {
+            "id": "charts",
+            "title": "Charts",
+            "description": "A picture that shows the data visually.",
+            "formula": "pie chart angle = 360° · f/n",
+            "image": "./statistics/en/charts.svg",
+            "list": []
+          },
+          {
+            "id": "histogram",
+            "title": "Histogram",
+            "description": "A bar chart for data grouped into intervals.",
+            "formula": "bar height = frequency of the interval",
+            "image": "./statistics/en/histogram.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "probability",
+        "title": "Probability",
+        "description": "Measuring the likelihood of events.",
+        "formula": "P(A) = favorable outcomes / total outcomes",
+        "image": "",
+        "list": [
+          {
+            "id": "probability",
+            "title": "Probability",
+            "description": "A number between 0 and 1 measuring how likely an event is.",
+            "formula": "0 ≤ P(A) ≤ 1",
+            "image": "./probability/en/probability.svg",
+            "list": []
+          },
+          {
+            "id": "outcome",
+            "title": "Outcome",
+            "description": "One possible result of an experiment.",
+            "formula": "ω ∈ Ω",
+            "image": "./probability/en/outcome.svg",
+            "list": []
+          },
+          {
+            "id": "event",
+            "title": "Event",
+            "description": "A set of outcomes we are interested in.",
+            "formula": "A ⊆ Ω",
+            "image": "./probability/en/event.svg",
+            "list": []
+          },
+          {
+            "id": "sample_space",
+            "title": "Sample Space",
+            "description": "The set of all possible outcomes of an experiment.",
+            "formula": "Ω = {ω₁, ω₂, …}; P(Ω) = 1",
+            "image": "./probability/en/sample_space.svg",
+            "list": []
+          },
+          {
+            "id": "independent_events",
+            "title": "Independent Events",
+            "description": "Events where one happening does not affect the other.",
+            "formula": "P(A ∩ B) = P(A) · P(B)",
+            "image": "./probability/en/independent_events.svg",
+            "list": []
+          },
+          {
+            "id": "conditional_probability",
+            "title": "Conditional Probability",
+            "description": "The probability of A given that B has happened.",
+            "formula": "P(A|B) = P(A ∩ B)/P(B), P(B) > 0",
+            "image": "./probability/en/conditional_probability.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "calculus",
+        "title": "Introduction to Calculus",
+        "description": "Basic concepts of limits, derivatives and integrals.",
+        "formula": "f′(x) = lim(h→0) (f(x + h) − f(x))/h",
+        "image": "",
+        "list": [
+          {
+            "id": "limits",
+            "title": "Limits",
+            "description": "The value a function approaches as x approaches a given number.",
+            "formula": "lim(x→a) f(x) = L",
+            "image": "./calculus/en/limits.svg",
+            "list": []
+          },
+          {
+            "id": "derivatives",
+            "title": "Derivatives",
+            "description": "The branch of calculus that studies rates of change.",
+            "formula": "(xⁿ)′ = n · xⁿ⁻¹",
+            "image": "./calculus/en/derivatives.svg",
+            "list": []
+          },
+          {
+            "id": "derivative",
+            "title": "Derivative",
+            "description": "The limit of the change in the function over the change in x.",
+            "formula": "f′(x) = lim(h→0) (f(x + h) − f(x))/h",
+            "image": "./calculus/en/derivative.svg",
+            "list": []
+          },
+          {
+            "id": "integrals",
+            "title": "Integrals",
+            "description": "The branch of calculus that adds up infinitely small parts.",
+            "formula": "∫ xⁿ dx = xⁿ⁺¹/(n + 1) + C, n ≠ −1",
+            "image": "./calculus/en/integrals.svg",
+            "list": []
+          },
+          {
+            "id": "integral",
+            "title": "Integral",
+            "description": "The operation that reverses differentiation.",
+            "formula": "∫ f(x) dx = F(x) + C, where F′(x) = f(x)",
+            "image": "./calculus/en/integral.svg",
+            "list": []
+          },
+          {
+            "id": "rate_of_change",
+            "title": "Rate of Change",
+            "description": "How fast one quantity changes with respect to another.",
+            "formula": "v = ds/dt",
+            "image": "./calculus/en/rate_of_change.svg",
+            "list": []
+          },
+          {
+            "id": "area_under_the_curve",
+            "title": "Area Under the Curve",
+            "description": "The area between the graph of a function and the x-axis.",
+            "formula": "A = ∫ₐᵇ f(x) dx",
+            "image": "./calculus/en/area_under_the_curve.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "logic_and_proofs",
+        "title": "Logic and Proofs",
+        "description": "Mathematical reasoning and proof techniques.",
+        "formula": "A ⇒ B",
+        "image": "",
+        "list": [
+          {
+            "id": "statement",
+            "title": "Statement",
+            "description": "A sentence that is either true or false.",
+            "formula": "A: true (1) or false (0)",
+            "image": "./logic-and-proofs/en/statement.svg",
+            "list": []
+          },
+          {
+            "id": "proof",
+            "title": "Proof",
+            "description": "A chain of logical steps that establishes a statement.",
+            "formula": "premises ⇒ conclusion",
+            "image": "./logic-and-proofs/en/proof.svg",
+            "list": []
+          },
+          {
+            "id": "theorem",
+            "title": "Theorem",
+            "description": "An important statement that has been proved.",
+            "formula": "if A, then B (A ⇒ B)",
+            "image": "./logic-and-proofs/en/theorem.svg",
+            "list": []
+          },
+          {
+            "id": "lemma",
+            "title": "Lemma",
+            "description": "A helper statement used in proving a theorem.",
+            "formula": "lemma ⇒ theorem",
+            "image": "./logic-and-proofs/en/lemma.svg",
+            "list": []
+          },
+          {
+            "id": "corollary",
+            "title": "Corollary",
+            "description": "A statement that follows immediately from a proved theorem.",
+            "formula": "theorem ⇒ corollary",
+            "image": "./logic-and-proofs/en/corollary.svg",
+            "list": []
+          },
+          {
+            "id": "direct_proof",
+            "title": "Direct Proof",
+            "description": "Starts from the assumption and reaches the conclusion step by step.",
+            "formula": "A ⇒ … ⇒ B",
+            "image": "./logic-and-proofs/en/direct_proof.svg",
+            "list": []
+          },
+          {
+            "id": "proof_by_contradiction",
+            "title": "Proof by Contradiction",
+            "description": "Assumes the opposite and derives a contradiction.",
+            "formula": "¬B ⇒ contradiction ⟹ B is true",
+            "image": "./logic-and-proofs/en/proof_by_contradiction.svg",
+            "list": []
+          },
+          {
+            "id": "mathematical_induction",
+            "title": "Mathematical Induction",
+            "description": "A method for proving a statement for all natural numbers.",
+            "formula": "P(1) and (P(n) ⇒ P(n + 1)) ⟹ P(n) for every n",
+            "image": "./logic-and-proofs/en/mathematical_induction.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "units",
+        "title": "Units of Measurement",
+        "description": "Common mathematical units and measurements.",
+        "formula": "1 km = 1000 m = 100 000 cm",
+        "image": "",
+        "list": [
+          {
+            "id": "length",
+            "title": "Length",
+            "description": "A quantity measured with the metre and its related units.",
+            "formula": "1 m = 100 cm = 1000 mm; 1 km = 1000 m",
+            "image": "./units/en/length.svg",
+            "list": []
+          },
+          {
+            "id": "mass",
+            "title": "Mass",
+            "description": "A quantity measured with grams, kilograms and tonnes.",
+            "formula": "1 kg = 1000 g; 1 t = 1000 kg",
+            "image": "./units/en/mass.svg",
+            "list": []
+          },
+          {
+            "id": "time",
+            "title": "Time",
+            "description": "A quantity measured in seconds, minutes and hours.",
+            "formula": "1 h = 60 min = 3600 s",
+            "image": "./units/en/time.svg",
+            "list": []
+          },
+          {
+            "id": "area",
+            "title": "Area",
+            "description": "A quantity measured in square units.",
+            "formula": "1 m² = 100 dm² = 10 000 cm²",
+            "image": "./units/en/area.svg",
+            "list": []
+          },
+          {
+            "id": "volume",
+            "title": "Volume",
+            "description": "A quantity measured in cubic units and litres.",
+            "formula": "1 m³ = 1000 dm³; 1 dm³ = 1 L",
+            "image": "./units/en/volume.svg",
+            "list": []
+          },
+          {
+            "id": "speed",
+            "title": "Speed",
+            "description": "The distance travelled per unit of time.",
+            "formula": "v = s/t; 1 m/s = 3.6 km/h",
+            "image": "./units/en/speed.svg",
+            "list": []
+          },
+          {
+            "id": "temperature",
+            "title": "Temperature",
+            "description": "A quantity measured in degrees Celsius or in kelvins.",
+            "formula": "K = °C + 273.15",
+            "image": "./units/en/temperature.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "problem_solving",
+        "title": "Problem Solving",
+        "description": "Methods for solving mathematical problems.",
+        "formula": "given → unknown → formula → solution → check",
+        "image": "",
+        "list": [
+          {
+            "id": "word_problems",
+            "title": "Word Problems",
+            "description": "Problems given in words that must be translated into mathematics.",
+            "formula": "words → expression or equation",
+            "image": "./problem-solving/en/word_problems.svg",
+            "list": []
+          },
+          {
+            "id": "step_by_step",
+            "title": "Step by Step",
+            "description": "Breaking the solution into small steps in order.",
+            "formula": "step 1 → step 2 → … → answer",
+            "image": "./problem-solving/en/step_by_step.svg",
+            "list": []
+          },
+          {
+            "id": "known_values",
+            "title": "Known Values",
+            "description": "The numbers and conditions the problem gives you.",
+            "formula": "Given: a, b, c, …",
+            "image": "./problem-solving/en/known_values.svg",
+            "list": []
+          },
+          {
+            "id": "unknown_value",
+            "title": "Unknown Value",
+            "description": "The quantity the problem asks you to find.",
+            "formula": "Find: x = ?",
+            "image": "./problem-solving/en/unknown_value.svg",
+            "list": []
+          },
+          {
+            "id": "formula",
+            "title": "Formula",
+            "description": "A short way to write the relation between quantities.",
+            "formula": "e.g. s = v · t",
+            "image": "./problem-solving/en/formula.svg",
+            "list": []
+          },
+          {
+            "id": "solution",
+            "title": "Solution",
+            "description": "Carrying out the calculations according to your plan.",
+            "formula": "substitute into the formula and compute",
+            "image": "./problem-solving/en/solution.svg",
+            "list": []
+          },
+          {
+            "id": "answer",
+            "title": "Answer",
+            "description": "The final result, written with its unit.",
+            "formula": "Ans.: x = … (unit)",
+            "image": "./problem-solving/en/answer.svg",
+            "list": []
+          },
+          {
+            "id": "check",
+            "title": "Check",
+            "description": "Testing whether the result really fits the conditions.",
+            "formula": "substitute back: left side = right side",
+            "image": "./problem-solving/en/check.svg",
+            "list": []
+          }
+        ]
+      }
+    ]
+  }
+}

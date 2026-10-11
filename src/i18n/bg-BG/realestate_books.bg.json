@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "name": "Rich Dad Poor Dad",
+      "author": "Robert T. Kiyosaki",
+      "description": "Продадена в над 32 милиона копия, тази книга не е тясно за недвижими имоти, но е причината повечето инвеститори в имоти изобщо стартират. Чрез контраста между двама бащи Кийосаки обяснява разликата между активи и пасиви и защо недвижимите имоти са основният инструмент, чрез който той изгражда богатството си.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781612680194-L.jpg",
+      "link": "https://www.amazon.com/s?k=Rich+Dad+Poor+Dad+Kiyosaki"
+    },
+    {
+      "name": "The Millionaire Real Estate Investor",
+      "author": "Gary Keller, Dave Jenks, Jay Papasan",
+      "description": "Основана на интервюта с над 100 милионери, забогатели чрез недвижими имоти, книгата разкрива конкретните финансови модели и мисловни навици на успешните инвеститори — от поставяне на цели до анализ на сделки и изграждане на портфейл на етапи: мисли, купувай, притежавай, получавай милион.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780071446372-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Millionaire+Real+Estate+Investor+Gary+Keller"
+    },
+    {
+      "name": "The ABCs of Real Estate Investing",
+      "author": "Ken McElroy",
+      "description": "Практическо ръководство от опитен инвеститор в мултифамилни имоти за откриване на \"скрита\" печалба, която повечето инвеститори пропускат — как да намериш имот с реален потенциал, да преговаряш въз основа на числата и да увеличиш дохода си чрез управление на имота.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781937832032-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+ABCs+of+Real+Estate+Investing+Ken+McElroy"
+    },
+    {
+      "name": "The Book on Rental Property Investing",
+      "author": "Brandon Turner",
+      "description": "Над половин милион продадени копия — практично ръководство от съоснователя на BiggerPockets за изграждане на богатство чрез инвестиране в отдаваеми под наем имоти. Покрива четирите основни двигателя на богатството от имоти: поскъпване, паричен поток, данъчни облекчения и погасяване на заема, плюс метода BRRRR.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780990711790-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Book+on+Rental+Property+Investing+Brandon+Turner"
+    },
+    {
+      "name": "What Every Real Estate Investor Needs to Know About Cash Flow",
+      "author": "Frank Gallinelli",
+      "description": "Смятана за учебника по финансов анализ на инвестиционни имоти — обяснява основните показатели, които всеки сериозен инвеститор трябва да владее: cap rate, cash-on-cash return, вътрешна норма на възвращаемост и как да оцениш дали дадена сделка наистина си заслужава, преди да подпишеш договор.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781259586187-L.jpg",
+      "link": "https://www.amazon.com/s?k=What+Every+Real+Estate+Investor+Needs+to+Know+About+Cash+Flow+Gallinelli"
+    }
+  ]
+}

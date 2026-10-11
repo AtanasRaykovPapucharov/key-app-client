@@ -1,0 +1,65 @@
+{
+  "what_is_the_golden_ratio": {
+    "x": 20,
+    "y": 130,
+    "width": 1220,
+    "height": 1330,
+    "tileSize": 380
+  },
+  "golden_rectangle": {
+    "x": 420,
+    "y": 130,
+    "width": 1220,
+    "height": 1330,
+    "tileSize": 380
+  },
+  "golden_spiral": {
+    "x": 820,
+    "y": 130,
+    "width": 1220,
+    "height": 1330,
+    "tileSize": 380
+  },
+  "fibonacci_numbers": {
+    "x": 20,
+    "y": 530,
+    "width": 1220,
+    "height": 1330,
+    "tileSize": 380
+  },
+  "golden_ratio_in_a_face": {
+    "x": 420,
+    "y": 530,
+    "width": 1220,
+    "height": 1330,
+    "tileSize": 380
+  },
+  "composition_in_painting": {
+    "x": 820,
+    "y": 530,
+    "width": 1220,
+    "height": 1330,
+    "tileSize": 380
+  },
+  "golden_triangle": {
+    "x": 20,
+    "y": 930,
+    "width": 1220,
+    "height": 1330,
+    "tileSize": 380
+  },
+  "the_number_phi": {
+    "x": 420,
+    "y": 930,
+    "width": 1220,
+    "height": 1330,
+    "tileSize": 380
+  },
+  "golden_angle": {
+    "x": 820,
+    "y": 930,
+    "width": 1220,
+    "height": 1330,
+    "tileSize": 380
+  }
+}

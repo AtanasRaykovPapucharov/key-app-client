@@ -1,0 +1,1482 @@
+{
+  "math": {
+    "title": "Математика",
+    "description": "Най-важните теми от математиката",
+    "themes": [
+      {
+        "id": "numbers",
+        "title": "Числа и изчисления",
+        "description": "Числа и основни аритметични действия.",
+        "formula": "ℕ ⊂ ℤ ⊂ ℚ ⊂ ℝ",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Естествени числа",
+            "description": "Числата, с които броим предмети.",
+            "formula": "ℕ = {1, 2, 3, 4, …}",
+            "image": "./number-concepts/bg/natural_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Цели числа",
+            "description": "Естествените числа, нулата и противоположните им числа.",
+            "formula": "ℤ = {…, −2, −1, 0, 1, 2, …}",
+            "image": "./number-concepts/bg/integers.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Рационални числа",
+            "description": "Числа, които се записват като частно на две цели числа.",
+            "formula": "ℚ = { a/b | a, b ∈ ℤ, b ≠ 0 }",
+            "image": "./number-concepts/bg/rational_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Реални числа",
+            "description": "Всички рационални и ирационални числа — точките от числовата ос.",
+            "formula": "ℝ = ℚ ∪ (ирационални числа)",
+            "image": "./number-concepts/bg/real_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Дроби",
+            "description": "Запис a/b, който показва колко части от цялото вземаме.",
+            "formula": "a/b + c/d = (a·d + b·c)/(b·d)",
+            "image": "./number-concepts/bg/fractions.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Десетични дроби",
+            "description": "Числа със запетая, записани по разредите на десетицата.",
+            "formula": "0,25 = 25/100 = 1/4",
+            "image": "./number-concepts/bg/decimals.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Проценти",
+            "description": "Част от сто: 1% е една стотна от цялото.",
+            "formula": "p% от a = a · p/100",
+            "image": "./number-concepts/bg/percentages.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Абсолютна стойност",
+            "description": "Разстоянието на числото до нулата — винаги неотрицателно.",
+            "formula": "|a| = a при a ≥ 0; |a| = −a при a < 0",
+            "image": "./number-concepts/bg/absolute_value.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Ред на действията",
+            "description": "Последователността, в която се извършват действията в израз.",
+            "formula": "скоби → степени и корени → · и : → + и −",
+            "image": "./number-concepts/bg/order_of_operations.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Степени",
+            "description": "Съкратен запис на умножение на еднакви множители.",
+            "formula": "aⁿ = a · a · … · a (n пъти); aᵐ · aⁿ = aᵐ⁺ⁿ",
+            "image": "./number-concepts/bg/powers.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Корени",
+            "description": "Действие, обратно на степенуването.",
+            "formula": "√a = b ⟺ b² = a, b ≥ 0",
+            "image": "./number-concepts/bg/roots.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Научен запис",
+            "description": "Запис на много големи или много малки числа чрез степен на 10.",
+            "formula": "a · 10ⁿ, където 1 ≤ |a| < 10",
+            "image": "./number-concepts/bg/scientific_notation.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "arithmetic",
+        "title": "Аритметика",
+        "description": "Основни действия и свойства на числата.",
+        "formula": "a + b = b + a; a · b = b · a",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Събиране",
+            "description": "Действие, при което няколко числа се обединяват в сбор.",
+            "formula": "a + b = c (събираеми → сбор)",
+            "image": "./arithmetic/bg/addition.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Изваждане",
+            "description": "Действие, обратно на събирането — намира разликата.",
+            "formula": "a − b = c ⟺ c + b = a",
+            "image": "./arithmetic/bg/subtraction.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Умножение",
+            "description": "Съкратено събиране на равни събираеми.",
+            "formula": "a · b = c (множители → произведение)",
+            "image": "./arithmetic/bg/multiplication.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Деление",
+            "description": "Действие, обратно на умножението.",
+            "formula": "a : b = c ⟺ c · b = a, b ≠ 0",
+            "image": "./arithmetic/bg/division.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Делимост",
+            "description": "Число се дели на друго, когато остатъкът е нула.",
+            "formula": "a ⋮ b ⟺ a = b · k, k ∈ ℤ",
+            "image": "./arithmetic/bg/divisibility.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Прости числа",
+            "description": "Числа, по-големи от 1, които се делят само на 1 и на себе си.",
+            "formula": "2, 3, 5, 7, 11, 13, 17, …",
+            "image": "./arithmetic/bg/prime_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Делители",
+            "description": "Числата, на които даденото число се дели без остатък.",
+            "formula": "d | a ⟺ a = d · k, k ∈ ℤ",
+            "image": "./arithmetic/bg/factors.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Кратни",
+            "description": "Числата, получени при умножаване на дадено число с цяло число.",
+            "formula": "a, 2a, 3a, 4a, …",
+            "image": "./arithmetic/bg/multiples.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Най-голям общ делител",
+            "description": "Най-голямото число, което дели едновременно дадените числа.",
+            "formula": "НОД(a, b) · НОК(a, b) = a · b",
+            "image": "./arithmetic/bg/greatest_common_divisor.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Най-малко общо кратно",
+            "description": "Най-малкото положително число, кратно едновременно на дадените числа.",
+            "formula": "НОК(a, b) = a · b / НОД(a, b)",
+            "image": "./arithmetic/bg/least_common_multiple.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Отношения",
+            "description": "Сравняване на две величини чрез частно.",
+            "formula": "a : b = a/b",
+            "image": "./arithmetic/bg/ratios.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Пропорции",
+            "description": "Равенство между две отношения.",
+            "formula": "a : b = c : d ⟺ a · d = b · c",
+            "image": "./arithmetic/bg/proportions.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "algebra",
+        "title": "Алгебра",
+        "description": "Изрази, уравнения, неравенства и алгебрични структури.",
+        "formula": "ax + b = 0; ax² + bx + c = 0",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Променливи",
+            "description": "Буква, която означава неизвестно или изменящо се число.",
+            "formula": "x, y, z, …",
+            "image": "./algebra/bg/variables.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Алгебрични изрази",
+            "description": "Запис от числа, променливи и знаци за действия.",
+            "formula": "3x² − 2x + 5",
+            "image": "./algebra/bg/algebraic_expressions.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Опростяване на изрази",
+            "description": "Привеждане на израза до по-кратък, равен на него вид.",
+            "formula": "3x + 5x = 8x",
+            "image": "./algebra/bg/simplifying_expressions.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Линейни уравнения",
+            "description": "Уравнение от първа степен спрямо неизвестното.",
+            "formula": "ax + b = 0 ⟹ x = −b/a (a ≠ 0)",
+            "image": "./algebra/bg/linear_equations.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Квадратни уравнения",
+            "description": "Уравнение от втора степен спрямо неизвестното.",
+            "formula": "ax² + bx + c = 0; x₁,₂ = (−b ± √(b² − 4ac))/(2a)",
+            "image": "./algebra/bg/quadratic_equations.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Системи уравнения",
+            "description": "Няколко уравнения с общи неизвестни, решавани заедно.",
+            "formula": "{ a₁x + b₁y = c₁ ; a₂x + b₂y = c₂ }",
+            "image": "./algebra/bg/systems_of_equations.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Неравенства",
+            "description": "Сравнение между изрази със знаците <, >, ≤ или ≥.",
+            "formula": "a < b ⟹ a + c < b + c; при умножение с отрицателно число знакът се обръща",
+            "image": "./algebra/bg/inequalities.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Полиноми",
+            "description": "Сбор от едночлени със степени на променливата.",
+            "formula": "P(x) = aₙxⁿ + … + a₁x + a₀",
+            "image": "./algebra/bg/polynomials.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Разлагане на множители",
+            "description": "Представяне на израза като произведение.",
+            "formula": "a² − b² = (a − b)(a + b)",
+            "image": "./algebra/bg/factorization.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Тъждествени равенства",
+            "description": "Равенства, верни за всички стойности на променливите.",
+            "formula": "(a ± b)² = a² ± 2ab + b²",
+            "image": "./algebra/bg/algebraic_identities.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Редици",
+            "description": "Числа, подредени по определено правило.",
+            "formula": "a₁, a₂, a₃, …, aₙ",
+            "image": "./algebra/bg/sequences.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Аритметична прогресия",
+            "description": "Редица, при която разликата между съседни членове е постоянна.",
+            "formula": "aₙ = a₁ + (n − 1)d; Sₙ = n(a₁ + aₙ)/2",
+            "image": "./algebra/bg/arithmetic_sequence.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Геометрична прогресия",
+            "description": "Редица, при която отношението между съседни членове е постоянно.",
+            "formula": "aₙ = a₁ · qⁿ⁻¹; Sₙ = a₁(qⁿ − 1)/(q − 1), q ≠ 1",
+            "image": "./algebra/bg/geometric_sequence.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "functions",
+        "title": "Функции",
+        "description": "Функции, техните свойства и графики.",
+        "formula": "y = f(x)",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Функция",
+            "description": "Съответствие, което на всяко x съпоставя точно едно y.",
+            "formula": "f: X → Y, y = f(x)",
+            "image": "./functions/bg/function.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Дефиниционна област",
+            "description": "Множеството от всички допустими стойности на x.",
+            "formula": "D(f) = { x | f(x) е дефинирана }",
+            "image": "./functions/bg/domain.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Множество от стойности",
+            "description": "Всички стойности, които функцията приема.",
+            "formula": "E(f) = { f(x) | x ∈ D(f) }",
+            "image": "./functions/bg/range.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Линейна функция",
+            "description": "Функция, чиято графика е права линия.",
+            "formula": "y = ax + b",
+            "image": "./functions/bg/linear_function.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Квадратична функция",
+            "description": "Функция от втора степен, чиято графика е парабола.",
+            "formula": "y = ax² + bx + c; връх при x₀ = −b/(2a)",
+            "image": "./functions/bg/quadratic_function.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Експоненциална функция",
+            "description": "Функция, при която променливата стои в показателя.",
+            "formula": "y = aˣ, a > 0, a ≠ 1",
+            "image": "./functions/bg/exponential_function.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Графика",
+            "description": "Множеството от точки (x; f(x)) в координатната равнина.",
+            "formula": "G = { (x; y) | y = f(x) }",
+            "image": "./functions/bg/graph.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Наклон",
+            "description": "Число, което показва колко бързо расте или намалява правата.",
+            "formula": "k = (y₂ − y₁)/(x₂ − x₁)",
+            "image": "./functions/bg/slope.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Пресечна точка",
+            "description": "Точка, в която графиката пресича ос или друга графика.",
+            "formula": "с Oy: (0; f(0)); с Ox: (x; 0) при f(x) = 0",
+            "image": "./functions/bg/intercept.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Нули на функцията",
+            "description": "Стойностите на x, при които функцията е равна на нула.",
+            "formula": "f(x) = 0",
+            "image": "./functions/bg/zeros_of_a_function.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "geometry",
+        "title": "Геометрия",
+        "description": "Фигури, ъгли, измервания и геометрични свойства.",
+        "formula": "α + β + γ = 180° (в триъгълник)",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Точки",
+            "description": "Основно понятие в геометрията — положение без размери.",
+            "formula": "A ∈ a (точката A лежи на правата a)",
+            "image": "./geometry/bg/points.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Прави",
+            "description": "Безкрайна права линия, определена от две точки.",
+            "formula": "AB; ax + by + c = 0",
+            "image": "./geometry/bg/lines.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Отсечки",
+            "description": "Част от права, ограничена от две точки.",
+            "formula": "|AB| = разстоянието между A и B",
+            "image": "./geometry/bg/line_segments.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Ъгли",
+            "description": "Фигура от два лъча с общо начало.",
+            "formula": "∠AOB; прав ъгъл = 90°",
+            "image": "./geometry/bg/angles.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Триъгълници",
+            "description": "Фигура с три върха, три страни и три ъгъла.",
+            "formula": "α + β + γ = 180°",
+            "image": "./geometry/bg/triangles.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Четириъгълници",
+            "description": "Фигура с четири върха и четири страни.",
+            "formula": "α + β + γ + δ = 360°",
+            "image": "./geometry/bg/quadrilaterals.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Многоъгълници",
+            "description": "Затворена фигура от n отсечки.",
+            "formula": "сбор на ъглите = (n − 2) · 180°",
+            "image": "./geometry/bg/polygons.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Окръжности",
+            "description": "Точките от равнината на равно разстояние от центъра.",
+            "formula": "C = 2πr; S = πr²",
+            "image": "./geometry/bg/circles.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Периметър",
+            "description": "Сборът от дължините на всички страни на фигурата.",
+            "formula": "P = a + b + c + …",
+            "image": "./geometry/bg/perimeter.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Лице",
+            "description": "Мярка за големината на частта от равнината.",
+            "formula": "S(правоъгълник) = a · b",
+            "image": "./geometry/bg/area.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Обем",
+            "description": "Мярка за пространството, което заема едно тяло.",
+            "formula": "V(паралелепипед) = a · b · c",
+            "image": "./geometry/bg/volume.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Еднаквост",
+            "description": "Фигури с еднаква форма и еднакви размери.",
+            "formula": "△ABC ≅ △A₁B₁C₁",
+            "image": "./geometry/bg/congruence.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Подобие",
+            "description": "Фигури с еднаква форма и пропорционални страни.",
+            "formula": "△ABC ∼ △A₁B₁C₁; a/a₁ = b/b₁ = c/c₁ = k",
+            "image": "./geometry/bg/similarity.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Симетрия",
+            "description": "Свойство фигурата да съвпада със себе си при отражение или завъртане.",
+            "formula": "осева симетрия: оста е симетрала на AA′",
+            "image": "./geometry/bg/symmetry.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "golden_ratio",
+        "title": "Златно сечение",
+        "description": "Специалната пропорция φ ≈ 1.618, която се среща в геометрията, природата и изкуството.",
+        "formula": "φ = (1 + √5) / 2",
+        "image": "",
+        "list": [
+          {
+            "id": "what_is_the_golden_ratio",
+            "title": "Какво е златно сечение?",
+            "description": "Отсечка, разделена така, че цялото да се отнася към по-голямата част както по-голямата се отнася към по-малката.",
+            "formula": "(a + b) : a = a : b = φ",
+            "image": "./golden-ratio/bg/what_is_the_golden_ratio.svg",
+            "list": []
+          },
+          {
+            "id": "golden_rectangle",
+            "title": "Златният правоъгълник",
+            "description": "Правоъгълник, чиито страни са в съотношение φ : 1 и повторя структурата си след отрязване на квадрат.",
+            "formula": "φ : 1 = 1 : (φ − 1)",
+            "image": "./golden-ratio/bg/golden_rectangle.svg",
+            "list": []
+          },
+          {
+            "id": "golden_spiral",
+            "title": "Златната спирала",
+            "description": "Спирала, построена от четвърт кръгове в вложени квадрати, които растат с коефициент φ.",
+            "formula": "радиус × φ на всяка четвърт завъртане",
+            "image": "./golden-ratio/bg/golden_spiral.svg",
+            "list": []
+          },
+          {
+            "id": "fibonacci_numbers",
+            "title": "Числата на Фибоначи",
+            "description": "Редицата, чиито отношения се доближават до φ с нарастването на числата.",
+            "formula": "F(n) = F(n−1) + F(n−2)",
+            "image": "./golden-ratio/bg/fibonacci_numbers.svg",
+            "list": []
+          },
+          {
+            "id": "golden_ratio_in_a_face",
+            "title": "Златното сечение в лице",
+            "description": "Художниците използват φ, за да подреждат ключовите черти на лицето в портрет.",
+            "formula": "b : a ≈ φ",
+            "image": "./golden-ratio/bg/golden_ratio_in_a_face.svg",
+            "list": []
+          },
+          {
+            "id": "composition_in_painting",
+            "title": "Композиция в живописта",
+            "description": "Разделянето на платно по φ дава силни линии за поставяне на централните елементи.",
+            "formula": "ширина ÷ φ маркира силната линия",
+            "image": "./golden-ratio/bg/composition_in_painting.svg",
+            "list": []
+          },
+          {
+            "id": "golden_triangle",
+            "title": "Златният триъгълник",
+            "description": "Равнобедрен триъгълник с ъгли 36°, 72° и 72°, чиито равни страни са в златно съотношение с основата.",
+            "formula": "крак : основа = φ",
+            "image": "./golden-ratio/bg/golden_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "the_number_phi",
+            "title": "Числото φ",
+            "description": "Положителното решение на x² = x + 1, което може да се запише като (1 + √5) / 2.",
+            "formula": "φ² = φ + 1",
+            "image": "./golden-ratio/bg/the_number_phi.svg",
+            "list": []
+          },
+          {
+            "id": "golden_angle",
+            "title": "Златният ъгъл",
+            "description": "Пълният оборот, разделен в златното сечение, дава ъгъл около 137,5°.",
+            "formula": "360° ÷ φ² ≈ 137,5°",
+            "image": "./golden-ratio/bg/golden_angle.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "triangles",
+        "title": "Триъгълници",
+        "description": "Видове и свойства на триъгълниците.",
+        "formula": "a² + b² = c²",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Равностранен триъгълник",
+            "description": "Триъгълник с три равни страни и три ъгъла по 60°.",
+            "formula": "S = a²√3/4; h = a√3/2",
+            "image": "./triangles/bg/equilateral_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Равнобедрен триъгълник",
+            "description": "Триъгълник с две равни бедра и равни ъгли при основата.",
+            "formula": "a = b ⟹ α = β",
+            "image": "./triangles/bg/isosceles_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Разностранен триъгълник",
+            "description": "Триъгълник, чиито три страни са с различни дължини.",
+            "formula": "a ≠ b ≠ c ≠ a",
+            "image": "./triangles/bg/scalene_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Правоъгълен триъгълник",
+            "description": "Триъгълник с един прав ъгъл.",
+            "formula": "a² + b² = c²; S = a · b/2",
+            "image": "./triangles/bg/right_triangle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Питагорова теорема",
+            "description": "Сборът от квадратите на катетите е равен на квадрата на хипотенузата.",
+            "formula": "a² + b² = c²",
+            "image": "./triangles/bg/pythagorean_theorem.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Неравенство на триъгълника",
+            "description": "Всяка страна е по-малка от сбора на другите две.",
+            "formula": "a + b > c; |a − b| < c",
+            "image": "./triangles/bg/triangle_inequality.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Височина",
+            "description": "Перпендикуляр от връх към срещуположната страна.",
+            "formula": "S = a · hₐ/2",
+            "image": "./triangles/bg/altitude.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Медиана",
+            "description": "Отсечка от връх до средата на срещуположната страна.",
+            "formula": "mₐ = ½·√(2b² + 2c² − a²)",
+            "image": "./triangles/bg/median.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Ъглополовяща",
+            "description": "Лъч, който разделя ъгъла на две равни части.",
+            "formula": "BD : DC = c : b",
+            "image": "./triangles/bg/angle_bisector.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "quadrilaterals",
+        "title": "Четириъгълници",
+        "description": "Геометрични фигури с четири страни.",
+        "formula": "P = a + b + c + d",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Квадрат",
+            "description": "Четириъгълник с четири равни страни и четири прави ъгъла.",
+            "formula": "P = 4a; S = a²; d = a√2",
+            "image": "./quadrilaterals/bg/square.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Правоъгълник",
+            "description": "Четириъгълник с четири прави ъгъла.",
+            "formula": "P = 2(a + b); S = a · b",
+            "image": "./quadrilaterals/bg/rectangle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Успоредник",
+            "description": "Четириъгълник с две двойки успоредни страни.",
+            "formula": "P = 2(a + b); S = a · hₐ",
+            "image": "./quadrilaterals/bg/parallelogram.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Ромб",
+            "description": "Успоредник с четири равни страни.",
+            "formula": "S = a · h = d₁ · d₂/2",
+            "image": "./quadrilaterals/bg/rhombus.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Трапец",
+            "description": "Четириъгълник с две успоредни страни.",
+            "formula": "S = (a + b)/2 · h",
+            "image": "./quadrilaterals/bg/trapezoid.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Делтоид",
+            "description": "Четириъгълник с две двойки съседни равни страни.",
+            "formula": "S = d₁ · d₂/2",
+            "image": "./quadrilaterals/bg/kite.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "circle",
+        "title": "Окръжност и кръг",
+        "description": "Свойства и измервания на окръжности и кръгове.",
+        "formula": "C = 2πr, A = πr²",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Радиус",
+            "description": "Отсечка от центъра до точка от окръжността.",
+            "formula": "r = d/2",
+            "image": "./circle/bg/radius.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Диаметър",
+            "description": "Хорда през центъра — най-дългата хорда.",
+            "formula": "d = 2r",
+            "image": "./circle/bg/diameter.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Дължина на окръжността",
+            "description": "Обиколката на окръжността.",
+            "formula": "C = 2πr = πd",
+            "image": "./circle/bg/circumference.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Лице",
+            "description": "Лицето на кръга, ограден от окръжността.",
+            "formula": "S = πr²",
+            "image": "./circle/bg/area.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Дъга",
+            "description": "Част от окръжността между две нейни точки.",
+            "formula": "l = πrα/180° (α в градуси)",
+            "image": "./circle/bg/arc.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Хорда",
+            "description": "Отсечка, свързваща две точки от окръжността.",
+            "formula": "AB = 2r · sin(α/2)",
+            "image": "./circle/bg/chord.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Централен ъгъл",
+            "description": "Ъгъл с връх в центъра на окръжността.",
+            "formula": "α = 2β (β — вписан ъгъл над същата дъга)",
+            "image": "./circle/bg/central_angle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Вписан ъгъл",
+            "description": "Ъгъл с връх върху окръжността.",
+            "formula": "β = α/2",
+            "image": "./circle/bg/inscribed_angle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Число π",
+            "description": "Отношението на дължината на окръжността към диаметъра ѝ.",
+            "formula": "π = C/d ≈ 3,14159",
+            "image": "./circle/bg/pi.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "solid_geometry",
+        "title": "Стереометрия",
+        "description": "Пространствени фигури и техните измервания.",
+        "formula": "V = B · h (за призма)",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Куб",
+            "description": "Тяло с шест еднакви квадратни стени.",
+            "formula": "V = a³; S = 6a²",
+            "image": "./solid-geometry/bg/cube.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Правоъгълен паралелепипед",
+            "description": "Тяло с шест правоъгълни стени.",
+            "formula": "V = a · b · c; S = 2(ab + bc + ca)",
+            "image": "./solid-geometry/bg/cuboid.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Призма",
+            "description": "Тяло с две еднакви успоредни основи и странични стени.",
+            "formula": "V = B · h; S = 2B + P · h",
+            "image": "./solid-geometry/bg/prism.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Пирамида",
+            "description": "Тяло с многоъгълна основа и общ връх.",
+            "formula": "V = B · h/3",
+            "image": "./solid-geometry/bg/pyramid.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Цилиндър",
+            "description": "Тяло с две равни кръгови основи.",
+            "formula": "V = πr²h; S = 2πr(r + h)",
+            "image": "./solid-geometry/bg/cylinder.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Конус",
+            "description": "Тяло с кръгова основа и един връх.",
+            "formula": "V = πr²h/3; S = πr(r + l)",
+            "image": "./solid-geometry/bg/cone.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Сфера",
+            "description": "Точките в пространството на равно разстояние от центъра.",
+            "formula": "V = 4πr³/3; S = 4πr²",
+            "image": "./solid-geometry/bg/sphere.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Повърхнина",
+            "description": "Сборът от лицата на всички стени на тялото.",
+            "formula": "S = 2B + S_околна",
+            "image": "./solid-geometry/bg/surface_area.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Обем",
+            "description": "Мярка за пространството, което заема тялото.",
+            "formula": "V = B · h",
+            "image": "./solid-geometry/bg/volume.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "coordinate_geometry",
+        "title": "Координатна геометрия",
+        "description": "Геометрия чрез координати и уравнения.",
+        "formula": "d = √((x₂-x₁)² + (y₂-y₁)²)",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Координатна равнина",
+            "description": "Равнина с две перпендикулярни оси и начало O.",
+            "formula": "O(0; 0); точка M(x; y)",
+            "image": "./coordinate-geometry/bg/coordinate_plane.svg",
+            "list": []
+          },
+          {
+            "id": "x",
+            "title": "Ос x",
+            "description": "Хоризонталната (абсцисна) ос.",
+            "formula": "y = 0",
+            "image": "./coordinate-geometry/bg/x_axis.svg",
+            "list": []
+          },
+          {
+            "id": "y",
+            "title": "Ос y",
+            "description": "Вертикалната (ординатна) ос.",
+            "formula": "x = 0",
+            "image": "./coordinate-geometry/bg/y_axis.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Координати",
+            "description": "Двойка числа, която определя положението на точка.",
+            "formula": "M(x; y)",
+            "image": "./coordinate-geometry/bg/coordinates.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Разстояние между точки",
+            "description": "Дължината на отсечката между две точки.",
+            "formula": "d = √((x₂ − x₁)² + (y₂ − y₁)²)",
+            "image": "./coordinate-geometry/bg/distance_between_points.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Среда на отсечка",
+            "description": "Точката, която дели отсечката на две равни части.",
+            "formula": "M((x₁ + x₂)/2; (y₁ + y₂)/2)",
+            "image": "./coordinate-geometry/bg/midpoint.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Наклон",
+            "description": "Мярка за стръмността на правата.",
+            "formula": "k = (y₂ − y₁)/(x₂ − x₁) = tg α",
+            "image": "./coordinate-geometry/bg/slope.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Уравнение на права",
+            "description": "Връзката между x и y за всички точки от правата.",
+            "formula": "y = kx + b; ax + by + c = 0",
+            "image": "./coordinate-geometry/bg/equation_of_a_line.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "trigonometry",
+        "title": "Тригонометрия",
+        "description": "Връзки между ъгли и страни.",
+        "formula": "sin²x + cos²x = 1",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Синус",
+            "description": "Отношението на срещулежащия катет към хипотенузата.",
+            "formula": "sin α = a/c",
+            "image": "./trigonometry/bg/sine.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Косинус",
+            "description": "Отношението на прилежащия катет към хипотенузата.",
+            "formula": "cos α = b/c",
+            "image": "./trigonometry/bg/cosine.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Тангенс",
+            "description": "Отношението на срещулежащия към прилежащия катет.",
+            "formula": "tg α = a/b = sin α / cos α",
+            "image": "./trigonometry/bg/tangent.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Котангенс",
+            "description": "Отношението, обратно на тангенса.",
+            "formula": "cotg α = b/a = 1/tg α",
+            "image": "./trigonometry/bg/cotangent.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Тригонометрични функции",
+            "description": "Функции, които зависят от големината на ъгъла.",
+            "formula": "y = sin x; y = cos x; y = tg x",
+            "image": "./trigonometry/bg/trigonometric_ratios.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Единична окръжност",
+            "description": "Окръжност с радиус 1 и център началото на координатната система.",
+            "formula": "x² + y² = 1; P(cos α; sin α)",
+            "image": "./trigonometry/bg/unit_circle.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Тригонометрични тъждества",
+            "description": "Равенства, верни за всеки допустим ъгъл.",
+            "formula": "sin²α + cos²α = 1",
+            "image": "./trigonometry/bg/trigonometric_identities.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Теорема за синусите",
+            "description": "Страните се отнасят както синусите на срещулежащите ъгли.",
+            "formula": "a/sin α = b/sin β = c/sin γ = 2R",
+            "image": "./trigonometry/bg/law_of_sines.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Теорема за косинусите",
+            "description": "Обобщение на Питагоровата теорема за произволен триъгълник.",
+            "formula": "c² = a² + b² − 2ab · cos γ",
+            "image": "./trigonometry/bg/law_of_cosines.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "statistics",
+        "title": "Статистика",
+        "description": "Събиране, организиране и анализиране на данни.",
+        "formula": "x̄ = (x₁ + x₂ + … + xₙ)/n",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Данни",
+            "description": "Събраните стойности, които се подреждат и анализират.",
+            "formula": "x₁, x₂, …, xₙ",
+            "image": "./statistics/bg/data.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Средно аритметично",
+            "description": "Сборът от стойностите, разделен на техния брой.",
+            "formula": "x̄ = (x₁ + x₂ + … + xₙ)/n",
+            "image": "./statistics/bg/mean.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Медиана",
+            "description": "Средната стойност в подредения ред от данни.",
+            "formula": "Me = средният член на подредения ред",
+            "image": "./statistics/bg/median.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Мода",
+            "description": "Стойността, която се среща най-често.",
+            "formula": "Mo = стойността с най-голяма честота",
+            "image": "./statistics/bg/mode.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Размах",
+            "description": "Разликата между най-голямата и най-малката стойност.",
+            "formula": "R = xmax − xmin",
+            "image": "./statistics/bg/range.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Честота",
+            "description": "Броят на появяванията на дадена стойност.",
+            "formula": "относителна честота = f/n",
+            "image": "./statistics/bg/frequency.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Диаграми",
+            "description": "Графично представяне на данните.",
+            "formula": "ъгъл в кръгова диаграма = 360° · f/n",
+            "image": "./statistics/bg/charts.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Хистограма",
+            "description": "Стълбовидна диаграма за данни, групирани по интервали.",
+            "formula": "височина на стълба = честотата на интервала",
+            "image": "./statistics/bg/histogram.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "probability",
+        "title": "Вероятности",
+        "description": "Измерване на вероятността на събития.",
+        "formula": "P(A) = благоприятни изходи / всички изходи",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Вероятност",
+            "description": "Число между 0 и 1, което измерва шанса за настъпване на събитие.",
+            "formula": "0 ≤ P(A) ≤ 1",
+            "image": "./probability/bg/probability.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Изход",
+            "description": "Един възможен резултат от опита.",
+            "formula": "ω ∈ Ω",
+            "image": "./probability/bg/outcome.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Събитие",
+            "description": "Множество от изходи, което ни интересува.",
+            "formula": "A ⊆ Ω",
+            "image": "./probability/bg/event.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Пространство от изходи",
+            "description": "Множеството от всички възможни изходи на опита.",
+            "formula": "Ω = {ω₁, ω₂, …}; P(Ω) = 1",
+            "image": "./probability/bg/sample_space.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Независими събития",
+            "description": "Настъпването на едното не влияе на другото.",
+            "formula": "P(A ∩ B) = P(A) · P(B)",
+            "image": "./probability/bg/independent_events.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Условна вероятност",
+            "description": "Вероятност за A, ако се знае, че B е настъпило.",
+            "formula": "P(A|B) = P(A ∩ B)/P(B), P(B) > 0",
+            "image": "./probability/bg/conditional_probability.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "calculus",
+        "title": "Основи на математическия анализ",
+        "description": "Основни понятия за граници, производни и интеграли.",
+        "formula": "f′(x) = lim(h→0) (f(x + h) − f(x))/h",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Граници",
+            "description": "Стойността, към която се приближава функцията.",
+            "formula": "lim(x→a) f(x) = L",
+            "image": "./calculus/bg/limits.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Производни",
+            "description": "Раздел, който изучава скоростта на изменение на функциите.",
+            "formula": "(xⁿ)′ = n · xⁿ⁻¹",
+            "image": "./calculus/bg/derivatives.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Производна",
+            "description": "Границата на отношението на прираста на функцията към прираста на аргумента.",
+            "formula": "f′(x) = lim(h→0) (f(x + h) − f(x))/h",
+            "image": "./calculus/bg/derivative.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Интеграли",
+            "description": "Раздел за сумиране на безкрайно малки части.",
+            "formula": "∫ xⁿ dx = xⁿ⁺¹/(n + 1) + C, n ≠ −1",
+            "image": "./calculus/bg/integrals.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Интеграл",
+            "description": "Действие, обратно на намирането на производна.",
+            "formula": "∫ f(x) dx = F(x) + C, където F′(x) = f(x)",
+            "image": "./calculus/bg/integral.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Скорост на изменение",
+            "description": "Колко бързо се изменя една величина спрямо друга.",
+            "formula": "v = ds/dt",
+            "image": "./calculus/bg/rate_of_change.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Лице под графика",
+            "description": "Лицето между графиката на функцията и оста x.",
+            "formula": "S = ∫ₐᵇ f(x) dx",
+            "image": "./calculus/bg/area_under_the_curve.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "logic_and_proofs",
+        "title": "Логика и доказателства",
+        "description": "Математическо мислене и методи за доказване.",
+        "formula": "A ⇒ B",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Твърдение",
+            "description": "Изречение, за което може да се каже дали е вярно, или невярно.",
+            "formula": "A: вярно (1) или невярно (0)",
+            "image": "./logic-and-proofs/bg/statement.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Доказателство",
+            "description": "Верига от логически стъпки, която обосновава твърдение.",
+            "formula": "предпоставки ⇒ заключение",
+            "image": "./logic-and-proofs/bg/proof.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Теорема",
+            "description": "Твърдение с важно значение, което е доказано.",
+            "formula": "ако A, то B (A ⇒ B)",
+            "image": "./logic-and-proofs/bg/theorem.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Лема",
+            "description": "Помощно твърдение, което се използва при доказване на теорема.",
+            "formula": "лема ⇒ теорема",
+            "image": "./logic-and-proofs/bg/lemma.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Следствие",
+            "description": "Твърдение, което следва непосредствено от доказана теорема.",
+            "formula": "теорема ⇒ следствие",
+            "image": "./logic-and-proofs/bg/corollary.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Директно доказателство",
+            "description": "Тръгва от условието и чрез верни стъпки стига до заключението.",
+            "formula": "A ⇒ … ⇒ B",
+            "image": "./logic-and-proofs/bg/direct_proof.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Доказателство чрез противоречие",
+            "description": "Допуска се обратното и се стига до противоречие.",
+            "formula": "¬B ⇒ противоречие ⟹ B е вярно",
+            "image": "./logic-and-proofs/bg/proof_by_contradiction.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Математическа индукция",
+            "description": "Метод за доказване на твърдение за всички естествени числа.",
+            "formula": "P(1) и (P(n) ⇒ P(n + 1)) ⟹ P(n) за всяко n",
+            "image": "./logic-and-proofs/bg/mathematical_induction.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "units",
+        "title": "Мерни единици",
+        "description": "Основни мерни единици и величини.",
+        "formula": "1 km = 1000 m = 100 000 cm",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Дължина",
+            "description": "Величина, която се измерва с метър и производните му единици.",
+            "formula": "1 m = 100 cm = 1000 mm; 1 km = 1000 m",
+            "image": "./units/bg/length.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Маса",
+            "description": "Величина, която се измерва с грам, килограм и тон.",
+            "formula": "1 kg = 1000 g; 1 t = 1000 kg",
+            "image": "./units/bg/mass.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Време",
+            "description": "Величина, която се измерва със секунди, минути и часове.",
+            "formula": "1 h = 60 min = 3600 s",
+            "image": "./units/bg/time.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Лице",
+            "description": "Величина, която се измерва в квадратни единици.",
+            "formula": "1 m² = 100 dm² = 10 000 cm²",
+            "image": "./units/bg/area.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Обем",
+            "description": "Величина, която се измерва в кубични единици и литри.",
+            "formula": "1 m³ = 1000 dm³; 1 dm³ = 1 l",
+            "image": "./units/bg/volume.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Скорост",
+            "description": "Изминатият път за единица време.",
+            "formula": "v = s/t; 1 m/s = 3,6 km/h",
+            "image": "./units/bg/speed.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Температура",
+            "description": "Величина, която се измерва в градуси Целзий или в келвини.",
+            "formula": "K = °C + 273,15",
+            "image": "./units/bg/temperature.svg",
+            "list": []
+          }
+        ]
+      },
+      {
+        "id": "problem_solving",
+        "title": "Решаване на задачи",
+        "description": "Методи за решаване на математически задачи.",
+        "formula": "дадено → търсено → формула → решение → проверка",
+        "image": "",
+        "list": [
+          {
+            "id": "",
+            "title": "Текстови задачи",
+            "description": "Задачи, зададени с думи, които се превеждат на математически език.",
+            "formula": "думи → израз или уравнение",
+            "image": "./problem-solving/bg/word_problems.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Стъпка по стъпка",
+            "description": "Разделяне на решението на последователни малки стъпки.",
+            "formula": "стъпка 1 → стъпка 2 → … → отговор",
+            "image": "./problem-solving/bg/step_by_step.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Дадени величини",
+            "description": "Известните числа и условия в задачата.",
+            "formula": "Дадено: a, b, c, …",
+            "image": "./problem-solving/bg/known_values.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Търсена величина",
+            "description": "Това, което трябва да се намери.",
+            "formula": "Търси се: x = ?",
+            "image": "./problem-solving/bg/unknown_value.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Формула",
+            "description": "Кратък запис на връзката между величините.",
+            "formula": "например s = v · t",
+            "image": "./problem-solving/bg/formula.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Решение",
+            "description": "Изпълнение на пресмятанията по избрания план.",
+            "formula": "заместване в формулата и пресмятане",
+            "image": "./problem-solving/bg/solution.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Отговор",
+            "description": "Крайният резултат, записан с мерна единица.",
+            "formula": "Отг.: x = … (мерна единица)",
+            "image": "./problem-solving/bg/answer.svg",
+            "list": []
+          },
+          {
+            "id": "",
+            "title": "Проверка",
+            "description": "Сверяване дали намереният резултат отговаря на условието.",
+            "formula": "замяна в условието: лява страна = дясна страна",
+            "image": "./problem-solving/bg/check.svg",
+            "list": []
+          }
+        ]
+      }
+    ]
+  }
+}

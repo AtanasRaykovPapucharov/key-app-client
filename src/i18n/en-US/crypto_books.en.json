@@ -1,0 +1,39 @@
+{
+  "books": [
+    {
+      "name": "The Bitcoin Standard",
+      "author": "Saifedean Ammous",
+      "description": "An economist traces the history of money — from shells and metals to the gold standard and modern fiat debt — to explain why Bitcoin has the properties of sound money: scarcity, durability, and decentralization. The most influential economic case for Bitcoin as an alternative to central banking.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781119473862-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Bitcoin+Standard+Saifedean+Ammous"
+    },
+    {
+      "name": "Mastering Bitcoin",
+      "author": "Andreas M. Antonopoulos, David A. Harding",
+      "description": "The definitive technical guide to Bitcoin — explaining the decentralized network, cryptography, transaction lifecycle, and security principles accessibly for nontechnical investors while going deep enough for developers. Third edition, updated with Taproot, Schnorr signatures, and the Lightning Network.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781098150099-L.jpg",
+      "link": "https://www.amazon.com/s?k=Mastering+Bitcoin+Antonopoulos"
+    },
+    {
+      "name": "Digital Gold",
+      "author": "Nathaniel Popper",
+      "description": "A New York Times reporter tells the gripping early history of Bitcoin through its colorful cast of characters — from anarchists to millionaires — and how a mocked idea grew into a multi-billion-dollar technology. Shortlisted for the Financial Times business book of the year.",
+      "image": "https://covers.openlibrary.org/b/isbn/9780062362506-L.jpg",
+      "link": "https://www.amazon.com/s?k=Digital+Gold+Nathaniel+Popper"
+    },
+    {
+      "name": "Cryptoassets",
+      "author": "Chris Burniske, Jack Tatar",
+      "description": "A guide from two industry insiders on treating cryptoassets as a genuinely new investment class — a framework for fundamental analysis, portfolio management, and valuing the hundreds of tokens beyond Bitcoin. A practical toolkit for serious investors rather than a speculative hype book.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781260026672-L.jpg",
+      "link": "https://www.amazon.com/s?k=Cryptoassets+Burniske+Tatar"
+    },
+    {
+      "name": "The Basics of Bitcoins and Blockchains",
+      "author": "Antony Lewis",
+      "description": "A clear, accessible introduction for beginners — explaining how Bitcoin, blockchain technology, other cryptocurrencies, and ICOs work without technical jargon. Widely recommended as the first book to read for anyone new to crypto.",
+      "image": "https://covers.openlibrary.org/b/isbn/9781642506730-L.jpg",
+      "link": "https://www.amazon.com/s?k=The+Basics+of+Bitcoins+and+Blockchains+Antony+Lewis"
+    }
+  ]
+}

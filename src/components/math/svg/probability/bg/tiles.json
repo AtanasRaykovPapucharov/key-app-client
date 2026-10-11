@@ -1,0 +1,44 @@
+{
+    "probability":  {
+                        "x":  20,
+                        "y":  130,
+                        "width":  1220,
+                        "height":  930,
+                        "tileSize":  380
+                    },
+    "outcome":  {
+                    "x":  420,
+                    "y":  130,
+                    "width":  1220,
+                    "height":  930,
+                    "tileSize":  380
+                },
+    "event":  {
+                  "x":  820,
+                  "y":  130,
+                  "width":  1220,
+                  "height":  930,
+                  "tileSize":  380
+              },
+    "sample_space":  {
+                         "x":  20,
+                         "y":  530,
+                         "width":  1220,
+                         "height":  930,
+                         "tileSize":  380
+                     },
+    "independent_events":  {
+                               "x":  420,
+                               "y":  530,
+                               "width":  1220,
+                               "height":  930,
+                               "tileSize":  380
+                           },
+    "conditional_probability":  {
+                                    "x":  820,
+                                    "y":  530,
+                                    "width":  1220,
+                                    "height":  930,
+                                    "tileSize":  380
+                                }
+}
