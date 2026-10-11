@@ -1,10 +1,10 @@
 <template>
   <q-page class="q-pa-md dark-page">
     <!-- MENU: quiz selection cards -->
-    <div v-if="!activeQuizId" style="max-width: 960px; margin: 0 auto;">
-      <div class="text-h5 text-white q-mb-xs">Choose a Quiz</div>
+    <div v-if="!activeQuizId" style="max-width: 960px; margin: 0 auto">
+      <div class="text-h5 text-white q-mb-xs">{{ t('app.math.quiz.choose') }}</div>
       <div class="text-body2 text-grey-5 q-mb-lg">
-        Pick a quiz to begin. Each one has its own time limit and difficulty.
+        {{ t('app.math.quiz.intro') }}
       </div>
 
       <div class="row q-col-gutter-md">
@@ -23,18 +23,18 @@
             <q-card-section class="row justify-center text-caption text-grey-6 q-gutter-md">
               <div class="row items-center q-gutter-xs">
                 <q-icon name="quiz" size="16px" />
-                {{ quiz.questionCount }} questions
+                {{ quiz.questionCount }} {{ t('app.math.quiz.questions') }}
               </div>
               <div class="row items-center q-gutter-xs">
                 <q-icon name="schedule" size="16px" />
-                {{ quiz.timeLimitMinutes }} min
+                {{ quiz.timeLimitMinutes }} {{ t('app.math.quiz.min') }}
               </div>
             </q-card-section>
 
             <q-card-actions class="q-pa-md">
               <q-btn
                 :color="quiz.color"
-                label="Start Quiz"
+                :label="t('app.math.quiz.start')"
                 icon="play_arrow"
                 unelevated
                 class="full-width"
@@ -47,12 +47,7 @@
     </div>
 
     <!-- ACTIVE QUIZ -->
-    <QuizRunner
-      v-else
-      :key="activeQuizId"
-      :quiz-id="activeQuizId"
-      @exit="activeQuizId = null"
-    />
+    <QuizRunner v-else :key="activeQuizId" :quiz-id="activeQuizId" @exit="activeQuizId = null" />
   </q-page>
 </template>
 
@@ -61,6 +56,9 @@ import { ref } from 'vue'
 import { useQuasar } from 'quasar'
 import QuizRunner from './QuizRunner.vue'
 import { QUIZ_CATALOG } from './quizFactory.js'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const $q = useQuasar()
 $q.dark.set(true)

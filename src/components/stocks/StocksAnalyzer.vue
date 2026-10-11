@@ -4,11 +4,13 @@ import { Chart, registerables } from 'chart.js'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
 import { api } from 'src/boot/axios'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 Chart.register(...registerables)
 
 const { locale } = useI18n({ useScope: 'global' })
-const lang = computed(() => locale.value.split('-')[0])
 const route = useRoute()
 const symbol = ref(route.query.symbol ? String(route.query.symbol).toUpperCase() : 'AAPL')
 const searchText = ref('')
@@ -41,36 +43,22 @@ const rangeOptions = [
   { label: '5Y', value: '5y' },
 ]
 
+const METRIC_KEYS = [
+  'marketCap',
+  'trailingPE',
+  'forwardPE',
+  'priceToBook',
+  'beta',
+  'dividendYield',
+  'fiftyTwoWeekHigh',
+  'fiftyTwoWeekLow',
+  'volume',
+  'avgVolume3Month',
+  'epsTrailingTwelveMonths',
+  'bookValue',
+]
 const metricLabels = computed(() =>
-  lang.value === 'bg'
-    ? {
-        marketCap: 'Пазарна капитализация',
-        trailingPE: 'P/E',
-        forwardPE: 'Forward P/E',
-        priceToBook: 'Цена / Балансова стойност',
-        beta: 'Beta',
-        dividendYield: 'Дивидентна доходност',
-        fiftyTwoWeekHigh: '52-седмичен връх',
-        fiftyTwoWeekLow: '52-седмично дъно',
-        volume: 'Обем',
-        avgVolume3Month: 'Среден обем',
-        epsTrailingTwelveMonths: 'EPS',
-        bookValue: 'Балансова стойност',
-      }
-    : {
-        marketCap: 'Market cap',
-        trailingPE: 'P/E',
-        forwardPE: 'Forward P/E',
-        priceToBook: 'Price / book',
-        beta: 'Beta',
-        dividendYield: 'Dividend yield',
-        fiftyTwoWeekHigh: '52-week high',
-        fiftyTwoWeekLow: '52-week low',
-        volume: 'Volume',
-        avgVolume3Month: 'Average volume',
-        epsTrailingTwelveMonths: 'EPS',
-        bookValue: 'Book value',
-      },
+  Object.fromEntries(METRIC_KEYS.map((key) => [key, t(`app.stocks.metrics.${key}`)])),
 )
 
 const metricUnits = {
@@ -231,9 +219,7 @@ async function loadStock() {
     quote.value = null
     history.value = []
     summary.value = null
-    errorMessage.value =
-      error.response?.data?.error ||
-      (lang.value === 'bg' ? 'Неуспешно зареждане на данните.' : 'Could not load stock data.')
+    errorMessage.value = error.response?.data?.error || t('app.stocks.analyzer.couldNotLoadStock')
     destroyChart()
   } finally {
     loading.value = false
@@ -376,7 +362,7 @@ loadStock()
               readonly
               filled
               color="green-5"
-              label="Symbol"
+              :label="t('app.common.labels.symbol')"
               @keyup.enter="loadStock"
             />
           </div>
@@ -398,7 +384,7 @@ loadStock()
               dark
               color="green-5"
               :loading="companiesLoading"
-              label="Top companies"
+              :label="t('app.stocks.topCompanies')"
               @filter="filterCompanies"
               @update:model-value="selectCompany"
             />
@@ -411,7 +397,7 @@ loadStock()
               dense
               dark
               color="green-5"
-              label="Search"
+              :label="t('app.common.actions.search')"
               @keyup.enter="searchSymbols"
             >
               <template #prepend>
@@ -442,7 +428,7 @@ loadStock()
               </q-item>
             </q-list>
             <div v-else-if="hasSearched" class="search-suggestions search-suggestions--empty">
-              No matching companies found.
+              {{ t('app.common.labels.noCompanies') }}
             </div>
           </div>
         </div>
@@ -458,7 +444,7 @@ loadStock()
       <div class="row q-col-gutter-md q-mt-xs">
         <div class="col-12 col-lg-8">
           <div class="chart-toolbar row items-center justify-between q-mb-sm">
-            <div class="text-subtitle1 text-grey-3">Price history</div>
+            <div class="text-subtitle1 text-grey-3">{{ t('app.common.labels.priceHistory') }}</div>
             <q-btn-toggle
               v-model="range"
               dense
@@ -481,7 +467,7 @@ loadStock()
       </div>
 
       <q-separator class="q-mb-sm" />
-      <div class="text-h6 text-green-5 q-mb-md">Extended fundamentals</div>
+      <div class="text-h6 text-green-5 q-mb-md">{{ t('app.stocks.extended') }}</div>
       <div class="metric-grid summary-grid">
         <div v-for="metric in summaryMetrics" :key="metric.key" class="metric-cell">
           <div class="text-caption text-grey-5">{{ metric.label }}</div>

@@ -5,11 +5,13 @@ import { useI18n } from 'vue-i18n'
 import { getLongTermChart, getCoingeckoMarkets } from 'src/services/web/coingecko'
 import CryptoChart from 'src/components/crypto/CryptoChart.vue'
 import StrategyBuilder from 'src/components/crypto/StrategyBuilder.vue'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t: tt } = useLocalized()
 
 const { locale } = useI18n({ useScope: 'global' })
 const $q = useQuasar()
 const bg = computed(() => locale.value === 'bg-BG')
-const t = (en, bgText) => (bg.value ? bgText : en)
 
 const coins = [
   { value: 'bitcoin', label: 'Bitcoin', symbol: 'BTC' },
@@ -35,7 +37,12 @@ const ranges = [
 ]
 
 const intervals = [
-  { value: 'auto', label: 'Auto' },
+  {
+    value: 'auto',
+    get label() {
+      return tt('app.crypto.longTerm.auto')
+    },
+  },
   { value: '1d', label: '1D' },
   { value: '3d', label: '3D' },
   { value: '1w', label: '1W' },
@@ -199,40 +206,45 @@ const stats = computed(() => {
 const statCards = computed(() => {
   const s = stats.value
   return [
-    { key: 'last', label: t('Last', 'Последна'), value: fmtMoney(s?.last), icon: 'payments' },
+    {
+      key: 'last',
+      label: tt('app.crypto.longTerm.last'),
+      value: fmtMoney(s?.last),
+      icon: 'payments',
+    },
     {
       key: 'change',
-      label: t('Range change', 'Промяна за периода'),
+      label: tt('app.crypto.longTerm.rangeChange'),
       value: fmtPct(s?.changePct),
       icon: 'trending_up',
       pct: s?.changePct,
     },
     {
       key: 'high',
-      label: t('Period high', 'Връх за периода'),
+      label: tt('app.crypto.longTerm.periodHigh'),
       value: fmtMoney(s?.high),
       caption: fmtDate(s?.highDate),
       icon: 'arrow_upward',
     },
     {
       key: 'low',
-      label: t('Period low', 'Дъно за периода'),
+      label: tt('app.crypto.longTerm.periodLow'),
       value: fmtMoney(s?.low),
       caption: fmtDate(s?.lowDate),
       icon: 'arrow_downward',
     },
     {
       key: 'drawdown',
-      label: t('From high', 'От върха'),
+      label: tt('app.crypto.longTerm.fromHigh'),
       value: fmtPct(s?.fromHighPct),
       icon: 'waterfall_chart',
       pct: s?.fromHighPct,
     },
     {
       key: 'cagr',
-      label: t('CAGR', 'Год. доходност'),
+      label: tt('app.crypto.longTerm.cagr'),
       value: fmtPct(s?.cagr),
-      caption: s?.years ? `${s.years.toFixed(1)} ${t('yrs', 'г.')}` : '',
+      caption: s?.years ? `${s.years.toFixed(1)} ${tt('app.crypto.longTerm.yrs')}` : '',
       icon: 'auto_graph',
       pct: s?.cagr,
     },
@@ -335,7 +347,7 @@ async function load() {
     }
   } catch (err) {
     console.error(err)
-    errorMsg.value = t('Failed to load data.', 'Неуспешно зареждане на данните.')
+    errorMsg.value = tt('app.crypto.longTerm.failedToLoadData')
   } finally {
     loading.value = false
   }
@@ -352,7 +364,7 @@ function resetSettings() {
 }
 
 function applySettings() {
-  $q.notify({ message: t('Indicators updated', 'Индикаторите са обновени'), color: 'positive' })
+  $q.notify({ message: tt('app.crypto.longTerm.indicatorsUpdated'), color: 'positive' })
 }
 
 // ── Price alerts ──────────────────────────────────────────────────────────────
@@ -361,7 +373,7 @@ const activeAlerts = computed(() => alerts.value.filter((a) => a.coinId === coin
 function addAlert() {
   const value = Number(alertDraft.value.value)
   if (!Number.isFinite(value) || value <= 0) {
-    $q.notify({ message: t('Enter a valid price', 'Въведете валидна цена'), color: 'negative' })
+    $q.notify({ message: tt('app.crypto.longTerm.enterAValidPrice'), color: 'negative' })
     return
   }
   alerts.value = [
@@ -405,7 +417,7 @@ function fireAlert(alert, price) {
   const message = `${alert.symbol} ${dir} ${fmtMoney(alert.value)} — ${fmtMoney(price)}`
   $q.notify({
     message,
-    caption: t('Price alert', 'Ценови сигнал'),
+    caption: tt('app.crypto.longTerm.priceAlert'),
     color: alert.direction === 'above' ? 'positive' : 'negative',
     icon: 'notifications_active',
     timeout: 8000,
@@ -415,7 +427,7 @@ function fireAlert(alert, price) {
     typeof Notification !== 'undefined' &&
     Notification.permission === 'granted'
   ) {
-    new Notification(t('Price alert', 'Ценови сигнал'), { body: message })
+    new Notification(tt('app.crypto.longTerm.priceAlert'), { body: message })
   }
 }
 
@@ -529,10 +541,12 @@ onBeforeUnmount(() => {
           <span class="text-grey-6 text-subtitle1">/ USD</span>
         </div>
         <div class="text-caption text-grey-6">
-          {{ t('Long term history', 'Дългосрочна история') }}
-          <span v-if="stats"> · {{ t('since', 'от') }} {{ fmtDate(stats.from) }}</span>
+          {{ tt('app.crypto.longTerm.longTermHistory') }}
+          <span v-if="stats">
+            · {{ tt('app.crypto.longTerm.since') }} {{ fmtDate(stats.from) }}</span
+          >
           <span v-if="meta">
-            · {{ meta.interval }} · {{ candleCount }} {{ t('bars', 'бара') }}</span
+            · {{ meta.interval }} · {{ candleCount }} {{ tt('app.crypto.longTerm.bars') }}</span
           >
         </div>
       </div>
@@ -541,7 +555,7 @@ onBeforeUnmount(() => {
         <div class="text-h5 text-weight-bold text-white">{{ fmtMoney(stats?.last) }}</div>
         <div class="text-caption" :class="pctClass(stats?.changePct)">
           {{ fmtPct(stats?.changePct) }}
-          <span class="text-grey-6">{{ t('this range', 'за периода') }}</span>
+          <span class="text-grey-6">{{ tt('app.crypto.longTerm.thisRange') }}</span>
         </div>
       </div>
       <div class="col-auto">
@@ -564,7 +578,7 @@ onBeforeUnmount(() => {
             outlined
             dark
             color="orange-6"
-            :label="t('Asset', 'Актив')"
+            :label="tt('app.crypto.longTerm.asset')"
           >
             <template #prepend>
               <q-avatar size="22px" class="coin-avatar text-caption">
@@ -622,8 +636,8 @@ onBeforeUnmount(() => {
             toggle-color="cyan-8"
             toggle-text-color="grey-10"
             :options="[
-              { value: 'candles', label: t('Candles', 'Свещи'), disable: !candleCount },
-              { value: 'area', label: t('Area', 'Площ') },
+              { value: 'candles', label: tt('app.crypto.longTerm.candles'), disable: !candleCount },
+              { value: 'area', label: tt('app.crypto.longTerm.area') },
             ]"
           />
         </div>
@@ -634,7 +648,7 @@ onBeforeUnmount(() => {
             dark
             color="orange-6"
             class="text-grey-5"
-            :label="t('Log', 'Лог')"
+            :label="tt('app.crypto.longTerm.log')"
           />
         </div>
         <q-space />
@@ -715,10 +729,12 @@ onBeforeUnmount(() => {
         @click="toggleAlert(alert.id)"
       >
         {{ alert.symbol }} {{ alert.direction === 'above' ? '≥' : '≤' }} {{ fmtMoney(alert.value) }}
-        <span v-if="!alert.enabled" class="q-ml-xs text-grey-6">({{ t('off', 'изкл.') }})</span>
+        <span v-if="!alert.enabled" class="q-ml-xs text-grey-6"
+          >({{ tt('app.crypto.longTerm.off') }})</span
+        >
       </q-chip>
       <span v-if="livePrice" class="text-caption text-grey-6 q-ml-sm">
-        {{ t('live', 'на живо') }}: {{ fmtMoney(livePrice) }}
+        {{ tt('app.crypto.longTerm.live') }}: {{ fmtMoney(livePrice) }}
       </span>
     </div>
 
@@ -779,7 +795,7 @@ onBeforeUnmount(() => {
             <template v-else>{{ selectedCoin.symbol.slice(0, 1) }}</template>
           </q-avatar>
           <span class="text-subtitle2 text-white">{{ liveSymbol }}</span>
-          <span class="text-caption text-grey-6 q-ml-sm">{{ t('live', 'на живо') }}</span>
+          <span class="text-caption text-grey-6 q-ml-sm">{{ tt('app.crypto.longTerm.live') }}</span>
           <q-space />
           <q-btn
             flat
@@ -849,29 +865,29 @@ onBeforeUnmount(() => {
     <q-card v-if="market" flat class="panel q-mt-md q-pa-md">
       <div class="row q-col-gutter-md text-body2">
         <div class="col-6 col-md-3">
-          <div class="text-caption text-grey-6">{{ t('All time high', 'Исторически връх') }}</div>
+          <div class="text-caption text-grey-6">{{ tt('app.crypto.longTerm.allTimeHigh') }}</div>
           <div class="text-white">
             {{ fmtMoney(market.ath) }}
             <span class="text-grey-7">· {{ fmtDate(new Date(market.athDate)) }}</span>
           </div>
         </div>
         <div class="col-6 col-md-3">
-          <div class="text-caption text-grey-6">{{ t('All time low', 'Историческо дъно') }}</div>
+          <div class="text-caption text-grey-6">{{ tt('app.crypto.longTerm.allTimeLow') }}</div>
           <div class="text-white">
             {{ fmtMoney(market.atl) }}
             <span class="text-grey-7">· {{ fmtDate(new Date(market.atlDate)) }}</span>
           </div>
         </div>
         <div class="col-6 col-md-2">
-          <div class="text-caption text-grey-6">{{ t('Market cap', 'Пазарна кап.') }}</div>
+          <div class="text-caption text-grey-6">{{ tt('app.crypto.longTerm.marketCap') }}</div>
           <div class="text-white">{{ fmtMoney(market.marketCap) }}</div>
         </div>
         <div class="col-6 col-md-2">
-          <div class="text-caption text-grey-6">{{ t('1Y change', 'Промяна 1Г') }}</div>
+          <div class="text-caption text-grey-6">{{ tt('app.crypto.longTerm.n1yChange') }}</div>
           <div :class="pctClass(market.change1y)">{{ fmtPct(market.change1y) }}</div>
         </div>
         <div class="col-6 col-md-2">
-          <div class="text-caption text-grey-6">{{ t('200D change', 'Промяна 200Д') }}</div>
+          <div class="text-caption text-grey-6">{{ tt('app.crypto.longTerm.n200dChange') }}</div>
           <div :class="pctClass(market.change200d)">{{ fmtPct(market.change200d) }}</div>
         </div>
       </div>
@@ -881,7 +897,7 @@ onBeforeUnmount(() => {
       <q-badge outline color="orange-6" class="q-mr-sm">
         {{ chartMode === 'candles' ? meta?.source || '—' : chartData?.source || '—' }}
       </q-badge>
-      <span>{{ t('Long term data + technical overlays', 'Дългосрочни данни + индикатори') }}</span>
+      <span>{{ tt('app.crypto.longTerm.longTermDataTechnical') }}</span>
     </div>
 
     <!-- Customisation -->
@@ -893,7 +909,7 @@ onBeforeUnmount(() => {
             <template v-else>{{ selectedCoin.symbol.slice(0, 1) }}</template>
           </q-avatar>
           <q-toolbar-title class="text-subtitle1 text-white">
-            {{ t('Customise', 'Настройки') }}
+            {{ tt('app.crypto.longTerm.customise') }}
           </q-toolbar-title>
           <q-btn v-close-popup flat round dense icon="close" color="grey-5" />
         </q-toolbar>
@@ -906,9 +922,13 @@ onBeforeUnmount(() => {
           indicator-color="orange-6"
           class="text-grey-5"
         >
-          <q-tab name="indicators" icon="show_chart" :label="t('Indicators', 'Индикатори')" />
-          <q-tab name="alerts" icon="notifications" :label="t('Alerts', 'Сигнали')" />
-          <q-tab name="strategy" icon="savings" :label="t('Strategy', 'Стратегия')" />
+          <q-tab
+            name="indicators"
+            icon="show_chart"
+            :label="tt('app.crypto.longTerm.indicators')"
+          />
+          <q-tab name="alerts" icon="notifications" :label="tt('app.crypto.longTerm.alerts')" />
+          <q-tab name="strategy" icon="savings" :label="tt('app.crypto.longTerm.strategy')" />
         </q-tabs>
         <q-separator dark />
 
@@ -916,18 +936,13 @@ onBeforeUnmount(() => {
           <!-- Indicators -->
           <q-tab-panel name="indicators" class="q-gutter-md">
             <div class="text-caption text-grey-6">
-              {{
-                t(
-                  'Periods apply to the selected candle interval.',
-                  'Периодите важат за избрания интервал на свещите.',
-                )
-              }}
+              {{ tt('app.crypto.longTerm.periodsApplyToThe') }}
             </div>
 
             <div class="setting-group">
               <div class="row items-center justify-between q-mb-xs">
                 <div class="text-subtitle2 text-white">
-                  {{ t('Moving average', 'Пълзяща средна') }}
+                  {{ tt('app.crypto.longTerm.movingAverage') }}
                 </div>
                 <q-btn-group unelevated outline size="xs">
                   <q-btn
@@ -953,12 +968,7 @@ onBeforeUnmount(() => {
                 </q-btn-group>
               </div>
               <div class="text-caption text-grey-5 q-mb-xs">
-                {{
-                  t(
-                    'Smooths price data to identify trend direction and crossover signals.',
-                    'Изглажда цената за определяне на посоката на тренда и сигнали за пресичане.',
-                  )
-                }}
+                {{ tt('app.crypto.longTerm.smoothsPriceDataTo') }}
               </div>
               <div class="row q-col-gutter-sm">
                 <q-input
@@ -969,7 +979,7 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Fast (X)', 'Бърза (X)')"
+                  :label="tt('app.crypto.longTerm.fastX')"
                 />
                 <q-input
                   v-model.number="settings.ma.long"
@@ -979,7 +989,7 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Slow (Y)', 'Бавна (Y)')"
+                  :label="tt('app.crypto.longTerm.slowY')"
                 />
               </div>
             </div>
@@ -987,12 +997,7 @@ onBeforeUnmount(() => {
             <div class="setting-group">
               <div class="text-subtitle2 text-white q-mb-xs">EMA</div>
               <div class="text-caption text-grey-5 q-mb-xs">
-                {{
-                  t(
-                    'Exponential average giving higher weight to recent price changes.',
-                    'Експоненциална средна с по-голяма тежест за последните цени.',
-                  )
-                }}
+                {{ tt('app.crypto.longTerm.exponentialAverageGivingHigher') }}
               </div>
               <div class="row q-col-gutter-sm">
                 <q-input
@@ -1003,7 +1008,7 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Fast', 'Бърза')"
+                  :label="tt('app.crypto.longTerm.fast')"
                 />
                 <q-input
                   v-model.number="settings.ema.long"
@@ -1013,20 +1018,17 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Slow', 'Бавна')"
+                  :label="tt('app.crypto.longTerm.slow')"
                 />
               </div>
             </div>
 
             <div class="setting-group">
-              <div class="text-subtitle2 text-white q-mb-xs">{{ t('Bollinger', 'Болинджър') }}</div>
+              <div class="text-subtitle2 text-white q-mb-xs">
+                {{ tt('app.crypto.longTerm.bollinger') }}
+              </div>
               <div class="text-caption text-grey-5 q-mb-xs">
-                {{
-                  t(
-                    'Volatility bands above/below SMA. Band squeezes signal price breakouts.',
-                    'Ленти за волатилност около пълзяща средна. Свиването показва нов тренд.',
-                  )
-                }}
+                {{ tt('app.crypto.longTerm.volatilityBandsAboveBelow') }}
               </div>
               <div class="row q-col-gutter-sm">
                 <q-input
@@ -1037,7 +1039,7 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Period', 'Период')"
+                  :label="tt('app.crypto.longTerm.period')"
                 />
                 <q-input
                   v-model.number="settings.bb.mult"
@@ -1048,7 +1050,7 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Deviation', 'Отклонение')"
+                  :label="tt('app.crypto.longTerm.deviation')"
                 />
               </div>
             </div>
@@ -1056,12 +1058,7 @@ onBeforeUnmount(() => {
             <div class="setting-group">
               <div class="text-subtitle2 text-white q-mb-xs">Parabolic SAR</div>
               <div class="text-caption text-grey-5 q-mb-xs">
-                {{
-                  t(
-                    'Trailing stop-and-reverse dots indicating trend direction and reversals.',
-                    'Следващи точки за затваряне и обръщане, показващи посоката и обрата.',
-                  )
-                }}
+                {{ tt('app.crypto.longTerm.trailingStopAndReverse') }}
               </div>
               <div class="row q-col-gutter-sm">
                 <q-input
@@ -1073,7 +1070,7 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Step AF', 'Стъпка AF')"
+                  :label="tt('app.crypto.longTerm.stepAf')"
                 />
                 <q-input
                   v-model.number="settings.sar.max"
@@ -1084,7 +1081,7 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Max AF', 'Макс AF')"
+                  :label="tt('app.crypto.longTerm.maxAf')"
                 />
               </div>
             </div>
@@ -1092,12 +1089,7 @@ onBeforeUnmount(() => {
             <div class="setting-group">
               <div class="text-subtitle2 text-white q-mb-xs">Supertrend</div>
               <div class="text-caption text-grey-5 q-mb-xs">
-                {{
-                  t(
-                    'ATR-based trend-following indicator showing trailing support/resistance.',
-                    'Воден от ATR индикатор, показващ динамични нива на подкрепа/съпротива.',
-                  )
-                }}
+                {{ tt('app.crypto.longTerm.atrBasedTrendFollowing') }}
               </div>
               <div class="row q-col-gutter-sm">
                 <q-input
@@ -1108,7 +1100,7 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Period', 'Период')"
+                  :label="tt('app.crypto.longTerm.period')"
                 />
                 <q-input
                   v-model.number="settings.super.mult"
@@ -1119,7 +1111,7 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Multiplier', 'Множител')"
+                  :label="tt('app.crypto.longTerm.multiplier')"
                 />
               </div>
             </div>
@@ -1127,12 +1119,7 @@ onBeforeUnmount(() => {
             <div class="setting-group">
               <div class="text-subtitle2 text-white q-mb-xs">RSI</div>
               <div class="text-caption text-grey-5 q-mb-xs">
-                {{
-                  t(
-                    'Momentum oscillator (0-100) detecting overbought/oversold price levels.',
-                    'Осцилатор за импулс (0-100) за откриване на свръхкупени/свръхпродадени нива.',
-                  )
-                }}
+                {{ tt('app.crypto.longTerm.momentumOscillator0100') }}
               </div>
               <div class="row q-col-gutter-sm">
                 <q-input
@@ -1143,7 +1130,7 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Period', 'Период')"
+                  :label="tt('app.crypto.longTerm.period')"
                 />
                 <q-input
                   v-model.number="settings.rsi.overbought"
@@ -1153,7 +1140,7 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Overbought', 'Свръхкупен')"
+                  :label="tt('app.crypto.longTerm.overbought')"
                 />
                 <q-input
                   v-model.number="settings.rsi.oversold"
@@ -1163,7 +1150,7 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Oversold', 'Свръхпродаден')"
+                  :label="tt('app.crypto.longTerm.oversold')"
                 />
               </div>
             </div>
@@ -1171,12 +1158,7 @@ onBeforeUnmount(() => {
             <div class="setting-group">
               <div class="text-subtitle2 text-white q-mb-xs">MACD</div>
               <div class="text-caption text-grey-5 q-mb-xs">
-                {{
-                  t(
-                    'Trend-following momentum indicator showing the distance between EMAs.',
-                    'Индикатор за импулс, показващ разликата между бърза и бавна ЕМА.',
-                  )
-                }}
+                {{ tt('app.crypto.longTerm.trendFollowingMomentumIndicator') }}
               </div>
               <div class="row q-col-gutter-sm">
                 <q-input
@@ -1187,7 +1169,7 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Fast', 'Бърза')"
+                  :label="tt('app.crypto.longTerm.fast')"
                 />
                 <q-input
                   v-model.number="settings.macd.slow"
@@ -1197,7 +1179,7 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Slow', 'Бавна')"
+                  :label="tt('app.crypto.longTerm.slow')"
                 />
                 <q-input
                   v-model.number="settings.macd.signal"
@@ -1207,20 +1189,17 @@ onBeforeUnmount(() => {
                   outlined
                   dark
                   color="orange-6"
-                  :label="t('Signal', 'Сигнал')"
+                  :label="tt('app.crypto.longTerm.signal')"
                 />
               </div>
             </div>
 
             <div class="setting-group">
-              <div class="text-subtitle2 text-white q-mb-xs">{{ t('Volume MA', 'Обем MA') }}</div>
+              <div class="text-subtitle2 text-white q-mb-xs">
+                {{ tt('app.crypto.longTerm.volumeMa') }}
+              </div>
               <div class="text-caption text-grey-5 q-mb-xs">
-                {{
-                  t(
-                    'Moving average line calculated on trading volume bars.',
-                    'Пълзяща средна, изчислена върху стълбовете на търговския обем.',
-                  )
-                }}
+                {{ tt('app.crypto.longTerm.movingAverageLineCalculated') }}
               </div>
               <q-input
                 v-model.number="settings.vol.period"
@@ -1229,7 +1208,7 @@ onBeforeUnmount(() => {
                 outlined
                 dark
                 color="orange-6"
-                :label="t('Period', 'Период')"
+                :label="tt('app.crypto.longTerm.period')"
               />
             </div>
 
@@ -1239,14 +1218,14 @@ onBeforeUnmount(() => {
                 no-caps
                 color="orange-7"
                 text-color="grey-10"
-                :label="t('Apply', 'Приложи')"
+                :label="tt('app.crypto.longTerm.apply')"
                 @click="applySettings"
               />
               <q-btn
                 flat
                 no-caps
                 color="grey-5"
-                :label="t('Reset', 'Нулирай')"
+                :label="tt('app.crypto.longTerm.reset')"
                 @click="resetSettings"
               />
             </div>
@@ -1255,12 +1234,7 @@ onBeforeUnmount(() => {
           <!-- Alerts -->
           <q-tab-panel name="alerts" class="q-gutter-md">
             <div class="text-caption text-grey-6">
-              {{
-                t(
-                  'Alerts are checked every minute while this page is open.',
-                  'Сигналите се проверяват всяка минута, докато страницата е отворена.',
-                )
-              }}
+              {{ tt('app.crypto.longTerm.alertsAreCheckedEvery') }}
             </div>
 
             <div class="setting-group q-gutter-sm">
@@ -1275,8 +1249,8 @@ onBeforeUnmount(() => {
                 toggle-color="orange-7"
                 toggle-text-color="grey-10"
                 :options="[
-                  { value: 'above', label: t('Above', 'Над') },
-                  { value: 'below', label: t('Below', 'Под') },
+                  { value: 'above', label: tt('app.crypto.longTerm.above') },
+                  { value: 'below', label: tt('app.crypto.longTerm.below') },
                 ]"
               />
               <q-input
@@ -1286,8 +1260,8 @@ onBeforeUnmount(() => {
                 outlined
                 dark
                 color="orange-6"
-                :label="`${t('Price', 'Цена')} (USD)`"
-                :hint="livePrice ? `${t('now', 'сега')}: ${fmtMoney(livePrice)}` : ''"
+                :label="`${tt('app.crypto.longTerm.price')} (USD)`"
+                :hint="livePrice ? `${tt('app.crypto.longTerm.now')}: ${fmtMoney(livePrice)}` : ''"
               />
               <q-toggle
                 v-model="alertDraft.notifyBrowser"
@@ -1295,7 +1269,7 @@ onBeforeUnmount(() => {
                 dark
                 color="orange-6"
                 class="text-grey-5"
-                :label="t('Browser notification', 'Известие в браузъра')"
+                :label="tt('app.crypto.longTerm.browserNotification')"
               />
               <q-btn
                 unelevated
@@ -1303,7 +1277,7 @@ onBeforeUnmount(() => {
                 color="orange-7"
                 text-color="grey-10"
                 icon="add_alert"
-                :label="`${t('Add alert for', 'Добави сигнал за')} ${selectedCoin.symbol}`"
+                :label="`${tt('app.crypto.longTerm.addAlertFor')} ${selectedCoin.symbol}`"
                 @click="addAlert"
               />
             </div>
@@ -1328,8 +1302,8 @@ onBeforeUnmount(() => {
                   <q-item-label caption class="text-grey-6">
                     {{
                       alert.triggeredAt
-                        ? `${t('triggered', 'задействан')} ${fmtDate(new Date(alert.triggeredAt))}`
-                        : t('armed', 'активен')
+                        ? `${tt('app.crypto.longTerm.triggered')} ${fmtDate(new Date(alert.triggeredAt))}`
+                        : tt('app.crypto.longTerm.armed')
                     }}
                   </q-item-label>
                 </q-item-section>
@@ -1355,7 +1329,7 @@ onBeforeUnmount(() => {
               </q-item>
             </q-list>
             <div v-else class="text-caption text-grey-7">
-              {{ t('No alerts yet.', 'Все още няма сигнали.') }}
+              {{ tt('app.crypto.longTerm.noAlertsYet') }}
             </div>
           </q-tab-panel>
 

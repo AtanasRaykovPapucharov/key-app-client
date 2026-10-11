@@ -10,6 +10,9 @@ import {
 } from 'src/services/storage/rest'
 import DatatypeSelect from 'src/components/select/DatatypeSelect.vue'
 import AppDialog from 'src/components/AppDialog.vue'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const emit = defineEmits('refresh')
 const props = defineProps({
@@ -209,7 +212,7 @@ function inputType(dataType) {
       <q-th v-if="title" class="text-center">
         <q-btn flat dense round icon="add" color="primary" @click="addRow">
           <q-tooltip :delay="500" transition-show="rotate" transition-hide="rotate">
-            Add Row
+            {{ t('app.components.table.addRow') }}
           </q-tooltip>
         </q-btn>
       </q-th>
@@ -235,7 +238,7 @@ function inputType(dataType) {
               v-close-popup
               @click="addCol"
             >
-              <q-item-section>Add</q-item-section>
+              <q-item-section>{{ t('app.common.actions.add') }}</q-item-section>
             </q-item>
             <q-item
               v-if="props.col.opts.includes('sum')"
@@ -244,7 +247,7 @@ function inputType(dataType) {
               v-close-popup
               @click="showMessage(props.col)"
             >
-              <q-item-section>Sum</q-item-section>
+              <q-item-section>{{ t('app.common.labels.sum') }}</q-item-section>
             </q-item>
             <q-item
               v-if="props.col.opts.includes('delete')"
@@ -253,7 +256,7 @@ function inputType(dataType) {
               v-close-popup
               @click="deleteCol(props.col)"
             >
-              <q-item-section>Delete</q-item-section>
+              <q-item-section>{{ t('app.common.actions.delete') }}</q-item-section>
             </q-item>
           </q-list>
         </q-btn-dropdown>
@@ -273,10 +276,10 @@ function inputType(dataType) {
         >
           <q-list>
             <q-item dense clickable v-close-popup @click="editRow(props.row)">
-              <q-item-section>Edit</q-item-section>
+              <q-item-section>{{ t('app.common.actions.edit') }}</q-item-section>
             </q-item>
             <q-item dense clickable v-close-popup @click="deleteRow(props.row)">
-              <q-item-section>Delete</q-item-section>
+              <q-item-section>{{ t('app.common.actions.delete') }}</q-item-section>
             </q-item>
           </q-list>
         </q-btn-dropdown>
@@ -285,7 +288,7 @@ function inputType(dataType) {
     <template #pagination>
       <q-checkbox
         v-model="total"
-        label="Sum"
+        :label="t('app.common.labels.sum')"
         size="sm"
         color="black"
         style="position: absolute; left: 16px"
@@ -296,7 +299,9 @@ function inputType(dataType) {
     <template #bottom-row>
       <q-tr v-if="total">
         <!-- First cell as a label -->
-        <q-td colspan="1" class="text-left text-bold text-primary"> Total </q-td>
+        <q-td colspan="1" class="text-left text-bold text-primary">
+          {{ t('app.common.labels.total') }}
+        </q-td>
 
         <!-- Example: loop through numeric columns -->
         <q-td
@@ -344,7 +349,7 @@ function inputType(dataType) {
             :class="`col-${7}`"
             v-model="newName"
             type="text"
-            label="Name"
+            :label="t('app.common.labels.name')"
             filled
           />
           <datatype-select
@@ -354,8 +359,8 @@ function inputType(dataType) {
           />
         </div>
         <template #actions>
-          <q-btn flat label="Cancel" @click="cancel" color="primary" />
-          <q-btn flat label="Save" @click="save" color="primary" />
+          <q-btn flat :label="t('app.common.actions.cancel')" @click="cancel" color="primary" />
+          <q-btn flat :label="t('app.common.actions.save')" @click="save" color="primary" />
         </template>
       </AppDialog>
     </template>

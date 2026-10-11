@@ -2,6 +2,9 @@
 import { useDialogPluginComponent } from 'quasar'
 import { ref, reactive, computed, useAttrs } from 'vue'
 import AppDialog from './AppDialog.vue'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 defineEmits([...useDialogPluginComponent.emits])
 
@@ -151,7 +154,7 @@ const onCancel = () => {
         <q-tooltip :delay="500">{{ !ok ? 'Close' : 'Cancel' }}</q-tooltip>
       </q-btn>
       <q-btn v-if="ok" v-bind="buttonBinding(ok)" type="submit" dense flat icon="check">
-        <q-tooltip :delay="500">OK</q-tooltip>
+        <q-tooltip :delay="500">{{ t('app.common.actions.ok') }}</q-tooltip>
       </q-btn>
     </template>
   </AppDialog>

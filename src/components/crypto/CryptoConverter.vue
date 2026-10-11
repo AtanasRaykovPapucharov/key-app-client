@@ -3,6 +3,9 @@ import { ref, computed, watch, onMounted } from 'vue'
 import { useBinanceStore } from 'src/stores/binance'
 import cryptoMapper from 'src/helpers/crypto-mapper'
 import { getEurUsdcPrice } from 'src/services/web/coingecko'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const emit = defineEmits(['update:amount', 'swap'])
 
@@ -234,7 +237,7 @@ onMounted(async () => {
 
 <template>
   <div v-if="rate === null && from && to" class="text-caption text-negative text-center">
-    Missing {{ from }}/{{ to }} price
+    {{ t('app.common.labels.missing') }} {{ from }}/{{ to }} {{ t('app.common.labels.priceLower') }}
   </div>
 
   <q-card dark bordered class="bg-grey-9" :style="{ width, height }">

@@ -1,0 +1,28 @@
+{
+  "table": {
+    "addRow": "Add Row"
+  },
+  "resources": {
+    "links": "Links",
+    "books": "Books"
+  },
+  "art": {
+    "color": "Color",
+    "uploadedImage": "Uploaded image",
+    "pickerUnsupported": "Screen color picker is not supported in this browser"
+  },
+  "admin": {
+    "dataType": "Data Type",
+    "tableName": "Table Name",
+    "refreshTables": "Refresh Tables",
+    "createTable": "Create Table"
+  },
+  "forms": {
+    "doYouWant": "Do you want to"
+  },
+  "bot": {
+    "dataWatcher": "Data watcher",
+    "analyzer": "Analyzer",
+    "cash": "Cash"
+  }
+}

@@ -72,3 +72,160 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255, 0, 0, 0.5);
 }
+
+/* -------------------------------------------------------------------------
+ * Responsive foundation
+ * Quasar breakpoints: xs < 600 ≤ sm < 1024 ≤ md < 1440 ≤ lg < 1920 ≤ xl
+ * ---------------------------------------------------------------------- */
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+/* Wide content never pushes the page sideways */
+.q-table__middle,
+.scroll-x {
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.q-table__container {
+  max-width: 100%;
+}
+
+.text-break {
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+/* Centered page body with fluid gutters */
+.page-shell {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(8px, 2vw, 24px);
+  box-sizing: border-box;
+}
+
+/* Rows of buttons / chips that must wrap on narrow screens */
+.action-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Fluid card grid: 1 column on phones, as many as fit above */
+.auto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, var(--auto-grid-min, 280px)), 1fr));
+  gap: var(--auto-grid-gap, 16px);
+}
+
+/* Inputs sit side by side on desktop and stack on phones */
+.field-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.field-row > * {
+  flex: 1 1 var(--field-min, 180px);
+  min-width: 0;
+}
+
+/* Visible focus for keyboard users */
+.q-btn:focus-visible,
+.q-tab:focus-visible,
+.q-item:focus-visible {
+  outline: 2px solid var(--q-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Phones */
+@media (max-width: 599px) {
+  .text-h3 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .text-h4 {
+    font-size: 1.6rem;
+    line-height: 2rem;
+  }
+
+  .text-h5 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .text-h6 {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+  }
+
+  .q-page {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .q-dialog__inner--minimized > div {
+    max-width: calc(100vw - 24px) !important;
+    min-width: 0 !important;
+  }
+
+  .q-tab {
+    padding: 0 10px;
+    min-height: 40px;
+  }
+
+  .q-tab__label {
+    font-size: 13px;
+  }
+
+  /* Comfortable touch targets */
+  .q-btn--dense.q-btn--round {
+    min-width: 36px;
+    min-height: 36px;
+  }
+
+  .q-table th,
+  .q-table td {
+    padding: 6px 8px;
+  }
+
+  .hide-xs {
+    display: none !important;
+  }
+}
+
+/* Small tablets */
+@media (min-width: 600px) and (max-width: 1023px) {
+  .hide-sm {
+    display: none !important;
+  }
+}

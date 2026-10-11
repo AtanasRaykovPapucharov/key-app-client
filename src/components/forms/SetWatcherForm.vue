@@ -1,6 +1,9 @@
 <script setup>
 import { computed } from 'vue'
 import { fee } from 'src/services/storage/calc'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const emit = defineEmits(['update:modelValue']) // fix: unified event instead of update:price / update:amount
 
@@ -42,7 +45,7 @@ const bankFee = computed(() => fee(total.value))
 <template>
   <div class="q-gutter-md">
     <div class="text-h6 text-center">
-      Do you want to {{ modelValue.order_type }}
+      {{ t('app.components.forms.doYouWant') }} {{ modelValue.order_type }}
       {{ modelValue.displaySymbol || modelValue.symbol?.replace('USDC', ' / USDC') }} ?
     </div>
 

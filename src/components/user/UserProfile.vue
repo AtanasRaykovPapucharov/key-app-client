@@ -3,6 +3,9 @@ import { computed, reactive, ref, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 
 import { useUserStore } from 'src/stores/user'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const userStore = useUserStore()
 const { user } = storeToRefs(userStore)
@@ -35,31 +38,116 @@ const hairColors = ['#2f2118', '#6f4e37', '#b36b24', '#f0d06a', '#121212']
 const eyeColors = ['#1b1b1b', '#5b3a29', '#1f5f8b', '#2e7d32', '#7e57c2']
 const backgroundOptions = ['#263238', '#1e3a5f', '#355e3b', '#6b2f3b', '#4a3d75']
 const hairOptions = [
-  { label: 'Short', value: 'short' },
-  { label: 'Wave', value: 'wave' },
-  { label: 'Long', value: 'long' },
-  { label: 'Bald', value: 'bald' },
+  {
+    get label() {
+      return t('app.user.opt.short')
+    },
+    value: 'short',
+  },
+  {
+    get label() {
+      return t('app.user.opt.wave')
+    },
+    value: 'wave',
+  },
+  {
+    get label() {
+      return t('app.user.opt.long')
+    },
+    value: 'long',
+  },
+  {
+    get label() {
+      return t('app.user.opt.bald')
+    },
+    value: 'bald',
+  },
 ]
 const eyeOptions = [
-  { label: 'Calm', value: 'calm' },
-  { label: 'Bright', value: 'bright' },
-  { label: 'Focus', value: 'focus' },
+  {
+    get label() {
+      return t('app.user.opt.calm')
+    },
+    value: 'calm',
+  },
+  {
+    get label() {
+      return t('app.user.opt.bright')
+    },
+    value: 'bright',
+  },
+  {
+    get label() {
+      return t('app.user.opt.focus')
+    },
+    value: 'focus',
+  },
 ]
 const noseOptions = [
-  { label: 'Soft', value: 'soft' },
-  { label: 'Round', value: 'round' },
-  { label: 'Sharp', value: 'sharp' },
+  {
+    get label() {
+      return t('app.user.opt.soft')
+    },
+    value: 'soft',
+  },
+  {
+    get label() {
+      return t('app.user.opt.round')
+    },
+    value: 'round',
+  },
+  {
+    get label() {
+      return t('app.user.opt.sharp')
+    },
+    value: 'sharp',
+  },
 ]
 const mouthOptions = [
-  { label: 'Smile', value: 'smile' },
-  { label: 'Line', value: 'line' },
-  { label: 'Open', value: 'open' },
+  {
+    get label() {
+      return t('app.user.opt.smile')
+    },
+    value: 'smile',
+  },
+  {
+    get label() {
+      return t('app.user.opt.line')
+    },
+    value: 'line',
+  },
+  {
+    get label() {
+      return t('app.user.opt.open')
+    },
+    value: 'open',
+  },
 ]
 const accessoryOptions = [
-  { label: 'None', value: 'none' },
-  { label: 'Cap', value: 'cap' },
-  { label: 'Halo', value: 'halo' },
-  { label: 'Glasses', value: 'glasses' },
+  {
+    get label() {
+      return t('app.common.labels.none')
+    },
+    value: 'none',
+  },
+  {
+    get label() {
+      return t('app.user.opt.cap')
+    },
+    value: 'cap',
+  },
+  {
+    get label() {
+      return t('app.user.opt.halo')
+    },
+    value: 'halo',
+  },
+  {
+    get label() {
+      return t('app.user.opt.glasses')
+    },
+    value: 'glasses',
+  },
 ]
 
 const avatarSvg = computed(() => {
@@ -109,10 +197,30 @@ const generatedAvatar = computed(() => `data:image/svg+xml;base64,${window.btoa(
 const avatarPreview = computed(() => profile.avatar || generatedAvatar.value)
 
 const userFields = computed(() => [
-  { label: 'Username', value: user.value.username || 'Unknown' },
-  { label: 'User ID', value: user.value.uid || user.value.id || 'Not available' },
-  { label: 'Admin', value: user.value.admin ? 'Yes' : 'No' },
-  { label: 'Authenticated', value: user.value.isAuthenticated ? 'Yes' : 'No' },
+  {
+    get label() {
+      return t('app.common.labels.username')
+    },
+    value: user.value.username || 'Unknown',
+  },
+  {
+    get label() {
+      return t('app.user.userId')
+    },
+    value: user.value.uid || user.value.id || 'Not available',
+  },
+  {
+    get label() {
+      return t('app.user.admin')
+    },
+    value: user.value.admin ? 'Yes' : 'No',
+  },
+  {
+    get label() {
+      return t('app.user.authenticated')
+    },
+    value: user.value.isAuthenticated ? 'Yes' : 'No',
+  },
 ])
 
 const syncProfile = () => {
@@ -178,7 +286,7 @@ watch(uploadedImage, uploadAvatar)
           @keydown.enter="toggleAvatarBuilder"
           @keydown.space.prevent="toggleAvatarBuilder"
         >
-          <img :src="avatarPreview" alt="User avatar" />
+          <img :src="avatarPreview" :alt="t('app.user.avatar')" />
         </q-avatar>
         <q-btn
           round
@@ -186,7 +294,7 @@ watch(uploadedImage, uploadAvatar)
           unelevated
           color="primary"
           icon="edit"
-          aria-label="Edit avatar"
+          :aria-label="t('app.user.editAvatar')"
           class="avatar-edit-btn"
           @click="toggleAvatarBuilder"
         />
@@ -196,14 +304,14 @@ watch(uploadedImage, uploadAvatar)
     <div class="profile-grid">
       <q-card flat bordered class="profile-card bg-grey-10 text-grey-2">
         <q-card-section>
-          <div class="text-h6 text-secondary q-mb-md">Profile fields</div>
+          <div class="text-h6 text-secondary q-mb-md">{{ t('app.user.profileFields') }}</div>
           <q-input
             v-model="profile.username"
             dark
             outlined
             dense
             color="secondary"
-            label="Username"
+            :label="t('app.common.labels.username')"
           />
           <q-input
             v-model="profile.uid"
@@ -212,7 +320,7 @@ watch(uploadedImage, uploadAvatar)
             dense
             readonly
             color="secondary"
-            label="User ID"
+            :label="t('app.user.userId')"
             class="q-mt-md"
           />
 
@@ -227,7 +335,7 @@ watch(uploadedImage, uploadAvatar)
 
       <q-card flat bordered class="profile-card bg-grey-10 text-grey-2">
         <q-card-section>
-          <div class="text-h6 text-secondary q-mb-md">Avatar image</div>
+          <div class="text-h6 text-secondary q-mb-md">{{ t('app.user.avatarImage') }}</div>
           <q-file
             v-model="uploadedImage"
             dark
@@ -236,7 +344,7 @@ watch(uploadedImage, uploadAvatar)
             clearable
             accept="image/*"
             color="secondary"
-            label="Upload image"
+            :label="t('app.common.actions.uploadImage')"
           >
             <template #prepend>
               <q-icon name="image" />
@@ -249,7 +357,7 @@ watch(uploadedImage, uploadAvatar)
             outlined
             dense
             color="secondary"
-            label="Image URL or data URL"
+            :label="t('app.user.imageUrl')"
             class="q-mt-md"
           />
 
@@ -259,7 +367,7 @@ watch(uploadedImage, uploadAvatar)
                 class="full-width"
                 color="positive"
                 no-caps
-                label="Use custom avatar"
+                :label="t('app.user.useCustom')"
                 @click="useGeneratedAvatar"
               />
             </div>
@@ -268,7 +376,7 @@ watch(uploadedImage, uploadAvatar)
                 class="full-width"
                 color="grey-8"
                 no-caps
-                label="Clear image"
+                :label="t('app.user.clearImage')"
                 @click="clearAvatar"
               />
             </div>
@@ -287,14 +395,14 @@ watch(uploadedImage, uploadAvatar)
         <q-card-section>
           <div class="builder-head">
             <div>
-              <div class="text-h6 text-secondary">Avatar builder</div>
+              <div class="text-h6 text-secondary">{{ t('app.user.builder') }}</div>
               <div class="text-caption text-grey-5">
-                Customize the generated avatar, then save it to your profile.
+                {{ t('app.user.builderIntro') }}
               </div>
             </div>
             <div class="builder-preview" style="padding-right: 30%">
               <q-avatar size="86px" class="profile-avatar small">
-                <img :src="generatedAvatar" alt="Generated avatar" />
+                <img :src="generatedAvatar" :alt="t('app.user.generated')" />
               </q-avatar>
               <q-btn
                 round
@@ -303,7 +411,7 @@ watch(uploadedImage, uploadAvatar)
                 size="sm"
                 color="primary"
                 icon="close"
-                aria-label="Hide avatar builder"
+                :aria-label="t('app.user.hideBuilder')"
                 class="builder-close-btn"
                 @click="showAvatarBuilder = false"
                 style="position: absolute; top: 18px; right: 18px"
@@ -313,7 +421,7 @@ watch(uploadedImage, uploadAvatar)
 
           <div class="color-controls q-mt-lg">
             <div class="color-control">
-              <div class="control-label">Skin</div>
+              <div class="control-label">{{ t('app.user.skin') }}</div>
               <div class="swatches">
                 <button
                   v-for="color in skinOptions"
@@ -328,7 +436,7 @@ watch(uploadedImage, uploadAvatar)
             </div>
 
             <div class="color-control">
-              <div class="control-label">Hair</div>
+              <div class="control-label">{{ t('app.user.hair') }}</div>
               <div class="swatches">
                 <button
                   v-for="color in hairColors"
@@ -343,7 +451,7 @@ watch(uploadedImage, uploadAvatar)
             </div>
 
             <div class="color-control">
-              <div class="control-label">Eyes</div>
+              <div class="control-label">{{ t('app.user.eyes') }}</div>
               <div class="swatches">
                 <button
                   v-for="color in eyeColors"
@@ -358,7 +466,7 @@ watch(uploadedImage, uploadAvatar)
             </div>
 
             <div class="color-control">
-              <div class="control-label">Background</div>
+              <div class="control-label">{{ t('app.user.background') }}</div>
               <div class="swatches">
                 <button
                   v-for="color in backgroundOptions"
@@ -382,7 +490,7 @@ watch(uploadedImage, uploadAvatar)
               emit-value
               map-options
               :options="hairOptions"
-              label="Hair"
+              :label="t('app.user.hair')"
             />
             <q-select
               v-model="avatar.eyes"
@@ -392,7 +500,7 @@ watch(uploadedImage, uploadAvatar)
               emit-value
               map-options
               :options="eyeOptions"
-              label="Eyes"
+              :label="t('app.user.eyes')"
             />
             <q-select
               v-model="avatar.nose"
@@ -402,7 +510,7 @@ watch(uploadedImage, uploadAvatar)
               emit-value
               map-options
               :options="noseOptions"
-              label="Nose"
+              :label="t('app.user.nose')"
             />
             <q-select
               v-model="avatar.mouth"
@@ -412,7 +520,7 @@ watch(uploadedImage, uploadAvatar)
               emit-value
               map-options
               :options="mouthOptions"
-              label="Mouth"
+              :label="t('app.user.mouth')"
             />
             <q-select
               v-model="avatar.accessory"
@@ -422,18 +530,24 @@ watch(uploadedImage, uploadAvatar)
               emit-value
               map-options
               :options="accessoryOptions"
-              label="Hat / accessory"
+              :label="t('app.user.hat')"
             />
-            <q-toggle v-model="avatar.ears" color="secondary" label="Ears" />
+            <q-toggle v-model="avatar.ears" color="secondary" :label="t('app.user.ears')" />
           </div>
         </q-card-section>
 
         <q-card-actions align="right" class="q-px-md q-pb-md">
-          <q-btn flat color="grey-5" label="Close" no-caps @click="showAvatarBuilder = false" />
+          <q-btn
+            flat
+            color="grey-5"
+            :label="t('app.common.actions.close')"
+            no-caps
+            @click="showAvatarBuilder = false"
+          />
           <q-btn
             color="positive"
             icon="check"
-            label="Use avatar"
+            :label="t('app.user.useAvatar')"
             no-caps
             @click="useGeneratedAvatar"
           />
@@ -442,7 +556,13 @@ watch(uploadedImage, uploadAvatar)
     </q-dialog>
 
     <div class="profile-actions">
-      <q-btn color="positive" icon="save" label="Save profile" no-caps @click="saveProfile" />
+      <q-btn
+        color="positive"
+        icon="save"
+        :label="t('app.user.saveProfile')"
+        no-caps
+        @click="saveProfile"
+      />
     </div>
   </div>
 </template>

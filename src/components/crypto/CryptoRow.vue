@@ -5,6 +5,9 @@ import EthIndicator from './coin-view/EthIndicator.vue'
 import BnbIndicator from './coin-view/BnbIndicator.vue'
 import SolIndicator from './coin-view/SolIndicator.vue'
 import UsdcIndicator from './coin-view/UsdcIndicator.vue'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const props = defineProps({
   usdVal: { type: Number, default: null },
@@ -32,10 +35,12 @@ const sumUsdcAmount = computed(() => {
   <!-- <div class="text-h3 q-mb-md text-center bg-red">USDC {{ usdVal }}</div> -->
   <UsdcIndicator :usdc-value="(usdVal || sumUsdcAmount) + props.availableUsdc" />
   <div class="available-usdc">
-    Available: <span class="text-green-5">{{ props.availableUsdc.toFixed(4) }}</span>
+    {{ t('app.common.labels.availableColon') }}
+    <span class="text-green-5">{{ props.availableUsdc.toFixed(4) }}</span>
     <span class="q-mx-xs text-green-5 q-mr-lg">USDC</span>
 
-    In-Crypto: <span class="text-red-5">{{ usdVal || sumUsdcAmount.toFixed(4) }}</span>
+    {{ t('app.common.labels.inCryptoColon') }}
+    <span class="text-red-5">{{ usdVal || sumUsdcAmount.toFixed(4) }}</span>
     <span class="q-mx-xs text-red-5">USDC</span>
   </div>
   <br />

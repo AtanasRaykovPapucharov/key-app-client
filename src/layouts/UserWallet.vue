@@ -11,8 +11,10 @@ import SetOrderForm from 'src/components/forms/SetWatcherForm.vue'
 import CryptoConverter from 'src/components/crypto/CryptoConverter.vue'
 import { getEurUsdcPrice } from 'src/services/web/coingecko'
 import euroIcon from 'src/assets/icons/euro.png'
+import { useLocalized } from 'src/composables/useLocalized'
 
 const $q = useQuasar()
+const { t, n } = useLocalized()
 const binanceStore = useBinanceStore()
 const portfolioStore = usePortfolioStore()
 const userStore = useUserStore()
@@ -96,7 +98,7 @@ function validateEurAmount() {
   if (!uid) {
     $q.notify({
       type: 'negative',
-      message: 'Please log in to buy USDC.',
+      message: t('app.layout.wallet.loginToBuyUsdc'),
       position: 'top-left',
     })
     return false
@@ -106,7 +108,7 @@ function validateEurAmount() {
   if (!Number.isFinite(eurAmount) || eurAmount <= 0) {
     $q.notify({
       type: 'negative',
-      message: 'EUR amount must be greater than 0.',
+      message: t('app.layout.wallet.eurPositive'),
       position: 'top-left',
     })
     return false
@@ -115,7 +117,9 @@ function validateEurAmount() {
   if (eurAmount > availableEur.value) {
     $q.notify({
       type: 'negative',
-      message: `EUR amount exceeds your available balance (${availableEur.value.toFixed(2)} EUR).`,
+      message: t('app.layout.wallet.eurExceeds', {
+        balance: n(availableEur.value, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+      }),
       position: 'top-left',
     })
     return false
@@ -124,7 +128,7 @@ function validateEurAmount() {
   if (!eurToUsdcRate.value || eurToUsdcRate.value <= 0) {
     $q.notify({
       type: 'negative',
-      message: 'EUR/USDC price is currently unavailable. Please try again later.',
+      message: t('app.layout.wallet.rateUnavailable'),
       position: 'top-left',
     })
     return false
@@ -141,7 +145,7 @@ async function handleOrderConfirmed() {
   try {
     const uid = userStore.user?.uid
     if (!uid) {
-      throw new Error('User ID is missing or invalid')
+      throw new Error(t('app.layout.wallet.missingUser'))
     }
 
     const payload = {
@@ -167,11 +171,12 @@ async function handleOrderConfirmed() {
       return
     }
 
-    throw new Error('No response message from server')
+    throw new Error(t('app.common.notify.noServerMessage'))
   } catch (error) {
     $q.notify({
       type: 'negative',
-      message: error?.response?.data?.error || error?.message || 'Failed to buy USDC',
+      message:
+        error?.response?.data?.error || error?.message || t('app.layout.wallet.buyUsdcFailed'),
       position: 'top-left',
     })
   } finally {
@@ -197,7 +202,7 @@ function openOrderConfirmation() {
       persistent: true,
       close: true,
       modelValue: orderSummary,
-      ok: 'Confirm',
+      ok: t('app.common.actions.confirm'),
     },
   })
     .onOk(handleOrderConfirmed)
@@ -212,7 +217,7 @@ function validateUsdcAmount() {
   if (!uid) {
     $q.notify({
       type: 'negative',
-      message: 'Please log in to buy EUR.',
+      message: t('app.layout.wallet.loginToBuyEur'),
       position: 'top-left',
     })
     return false
@@ -222,7 +227,7 @@ function validateUsdcAmount() {
   if (!Number.isFinite(usdcAmount) || usdcAmount <= 0) {
     $q.notify({
       type: 'negative',
-      message: 'USDC amount must be greater than 0.',
+      message: t('app.layout.wallet.usdcPositive'),
       position: 'top-left',
     })
     return false
@@ -231,7 +236,9 @@ function validateUsdcAmount() {
   if (usdcAmount > availableUsdc.value) {
     $q.notify({
       type: 'negative',
-      message: `USDC amount exceeds your available balance (${availableUsdc.value.toFixed(2)} USDC).`,
+      message: t('app.layout.wallet.usdcExceeds', {
+        balance: n(availableUsdc.value, { minimumFractionDigits: 2, maximumFractionDigits: 2 }),
+      }),
       position: 'top-left',
     })
     return false
@@ -240,7 +247,7 @@ function validateUsdcAmount() {
   if (!eurToUsdcRate.value || eurToUsdcRate.value <= 0) {
     $q.notify({
       type: 'negative',
-      message: 'EUR/USDC price is currently unavailable. Please try again later.',
+      message: t('app.layout.wallet.rateUnavailable'),
       position: 'top-left',
     })
     return false
@@ -278,11 +285,12 @@ async function handleSellConfirmed() {
       return
     }
 
-    throw new Error('No response message from server')
+    throw new Error(t('app.common.notify.noServerMessage'))
   } catch (error) {
     $q.notify({
       type: 'negative',
-      message: error?.response?.data?.error || error?.message || 'Failed to buy EUR',
+      message:
+        error?.response?.data?.error || error?.message || t('app.layout.wallet.buyEurFailed'),
       position: 'top-left',
     })
   } finally {
@@ -311,7 +319,7 @@ function openSellConfirmation() {
         amount: Number(amount.value),
         readOnly: true,
       },
-      ok: 'Confirm',
+      ok: t('app.common.actions.confirm'),
     },
   }).onOk(handleSellConfirmed)
 }
@@ -330,10 +338,10 @@ function handleConverterSwap({ from, to }) {
           class="bg-secondary q-mr-md"
           style="border: 1px solid grey; margin-top: -7px; font-size: 20px"
         >
-          <img :src="euroIcon" />
+          <img :src="euroIcon" alt="EUR" />
         </q-avatar>
         <span class="q-mr-sm">{{ 'EUR' }}</span>
-        <span style="font-size: 16px">{{ 'Euro' }}</span>
+        <span style="font-size: 16px">{{ t('app.layout.wallet.euro') }}</span>
       </div>
 
       <q-space />
@@ -342,11 +350,11 @@ function handleConverterSwap({ from, to }) {
     <br />
     <div class="row" style="width: 100%">
       <div v-if="eurUsdRate !== null" class="text-caption text-blue-4">
-        1 EUR = {{ eurUsdRate.toLocaleString('en-US', { maximumFractionDigits: 4 }) }} USDC
+        1 EUR = {{ n(eurUsdRate, { maximumFractionDigits: 4 }) }} USDC
       </div>
       <q-space />
       <div v-if="btcInEurRate !== null" class="text-caption text-orange">
-        1 BTC = {{ btcInEurRate.toLocaleString('en-US', { maximumFractionDigits: 2 }) }} EUR
+        1 BTC = {{ n(btcInEurRate, { maximumFractionDigits: 2 }) }} EUR
       </div>
     </div>
   </div>
@@ -369,7 +377,7 @@ function handleConverterSwap({ from, to }) {
       style="width: auto; display: block; margin: 0 auto; margin-top: 10px"
       :color="isBuyingUsdc ? 'green' : 'orange'"
       :icon="isBuyingUsdc ? 'trending_up' : 'trending_down'"
-      :label="isBuyingUsdc ? 'BUY USDC' : 'BUY EUR'"
+      :label="isBuyingUsdc ? t('app.layout.wallet.buyUsdc') : t('app.layout.wallet.buyEur')"
       :loading="isBuying || isSelling"
       :disable="isBuying || isSelling"
       @click="isBuyingUsdc ? openOrderConfirmation() : openSellConfirmation()"
@@ -379,7 +387,7 @@ function handleConverterSwap({ from, to }) {
       <!-- <div class="text-subtitle1 text-secondary q-mb-md">Portfolio balances</div> -->
       <div class="row q-col-gutter-md">
         <div class="col-12 col-sm-6">
-          <div class="text-caption text-secondary">Available</div>
+          <div class="text-caption text-secondary">{{ t('app.layout.wallet.available') }}</div>
           <div class="row items-baseline no-wrap text-green-5">
             <span class="text-weight-bold text-h6">{{ availableUsdc.toFixed(4) }}</span>
             <span class="text-caption q-ml-xs">USDC</span>
@@ -387,7 +395,7 @@ function handleConverterSwap({ from, to }) {
           <div class="text-caption text-green-5">{{ availableUsdcEur.toFixed(2) }} EUR</div>
         </div>
         <div class="col-12 col-sm-6">
-          <div class="text-caption text-secondary">Total in Assets</div>
+          <div class="text-caption text-secondary">{{ t('app.layout.wallet.totalInAssets') }}</div>
           <div class="row items-baseline no-wrap text-purple-5">
             <span class="text-weight-bold text-h6">{{ totalUsdc.toFixed(4) }}</span>
             <span class="text-caption q-ml-xs">USDC</span>
@@ -397,7 +405,7 @@ function handleConverterSwap({ from, to }) {
       </div>
       <q-separator class="q-my-md" dark />
       <div class="row items-center">
-        <div class="text-caption text-secondary">Total including fiat</div>
+        <div class="text-caption text-secondary">{{ t('app.layout.wallet.totalWithFiat') }}</div>
         <q-space />
         <div class="text-secondary text-h5">{{ totalWithFiatEur.toFixed(2) }} EUR</div>
       </div>

@@ -3,53 +3,70 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import { api } from 'src/boot/axios'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const { locale } = useI18n({ useScope: 'global' })
 const router = useRouter()
-const lang = computed(() => locale.value.split('-')[0])
 const criterion = ref('marketCap')
 const search = ref('')
 const stocks = ref([])
 const loading = ref(false)
 const errorMessage = ref('')
 
-const criteria = computed(() =>
-  lang.value === 'bg'
-    ? [
-        { label: 'Пазарна капитализация', value: 'marketCap' },
-        { label: 'Дневен ръст', value: 'changePercent' },
-        { label: 'Обем', value: 'volume' },
-        { label: 'Най-нисък P/E', value: 'trailingPE' },
-        { label: 'Дивидентна доходност', value: 'dividendYield' },
-      ]
-    : [
-        { label: 'Market cap', value: 'marketCap' },
-        { label: 'Daily gain', value: 'changePercent' },
-        { label: 'Volume', value: 'volume' },
-        { label: 'Lowest P/E', value: 'trailingPE' },
-        { label: 'Dividend yield', value: 'dividendYield' },
-      ],
-)
+const criteria = computed(() => [
+  {
+    get label() {
+      return t('app.common.labels.marketCap')
+    },
+    value: 'marketCap',
+  },
+  {
+    get label() {
+      return t('app.common.labels.dailyGain')
+    },
+    value: 'changePercent',
+  },
+  {
+    get label() {
+      return t('app.common.labels.volume')
+    },
+    value: 'volume',
+  },
+  {
+    get label() {
+      return t('app.stocks.lowestPe')
+    },
+    value: 'trailingPE',
+  },
+  {
+    get label() {
+      return t('app.stocks.dividendYield')
+    },
+    value: 'dividendYield',
+  },
+])
 
 const columns = computed(() => [
   { name: 'rank', label: '#', field: 'rank', align: 'left', sortable: true },
   {
     name: 'symbol',
-    label: lang.value === 'bg' ? 'Символ' : 'Symbol',
+    label: t('app.stocks.top100.symbol'),
     field: 'symbol',
     align: 'left',
     sortable: true,
   },
   {
     name: 'name',
-    label: lang.value === 'bg' ? 'Компания' : 'Company',
+    label: t('app.stocks.top100.company'),
     field: 'name',
     align: 'left',
     sortable: true,
   },
   {
     name: 'price',
-    label: lang.value === 'bg' ? 'Цена' : 'Price',
+    label: t('app.stocks.top100.price'),
     field: 'price',
     align: 'right',
     sortable: true,
@@ -57,7 +74,7 @@ const columns = computed(() => [
   { name: 'changePercent', label: '%', field: 'changePercent', align: 'right', sortable: true },
   {
     name: 'marketCap',
-    label: lang.value === 'bg' ? 'Капитализация' : 'Market cap',
+    label: t('app.stocks.top100.marketCap'),
     field: 'marketCap',
     align: 'right',
     sortable: true,
@@ -65,26 +82,22 @@ const columns = computed(() => [
   { name: 'trailingPE', label: 'P/E', field: 'trailingPE', align: 'right', sortable: true },
   {
     name: 'dividendYield',
-    label: lang.value === 'bg' ? 'Дивидент %' : 'Dividend %',
+    label: t('app.stocks.top100.dividend'),
     field: 'dividendYield',
     align: 'right',
     sortable: true,
   },
   {
     name: 'volume',
-    label: lang.value === 'bg' ? 'Обем' : 'Volume',
+    label: t('app.stocks.top100.volume'),
     field: 'volume',
     align: 'right',
     sortable: true,
   },
 ])
 
-const title = computed(() => (lang.value === 'bg' ? 'Топ 100 акции' : 'Top 100 stocks'))
-const description = computed(() =>
-  lang.value === 'bg'
-    ? 'Най-важните показатели за водещите компании според избрания критерий.'
-    : 'Key metrics for leading companies ranked by the selected criterion.',
-)
+const title = computed(() => t('app.stocks.top100.top100Stocks'))
+const description = computed(() => t('app.stocks.top100.keyMetricsForLeading'))
 
 const filteredStocks = computed(() => {
   const needle = search.value.trim().toLowerCase()
@@ -124,11 +137,7 @@ async function loadStocks() {
     stocks.value = response.data.stocks || []
   } catch (error) {
     stocks.value = []
-    errorMessage.value =
-      error.response?.data?.error ||
-      (lang.value === 'bg'
-        ? 'Данните не могат да бъдат заредени.'
-        : 'Could not load stock rankings.')
+    errorMessage.value = error.response?.data?.error || t('app.stocks.top100.couldNotLoadStock')
   } finally {
     loading.value = false
   }
@@ -160,7 +169,7 @@ onMounted(loadStocks)
             dark
             clearable
             class="full-width"
-            :label="lang === 'bg' ? 'Търсене по символ или име' : 'Search by symbol or name'"
+            :label="t('app.stocks.top100.searchBySymbolOr')"
           >
             <template #prepend>
               <q-icon name="search" />
@@ -176,7 +185,7 @@ onMounted(loadStocks)
             outlined
             dense
             dark
-            :label="lang === 'bg' ? 'Класиране по' : 'Rank by'"
+            :label="t('app.stocks.top100.rankBy')"
           />
         </div>
       </div>

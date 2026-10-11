@@ -2,6 +2,7 @@
 import { useQuasar } from 'quasar'
 import { nextTick, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import { useLocalized } from 'src/composables/useLocalized'
 
 import FinanceExp from './expansions/FinanceExp.vue'
 import PhysicsExp from './expansions/PhysicsExp.vue'
@@ -10,6 +11,7 @@ import FaqExp from './expansions/FaqExp.vue'
 
 const emit = defineEmits(['close'])
 const $q = useQuasar()
+const { t } = useLocalized()
 const route = useRoute()
 const props = defineProps({
   drawerLeft: {
@@ -91,8 +93,8 @@ watch(
     v-model="drawer"
     bordered
     overlay
-    :breakpoint="500"
-    :width="360"
+    :breakpoint="1023"
+    :width="$q.screen.lt.sm ? $q.screen.width : 360"
     :class="'bg-grey-10'"
     style="border-right: 2px solid #b30000"
   >
@@ -103,7 +105,7 @@ watch(
       dense
       icon="close"
       color="grey-4"
-      aria-label="Close menu"
+      :aria-label="t('app.common.actions.closeMenu')"
       class="absolute-top-right q-ma-sm"
       style="z-index: 2"
       @click="emit('close')"
@@ -127,7 +129,15 @@ watch(
     </q-scroll-area>
 
     <div v-if="!$q.screen.lt.sm" class="absolute" style="top: 3px; right: -17px">
-      <q-btn class="mini-toggle-btn" dense round unelevated size="md" @click="closeDrawer">
+      <q-btn
+        class="mini-toggle-btn"
+        dense
+        round
+        unelevated
+        size="md"
+        :aria-label="t('app.common.actions.closeMenu')"
+        @click="closeDrawer"
+      >
         <q-icon
           class="mini-toggle-icon bg-red-11"
           size="xs"

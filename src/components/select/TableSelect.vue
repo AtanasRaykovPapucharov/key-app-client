@@ -10,6 +10,9 @@ import {
 } from 'src/services/storage/rest'
 import ExtendedTable from 'src/components/ExtendedTable.vue'
 import AddEditDelete from 'src/components/buttons/AddEditDelete.vue'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const props = defineProps({
   modelValue: {
@@ -54,8 +57,10 @@ onMounted(async () => {
 
 const createTbl = async () => {
   $q.dialog({
-    title: 'Create Table',
-    message: 'Name (Minimum 3 characters)',
+    get title() {
+      return t('app.components.admin.createTable')
+    },
+    message: t('app.common.validation.nameMin3'),
     prompt: {
       model: '',
       isValid: (val) => val.length > 2, // << here is the magic
@@ -102,7 +107,7 @@ const refresh = async () => {
           <q-select
             v-model="tableName"
             :options="allTables"
-            label="Table Name"
+            :label="t('app.components.admin.tableName')"
             :class="`col q-pl-sm ${!Dark.isActive ? 'bg-grey-3' : 'bg-grey-9'}`"
             style="width: 260px; border-radius: 5px"
             dense
@@ -113,7 +118,7 @@ const refresh = async () => {
           />
           <q-btn flat round class="q-mx-xs" icon="refresh" dense @click="refresh">
             <q-tooltip :delay="500" transition-show="rotate" transition-hide="rotate">
-              Refresh Tables
+              {{ t('app.components.admin.refreshTables') }}
             </q-tooltip>
           </q-btn>
         </div>

@@ -85,22 +85,21 @@ onMounted(async () => {
       @close="leftDrawer = false"
     />
     <layout-right-drawer v-if="route.path !== '/'" ref="rightDrawerRef" />
-    <q-page-container
-      class="bg-dark main-page-container"
-      style="padding-top: 70px"
-      @click="hideDrawers"
-    >
+    <q-page-container class="bg-dark main-page-container" @click="hideDrawers">
       <router-view />
     </q-page-container>
   </q-layout>
 </template>
 
 <style scoped>
+.main-page-container {
+  min-width: 0;
+  overflow-x: clip;
+}
+
 @media (max-width: 599px) {
   .main-page-container {
-    min-width: 0;
-    padding-bottom: 24px;
-    overflow-x: clip;
+    padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
   }
 }
 </style>

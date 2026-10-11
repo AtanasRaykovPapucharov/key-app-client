@@ -25,6 +25,9 @@ import {
 } from 'src/services/algo'
 import { useBinanceStore } from 'src/stores/binance'
 import CryptoDropdown from 'src/components/select/CryptoDropdown.vue'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const emit = defineEmits([
   'update:symbol',
@@ -612,7 +615,15 @@ const iSignals = ref({
 // ── Composite signal ──────────────────────────────────────────────────────────
 const composite = computed(() => {
   const active = Object.keys(indicators.value).filter((k) => indicators.value[k])
-  if (!active.length) return { label: 'HOLD', buys: 0, sells: 0, total: 0 }
+  if (!active.length)
+    return {
+      get label() {
+        return t('app.crypto.chart.hold')
+      },
+      buys: 0,
+      sells: 0,
+      total: 0,
+    }
 
   const total = active.length
   let buys = 0,
@@ -816,7 +827,9 @@ function initSubChart() {
   macdSignalSeries = addSeries(subChart, 'Line', {
     color: '#FF5722',
     lineWidth: 1,
-    title: 'Signal',
+    get title() {
+      return t('app.common.labels.signal')
+    },
   })
 
   volBarSeries = addSeries(subChart, 'Histogram', { title: 'Vol', priceScaleId: 'right' })
@@ -1256,7 +1269,7 @@ async function loadCandles() {
     if (chart) {
       chart.timeScale().fitContent()
       subChart?.timeScale().fitContent()
-    } 
+    }
     emit('update:candles', [...candles])
   } catch (err) {
     console.error('[CryptoChart] Failed to load candles:', err)
@@ -1372,7 +1385,7 @@ onUnmounted(() => {
         <div class="col-auto">
           <div class="row q-gutter-xs items-start">
             <span class="text-caption text-grey-5 q-mr-xs q-mt-xs" style="min-width: 48px">
-              Overlay:
+              {{ t('app.crypto.chart.overlay') }}
             </span>
 
             <!-- MA -->
@@ -1408,7 +1421,7 @@ onUnmounted(() => {
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    MA Presets
+                    {{ t('app.crypto.chart.maPresets') }}
                   </q-item-label>
 
                   <q-item
@@ -1420,7 +1433,9 @@ onUnmounted(() => {
                   >
                     <q-item-section>
                       <q-item-label>5 / 20 MA</q-item-label>
-                      <q-item-label caption class="text-grey-5">Short-term trend</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.shortTrend')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
@@ -1433,14 +1448,16 @@ onUnmounted(() => {
                   >
                     <q-item-section>
                       <q-item-label>50 / 200 MA</q-item-label>
-                      <q-item-label caption class="text-grey-5">Golden / Death cross</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.goldenDeath')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    Dynamic X / Y MA
+                    {{ t('app.crypto.chart.dynMa') }}
                   </q-item-label>
                   <div class="row q-col-gutter-xs q-px-xs q-pb-xs">
                     <div class="col-6">
@@ -1451,7 +1468,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="orange-6"
-                        label="X (Fast)"
+                        :label="t('app.crypto.chart.xFast')"
                         :min="1"
                         @update:model-value="onCustomMaChange"
                       />
@@ -1464,7 +1481,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="orange-6"
-                        label="Y (Slow)"
+                        :label="t('app.crypto.chart.ySlow')"
                         :min="1"
                         @update:model-value="onCustomMaChange"
                       />
@@ -1506,7 +1523,7 @@ onUnmounted(() => {
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    EMA Presets
+                    {{ t('app.crypto.chart.emaPresets') }}
                   </q-item-label>
 
                   <q-item
@@ -1518,7 +1535,9 @@ onUnmounted(() => {
                   >
                     <q-item-section>
                       <q-item-label>9 / 21 EMA</q-item-label>
-                      <q-item-label caption class="text-grey-5">Standard fast trend</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.stdFast')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
@@ -1531,7 +1550,9 @@ onUnmounted(() => {
                   >
                     <q-item-section>
                       <q-item-label>12 / 26 EMA</q-item-label>
-                      <q-item-label caption class="text-grey-5">MACD components</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.macdComponents')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
@@ -1544,14 +1565,16 @@ onUnmounted(() => {
                   >
                     <q-item-section>
                       <q-item-label>20 / 50 EMA</q-item-label>
-                      <q-item-label caption class="text-grey-5">Medium trend</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.mediumTrend')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    Dynamic X / Y EMA
+                    {{ t('app.crypto.chart.dynEma') }}
                   </q-item-label>
                   <div class="row q-col-gutter-xs q-px-xs q-pb-xs">
                     <div class="col-6">
@@ -1562,7 +1585,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="cyan-6"
-                        label="X (Fast)"
+                        :label="t('app.crypto.chart.xFast')"
                         :min="1"
                         @update:model-value="onCustomEmaChange"
                       />
@@ -1575,7 +1598,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="cyan-6"
-                        label="Y (Slow)"
+                        :label="t('app.crypto.chart.ySlow')"
                         :min="1"
                         @update:model-value="onCustomEmaChange"
                       />
@@ -1618,7 +1641,7 @@ onUnmounted(() => {
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    Bollinger Presets
+                    {{ t('app.crypto.chart.bbPresets') }}
                   </q-item-label>
 
                   <q-item
@@ -1629,8 +1652,10 @@ onUnmounted(() => {
                     active-class="text-blue-grey-3"
                   >
                     <q-item-section>
-                      <q-item-label>20 / 2.0 SD</q-item-label>
-                      <q-item-label caption class="text-grey-5">Standard bands</q-item-label>
+                      <q-item-label>{{ t('app.crypto.chart.bb20') }}</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.stdBands')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
@@ -1642,15 +1667,17 @@ onUnmounted(() => {
                     active-class="text-blue-grey-3"
                   >
                     <q-item-section>
-                      <q-item-label>20 / 2.5 SD</q-item-label>
-                      <q-item-label caption class="text-grey-5">Wide bands</q-item-label>
+                      <q-item-label>{{ t('app.crypto.chart.bb25') }}</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.wideBands')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    Dynamic Period / Deviation
+                    {{ t('app.crypto.chart.dynBb') }}
                   </q-item-label>
                   <div class="row q-col-gutter-xs q-px-xs q-pb-xs">
                     <div class="col-6">
@@ -1661,7 +1688,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="blue-grey-4"
-                        label="Period"
+                        :label="t('app.common.labels.period')"
                         :min="1"
                         @update:model-value="onCustomBbChange"
                       />
@@ -1675,7 +1702,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="blue-grey-4"
-                        label="Dev (σ)"
+                        :label="t('app.crypto.chart.dev')"
                         :min="0.1"
                         @update:model-value="onCustomBbChange"
                       />
@@ -1718,7 +1745,7 @@ onUnmounted(() => {
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    Parabolic SAR Presets
+                    {{ t('app.crypto.chart.sarPresets') }}
                   </q-item-label>
 
                   <q-item
@@ -1730,7 +1757,9 @@ onUnmounted(() => {
                   >
                     <q-item-section>
                       <q-item-label>0.02 / 0.2</q-item-label>
-                      <q-item-label caption class="text-grey-5">Standard AF</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.stdAf')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
@@ -1743,14 +1772,16 @@ onUnmounted(() => {
                   >
                     <q-item-section>
                       <q-item-label>0.01 / 0.1</q-item-label>
-                      <q-item-label caption class="text-grey-5">Smooth AF</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.smoothAf')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    Dynamic Step / Max AF
+                    {{ t('app.crypto.chart.dynSar') }}
                   </q-item-label>
                   <div class="row q-col-gutter-xs q-px-xs q-pb-xs">
                     <div class="col-6">
@@ -1762,7 +1793,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="orange-5"
-                        label="Step AF"
+                        :label="t('app.crypto.chart.stepAf')"
                         :min="0.001"
                         @update:model-value="onCustomSarChange"
                       />
@@ -1776,7 +1807,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="orange-5"
-                        label="Max AF"
+                        :label="t('app.crypto.chart.maxAf')"
                         :min="0.01"
                         @update:model-value="onCustomSarChange"
                       />
@@ -1819,7 +1850,7 @@ onUnmounted(() => {
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    Supertrend Presets
+                    {{ t('app.crypto.chart.stPresets') }}
                   </q-item-label>
 
                   <q-item
@@ -1831,7 +1862,9 @@ onUnmounted(() => {
                   >
                     <q-item-section>
                       <q-item-label>10 / 3.0</q-item-label>
-                      <q-item-label caption class="text-grey-5">Standard ATR</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.stdAtr')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
@@ -1844,14 +1877,16 @@ onUnmounted(() => {
                   >
                     <q-item-section>
                       <q-item-label>10 / 2.0</q-item-label>
-                      <q-item-label caption class="text-grey-5">Tight ATR</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.tightAtr')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    Dynamic Period / Multiplier
+                    {{ t('app.crypto.chart.dynSt') }}
                   </q-item-label>
                   <div class="row q-col-gutter-xs q-px-xs q-pb-xs">
                     <div class="col-6">
@@ -1862,7 +1897,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="green-5"
-                        label="Period"
+                        :label="t('app.common.labels.period')"
                         :min="1"
                         @update:model-value="onCustomSuperChange"
                       />
@@ -1876,7 +1911,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="green-5"
-                        label="Mult"
+                        :label="t('app.crypto.chart.mult')"
                         :min="0.1"
                         @update:model-value="onCustomSuperChange"
                       />
@@ -1919,7 +1954,7 @@ onUnmounted(() => {
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    Volume MA Presets
+                    {{ t('app.crypto.chart.volPresets') }}
                   </q-item-label>
 
                   <q-item
@@ -1930,8 +1965,10 @@ onUnmounted(() => {
                     active-class="text-amber-5"
                   >
                     <q-item-section>
-                      <q-item-label>20 Period</q-item-label>
-                      <q-item-label caption class="text-grey-5">Standard Volume MA</q-item-label>
+                      <q-item-label>{{ t('app.crypto.chart.p20') }}</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.stdVol')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
@@ -1943,15 +1980,17 @@ onUnmounted(() => {
                     active-class="text-amber-5"
                   >
                     <q-item-section>
-                      <q-item-label>50 Period</q-item-label>
-                      <q-item-label caption class="text-grey-5">Long Volume MA</q-item-label>
+                      <q-item-label>{{ t('app.crypto.chart.p50') }}</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.longVol')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    Dynamic Period
+                    {{ t('app.crypto.chart.dynPeriod') }}
                   </q-item-label>
                   <div class="q-px-xs q-pb-xs">
                     <q-input
@@ -1961,7 +2000,7 @@ onUnmounted(() => {
                       outlined
                       dark
                       color="amber-6"
-                      label="Volume MA Period"
+                      :label="t('app.crypto.chart.volMaPeriod')"
                       :min="1"
                       @update:model-value="onCustomAvlChange"
                     />
@@ -1978,7 +2017,7 @@ onUnmounted(() => {
         <div class="col-auto">
           <div class="row q-gutter-xs items-end">
             <span class="text-caption text-grey-5 q-mr-xs q-mb-xs" style="min-width: 48px">
-              Sub/Osc:
+              {{ t('app.crypto.chart.subOsc') }}
             </span>
 
             <!-- RSI Dropdown -->
@@ -2014,7 +2053,7 @@ onUnmounted(() => {
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    RSI Presets
+                    {{ t('app.crypto.chart.rsiPresets') }}
                   </q-item-label>
 
                   <q-item
@@ -2025,8 +2064,10 @@ onUnmounted(() => {
                     active-class="text-purple-4"
                   >
                     <q-item-section>
-                      <q-item-label>14 Period (70/30)</q-item-label>
-                      <q-item-label caption class="text-grey-5">Standard RSI</q-item-label>
+                      <q-item-label>{{ t('app.crypto.chart.rsi14') }}</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.stdRsi')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
@@ -2038,15 +2079,17 @@ onUnmounted(() => {
                     active-class="text-purple-4"
                   >
                     <q-item-section>
-                      <q-item-label>9 Period (80/20)</q-item-label>
-                      <q-item-label caption class="text-grey-5">Fast RSI</q-item-label>
+                      <q-item-label>{{ t('app.crypto.chart.rsi9') }}</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.fastRsi')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    Dynamic RSI Parameters
+                    {{ t('app.crypto.chart.dynRsi') }}
                   </q-item-label>
                   <div class="row q-col-gutter-xs q-px-xs q-pb-xs">
                     <div class="col-12 q-mb-xs">
@@ -2057,7 +2100,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="deep-purple-3"
-                        label="Period"
+                        :label="t('app.common.labels.period')"
                         :min="1"
                         @update:model-value="onCustomRsiChange"
                       />
@@ -2070,7 +2113,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="deep-purple-3"
-                        label="OB Level"
+                        :label="t('app.crypto.chart.obLevel')"
                         :min="1"
                         :max="99"
                         @update:model-value="onCustomRsiChange"
@@ -2084,7 +2127,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="deep-purple-3"
-                        label="OS Level"
+                        :label="t('app.crypto.chart.osLevel')"
                         :min="1"
                         :max="99"
                         @update:model-value="onCustomRsiChange"
@@ -2128,7 +2171,7 @@ onUnmounted(() => {
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    MACD Presets
+                    {{ t('app.crypto.chart.macdPresets') }}
                   </q-item-label>
 
                   <q-item
@@ -2140,7 +2183,9 @@ onUnmounted(() => {
                   >
                     <q-item-section>
                       <q-item-label>12 / 26 / 9</q-item-label>
-                      <q-item-label caption class="text-grey-5">Standard MACD</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.stdMacd')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
@@ -2153,14 +2198,16 @@ onUnmounted(() => {
                   >
                     <q-item-section>
                       <q-item-label>5 / 35 / 5</q-item-label>
-                      <q-item-label caption class="text-grey-5">Fast MACD</q-item-label>
+                      <q-item-label caption class="text-grey-5">{{
+                        t('app.crypto.chart.fastMacd')
+                      }}</q-item-label>
                     </q-item-section>
                   </q-item>
 
                   <q-separator dark class="q-my-xs" />
 
                   <q-item-label header class="text-grey-4 text-caption q-px-xs">
-                    Dynamic MACD Parameters
+                    {{ t('app.crypto.chart.dynMacd') }}
                   </q-item-label>
                   <div class="row q-col-gutter-xs q-px-xs q-pb-xs">
                     <div class="col-4">
@@ -2171,7 +2218,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="blue-4"
-                        label="Fast"
+                        :label="t('app.common.labels.fast')"
                         :min="1"
                         @update:model-value="onCustomMacdChange"
                       />
@@ -2184,7 +2231,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="blue-4"
-                        label="Slow"
+                        :label="t('app.common.labels.slow')"
                         :min="2"
                         @update:model-value="onCustomMacdChange"
                       />
@@ -2197,7 +2244,7 @@ onUnmounted(() => {
                         outlined
                         dark
                         color="blue-4"
-                        label="Signal"
+                        :label="t('app.common.labels.signal')"
                         :min="1"
                         @update:model-value="onCustomMacdChange"
                       />
@@ -2384,7 +2431,9 @@ onUnmounted(() => {
 
       <!-- Timeframe / Range row (under indicators) -->
       <div v-if="showRangeControls" class="row q-gutter-xs items-center q-mt-md">
-        <span class="text-caption text-grey-5 q-mr-xs" style="min-width: 48px">Range:</span>
+        <span class="text-caption text-grey-5 q-mr-xs" style="min-width: 48px">{{
+          t('app.common.labels.rangeColon')
+        }}</span>
         <q-btn-toggle
           v-model="selectedRange"
           dense
@@ -2399,11 +2448,13 @@ onUnmounted(() => {
             { value: '90', label: '3M' },
             { value: '365', label: '1Y' },
             { value: '1825', label: '5Y' },
-            { value: 'max', label: 'Max' },
+            { value: 'max', label: t('app.crypto.chart.max') },
           ]"
         />
 
-        <span class="text-caption text-grey-5 q-ml-sm q-mr-xs">Interval:</span>
+        <span class="text-caption text-grey-5 q-ml-sm q-mr-xs">{{
+          t('app.common.labels.intervalColon')
+        }}</span>
         <q-btn-toggle
           v-model="selectedInterval"
           dense
@@ -2414,7 +2465,7 @@ onUnmounted(() => {
           toggle-color="blue-grey-6"
           toggle-text-color="grey-10"
           :options="[
-            { value: 'auto', label: 'Auto' },
+            { value: 'auto', label: t('app.crypto.chart.auto') },
             { value: '1h', label: '1H' },
             { value: '1d', label: '1D' },
             { value: '3d', label: '3D' },
@@ -2423,7 +2474,9 @@ onUnmounted(() => {
           ]"
         />
 
-        <span class="text-caption text-grey-5 q-ml-sm q-mr-xs">Type:</span>
+        <span class="text-caption text-grey-5 q-ml-sm q-mr-xs">{{
+          t('app.common.labels.typeColon')
+        }}</span>
         <q-btn-toggle
           v-model="selectedMode"
           dense
@@ -2434,8 +2487,8 @@ onUnmounted(() => {
           toggle-color="cyan-8"
           toggle-text-color="grey-10"
           :options="[
-            { value: 'candles', label: 'Candles' },
-            { value: 'area', label: 'Area' },
+            { value: 'candles', label: t('app.crypto.chart.candles') },
+            { value: 'area', label: t('app.crypto.chart.area') },
           ]"
         />
 
@@ -2446,7 +2499,7 @@ onUnmounted(() => {
           size="xs"
           color="orange-6"
           class="text-grey-5 q-ml-xs"
-          label="Log"
+          :label="t('app.crypto.chart.log')"
         />
 
         <q-space />
@@ -2466,7 +2519,7 @@ onUnmounted(() => {
     <!-- ── Oscillator sub-chart (lazy-mounted) ────────────────────────── -->
     <template v-if="controls && showOscillator">
       <div class="row items-center q-px-sm q-pt-xs q-gutter-xs">
-        <span class="text-caption text-grey-5">Oscillator:</span>
+        <span class="text-caption text-grey-5">{{ t('app.crypto.chart.oscillator') }}</span>
         <q-btn-toggle
           :model-value="activeOscillator"
           dense

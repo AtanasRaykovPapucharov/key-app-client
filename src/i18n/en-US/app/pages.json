@@ -1,0 +1,55 @@
+{
+  "index": {
+    "mute": "Mute sound",
+    "unmute": "Unmute sound",
+    "crosshair": "Crosshair",
+    "shots": "Crypto shots",
+    "live": "Live",
+    "simulation": "market simulation",
+    "titleMain": "Crypto",
+    "titleSub": "Trader",
+    "tagline": "Unreal game with real numbers",
+    "startTrading": "Start trading",
+    "learnCrypto": "Learn crypto",
+    "statVolume": "Simulated volume",
+    "statTraders": "Active traders",
+    "statRisk": "Real risk"
+  },
+  "dashboard": {
+    "pair": "Pair",
+    "high24": "24h high, $",
+    "low24": "24h low, $",
+    "changePct": "Change, %",
+    "priceUsd": "Price, $",
+    "amount": "Amount",
+    "watched": "Watched, $",
+    "current": "Current, $",
+    "diff": "Diff., $",
+    "diffPct": "Diff., %",
+    "openedOn": "Opened on",
+    "addWatcher": "Watch this price",
+    "editSoon": "Editing watchers is coming soon.",
+    "deleteSoon": "Deleting watchers is coming soon.",
+    "deleteConfirm": "Delete this watcher?",
+    "ordersWatched": "No orders watched",
+    "ordersWatchedOne": "1 order watched",
+    "ordersWatchedMany": "{count} orders watched",
+    "avgPrice": "avg. price: {price}",
+    "currPrice": "curr. price: {price}",
+    "priceLabel": "Price:",
+    "totalLabel": "Total:",
+    "sumLabel": "Sum:",
+    "high": "24h high",
+    "low": "24h low",
+    "volume": "Volume",
+    "katAlert": "{symbol} is above {price}. Consider selling."
+  },
+  "notFound": {
+    "title": "Oops. Nothing here...",
+    "body": "The link may be broken or the page was moved.",
+    "home": "Go Home"
+  },
+  "admin": {
+    "legend": "ADMIN"
+  }
+}

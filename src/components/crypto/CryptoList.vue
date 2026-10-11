@@ -10,6 +10,9 @@ import { getCoinmarketcapPrices } from 'src/services/web/coinmarketcap'
 import { getLocalUser, setLocalCrypto } from 'src/services/storage/local'
 import { updatePortfolioWatchList } from 'src/services/storage/user'
 import { getCrypto } from 'src/services/storage/crypto'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const $q = useQuasar()
 const router = useRouter()
@@ -90,33 +93,78 @@ const rows = computed(() => {
 
 const columns = [
   { name: 'logo', label: '', field: 'logo', align: 'left' },
-  { name: 'symbol', label: 'Symbol', field: 'symbol', sortable: true, align: 'left' },
-  { name: 'name', label: 'Name', field: 'name', sortable: true, align: 'left' },
+  {
+    name: 'symbol',
+    get label() {
+      return t('app.common.labels.symbol')
+    },
+    field: 'symbol',
+    sortable: true,
+    align: 'left',
+  },
+  {
+    name: 'name',
+    get label() {
+      return t('app.common.labels.name')
+    },
+    field: 'name',
+    sortable: true,
+    align: 'left',
+  },
   {
     name: 'no',
-    label: 'No',
+    get label() {
+      return t('app.common.labels.no')
+    },
     field: 'no',
     sortable: true,
     format: (val) => `#${val}`,
     align: 'left',
   },
-  { name: 'short_descr', label: 'Consensus', field: 'short_descr', align: 'left' },
+  {
+    name: 'short_descr',
+    get label() {
+      return t('app.crypto.list.consensus')
+    },
+    field: 'short_descr',
+    align: 'left',
+  },
   {
     name: 'infinite_supply',
-    label: 'Infinite Supply',
+    get label() {
+      return t('app.crypto.list.infinite')
+    },
     field: 'infinite_supply',
     sortable: true,
     align: 'left',
   },
-  { name: 'max_supply', label: 'Max Supply', field: 'max_supply', sortable: true, align: 'left' },
+  {
+    name: 'max_supply',
+    get label() {
+      return t('app.crypto.list.maxSupply')
+    },
+    field: 'max_supply',
+    sortable: true,
+    align: 'left',
+  },
   {
     name: 'total_supply',
-    label: 'Total Supply',
+    get label() {
+      return t('app.crypto.list.totalSupply')
+    },
     field: 'total_supply',
     sortable: true,
     align: 'left',
   },
-  { name: 'marketCap', label: 'Market Cap', field: 'marketCap', sortable: true, align: 'left' },
+  {
+    name: 'marketCap',
+    get label() {
+      return t('app.common.labels.marketCap')
+    },
+    field: 'marketCap',
+    sortable: true,
+    align: 'left',
+  },
   // { name: 'description', label: 'Description', field: 'description', align: 'left' },
 ]
 
@@ -131,7 +179,7 @@ async function saveList() {
     hasChanged.value = false
     $q.notify({
       type: 'positive',
-      message: 'List successfully saved',
+      message: t('app.crypto.list.saved'),
       position: 'top-left',
     })
   } catch (err) {
@@ -146,7 +194,7 @@ async function saveList() {
     <br />
     {{ selected?.map((item) => (!item?.symbol ? null : `${item?.symbol?.toLowerCase()}usdc`)) }} -->
     <q-table
-      title="Crypto Watch List"
+      :title="t('app.crypto.list.title')"
       row-key="symbol"
       :rows="rows"
       :columns="columns"
@@ -164,7 +212,7 @@ async function saveList() {
           :disable="!hasChanged"
           flat
           color="secondary"
-          label="Save"
+          :label="t('app.common.actions.save')"
           icon="save"
           @click="saveList"
         />

@@ -1,24 +1,19 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useLocalized } from 'src/composables/useLocalized'
 import { api } from 'src/boot/axios'
 
 const { locale } = useI18n({ useScope: 'global' })
-const lang = computed(() => locale.value.split('-')[0])
+const { t } = useLocalized()
 const coins = ref([])
 const loading = ref(false)
 const errorMessage = ref('')
 
-const title = computed(() =>
-  lang.value === 'bg' ? 'Календар за отключване на токени' : 'Token unlock calendar',
-)
+const title = computed(() => t('app.crypto.unlockcalendar.tokenUnlockCalendar'))
 // CoinGecko does not expose exact vesting dates for free, so this approximates
 // unlock pressure using circulating vs. total/max supply.
-const note = computed(() =>
-  lang.value === 'bg'
-    ? 'Няма безплатен API с точни дати за отключване, затова прогресът показва циркулиращо спрямо общо/максимално предлагане — колкото по-нисък %, толкова повече токени тепърва ще бъдат отключени.'
-    : 'No free API exposes exact unlock dates, so progress shows circulating vs. total/max supply — the lower the %, the more tokens are still to be unlocked.',
-)
+const note = computed(() => t('app.crypto.unlockcalendar.noFreeApiExposes'))
 
 function formatNumber(value, digits = 2) {
   if (value === null || value === undefined) return '—'
@@ -44,8 +39,7 @@ async function loadUnlocks() {
   } catch (error) {
     coins.value = []
     errorMessage.value =
-      error.response?.data?.error ||
-      (lang.value === 'bg' ? 'Данните не могат да бъдат заредени.' : 'Could not load unlock data.')
+      error.response?.data?.error || t('app.crypto.unlockcalendar.couldNotLoadUnlock')
   } finally {
     loading.value = false
   }
@@ -78,7 +72,7 @@ onMounted(loadUnlocks)
             <q-item-label caption>
               {{ formatCompact(coin.circulatingSupply) }} /
               {{ formatCompact(coin.totalSupply) }}
-              {{ lang === 'bg' ? 'в обращение' : 'circulating' }}
+              {{ t('app.crypto.unlockcalendar.circulating') }}
             </q-item-label>
           </q-item-section>
           <q-item-section side style="min-width: 160px">
@@ -91,7 +85,7 @@ onMounted(loadUnlocks)
             />
             <div class="text-caption text-grey-5 text-right q-mt-xs">
               {{ formatNumber(coin.unlockedPct) }}%
-              {{ lang === 'bg' ? 'отключено' : 'unlocked' }}
+              {{ t('app.crypto.unlockcalendar.unlocked') }}
             </div>
           </q-item-section>
         </q-item>

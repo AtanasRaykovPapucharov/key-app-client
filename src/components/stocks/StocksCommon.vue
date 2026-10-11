@@ -30,7 +30,9 @@ const metricInfo = (label, description, formula) => {
     html: true,
     dark: true,
     ok: {
-      label: 'OK',
+      get label() {
+        return t('app.common.actions.ok')
+      },
       color: 'negative', // red button
     },
     message: `

@@ -1,5 +1,8 @@
 <script setup>
 import { computed } from 'vue'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const props = defineProps({
   modelValue: String,
@@ -38,7 +41,7 @@ const dataType = computed({
   <q-select
     v-model="dataType"
     :options="typeOptions"
-    label="Data Type"
+    :label="t('app.components.admin.dataType')"
     class="q-pl-sm bg-grey-3"
     style="width: 150px; border-radius: 5px"
     :readonly="readOnly"

@@ -1,0 +1,11 @@
+{
+  "strategy": {
+    "oversold": "Oversold level",
+    "overbought": "Overbought level",
+    "stdDev": "Standard deviation",
+    "maCross": "Moving Average Crossover",
+    "rsiReversal": "RSI Reversal",
+    "macdTrend": "MACD Trend",
+    "bollinger": "Bollinger Bands"
+  }
+}

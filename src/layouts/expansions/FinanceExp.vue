@@ -1,8 +1,8 @@
 <script setup>
-import { useI18n } from 'vue-i18n'
+import { useLocalized } from 'src/composables/useLocalized'
 import ICON from 'src/helpers/icons'
 
-const { t, locale } = useI18n()
+const { t } = useLocalized()
 
 // const points = [{ name: 'stocks', icon: 'bar_chart', color: 'text-red-5', link: 'stock' }]
 // const subpoints = [{ name: 'fundamentals', label: 'Fundamentals', labelBg: 'Фундаменти' }]
@@ -17,13 +17,12 @@ const { t, locale } = useI18n()
     :icon="p.icon"
     :class="p.color"
     :label="t(`education.${p.name}.label`)"
-    caption=""
   >
     <q-btn
       v-for="subp in subpoints"
       :key="subp.name"
       :to="`/${p.stock}-fundamentals`"
-      :label="locale !== 'bg-BG' ? subp.label : subp.labelBg"
+      :label="field(subp, 'label')"
       :class="p.color"
       :style="{ width: subp.name !== 'fundamentals' ? '50%' : '100%' }"
       :icon="ICON.FUNDAMENTALS"
@@ -39,15 +38,14 @@ const { t, locale } = useI18n()
     class="text-grey-5 text-h6"
     header-class="text-grey-5"
     expand-icon-class="text-grey-5"
-    :label="locale !== 'bg-BG' ? 'School Math' : 'Математика'"
-    caption=""
+    :label="t('app.layout.nav.schoolMath')"
   >
     <q-btn
       to="/math-fundamentals"
       :icon="ICON.FUNDAMENTALS"
       size="md"
       class="text-grey-5"
-      :label="locale !== 'bg-BG' ? 'Fundamentals' : 'Фундаменти'"
+      :label="t('app.layout.nav.fundamentals')"
       style="width: 100%"
       no-caps
     />
@@ -56,7 +54,7 @@ const { t, locale } = useI18n()
       :icon="ICON.ANALYSIS"
       size="md"
       class="text-grey-5"
-      :label="locale !== 'bg-BG' ? 'Analysis' : 'Анализ'"
+      :label="t('app.layout.nav.analysis')"
       style="width: 50%"
       no-caps
     />
@@ -65,7 +63,7 @@ const { t, locale } = useI18n()
       :icon="ICON.RESOURCES"
       size="md"
       class="text-grey-5"
-      :label="locale !== 'bg-BG' ? 'Resources' : 'Ресурси'"
+      :label="t('app.layout.nav.resources')"
       style="width: 50%"
       no-caps
     />
@@ -78,8 +76,7 @@ const { t, locale } = useI18n()
     class="text-red-5 text-h6"
     header-class="text-red-5"
     expand-icon-class="text-red-5"
-    :label="locale !== 'bg-BG' ? 'Probability & Statistics' : 'Вероятности & Статистика'"
-    caption=""
+    :label="t('app.layout.nav.probabilityStatistics')"
   ></q-expansion-item> -->
 
   <q-expansion-item
@@ -90,14 +87,13 @@ const { t, locale } = useI18n()
     header-class="text-green-5"
     expand-icon-class="text-green-5"
     :label="t('education.stocks.label')"
-    caption=""
   >
     <q-btn
       to="/stocks-fundamentals"
       :icon="ICON.FUNDAMENTALS"
       size="md"
       class="text-green-5"
-      :label="locale !== 'bg-BG' ? 'Fundamentals' : 'Фундаменти'"
+      :label="t('app.layout.nav.fundamentals')"
       style="width: 100%"
       no-caps
     />
@@ -106,7 +102,7 @@ const { t, locale } = useI18n()
       :icon="ICON.ANALYSIS"
       size="md"
       class="text-green-5"
-      :label="locale !== 'bg-BG' ? 'Analysis' : 'Анализ'"
+      :label="t('app.layout.nav.analysis')"
       style="width: 50%"
       no-caps
     />
@@ -115,7 +111,7 @@ const { t, locale } = useI18n()
       :icon="ICON.RESOURCES"
       size="md"
       class="text-green-5"
-      :label="locale !== 'bg-BG' ? 'Resources' : 'Ресурси'"
+      :label="t('app.layout.nav.resources')"
       style="width: 50%"
       no-caps
     />
@@ -129,14 +125,13 @@ const { t, locale } = useI18n()
     header-class="text-red-5"
     expand-icon-class="text-red-5"
     :label="t('education.bonds.label')"
-    caption=""
   >
     <q-btn
       to="/bonds-fundamentals"
       :icon="ICON.FUNDAMENTALS"
       size="md"
       class="text-red-5"
-      :label="locale !== 'bg-BG' ? 'Fundamentals' : 'Фундаменти'"
+      :label="t('app.layout.nav.fundamentals')"
       style="width: 100%"
       no-caps
     />
@@ -145,7 +140,7 @@ const { t, locale } = useI18n()
       :icon="ICON.ANALYSIS"
       size="md"
       class="text-red-5"
-      :label="locale !== 'bg-BG' ? 'Analysis' : 'Анализ'"
+      :label="t('app.layout.nav.analysis')"
       style="width: 50%"
       no-caps
     />
@@ -154,7 +149,7 @@ const { t, locale } = useI18n()
       :icon="ICON.RESOURCES"
       size="md"
       class="text-red-5"
-      :label="locale !== 'bg-BG' ? 'Resources' : 'Ресурси'"
+      :label="t('app.layout.nav.resources')"
       style="width: 50%"
       no-caps
     />
@@ -168,14 +163,13 @@ const { t, locale } = useI18n()
     header-class="text-orange-5"
     expand-icon-class="text-orange-5"
     :label="t('education.crypto.label')"
-    caption=""
   >
     <q-btn
       to="/crypto-fundamentals"
       :icon="ICON.FUNDAMENTALS"
       size="md"
       class="text-orange-5"
-      :label="locale !== 'bg-BG' ? 'Fundamentals' : 'Фундаменти'"
+      :label="t('app.layout.nav.fundamentals')"
       style="width: 100%"
       no-caps
     />
@@ -184,7 +178,7 @@ const { t, locale } = useI18n()
       :icon="ICON.ANALYSIS"
       size="md"
       class="text-orange-5"
-      :label="locale !== 'bg-BG' ? 'Analysis' : 'Анализ'"
+      :label="t('app.layout.nav.analysis')"
       style="width: 50%"
       no-caps
     />
@@ -193,7 +187,7 @@ const { t, locale } = useI18n()
       :icon="ICON.RESOURCES"
       size="md"
       class="text-orange-5"
-      :label="locale !== 'bg-BG' ? 'Resources' : 'Ресурси'"
+      :label="t('app.layout.nav.resources')"
       style="width: 50%"
       no-caps
     />
@@ -207,14 +201,13 @@ const { t, locale } = useI18n()
     header-class="text-blue-5"
     expand-icon-class="text-blue-5"
     :label="t('education.realEstate.label')"
-    caption=""
   >
     <q-btn
       to="/real-estate-fundamentals"
       :icon="ICON.FUNDAMENTALS"
       size="md"
       class="text-blue-5"
-      :label="locale !== 'bg-BG' ? 'Fundamentals' : 'Фундаменти'"
+      :label="t('app.layout.nav.fundamentals')"
       style="width: 100%"
       no-caps
     />
@@ -223,7 +216,7 @@ const { t, locale } = useI18n()
       :icon="ICON.ANALYSIS"
       size="md"
       class="text-blue-5"
-      :label="locale !== 'bg-BG' ? 'Analysis' : 'Анализ'"
+      :label="t('app.layout.nav.analysis')"
       style="width: 50%"
       no-caps
     />
@@ -232,7 +225,7 @@ const { t, locale } = useI18n()
       :icon="ICON.RESOURCES"
       size="md"
       class="text-blue-5"
-      :label="locale !== 'bg-BG' ? 'Resources' : 'Ресурси'"
+      :label="t('app.layout.nav.resources')"
       style="width: 50%"
       no-caps
     />
@@ -246,14 +239,13 @@ const { t, locale } = useI18n()
     header-class="text-purple-4"
     expand-icon-class="text-purple-4"
     :label="t('education.trading.label')"
-    caption=""
   >
     <q-btn
       to="/trading-fundamentals"
       :icon="ICON.FUNDAMENTALS"
       size="md"
       class="text-purple-4"
-      :label="locale !== 'bg-BG' ? 'Fundamentals' : 'Фундаменти'"
+      :label="t('app.layout.nav.fundamentals')"
       style="width: 100%"
       no-caps
     />
@@ -262,7 +254,7 @@ const { t, locale } = useI18n()
       :icon="ICON.ANALYSIS"
       size="md"
       class="text-purple-4"
-      :label="locale !== 'bg-BG' ? 'Analysis' : 'Анализ'"
+      :label="t('app.layout.nav.analysis')"
       style="width: 50%"
       no-caps
     />
@@ -271,7 +263,7 @@ const { t, locale } = useI18n()
       :icon="ICON.RESOURCES"
       size="md"
       class="text-purple-4"
-      :label="locale !== 'bg-BG' ? 'Resources' : 'Ресурси'"
+      :label="t('app.layout.nav.resources')"
       style="width: 50%"
       no-caps
     />
@@ -285,14 +277,13 @@ const { t, locale } = useI18n()
     header-class="text-purple-5"
     expand-icon-class="text-purple-5"
     :label="t('education.mindset.label')"
-    caption=""
   >
     <q-btn
       to="/mindset-fundamentals"
       :icon="ICON.FUNDAMENTALS"
       size="md"
       class="text-purple-5"
-      :label="locale !== 'bg-BG' ? 'Fundamentals' : 'Фундаменти'"
+      :label="t('app.layout.nav.fundamentals')"
       style="width: 100%"
       no-caps
     />
@@ -301,7 +292,7 @@ const { t, locale } = useI18n()
       :icon="ICON.ANALYSIS"
       size="md"
       class="text-purple-5"
-      :label="locale !== 'bg-BG' ? 'Analysis' : 'Анализ'"
+      :label="t('app.layout.nav.analysis')"
       style="width: 50%"
       no-caps
     />
@@ -310,7 +301,7 @@ const { t, locale } = useI18n()
       :icon="ICON.RESOURCES"
       size="md"
       class="text-purple-5"
-      :label="locale !== 'bg-BG' ? 'Resources' : 'Ресурси'"
+      :label="t('app.layout.nav.resources')"
       style="width: 50%"
       no-caps
     />

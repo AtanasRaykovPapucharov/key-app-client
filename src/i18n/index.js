@@ -10,6 +10,8 @@ import bgContent from './bg-BG/crypto_bg.json'
 import tradingEn from './en-US/trading_en.json'
 import tradingBg from './bg-BG/trading_bg.json'
 
+import { appEn, appBg } from './app'
+
 /** The content trees live outside vue-i18n messages: they are data, not
  *  interpolated strings. Both files share the same key structure. */
 export const tradingContentByLocale = {
@@ -27,6 +29,6 @@ export const realEstateContentByLocale = {
 }
 
 export default {
-  'en-US': enUS,
-  'bg-BG': bgBG,
+  'en-US': { ...enUS, app: appEn },
+  'bg-BG': { ...bgBG, app: appBg },
 }

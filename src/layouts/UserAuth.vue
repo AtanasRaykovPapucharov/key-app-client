@@ -40,7 +40,7 @@ const userRegister = async () => {
     userStore.setUser(usr)
   } catch (err) {
     console.error(err)
-    notifyError('Registration not available')
+    notifyError(t('app.layout.auth.registrationUnavailable'))
   }
 }
 const userLogin = async () => {
@@ -71,7 +71,12 @@ const submitAuth = () => {
 </script>
 
 <template>
-  <q-card v-if="!user.isAuthenticated" dark class="text-center" style="width: 300; max-width: 90vw">
+  <q-card
+    v-if="!user.isAuthenticated"
+    dark
+    class="text-center"
+    style="width: 100%; max-width: 360px; margin: 0 auto"
+  >
     <q-form @submit.prevent="submitAuth">
       <q-card-section>
         <div class="text-h5 text-center text-secondary">
@@ -82,6 +87,7 @@ const submitAuth = () => {
           class="text-secondary"
           v-bind="{ ...$defaults.input, ...$attrs }"
           v-model="username"
+          autocomplete="username"
           :label="t('common.auth.username')"
         />
         <q-input
@@ -89,23 +95,28 @@ const submitAuth = () => {
           v-bind="{ ...$defaults.input, ...$attrs }"
           v-model="password"
           :type="showPassword ? 'text' : 'password'"
+          :autocomplete="logIn ? 'current-password' : 'new-password'"
           :label="t('common.auth.password')"
           class="text-secondary"
         >
           <template #append>
-            <q-icon
-              clickable
+            <q-btn
+              flat
+              round
               dense
-              size="xs"
-              :name="showPassword ? 'visibility' : 'visibility_off'"
+              size="sm"
+              :icon="showPassword ? 'visibility' : 'visibility_off'"
               color="secondary"
+              :aria-label="
+                showPassword ? t('app.layout.auth.hidePassword') : t('app.layout.auth.showPassword')
+              "
               @click="showPassword = !showPassword"
             />
           </template>
         </q-input>
       </q-card-section>
 
-      <q-card-actions align="right">
+      <q-card-actions align="right" class="wrap">
         <span class="text-secondary">{{ t('common.auth.switchTo') }}</span>
         <q-btn
           class="q-ml-xs"

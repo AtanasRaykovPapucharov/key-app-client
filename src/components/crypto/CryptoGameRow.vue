@@ -12,6 +12,9 @@ import UniIndicator from './coin-view/UniIndicator.vue'
 import ZecIndicator from './coin-view/ZecIndicator.vue'
 
 import { ref } from 'vue'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 defineProps({
   btcValue: { type: Number, default: 0 },
@@ -46,7 +49,7 @@ function scrollIndicators(direction) {
       round
       dense
       icon="chevron_left"
-      aria-label="Show previous indicators"
+      :aria-label="t('app.crypto.row.prevIndicators')"
       @click="scrollIndicators(-1)"
     />
     <div ref="indicatorsRef" class="crypto-row__viewport">
@@ -127,7 +130,7 @@ function scrollIndicators(direction) {
       round
       dense
       icon="chevron_right"
-      aria-label="Show next indicators"
+      :aria-label="t('app.crypto.row.nextIndicators')"
       @click="scrollIndicators(1)"
     />
   </div>

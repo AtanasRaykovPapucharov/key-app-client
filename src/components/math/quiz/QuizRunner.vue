@@ -21,7 +21,7 @@
       <q-card-section class="q-py-sm">
         <div class="row items-center justify-between">
           <div class="text-caption text-grey-5">
-            Answered: {{ answeredCount }} / {{ questions.length }}
+            {{ t('app.math.quiz.answered') }} {{ answeredCount }} / {{ questions.length }}
           </div>
           <q-linear-progress
             :value="answeredCount / questions.length"
@@ -48,12 +48,12 @@
         />
       </template>
       <div class="text-subtitle1">
-        Quiz finished! Score: <strong>{{ score }} / {{ questions.length }}</strong> ({{
+        {{ t('app.math.quiz.finished') }} <strong>{{ score }} / {{ questions.length }}</strong> ({{
           scorePercent
         }}%)
       </div>
       <div v-if="autoSubmitted" class="text-caption text-grey-4">
-        Time ran out — the quiz was submitted automatically.
+        {{ t('app.math.quiz.timeout') }}
       </div>
     </q-banner>
 
@@ -142,16 +142,18 @@
         flat
         color="grey-4"
         icon="chevron_left"
-        label="Prev"
+        :label="t('app.common.actions.previous')"
         :disable="slide === 0"
         @click="prevSlide"
       />
-      <div class="text-caption text-grey-5">Question {{ slide + 1 }} / {{ questions.length }}</div>
+      <div class="text-caption text-grey-5">
+        {{ t('app.common.labels.question') }} {{ slide + 1 }} / {{ questions.length }}
+      </div>
       <q-btn
         flat
         color="grey-4"
         icon-right="chevron_right"
-        label="Next"
+        :label="t('app.common.actions.next')"
         :disable="slide === questions.length - 1"
         @click="nextSlide"
       />
@@ -163,7 +165,7 @@
         v-if="!submitted"
         flat
         color="grey-5"
-        label="Clear all answers"
+        :label="t('app.math.quiz.clear')"
         @click="clearAnswers"
       />
       <span v-else />
@@ -176,8 +178,13 @@
         unelevated
       />
       <div v-else class="row q-gutter-sm">
-        <q-btn color="grey-8" label="Back to menu" @click="$emit('exit')" outline />
-        <q-btn color="secondary" label="Restart Quiz" @click="restartQuiz" unelevated />
+        <q-btn color="grey-8" :label="t('app.math.quiz.back')" @click="$emit('exit')" outline />
+        <q-btn
+          color="secondary"
+          :label="t('app.math.quiz.restart')"
+          @click="restartQuiz"
+          unelevated
+        />
       </div>
     </div>
 
@@ -185,14 +192,14 @@
     <q-dialog v-model="confirmDialog" transition-duration="500">
       <q-card dark class="bg-dark text-white">
         <q-card-section class="text-subtitle1">
-          You still have {{ questions.length - answeredCount }} unanswered question(s). Submit
-          anyway?
+          {{ t('app.math.quiz.stillHave') }} {{ questions.length - answeredCount }}
+          {{ t('app.math.quiz.unanswered') }}
         </q-card-section>
         <q-card-actions align="right">
-          <q-btn flat label="Keep working" color="grey-5" v-close-popup />
+          <q-btn flat :label="t('app.math.quiz.keepWorking')" color="grey-5" v-close-popup />
           <q-btn
             flat
-            label="Submit"
+            :label="t('app.common.actions.submit')"
             color="primary"
             v-close-popup
             @click="submitQuiz(false, true)"
@@ -207,6 +214,9 @@
 import { ref, reactive, computed, onMounted, onUnmounted } from 'vue'
 import { useQuasar } from 'quasar'
 import { createQuiz } from './quizFactory.js'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const props = defineProps({
   quizId: { type: String, required: true },

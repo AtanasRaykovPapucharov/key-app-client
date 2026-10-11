@@ -9,6 +9,9 @@ import SetOrderForm from 'src/components/forms/SetWatcherForm.vue'
 import CryptoConverter from './CryptoConverter.vue'
 import CryptoConverterToggle from './CryptoConverterToggle.vue'
 import { fee } from 'src/services/storage/calc'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const emit = defineEmits(['newOrder'])
 
@@ -63,7 +66,7 @@ function validateOrder() {
   if (!selectedAsset.value) {
     $q.notify({
       type: 'negative',
-      message: 'Please select a valid trading pair.',
+      message: t('app.crypto.order.invalidPair'),
       position: 'top-left',
     })
     return false
@@ -72,7 +75,7 @@ function validateOrder() {
   if (!currentPrice.value || currentPrice.value <= 0) {
     $q.notify({
       type: 'negative',
-      message: 'Invalid price data. Please try again.',
+      message: t('app.crypto.order.invalidPrice'),
       position: 'top-left',
     })
     return false
@@ -81,7 +84,7 @@ function validateOrder() {
   if (amount.value <= 0) {
     $q.notify({
       type: 'negative',
-      message: 'Amount must be greater than 0.',
+      message: t('app.common.validation.amountPositive'),
       position: 'top-left',
     })
     return false
@@ -90,7 +93,7 @@ function validateOrder() {
   if (!userStore.user?.uid) {
     $q.notify({
       type: 'negative',
-      message: 'User session is invalid. Please log in again.',
+      message: t('app.common.notify.sessionInvalid'),
       position: 'top-left',
     })
     return false
@@ -113,7 +116,7 @@ async function handleOrderConfirmed() {
     // uid should be a UUID string, not a number
     const userId = userStore.user?.uid
     if (!userId) {
-      throw new Error('User ID is missing or invalid')
+      throw new Error(t('app.common.notify.sessionInvalid'))
     }
 
     const dataView = {
@@ -139,14 +142,15 @@ async function handleOrderConfirmed() {
       emit('newOrder', resp)
       resetForm()
     } else {
-      throw new Error('No response message from server')
+      throw new Error(t('app.common.notify.noServerMessage'))
     }
   } catch (err) {
     console.error('Order submission error:', err)
-    const errorMsg = err?.response?.data?.error || err?.message || 'Unknown error'
+    const errorMsg =
+      err?.response?.data?.error || err?.message || t('app.crypto.order.unknownError')
     $q.notify({
       type: 'negative',
-      message: `Order failed: ${errorMsg}`,
+      message: t('app.crypto.order.failed', { error: errorMsg }),
       position: 'top-left',
     })
   } finally {
@@ -173,7 +177,7 @@ async function newOrder() {
       persistent: true,
       close: true,
       modelValue: orderSummary,
-      ok: 'Confirm',
+      ok: t('app.common.actions.confirm'),
     },
   })
     .onOk(handleOrderConfirmed)

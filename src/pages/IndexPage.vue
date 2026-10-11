@@ -27,7 +27,7 @@
 
     <img
       :src="sniperImage"
-      alt="Sniper crosshair"
+      :alt="t('app.pages.index.crosshair')"
       :style="{
         left: `${sniperPosition.left}px`,
         top: `${sniperPosition.top}px`,
@@ -51,41 +51,44 @@
       dense
       class="ct-sound-toggle"
       :icon="isMuted ? 'volume_off' : 'volume_up'"
-      :aria-label="isMuted ? 'Unmute sound' : 'Mute sound'"
+      :aria-label="isMuted ? t('app.pages.index.unmute') : t('app.pages.index.mute')"
       @click.stop="toggleMute"
     />
 
     <div class="ct-kill-counter" :style="counterStyle" aria-live="polite">
       <q-icon name="gps_fixed" size="18px" class="ct-counter-icon" />
       <div class="ct-counter-value" :key="hitCount">{{ hitCount }}</div>
-      <div class="ct-counter-label">CRYPTO SHOTS</div>
+      <div class="ct-counter-label">{{ t('app.pages.index.shots') }}</div>
     </div>
 
     <div class="ct-content">
       <div class="ct-badge">
         <span class="ct-dot"></span>
-        <span class="ct-live">LIVE</span> MARKET SIMULATION
+        <span class="ct-live">{{ t('app.pages.index.live') }}</span>
+        {{ t('app.pages.index.simulation') }}
       </div>
 
       <h1 class="ct-title">
-        <span class="ct-title-line ct-title-main">CRYPTO</span>
-        <span class="ct-title-line ct-title-sub" data-text="TRADER">TRADER</span>
+        <span class="ct-title-line ct-title-main">{{ t('app.pages.index.titleMain') }}</span>
+        <span class="ct-title-line ct-title-sub" :data-text="t('app.pages.index.titleSub')">{{
+          t('app.pages.index.titleSub')
+        }}</span>
       </h1>
 
-      <p class="ct-tagline" data-text="Unreal Game with Real Numbers">
-        Unreal Game with Real Numbers
+      <p class="ct-tagline" :data-text="t('app.pages.index.tagline')">
+        {{ t('app.pages.index.tagline') }}
       </p>
 
       <div class="ct-ticker">
         <div class="ct-ticker-track">
-          <span v-for="(t, i) in [...tickers, ...tickers]" :key="i" class="ct-ticker-item">
-            <strong class="ct-ticker-symbol">{{ t.symbol }}</strong>
-            <strong>{{ t.price }}</strong>
-            <span v-if="t.change !== '--'" :class="['ct-change', t.up ? 'ct-up' : 'ct-down']">
-              <span class="ct-arrow">{{ t.up ? '▲' : '▼' }}</span
-              >{{ t.change }}
+          <span v-for="(tk, i) in [...tickers, ...tickers]" :key="i" class="ct-ticker-item">
+            <strong class="ct-ticker-symbol">{{ tk.symbol }}</strong>
+            <strong>{{ tk.price }}</strong>
+            <span v-if="tk.change !== '--'" :class="['ct-change', tk.up ? 'ct-up' : 'ct-down']">
+              <span class="ct-arrow">{{ tk.up ? '▲' : '▼' }}</span
+              >{{ tk.change }}
             </span>
-            <span v-else class="ct-change">{{ t.change }}</span>
+            <span v-else class="ct-change">{{ tk.change }}</span>
           </span>
         </div>
       </div>
@@ -95,7 +98,7 @@
           unelevated
           no-caps
           class="ct-btn-primary"
-          label="Start Trading"
+          :label="t('app.pages.index.startTrading')"
           icon="rocket_launch"
           size="lg"
           to="/crypto-trader"
@@ -104,7 +107,7 @@
           flat
           no-caps
           class="ct-btn-secondary"
-          label="Learn Crypto"
+          :label="t('app.pages.index.learnCrypto')"
           icon="menu_book"
           size="lg"
           to="/crypto-fundamentals"
@@ -125,6 +128,7 @@
 import { useQuasar } from 'quasar'
 import { computed, markRaw, onBeforeUnmount, onMounted, ref } from 'vue'
 import { useBinanceStore } from 'src/stores/binance'
+import { useLocalized } from 'src/composables/useLocalized'
 import sniperImage from 'src/assets/sniper.svg'
 import AdaIndicator from 'src/components/crypto/coin-view/AdaIndicator.vue'
 import BnbIndicator from 'src/components/crypto/coin-view/BnbIndicator.vue'
@@ -142,6 +146,7 @@ import stellarLogo from 'src/assets/icons/stellar.png'
 import uniswapLogo from 'src/assets/icons/uniswap.png'
 
 const $q = useQuasar()
+const { t } = useLocalized()
 
 const binanceStore = useBinanceStore()
 
@@ -405,11 +410,11 @@ const tickers = computed(() =>
   }),
 )
 
-const stats = [
-  { value: '$2.4M', label: 'Simulated Volume' },
-  { value: '12,904', label: 'Active Traders' },
-  { value: '0.0%', label: 'Real Risk' },
-]
+const stats = computed(() => [
+  { value: '$2.4M', label: t('app.pages.index.statVolume') },
+  { value: '12,904', label: t('app.pages.index.statTraders') },
+  { value: '0.0%', label: t('app.pages.index.statRisk') },
+])
 
 onMounted(() => {
   resize()
@@ -847,5 +852,13 @@ onBeforeUnmount(() => {
     font-size: 8px;
     letter-spacing: 1px;
   }
+}
+
+/* Copy comes from i18n in sentence case; display treatment stays here */
+.ct-title-line,
+.ct-badge,
+.ct-counter-label,
+.ct-stat-label {
+  text-transform: uppercase;
 }
 </style>

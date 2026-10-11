@@ -1,0 +1,99 @@
+{
+  "header": {
+    "logoAlt": "Key App — home",
+    "learn": "Learn",
+    "apps": "Apps",
+    "faq": "Help",
+    "about": "About",
+    "language": "Language",
+    "live": "Live",
+    "connecting": "Connecting…"
+  },
+  "drawer": {
+    "menu": "Navigation",
+    "profile": "Profile",
+    "dailyPnl": "Daily P&L",
+    "achievements": "Achievements",
+    "wallet": "Wallet",
+    "crypto": "Crypto",
+    "bank": "Bank",
+    "settings": "Settings",
+    "user": "Account",
+    "logIn": "Log in",
+    "logOut": "Log out",
+    "toggle": "Show or hide the panel"
+  },
+  "settings": {
+    "crypto": "Crypto",
+    "watchList": "Watch list",
+    "user": "Account",
+    "logOut": "Log out",
+    "deleteAccount": "Delete account",
+    "deleteConfirmTitle": "Delete your account?",
+    "deleteConfirmMessage": "Your portfolio, orders and history will be removed permanently."
+  },
+  "userCrypto": {
+    "overview": "Overview",
+    "earn": "Earn",
+    "spot": "Spot",
+    "comingSoon": "Coming soon",
+    "empty": "No assets yet. Buy USDC in the wallet to start."
+  },
+  "bank": {
+    "feeLabel": "Transaction fee:",
+    "accumulated": "Collected from fees:",
+    "date": "Date",
+    "fee": "Fee, USDC",
+    "crypto": "Crypto",
+    "amount": "Amount",
+    "price": "Price, USDC",
+    "total": "Total, USDC"
+  },
+  "wallet": {
+    "euro": "Euro",
+    "buyUsdc": "Buy USDC",
+    "buyEur": "Buy EUR",
+    "available": "Available",
+    "totalInAssets": "Total in assets",
+    "totalWithFiat": "Total including fiat",
+    "inCrypto": "In crypto",
+    "loginToBuyUsdc": "Log in to buy USDC.",
+    "loginToBuyEur": "Log in to buy EUR.",
+    "eurPositive": "EUR amount must be greater than 0.",
+    "usdcPositive": "USDC amount must be greater than 0.",
+    "eurExceeds": "EUR amount exceeds your available balance ({balance} EUR).",
+    "usdcExceeds": "USDC amount exceeds your available balance ({balance} USDC).",
+    "rateUnavailable": "The EUR/USDC price is unavailable right now. Try again in a minute.",
+    "buyUsdcFailed": "Couldn’t buy USDC",
+    "buyEurFailed": "Couldn’t buy EUR",
+    "missingUser": "Your session has expired. Log in again."
+  },
+  "auth": {
+    "registrationUnavailable": "Registration isn’t available right now. Try again later.",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password"
+  },
+  "nav": {
+    "schoolMath": "School Math",
+    "stocks": "Stocks",
+    "top100": "Top 100",
+    "bonds": "Bonds",
+    "crypto": "Crypto",
+    "unlockCalendar": "Unlock Calendar",
+    "realEstate": "Real Estate",
+    "trading": "Trading",
+    "fundamentals": "Fundamentals",
+    "analysis": "Analysis",
+    "resources": "Resources",
+    "probabilityStatistics": "Probability & Statistics",
+    "examer": "Examer",
+    "trader": "Trader",
+    "watcher": "Watcher",
+    "longTerm": "Long-term analyzer",
+    "mechanics": "Mechanics & Astrophysics",
+    "thermo": "Thermodynamics & Statistics",
+    "electro": "Electrodynamics & Optics",
+    "atomic": "Atomic & Nuclear Physics",
+    "sizeCalculator": "Position Sizing"
+  }
+}

@@ -3,14 +3,32 @@ import { computed, onMounted, onUnmounted, ref } from 'vue'
 import { useQuasar } from 'quasar'
 import { api } from 'boot/axios'
 import { useUserStore } from 'src/stores/user'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const $q = useQuasar()
 const userStore = useUserStore()
 
 const schedulerTypes = [
-  { value: 'user', label: 'Reminder Notification' },
-  { value: 'system', label: 'System set notification' },
-  { value: 'strategy', label: 'Strategy Event Action' },
+  {
+    value: 'user',
+    get label() {
+      return t('app.crypto.scheduler.reminder')
+    },
+  },
+  {
+    value: 'system',
+    get label() {
+      return t('app.crypto.scheduler.system')
+    },
+  },
+  {
+    value: 'strategy',
+    get label() {
+      return t('app.crypto.scheduler.strategyEvent')
+    },
+  },
 ]
 
 const availableSchedulerTypes = computed(() =>
@@ -18,20 +36,75 @@ const availableSchedulerTypes = computed(() =>
 )
 
 const recurrenceOptions = [
-  { value: 'date-time', label: 'Date & time' },
-  { value: 'minutes', label: 'Minutes' },
-  { value: 'hours', label: 'Hours' },
-  { value: 'daily', label: 'Daily' },
-  { value: 'weekly', label: 'Weekly' },
-  { value: 'monthly', label: 'Monthly' },
-  { value: 'cron', label: 'CRON Advanced' },
+  {
+    value: 'date-time',
+    get label() {
+      return t('app.crypto.scheduler.dateTime')
+    },
+  },
+  {
+    value: 'minutes',
+    get label() {
+      return t('app.crypto.scheduler.minutes')
+    },
+  },
+  {
+    value: 'hours',
+    get label() {
+      return t('app.crypto.scheduler.hours')
+    },
+  },
+  {
+    value: 'daily',
+    get label() {
+      return t('app.crypto.scheduler.daily')
+    },
+  },
+  {
+    value: 'weekly',
+    get label() {
+      return t('app.crypto.scheduler.weekly')
+    },
+  },
+  {
+    value: 'monthly',
+    get label() {
+      return t('app.crypto.scheduler.monthly')
+    },
+  },
+  {
+    value: 'cron',
+    get label() {
+      return t('app.crypto.scheduler.cronAdvanced')
+    },
+  },
 ]
 
 const cronPresets = [
-  { label: 'Every 5 minutes', value: '*/5 * * * *' },
-  { label: 'Weekdays at 09:00', value: '0 9 * * 1-5' },
-  { label: 'Every Sunday at 20:00', value: '0 20 * * 0' },
-  { label: 'First day of month', value: '0 0 1 * *' },
+  {
+    get label() {
+      return t('app.crypto.scheduler.every5')
+    },
+    value: '*/5 * * * *',
+  },
+  {
+    get label() {
+      return t('app.crypto.scheduler.weekdays9')
+    },
+    value: '0 9 * * 1-5',
+  },
+  {
+    get label() {
+      return t('app.crypto.scheduler.sunday20')
+    },
+    value: '0 20 * * 0',
+  },
+  {
+    get label() {
+      return t('app.crypto.scheduler.firstDay')
+    },
+    value: '0 0 1 * *',
+  },
 ]
 
 const getDefaultDate = () => new Date().toISOString().slice(0, 10)
@@ -94,7 +167,7 @@ const loadEntries = async () => {
     entries.value = []
     $q.notify({
       type: 'negative',
-      message: 'Unable to load scheduler entries.',
+      message: t('app.crypto.scheduler.loadFailed'),
       position: 'top-left',
     })
   }
@@ -122,7 +195,7 @@ const upsertEntry = async () => {
   if (!title) {
     $q.notify({
       type: 'negative',
-      message: 'Please provide a scheduler title.',
+      message: t('app.crypto.scheduler.titleRequired'),
       position: 'top-left',
     })
     return
@@ -132,7 +205,7 @@ const upsertEntry = async () => {
   if (!uid) {
     $q.notify({
       type: 'negative',
-      message: 'User session is required to save scheduler entries.',
+      message: t('app.crypto.scheduler.sessionRequired'),
       position: 'top-left',
     })
     return
@@ -326,7 +399,7 @@ const cronValidation = computed(() => {
   if (!expression) {
     return {
       valid: false,
-      message: 'Enter five fields: minute hour day-of-month month day-of-week.',
+      message: t('app.crypto.scheduler.fiveFields'),
       suggestion,
     }
   }
@@ -334,7 +407,7 @@ const cronValidation = computed(() => {
   if (!getCronParts(expression)) {
     return {
       valid: false,
-      message: 'Use five valid cron fields, for example */5 * * * * or 0 9 * * 1-5.',
+      message: t('app.crypto.scheduler.validFields'),
       suggestion,
     }
   }
@@ -343,11 +416,12 @@ const cronValidation = computed(() => {
   if (preset) return { valid: true, message: preset.label }
 
   const [minute, hour, day, month, weekday] = expression.split(/\s+/)
-  const minuteMeaning = minute === '*' ? 'every minute' : `at minute ${minute}`
-  const hourMeaning = hour === '*' ? 'every hour' : `at hour ${hour}`
-  const dayMeaning = day === '*' ? 'every day' : `on day ${day}`
-  const monthMeaning = month === '*' ? 'every month' : `in month ${month}`
-  const weekdayMeaning = weekday === '*' ? '' : `, weekday ${weekday}`
+  const c = (key, value) => t(`app.crypto.scheduler.cronParts.${key}`, { value })
+  const minuteMeaning = minute === '*' ? c('everyMinute') : c('atMinute', minute)
+  const hourMeaning = hour === '*' ? c('everyHour') : c('atHour', hour)
+  const dayMeaning = day === '*' ? c('everyDay') : c('onDay', day)
+  const monthMeaning = month === '*' ? c('everyMonth') : c('inMonth', month)
+  const weekdayMeaning = weekday === '*' ? '' : c('weekday', weekday)
 
   return {
     valid: true,
@@ -362,11 +436,16 @@ const validateCronInput = ({ silent = false } = {}) => {
   $q.notify({
     type: 'negative',
     position: 'top-left',
-    message: 'Invalid cron expression.',
-    caption: `${cronValidation.value.message} Suggested: ${cronValidation.value.suggestion}`,
+    message: t('app.crypto.scheduler.invalidCron'),
+    caption: t('app.crypto.scheduler.suggested', {
+      message: cronValidation.value.message,
+      suggestion: cronValidation.value.suggestion,
+    }),
     actions: [
       {
-        label: 'Use suggestion',
+        get label() {
+          return t('app.crypto.scheduler.useSuggestion')
+        },
         color: 'white',
         handler: () => {
           form.value.cronExpression = cronValidation.value.suggestion
@@ -483,7 +562,7 @@ const notifyDueEntries = (previousTimestamp, currentTimestamp) => {
       type: entry.type === 'strategy' ? 'warning' : 'positive',
       position: 'top-left',
       icon: 'alarm',
-      message: `Scheduler event: ${entry.title}`,
+      message: t('app.crypto.scheduler.eventFired', { title: entry.title }),
       caption: entry.details || formatEntryLabel(entry),
       timeout: 6000,
     })
@@ -514,7 +593,7 @@ onUnmounted(() => {
   <div class="scheduler q-pa-md">
     <div class="scheduler__intro q-mb-md">
       <div>
-        <div class="text-overline text-primary">AUTOMATION DESK</div>
+        <div class="text-overline text-primary">{{ t('app.crypto.scheduler.heading') }}</div>
         <!-- <div class="text-h5 text-white text-weight-bold">Schedule an action</div>
         <div class="text-body2 text-grey-5">
           Build quick reminders or precise recurring jobs without losing the context of when they
@@ -540,7 +619,7 @@ onUnmounted(() => {
             <div class="text-subtitle1 text-weight-bold text-white">
               {{ form.id ? 'Edit schedule' : 'New schedule' }}
             </div>
-            <div class="text-caption text-grey-5">Choose the source, timing, and action.</div>
+            <div class="text-caption text-grey-5">{{ t('app.crypto.scheduler.intro') }}</div>
           </div>
           <q-icon
             :name="form.recurrence === 'cron' ? 'tune' : 'event_repeat'"
@@ -551,7 +630,14 @@ onUnmounted(() => {
 
         <div class="row q-gutter-sm">
           <div class="col-12 col-md">
-            <q-input v-model="form.title" label="Title" dense outlined dark class="q-mb-sm" />
+            <q-input
+              v-model="form.title"
+              :label="t('app.common.labels.title')"
+              dense
+              outlined
+              dark
+              class="q-mb-sm"
+            />
           </div>
           <div class="col-12 col-md">
             <q-select
@@ -562,7 +648,7 @@ onUnmounted(() => {
               popup-content-class="scheduler-select-menu"
               behavior="menu"
               :menu-offset="[0, 4]"
-              label="Event source"
+              :label="t('app.crypto.scheduler.source')"
               dense
               outlined
               dark
@@ -577,7 +663,7 @@ onUnmounted(() => {
             v-model.number="form.intervalValue"
             type="number"
             min="1"
-            label="Every"
+            :label="t('app.common.labels.every')"
             dense
             outlined
             dark
@@ -592,7 +678,7 @@ onUnmounted(() => {
             popup-content-class="scheduler-select-menu"
             behavior="menu"
             :menu-offset="[0, 4]"
-            label="Schedule mode"
+            :label="t('app.crypto.scheduler.mode')"
             dense
             outlined
             dark
@@ -611,7 +697,7 @@ onUnmounted(() => {
             popup-content-class="scheduler-select-menu"
             behavior="menu"
             :menu-offset="[0, 4]"
-            label="Start from a preset"
+            :label="t('app.crypto.scheduler.preset')"
             dense
             outlined
             dark
@@ -620,9 +706,9 @@ onUnmounted(() => {
           />
           <q-input
             v-model="form.cronExpression"
-            label="Cron expression"
+            :label="t('app.crypto.scheduler.cron')"
             placeholder="*/5 * * * *"
-            hint="minute hour day-of-month month day-of-week"
+            :hint="t('app.crypto.scheduler.cronHint')"
             :error="form.recurrence === 'cron' && !cronValidation.valid"
             :error-message="form.recurrence === 'cron' ? cronValidation.message : ''"
             @blur="form.recurrence === 'cron' && form.cronExpression.trim() && validateCronInput()"
@@ -638,34 +724,55 @@ onUnmounted(() => {
         </div>
 
         <div v-if="form.recurrence === 'date-time'" class="row q-col-gutter-sm q-mt-none">
-          <q-input v-model="form.date" type="date" label="Date" dense outlined dark class="col" />
-          <q-input v-model="form.time" type="time" label="Time" dense outlined dark class="col" />
+          <q-input
+            v-model="form.date"
+            type="date"
+            :label="t('app.common.labels.date')"
+            dense
+            outlined
+            dark
+            class="col"
+          />
+          <q-input
+            v-model="form.time"
+            type="time"
+            :label="t('app.common.labels.time')"
+            dense
+            outlined
+            dark
+            class="col"
+          />
         </div>
 
         <q-input
           v-model="form.condition"
-          label="Conditional trigger (optional)"
+          :label="t('app.crypto.scheduler.condition')"
           dense
           outlined
           dark
           class="q-mt-sm"
-          hint="Example: BUY signal, RSI < 30, portfolio > 1000 USDC"
+          :hint="t('app.crypto.scheduler.conditionHint')"
         />
 
         <q-input
           v-model="form.details"
           type="textarea"
-          label="Details / action"
+          :label="t('app.crypto.scheduler.details')"
           autogrow
           outlined
           dark
           class="q-mt-sm"
         />
 
-        <q-toggle v-model="form.enabled" label="Enabled" color="primary" class="q-mt-sm" />
+        <q-toggle
+          v-model="form.enabled"
+          :label="t('app.common.labels.enabled')"
+          color="primary"
+          class="q-mt-sm"
+        />
 
         <div class="row justify-end q-gutter-sm q-mt-sm">
-          <q-btn flat label="Reset" color="secondary" @click="resetForm" />
+          <q-btn flat :label="t('app.common.actions.reset')" color="secondary" @click="resetForm" />
           <q-btn
             color="primary"
             :label="form.id ? 'Update' : 'Add scheduler'"
@@ -677,8 +784,12 @@ onUnmounted(() => {
       <q-card v-else class="scheduler-card q-pa-md">
         <div class="row items-center justify-between q-mb-sm">
           <div>
-            <div class="text-subtitle1 text-weight-bold text-white">Your schedules</div>
-            <div class="text-caption text-grey-5">{{ filteredEntries.length }} shown</div>
+            <div class="text-subtitle1 text-weight-bold text-white">
+              {{ t('app.crypto.scheduler.yours') }}
+            </div>
+            <div class="text-caption text-grey-5">
+              {{ filteredEntries.length }} {{ t('app.common.labels.shownLower') }}
+            </div>
           </div>
           <q-input
             v-model="query"
@@ -686,7 +797,7 @@ onUnmounted(() => {
             outlined
             dark
             clearable
-            label="Search"
+            :label="t('app.common.actions.search')"
             style="min-width: 180px"
           />
         </div>
@@ -717,7 +828,7 @@ onUnmounted(() => {
                   </div>
 
                   <div v-if="entry.condition" class="text-body2 text-blue-3 q-mt-xs">
-                    Condition: {{ entry.condition }}
+                    {{ t('app.crypto.scheduler.conditionColon') }} {{ entry.condition }}
                   </div>
 
                   <div v-if="entry.details" class="text-body2 text-grey-3 q-mt-xs">
@@ -742,7 +853,7 @@ onUnmounted(() => {
 
           <q-item v-if="!filteredEntries.length">
             <q-item-section class="text-grey-5">
-              No scheduler entries match your filters.
+              {{ t('app.crypto.scheduler.noMatch') }}
             </q-item-section>
           </q-item>
         </q-list>
@@ -762,8 +873,12 @@ onUnmounted(() => {
             <q-icon name="delete_forever" size="24px" />
           </div>
           <div class="col">
-            <div class="text-h6 text-white text-weight-bold">Delete schedule?</div>
-            <div class="text-body2 text-grey-5 q-mt-xs">This action cannot be undone.</div>
+            <div class="text-h6 text-white text-weight-bold">
+              {{ t('app.crypto.scheduler.deleteConfirm') }}
+            </div>
+            <div class="text-body2 text-grey-5 q-mt-xs">
+              {{ t('app.common.confirm.deleteMessage') }}
+            </div>
           </div>
           <q-btn flat round dense icon="close" color="grey-5" v-close-popup />
         </q-card-section>
@@ -778,10 +893,10 @@ onUnmounted(() => {
         </q-card-section>
 
         <q-card-actions align="right" class="q-px-md q-pb-md q-gutter-sm">
-          <q-btn flat label="Keep schedule" color="grey-4" v-close-popup />
+          <q-btn flat :label="t('app.crypto.scheduler.keep')" color="grey-4" v-close-popup />
           <q-btn
             unelevated
-            label="Delete schedule"
+            :label="t('app.crypto.scheduler.delete')"
             color="negative"
             icon="delete"
             @click="confirmDelete"

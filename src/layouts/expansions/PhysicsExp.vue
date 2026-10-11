@@ -1,8 +1,8 @@
 <script setup>
-import { useI18n } from 'vue-i18n'
+import { useLocalized } from 'src/composables/useLocalized'
 import ICON from 'src/helpers/icons'
 
-const { locale } = useI18n()
+const { t } = useLocalized()
 </script>
 <template>
   <q-expansion-item
@@ -12,8 +12,7 @@ const { locale } = useI18n()
     class="text-secondary text-h6"
     header-class="text-secondary"
     expand-icon-class="text-secondary"
-    label="School Math"
-    caption=""
+    :label="t('app.layout.nav.schoolMath')"
   >
     <q-btn
       to="/math-fundamentals"
@@ -21,7 +20,7 @@ const { locale } = useI18n()
       size="md"
       class="text-secondary"
       text-color="secondary"
-      :label="locale !== 'bg-BG' ? 'Fundamentals' : 'Фундаменти'"
+      :label="t('app.layout.nav.fundamentals')"
       style="width: 100%"
       no-caps
     />
@@ -31,7 +30,7 @@ const { locale } = useI18n()
       size="md"
       class="text-secondary"
       text-color="secondary"
-      :label="locale !== 'bg-BG' ? 'Analysis' : 'Анализ'"
+      :label="t('app.layout.nav.analysis')"
       style="width: 50%"
       no-caps
     />
@@ -41,7 +40,7 @@ const { locale } = useI18n()
       size="md"
       class="text-secondary"
       text-color="secondary"
-      :label="locale !== 'bg-BG' ? 'Resources' : 'Ресурси'"
+      :label="t('app.layout.nav.resources')"
       style="width: 50%"
       no-caps
     />
@@ -53,15 +52,14 @@ const { locale } = useI18n()
     icon="fa fa-meteor"
     class="text-green-5 text-h6"
     expand-icon-class="text-green-5"
-    label="Mechanics & Astrophysics"
-    caption=""
+    :label="t('app.layout.nav.mechanics')"
   >
     <q-btn
       to="/mechanics-fundamentals"
       :icon="ICON.FUNDAMENTALS"
       size="md"
       class="text-green-5"
-      :label="locale !== 'bg-BG' ? 'Fundamentals' : 'Фундаменти'"
+      :label="t('app.layout.nav.fundamentals')"
       style="width: 100%"
       no-caps
     />
@@ -70,7 +68,7 @@ const { locale } = useI18n()
       :icon="ICON.ANALYSIS"
       size="md"
       class="text-green-5"
-      :label="locale !== 'bg-BG' ? 'Analysis' : 'Анализ'"
+      :label="t('app.layout.nav.analysis')"
       style="width: 50%"
       no-caps
     />
@@ -79,7 +77,7 @@ const { locale } = useI18n()
       :icon="ICON.RESOURCES"
       size="md"
       class="text-green-5"
-      :label="locale !== 'bg-BG' ? 'Resources' : 'Ресурси'"
+      :label="t('app.layout.nav.resources')"
       style="width: 50%"
       no-caps
     />
@@ -91,15 +89,14 @@ const { locale } = useI18n()
     icon="fa fa-temperature-low"
     class="text-red-5 text-h6"
     expand-icon-class="text-red-5"
-    label="Termodynamics & Statistics"
-    caption=""
+    :label="t('app.layout.nav.thermo')"
   >
     <q-btn
       to="/termodynamics-fundamentals"
       :icon="ICON.FUNDAMENTALS"
       size="md"
       class="text-red-5"
-      :label="locale !== 'bg-BG' ? 'Fundamentals' : 'Фундаменти'"
+      :label="t('app.layout.nav.fundamentals')"
       style="width: 100%"
       no-caps
     />
@@ -108,7 +105,7 @@ const { locale } = useI18n()
       :icon="ICON.ANALYSIS"
       size="md"
       class="text-red-5"
-      :label="locale !== 'bg-BG' ? 'Analysis' : 'Анализ'"
+      :label="t('app.layout.nav.analysis')"
       style="width: 50%"
       no-caps
     />
@@ -117,7 +114,7 @@ const { locale } = useI18n()
       :icon="ICON.RESOURCES"
       size="md"
       class="text-red-5"
-      :label="locale !== 'bg-BG' ? 'Resources' : 'Ресурси'"
+      :label="t('app.layout.nav.resources')"
       style="width: 50%"
       no-caps
     />
@@ -129,15 +126,14 @@ const { locale } = useI18n()
     icon="fa fa-microscope"
     class="text-blue-5 text-h6"
     expand-icon-class="text-blue-5"
-    label="Electrodynamics & Optics"
-    caption=""
+    :label="t('app.layout.nav.electro')"
   >
     <q-btn
       to="/electrodynamics-fundamentals"
       :icon="ICON.FUNDAMENTALS"
       size="md"
       class="text-blue-5"
-      :label="locale !== 'bg-BG' ? 'Fundamentals' : 'Фундаменти'"
+      :label="t('app.layout.nav.fundamentals')"
       style="width: 100%"
       no-caps
     />
@@ -146,7 +142,7 @@ const { locale } = useI18n()
       :icon="ICON.ANALYSIS"
       size="md"
       class="text-blue-5"
-      :label="locale !== 'bg-BG' ? 'Analysis' : 'Анализ'"
+      :label="t('app.layout.nav.analysis')"
       style="width: 50%"
       no-caps
     />
@@ -155,7 +151,7 @@ const { locale } = useI18n()
       :icon="ICON.RESOURCES"
       size="md"
       class="text-blue-5"
-      :label="locale !== 'bg-BG' ? 'Resources' : 'Ресурси'"
+      :label="t('app.layout.nav.resources')"
       style="width: 50%"
       no-caps
     />
@@ -167,15 +163,14 @@ const { locale } = useI18n()
     icon="fa fa-atom"
     class="text-purple-5 text-h6"
     expand-icon-class="text-purple-5"
-    label="Atomic & Nuclear Physics"
-    caption=""
+    :label="t('app.layout.nav.atomic')"
   >
     <q-btn
       to="atom-fundamentals"
       :icon="ICON.FUNDAMENTALS"
       size="md"
       class="text-purple-5"
-      :label="locale !== 'bg-BG' ? 'Fundamentals' : 'Фундаменти'"
+      :label="t('app.layout.nav.fundamentals')"
       style="width: 100%"
       no-caps
     />
@@ -184,7 +179,7 @@ const { locale } = useI18n()
       :icon="ICON.ANALYSIS"
       size="md"
       class="text-purple-5"
-      :label="locale !== 'bg-BG' ? 'Analysis' : 'Анализ'"
+      :label="t('app.layout.nav.analysis')"
       style="width: 50%"
       no-caps
     />
@@ -193,7 +188,7 @@ const { locale } = useI18n()
       :icon="ICON.RESOURCES"
       size="md"
       class="text-purple-5"
-      :label="locale !== 'bg-BG' ? 'Resources' : 'Ресурси'"
+      :label="t('app.layout.nav.resources')"
       style="width: 50%"
       no-caps
     />

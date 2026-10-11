@@ -3,7 +3,7 @@ import { useQuasar } from 'quasar'
 import { ref, computed, onMounted, reactive } from 'vue'
 // import OrderTrading from 'src/components/crypto/OrderTrading.vue'
 // import FormulaView from 'src/components/FormulaView.vue'
-// import { useI18n } from 'vue-i18n'
+import { useLocalized } from 'src/composables/useLocalized'
 
 import { useUserStore } from 'src/stores/user'
 import { getLocalUser } from 'src/services/storage/local'
@@ -22,7 +22,7 @@ import CryptoGameRow from './CryptoGameRow.vue'
 
 const binanceStore = useBinanceStore()
 const $q = useQuasar()
-// const { t } = useI18n()
+const { t } = useLocalized()
 
 const userStore = useUserStore()
 
@@ -170,7 +170,9 @@ const watcherColumns = [
   // },
   {
     name: 'dt_insert',
-    label: 'Opened on',
+    get label() {
+      return t('app.common.labels.openedOn')
+    },
   },
   {
     name: 'order_type',
@@ -180,25 +182,35 @@ const watcherColumns = [
   },
   {
     name: 'amount',
-    label: 'Amount',
+    get label() {
+      return t('app.common.labels.amount')
+    },
     field: 'amount',
     type: 'number',
   },
   {
     name: 'current',
-    label: 'Current, $',
+    get label() {
+      return t('app.common.labels.currentUsd')
+    },
   },
   {
     name: 'watched',
-    label: 'Order, $',
+    get label() {
+      return t('app.common.labels.orderUsd')
+    },
   },
   {
     name: 'diff',
-    label: 'Diff., $',
+    get label() {
+      return t('app.common.labels.diffUsd')
+    },
   },
   {
     name: 'diff_percent',
-    label: 'Diff., %',
+    get label() {
+      return t('app.common.labels.diffPct')
+    },
   },
   // {
   //   name: 'curr_price',
@@ -233,7 +245,7 @@ const addWatcher = () => {
       component: SetWatcherForm,
       persistent: true,
       close: true,
-      ok: 'Add',
+      ok: t('app.common.actions.add'),
       width: '380px',
       modelValue: {
         order_type: 'watch',
@@ -261,12 +273,14 @@ const deleteWatcher = (row) => {
     componentProps: {
       component: ConfirmForm,
       modelValue: {
-        message: `Delete watcher for ${selectedSymbol.value.replace('USDC', ' / USDC')}?`,
+        message: t('app.crypto.watcher.deleteFor', {
+          pair: selectedSymbol.value.replace('USDC', ' / USDC'),
+        }),
       },
       persistent: true,
       close: true,
-      cancel: 'Cancel',
-      ok: 'Delete',
+      cancel: t('app.common.actions.cancel'),
+      ok: t('app.common.actions.delete'),
       width: '380px',
     },
   }).onOk(async () => {
@@ -317,8 +331,15 @@ const onSignal = (signal) => {
   lastNotifiedSignal.value = notificationKey
   $q.notify({
     type: signal.label === 'BUY' ? 'positive' : 'negative',
-    message: `${signal.label} signal for ${selectedSymbol.value}`,
-    caption: `${signal.buys} BUY / ${signal.sells} SELL from ${signal.total} active signals`,
+    message: t('app.crypto.signals.notifyTitle', {
+      signal: t(`app.crypto.signals.${String(signal.label).toLowerCase()}`),
+      symbol: selectedSymbol.value,
+    }),
+    caption: t('app.crypto.signals.notifyCaption', {
+      buys: signal.buys,
+      sells: signal.sells,
+      total: signal.total,
+    }),
     timeout: 6000,
     position: 'top-left',
   })
@@ -373,10 +394,12 @@ const updateStrategyCandles = (candles) => {
             >
               <q-expansion-item dense v-model="openWatcherView" class="bg-grey-9">
                 <template #header>
-                  <q-item-section>PRICE WATCHER</q-item-section>
+                  <q-item-section>{{ t('app.crypto.watcher.heading') }}</q-item-section>
                   <q-item-section side>
                     <span>
-                      <span class="text-secondary">Total sum: </span>
+                      <span class="text-secondary"
+                        >{{ t('app.common.labels.totalSumColon') }}
+                      </span>
                       <strong class="text-purple-4">
                         {{ watcherTotalUsdc.toFixed(4) }} USDC
                       </strong>
@@ -394,8 +417,14 @@ const updateStrategyCandles = (candles) => {
                   >
                     <template #header-cell-crud="props">
                       <q-th :props="props">
-                        <q-btn dense flat icon="add" aria-label="Add watcher" @click="addWatcher">
-                          <q-tooltip>Add watcher</q-tooltip>
+                        <q-btn
+                          dense
+                          flat
+                          icon="add"
+                          :aria-label="t('app.common.labels.addWatcher')"
+                          @click="addWatcher"
+                        >
+                          <q-tooltip>{{ t('app.common.labels.addWatcher') }}</q-tooltip>
                         </q-btn>
                       </q-th>
                     </template>
@@ -406,10 +435,10 @@ const updateStrategyCandles = (candles) => {
                           flat
                           icon="delete"
                           color="secondary"
-                          aria-label="Delete watcher"
+                          :aria-label="t('app.common.labels.deleteWatcher')"
                           @click="deleteWatcher(props.row)"
                         >
-                          <q-tooltip>Delete watcher</q-tooltip>
+                          <q-tooltip>{{ t('app.common.labels.deleteWatcher') }}</q-tooltip>
                         </q-btn>
                       </q-td>
                     </template>
@@ -421,13 +450,13 @@ const updateStrategyCandles = (candles) => {
                     <template #body-cell-watched="props">
                       <q-td :props="props">
                         <div>
-                          Price:
+                          {{ t('app.common.labels.priceColon') }}
                           <span class="text-blue-4">{{
                             parseFloat(props.row.curr_price).toFixed(4)
                           }}</span>
                         </div>
                         <div>
-                          Total:
+                          {{ t('app.common.labels.totalColon') }}
                           <span class="text-blue-4">{{
                             parseFloat(props.row.curr_total).toFixed(4)
                           }}</span>
@@ -437,13 +466,13 @@ const updateStrategyCandles = (candles) => {
                     <template #body-cell-current="props">
                       <q-td :props="props">
                         <div>
-                          Price:
+                          {{ t('app.common.labels.priceColon') }}
                           <span class="text-purple-4">{{
                             parseFloat(props.row.price_now).toFixed(4)
                           }}</span>
                         </div>
                         <div>
-                          Total:
+                          {{ t('app.common.labels.totalColon') }}
                           <span class="text-purple-4">{{
                             parseFloat(props.row.total_now).toFixed(4)
                           }}</span>
@@ -483,13 +512,16 @@ const updateStrategyCandles = (candles) => {
                           class="text-right text-bold text-secondary"
                         >
                           <template v-if="col.name === 'amount'">
-                            Sum: {{ totalWatcherField('amount').toFixed(4) }}
+                            {{ t('app.common.labels.sumColon') }}
+                            {{ totalWatcherField('amount').toFixed(4) }}
                           </template>
                           <template v-else-if="col.name === 'watched'">
-                            Total: {{ totalWatcherField('curr_total').toFixed(4) }}
+                            {{ t('app.common.labels.totalColon') }}
+                            {{ totalWatcherField('curr_total').toFixed(4) }}
                           </template>
                           <template v-else-if="col.name === 'current'">
-                            Total: {{ totalWatcherField('total_now').toFixed(4) }}
+                            {{ t('app.common.labels.totalColon') }}
+                            {{ totalWatcherField('total_now').toFixed(4) }}
                           </template>
                         </q-td>
                       </q-tr>
@@ -533,19 +565,19 @@ const updateStrategyCandles = (candles) => {
 
                   <div class="row q-mt-md text-caption text-grey-5">
                     <div class="col">
-                      <div>24h High</div>
+                      <div>{{ t('app.common.labels.high24') }}</div>
                       <div class="text-positive">
                         ${{ ticker.high.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}
                       </div>
                     </div>
                     <div class="col">
-                      <div>24h Low</div>
+                      <div>{{ t('app.common.labels.low24') }}</div>
                       <div class="text-negative">
                         ${{ ticker.low.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}
                       </div>
                     </div>
                     <div class="col">
-                      <div>Volume</div>
+                      <div>{{ t('app.common.labels.volume') }}</div>
                       <div class="text-grey-3">${{ (ticker.volume / 1_000_000).toFixed(1) }}M</div>
                     </div>
                   </div>

@@ -1,6 +1,9 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
 import { useQuasar } from 'quasar'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const $q = useQuasar()
 const STORAGE_KEY = 'cryptool:trader:notes'
@@ -45,7 +48,7 @@ const upsertNote = () => {
   const content = form.value.content?.trim()
 
   if (!title && !content) {
-    $q.notify({ type: 'negative', message: 'Add a title or note content before saving.' })
+    $q.notify({ type: 'negative', message: t('app.crypto.notes.emptyError') })
     return
   }
 
@@ -128,7 +131,7 @@ onMounted(() => {
   <div class="notes q-pa-md">
     <div class="notes__intro q-mb-md">
       <div>
-        <div class="text-overline text-primary">NOTES</div>
+        <div class="text-overline text-primary">{{ t('app.crypto.notes.heading') }}</div>
       </div>
       <q-chip
         dense
@@ -138,7 +141,7 @@ onMounted(() => {
         :icon="listOpen ? 'visibility' : 'visibility_off'"
         @click="listOpen = !listOpen"
       >
-        {{ notes.length }} saved
+        {{ notes.length }} {{ t('app.common.labels.savedLower') }}
       </q-chip>
     </div>
 
@@ -149,24 +152,31 @@ onMounted(() => {
             <div class="text-subtitle1 text-weight-bold text-white">
               {{ form.id ? 'Edit note' : 'New note' }}
             </div>
-            <div class="text-caption text-grey-5">Jot down ideas, reminders, or analysis.</div>
+            <div class="text-caption text-grey-5">{{ t('app.crypto.notes.intro') }}</div>
           </div>
           <q-icon name="edit_note" color="primary" size="sm" />
         </div>
 
-        <q-input v-model="form.title" label="Title" dense outlined dark class="q-mb-sm" />
+        <q-input
+          v-model="form.title"
+          :label="t('app.common.labels.title')"
+          dense
+          outlined
+          dark
+          class="q-mb-sm"
+        />
 
         <q-input
           v-model="form.content"
           type="textarea"
-          label="Write your note"
+          :label="t('app.crypto.notes.body')"
           autogrow
           outlined
           dark
         />
 
         <div class="row justify-end q-gutter-sm q-mt-sm">
-          <q-btn flat label="Reset" color="secondary" @click="resetForm" />
+          <q-btn flat :label="t('app.common.actions.reset')" color="secondary" @click="resetForm" />
           <q-btn color="primary" :label="form.id ? 'Save note' : 'Add note'" @click="upsertNote" />
         </div>
       </q-card>
@@ -174,8 +184,12 @@ onMounted(() => {
       <q-card v-else class="notes-card q-pa-md">
         <div class="row items-center justify-between q-mb-sm">
           <div>
-            <div class="text-subtitle1 text-weight-bold text-white">Saved notes</div>
-            <div class="text-caption text-grey-5">{{ filteredNotes.length }} shown</div>
+            <div class="text-subtitle1 text-weight-bold text-white">
+              {{ t('app.crypto.notes.saved') }}
+            </div>
+            <div class="text-caption text-grey-5">
+              {{ filteredNotes.length }} {{ t('app.common.labels.shownLower') }}
+            </div>
           </div>
           <q-input
             v-model="query"
@@ -183,7 +197,7 @@ onMounted(() => {
             outlined
             dark
             clearable
-            label="Search"
+            :label="t('app.common.actions.search')"
             style="min-width: 180px"
           />
         </div>
@@ -222,7 +236,9 @@ onMounted(() => {
           </q-item>
 
           <q-item v-if="!filteredNotes.length">
-            <q-item-section class="text-grey-5"> No notes match your filters. </q-item-section>
+            <q-item-section class="text-grey-5">
+              {{ t('app.crypto.notes.noMatch') }}
+            </q-item-section>
           </q-item>
         </q-list>
       </q-card>
@@ -241,8 +257,12 @@ onMounted(() => {
             <q-icon name="delete_forever" size="24px" />
           </div>
           <div class="col">
-            <div class="text-h6 text-white text-weight-bold">Delete note?</div>
-            <div class="text-body2 text-grey-5 q-mt-xs">This action cannot be undone.</div>
+            <div class="text-h6 text-white text-weight-bold">
+              {{ t('app.crypto.notes.deleteConfirm') }}
+            </div>
+            <div class="text-body2 text-grey-5 q-mt-xs">
+              {{ t('app.common.confirm.deleteMessage') }}
+            </div>
           </div>
           <q-btn flat round dense icon="close" color="grey-5" v-close-popup />
         </q-card-section>
@@ -261,10 +281,10 @@ onMounted(() => {
         </q-card-section>
 
         <q-card-actions align="right" class="q-px-md q-pb-md q-gutter-sm">
-          <q-btn flat label="Keep note" color="grey-4" v-close-popup />
+          <q-btn flat :label="t('app.crypto.notes.keep')" color="grey-4" v-close-popup />
           <q-btn
             unelevated
-            label="Delete note"
+            :label="t('app.crypto.notes.delete')"
             color="negative"
             icon="delete"
             @click="confirmDelete"

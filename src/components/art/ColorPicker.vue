@@ -1,5 +1,8 @@
 <!-- <script setup>
 import { computed } from 'vue'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const props = defineProps({
   modelValue: {
@@ -22,7 +25,7 @@ const model = computed({
 
 <template>
   <div class="q-pa-sm" style="width: 320px">
-    <q-input dense v-model="model" label="Color" filled readonly>
+    <q-input dense v-model="model" :label="t('app.components.art.color')" filled readonly>
       <template #append>
         <q-icon name="colorize" class="cursor-pointer">
           <q-popup-proxy transition-show="scale" transition-hide="scale">

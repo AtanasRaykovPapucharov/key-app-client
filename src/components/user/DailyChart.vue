@@ -2,6 +2,9 @@
 import { ref, onMounted, computed, watch } from 'vue'
 import { getDaily } from 'src/services/storage/crypto'
 import { Chart, BarController, BarElement, CategoryScale, LinearScale, Tooltip } from 'chart.js'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 Chart.register(BarController, BarElement, CategoryScale, LinearScale, Tooltip)
 
@@ -15,7 +18,9 @@ const chartData = computed(() => {
     labels: daily.value.map((d) => d.id.toString().split('T')[0]),
     datasets: [
       {
-        label: 'Daily PNL',
+        get label() {
+          return t('app.user.dailyPnl')
+        },
         data: daily.value.map((d) => d.pnl),
         backgroundColor: daily.value.map((d) => (d.pnl >= 0 ? 'green' : 'red')),
       },

@@ -1,15 +1,16 @@
 <script setup>
 import { useQuasar } from 'quasar'
 import { ref, computed, watch, onMounted, nextTick } from 'vue'
-import { useI18n } from 'vue-i18n'
 import PageTitle from 'src/components/PageTitleFactory.vue'
 import DialogForm from 'src/components/DialogForm.vue'
 import ConfirmForm from 'src/components/forms/ConfirmForm.vue'
 import tabsData from 'src/helpers/crypto-analysis-tabs.json'
 import { api } from 'src/boot/axios'
 import { useUserStore } from 'src/stores/user'
+import { useLocalized } from 'src/composables/useLocalized'
 
-const { locale } = useI18n({ useScope: 'global' })
+const { t: tt, field } = useLocalized()
+
 const $q = useQuasar()
 const userStore = useUserStore()
 
@@ -125,7 +126,7 @@ function confirmAction(title, message, okLabel) {
         modelValue: { message },
         persistent: true,
         close: true,
-        cancel: 'Cancel',
+        cancel: tt('app.common.actions.cancel'),
         ok: okLabel,
         width: '380px',
         title,
@@ -142,11 +143,9 @@ async function deleteAnalysis() {
   if (!cryptoId) return
 
   const confirmed = await confirmAction(
-    locale.value !== 'bg-BG' ? 'Confirm delete' : 'Потвърждение за изтриване',
-    locale.value !== 'bg-BG'
-      ? `Delete the ${cryptoId.toUpperCase()} analysis?`
-      : `Да се изтрие ли анализът за ${cryptoId.toUpperCase()}?`,
-    locale.value !== 'bg-BG' ? 'Delete' : 'Изтрий',
+    tt('app.crypto.analysis.confirmDelete'),
+    tt('app.crypto.analysis.deleteQuestion', { symbol: cryptoId.toUpperCase() }),
+    tt('app.crypto.analysis.delete'),
   )
 
   if (!confirmed) return
@@ -160,15 +159,14 @@ async function deleteAnalysis() {
     $q.notify({
       type: 'positive',
       position: 'top-left',
-      message: locale.value !== 'bg-BG' ? 'Analysis deleted' : 'Анализът е изтрит',
+      message: tt('app.crypto.analysis.analysisDeleted'),
     })
   } catch (error) {
     console.error('Failed to delete crypto analysis:', error)
     $q.notify({
       type: 'negative',
       position: 'top-left',
-      message:
-        locale.value !== 'bg-BG' ? 'Failed to delete analysis' : 'Неуспешно изтриване на анализа',
+      message: tt('app.crypto.analysis.failedToDeleteAnalysis'),
     })
   }
 }
@@ -205,10 +203,7 @@ async function saveAnalysis() {
     $q.notify({
       type: 'warning',
       position: 'top-left',
-      message:
-        locale.value !== 'bg-BG'
-          ? 'Project name and currency are required'
-          : 'Името на проекта и валутата са задължителни',
+      message: tt('app.crypto.analysis.projectNameAndCurrency'),
     })
     return
   }
@@ -219,27 +214,9 @@ async function saveAnalysis() {
   const shouldUpdate = oper.value === 'add' && existingAnalysis
 
   const confirmed = await confirmAction(
-    shouldUpdate && locale.value !== 'bg-BG'
-      ? 'Confirm update'
-      : shouldUpdate
-        ? 'Потвърждение за актуализация'
-        : locale.value !== 'bg-BG'
-          ? 'Confirm save'
-          : 'Потвърждение за запис',
-    shouldUpdate && locale.value !== 'bg-BG'
-      ? 'This crypto already exists. Do you want to update the existing analysis?'
-      : shouldUpdate
-        ? 'Тази криптовалута вече съществува. Искате ли да актуализирате съществуващия анализ?'
-        : locale.value !== 'bg-BG'
-          ? 'Are you sure you want to save this analysis?'
-          : 'Сигурни ли сте, че искате да запазите този анализ?',
-    shouldUpdate
-      ? locale.value !== 'bg-BG'
-        ? 'Update'
-        : 'Актуализирай'
-      : locale.value !== 'bg-BG'
-        ? 'Save'
-        : 'Запази',
+    shouldUpdate ? tt('app.crypto.analysis.confirmUpdate') : tt('app.crypto.analysis.confirmSave'),
+    shouldUpdate ? tt('app.crypto.analysis.existsUpdate') : tt('app.crypto.analysis.areYouSureYou'),
+    shouldUpdate ? tt('app.crypto.analysis.update') : tt('app.crypto.analysis.save'),
   )
 
   if (!confirmed) return
@@ -261,14 +238,14 @@ async function saveAnalysis() {
     $q.notify({
       type: 'positive',
       position: 'top-left',
-      message: locale.value !== 'bg-BG' ? 'Analysis saved' : 'Анализът е записан',
+      message: tt('app.crypto.analysis.analysisSaved'),
     })
   } catch (error) {
     console.error('Failed to save crypto analysis:', error)
     $q.notify({
       type: 'negative',
       position: 'top-left',
-      message: locale.value !== 'bg-BG' ? 'Failed to save analysis' : 'Неуспешен запис на анализа',
+      message: tt('app.crypto.analysis.failedToSaveAnalysis'),
     })
   }
 }
@@ -300,7 +277,7 @@ watch(oper, (value) => {
     <PageTitle from="Crypto" title="Analysis" />
     <q-space />
     <div>
-      <q-btn icon="save" label="Save" :disable="noChanges" @click="saveAnalysis" />
+      <q-btn icon="save" :label="tt('app.common.actions.save')" :disable="noChanges" @click="saveAnalysis" />
     </div>
   </div> -->
   <div class="q-pa-md">
@@ -323,16 +300,20 @@ watch(oper, (value) => {
             ]"
           >
             <template #add>
-              <div class="row items-center no-wrap"><q-icon center name="add" /> ADD</div>
+              <div class="row items-center no-wrap">
+                <q-icon center name="add" /> {{ tt('app.common.actions.add') }}
+              </div>
             </template>
             <template #load>
-              <div class="row items-center no-wrap"><q-icon center name="autorenew" /> LOAD</div>
+              <div class="row items-center no-wrap">
+                <q-icon center name="autorenew" /> {{ tt('app.common.actions.load') }}
+              </div>
             </template>
           </q-btn-toggle>
           <q-btn
             flat
             icon="restart_alt"
-            label="RESET"
+            :label="tt('app.common.actions.reset')"
             no-caps
             size="md"
             padding="4px 8px"
@@ -341,14 +322,12 @@ watch(oper, (value) => {
             style="flex-shrink: 0"
             @click="refreshAnalysis"
           >
-            <q-tooltip>{{
-              locale.value !== 'bg-BG' ? 'Reset fields' : 'Нулиране на полетата'
-            }}</q-tooltip>
+            <q-tooltip>{{ tt('app.crypto.analysis.resetFields') }}</q-tooltip>
           </q-btn>
           <q-btn
             flat
             icon="delete"
-            label="DELETE"
+            :label="tt('app.common.actions.delete')"
             no-caps
             size="md"
             padding="4px 8px"
@@ -358,7 +337,7 @@ watch(oper, (value) => {
             :disable="oper !== 'load' || !currency"
             @click="deleteAnalysis"
           >
-            <q-tooltip>{{ locale !== 'bg-BG' ? 'Delete analysis' : 'Изтрий анализа' }}</q-tooltip>
+            <q-tooltip>{{ tt('app.crypto.analysis.deleteAnalysis') }}</q-tooltip>
           </q-btn>
         </div>
         <div class="col-12 col-md-2 q-ml-sm">
@@ -372,11 +351,8 @@ watch(oper, (value) => {
             filled
             hide-bottom-space
             :readonly="oper === 'load'"
-            :rules="[
-              (value) =>
-                Boolean(value?.trim()) || (locale !== 'bg-BG' ? 'Required' : 'Задължително поле'),
-            ]"
-            :label="locale !== 'bg-BG' ? 'Project name' : 'Име на проекта'"
+            :rules="[(value) => Boolean(value?.trim()) || tt('app.crypto.analysis.required')]"
+            :label="tt('app.crypto.analysis.projectName')"
           />
         </div>
         <div class="col-12 col-md-1">
@@ -397,10 +373,8 @@ watch(oper, (value) => {
             hide-bottom-space
             popup-content-class="hide-scrollbar"
             @update:model-value="loadProject"
-            :rules="[
-              (value) => Boolean(value) || (locale !== 'bg-BG' ? 'Required' : 'Задължително поле'),
-            ]"
-            :label="locale !== 'bg-BG' ? 'Currency' : 'Валута'"
+            :rules="[(value) => Boolean(value) || tt('app.crypto.analysis.required')]"
+            :label="tt('app.crypto.analysis.currency')"
           />
           <q-input
             ref="currencyField"
@@ -411,11 +385,8 @@ watch(oper, (value) => {
             dense
             filled
             hide-bottom-space
-            :rules="[
-              (value) =>
-                Boolean(value?.trim()) || (locale !== 'bg-BG' ? 'Required' : 'Задължително поле'),
-            ]"
-            :label="locale !== 'bg-BG' ? 'Currency' : 'Валута'"
+            :rules="[(value) => Boolean(value?.trim()) || tt('app.crypto.analysis.required')]"
+            :label="tt('app.crypto.analysis.currency')"
           />
         </div>
         <div class="col-12 col-md-1">
@@ -430,12 +401,12 @@ watch(oper, (value) => {
             :options="
               Array.from({ length: new Date().getFullYear() - 2009 + 1 }, (_, i) => 2009 + i)
             "
-            :label="locale !== 'bg-BG' ? 'Year founded' : 'Година на основаване'"
+            :label="tt('app.crypto.analysis.yearFounded')"
           />
         </div>
         <div class="col-12 col-md-2 text-right">
           <div class="text-caption text-secondary">
-            {{ locale !== 'bg-BG' ? 'Total points' : 'Общо точки' }}
+            {{ tt('app.crypto.analysis.totalPoints') }}
           </div>
           <div class="text-h5 text-orange-5">{{ totalVote }} / {{ totalMax }}</div>
         </div>
@@ -445,7 +416,7 @@ watch(oper, (value) => {
             square
             stack
             icon="save"
-            label="Save"
+            :label="tt('app.common.actions.save')"
             color="secondary"
             :disable="noChanges"
             @click="saveAnalysis"
@@ -458,12 +429,7 @@ watch(oper, (value) => {
     <q-splitter v-model="splitterModel">
       <template #before>
         <q-tabs v-model="tab" vertical class="text-orange-5" dense no-caps>
-          <q-tab
-            v-for="t in tabs"
-            :key="t.id"
-            :name="t.name"
-            :label="locale !== 'bg-BG' ? t.label : t.labelBg"
-          />
+          <q-tab v-for="t in tabs" :key="t.id" :name="t.name" :label="field(t, 'label')" />
         </q-tabs>
       </template>
 
@@ -489,24 +455,23 @@ watch(oper, (value) => {
             >
               <template #header-cell-label="props">
                 <q-th :props="props">
-                  <div class="text-h6 q-mb-sm">{{ locale !== 'bg-BG' ? t.label : t.labelBg }}</div>
+                  <div class="text-h6 q-mb-sm">{{ field(t, 'label') }}</div>
                 </q-th>
               </template>
               <template #header-cell-wanted="props">
                 <q-th :props="props">
-                  <div>{{ locale !== 'bg-BG' ? 'Wanted Value' : 'Желателно' }}</div>
+                  <div>{{ tt('app.crypto.analysis.wantedValue') }}</div>
                 </q-th>
               </template>
               <template #header-cell-real="props">
                 <q-th :props="props">
-                  <div>{{ locale !== 'bg-BG' ? 'Real Value' : 'Действително' }}</div>
+                  <div>{{ tt('app.crypto.analysis.realValue') }}</div>
                 </q-th>
               </template>
               <template #header-cell-vote="props">
                 <q-th :props="props">
                   <strong
-                    >{{ sumVote }} / {{ sumMax }}
-                    {{ locale !== 'bg-BG' ? 'points' : 'точки' }}</strong
+                    >{{ sumVote }} / {{ sumMax }} {{ tt('app.crypto.analysis.points') }}</strong
                   >
                 </q-th>
               </template>
@@ -569,16 +534,14 @@ watch(oper, (value) => {
               </template>
               <template #body-cell-label="props">
                 <q-td :props="props" class="text-white">
-                  <span class="text-secondary">{{
-                    locale !== 'bg-BG' ? props.row.label : props.row.labelBg
-                  }}</span>
+                  <span class="text-secondary">{{ field(props.row, 'label') }}</span>
                 </q-td>
               </template>
 
               <template #bottom>
                 <div>
                   <span class="text-secondary">
-                    {{ locale !== 'bg-BG' ? 'Resources: ' : 'Източници: ' }}
+                    {{ tt('app.crypto.analysis.resources') }}
                   </span>
                   <q-btn
                     v-for="(s, i) in t.sources"

@@ -1,5 +1,8 @@
 <script setup>
 import { computed } from 'vue'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const emit = defineEmits(['update:modelValue'])
 
@@ -11,10 +14,30 @@ const props = defineProps({
 })
 
 const strategyOptions = [
-  { label: 'Moving Average Crossover', value: 'moving_average' },
-  { label: 'RSI Reversal', value: 'rsi' },
-  { label: 'MACD Trend', value: 'macd' },
-  { label: 'Bollinger Bands', value: 'bollinger' },
+  {
+    get label() {
+      return t('app.forms.strategy.maCross')
+    },
+    value: 'moving_average',
+  },
+  {
+    get label() {
+      return t('app.forms.strategy.rsiReversal')
+    },
+    value: 'rsi',
+  },
+  {
+    get label() {
+      return t('app.forms.strategy.macdTrend')
+    },
+    value: 'macd',
+  },
+  {
+    get label() {
+      return t('app.forms.strategy.bollinger')
+    },
+    value: 'bollinger',
+  },
 ]
 
 const selectedStrategy = computed({
@@ -38,7 +61,7 @@ const updateNumber = (field, value) => update(field, Number(value))
       emit-value
       map-options
       :options="strategyOptions"
-      label="Strategy"
+      :label="t('app.common.labels.strategy')"
     />
 
     <template v-if="modelValue.strategy === 'moving_average'">
@@ -46,7 +69,7 @@ const updateNumber = (field, value) => update(field, Number(value))
         dark
         filled
         type="number"
-        label="Fast period"
+        :label="t('app.common.labels.fastPeriod')"
         :model-value="modelValue.fastPeriod"
         min="1"
         @update:model-value="updateNumber('fastPeriod', $event)"
@@ -55,7 +78,7 @@ const updateNumber = (field, value) => update(field, Number(value))
         dark
         filled
         type="number"
-        label="Slow period"
+        :label="t('app.common.labels.slowPeriod')"
         :model-value="modelValue.slowPeriod"
         min="2"
         @update:model-value="updateNumber('slowPeriod', $event)"
@@ -67,7 +90,7 @@ const updateNumber = (field, value) => update(field, Number(value))
         dark
         filled
         type="number"
-        label="RSI period"
+        :label="t('app.common.labels.rsiPeriod')"
         :model-value="modelValue.rsiPeriod"
         min="2"
         @update:model-value="updateNumber('rsiPeriod', $event)"
@@ -76,7 +99,7 @@ const updateNumber = (field, value) => update(field, Number(value))
         dark
         filled
         type="number"
-        label="Oversold level"
+        :label="t('app.forms.strategy.oversold')"
         :model-value="modelValue.oversold"
         min="1"
         max="49"
@@ -86,7 +109,7 @@ const updateNumber = (field, value) => update(field, Number(value))
         dark
         filled
         type="number"
-        label="Overbought level"
+        :label="t('app.forms.strategy.overbought')"
         :model-value="modelValue.overbought"
         min="51"
         max="99"
@@ -99,7 +122,7 @@ const updateNumber = (field, value) => update(field, Number(value))
         dark
         filled
         type="number"
-        label="Fast period"
+        :label="t('app.common.labels.fastPeriod')"
         :model-value="modelValue.macdFast"
         min="1"
         @update:model-value="updateNumber('macdFast', $event)"
@@ -108,7 +131,7 @@ const updateNumber = (field, value) => update(field, Number(value))
         dark
         filled
         type="number"
-        label="Slow period"
+        :label="t('app.common.labels.slowPeriod')"
         :model-value="modelValue.macdSlow"
         min="2"
         @update:model-value="updateNumber('macdSlow', $event)"
@@ -117,7 +140,7 @@ const updateNumber = (field, value) => update(field, Number(value))
         dark
         filled
         type="number"
-        label="Signal period"
+        :label="t('app.common.labels.signalPeriod')"
         :model-value="modelValue.macdSignal"
         min="1"
         @update:model-value="updateNumber('macdSignal', $event)"
@@ -129,7 +152,7 @@ const updateNumber = (field, value) => update(field, Number(value))
         dark
         filled
         type="number"
-        label="Period"
+        :label="t('app.common.labels.period')"
         :model-value="modelValue.bollingerPeriod"
         min="2"
         @update:model-value="updateNumber('bollingerPeriod', $event)"
@@ -138,7 +161,7 @@ const updateNumber = (field, value) => update(field, Number(value))
         dark
         filled
         type="number"
-        label="Standard deviation"
+        :label="t('app.forms.strategy.stdDev')"
         :model-value="modelValue.standardDeviation"
         min="0.1"
         step="0.1"

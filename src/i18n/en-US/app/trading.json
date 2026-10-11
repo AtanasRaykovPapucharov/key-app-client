@@ -1,0 +1,40 @@
+{
+  "calculator": {
+    "title": "Position sizing calculator",
+    "inputs": "Inputs",
+    "accountSize": "Account size",
+    "riskPerTrade": "Risk per trade (%)",
+    "riskHint": "Disciplined range: 0.25% – 1.5%",
+    "entryPrice": "Entry price",
+    "stopPrice": "Stop-loss price",
+    "direction": "Direction",
+    "long": "Long",
+    "short": "Short",
+    "results": "Results",
+    "sameStop": "Entry and stop prices are the same. Enter different values.",
+    "riskAmount": "Amount at risk",
+    "positionSize": "Position size (units)",
+    "positionValue": "Position value",
+    "exposure": "% of account (exposure)",
+    "footer": "Blue fields are inputs. The rest is calculated automatically. Educational material, not investment advice.",
+    "howTo": "How to use it",
+    "help": {
+      "title": "Why position size matters more than the entry",
+      "ideaTitle": "The idea in one sentence",
+      "idea": "First decide how much you are willing to lose, then let the math set the position size — not the other way round. That way no single trade can do outsized damage to the account.",
+      "formulaTitle": "The formula",
+      "formula": "Position size = (Account × Risk %) ÷ {'|'}Entry − Stop{'|'}",
+      "formulaExplain": "The numerator is how much money you risk. The denominator is how much you lose per unit if the stop is hit. Dividing gives the number of units that keeps the risk fixed — wherever the stop is.",
+      "stepsTitle": "Steps",
+      "step1": "Enter your account size.",
+      "step2": "Choose the risk per trade. 0.25%–1.5% is the disciplined range; 1% is a good starting point.",
+      "step3": "Enter the entry price and the stop-loss price — the real levels from your plan, not rough guesses.",
+      "step4": "Read “Position size” — that is the number of shares, units or contracts for the order.",
+      "principlesTitle": "InvestClub Trading principles",
+      "principle1": "Risk management before returns — surviving every market regime is the condition for profit.",
+      "principle2": "Process, not prediction — a fixed risk per trade turns trading into a repeatable process.",
+      "principle3": "No signals — this tool doesn’t tell you what to buy, only how much once you already have a plan.",
+      "disclaimer": "This is educational material and is not investment advice."
+    }
+  }
+}

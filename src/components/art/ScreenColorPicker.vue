@@ -17,6 +17,9 @@
 <script setup>
 import { ref } from 'vue'
 import { useQuasar } from 'quasar'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const $q = useQuasar()
 const color = ref('#1976D2')
@@ -25,7 +28,7 @@ const pickColor = async () => {
   if (!window.EyeDropper) {
     $q.notify({
       type: 'negative',
-      message: 'Screen color picker is not supported in this browser',
+      message: t('app.components.art.pickerUnsupported'),
       position: 'top-left',
     })
     return

@@ -6,6 +6,9 @@ import PageTitle from 'src/components/PageTitleFactory.vue'
 
 import concepts from './concepts.js'
 import tileMaps from './tileMaps.js'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t: tt } = useLocalized()
 
 const themeAliases = {
   numbers: 'number_concepts',
@@ -227,18 +230,18 @@ watch(tab, (categoryKey) => {
 
                   <div class="learning-details">
                     <div v-if="item.description" class="learning-cell">
-                      <div class="learning-title">Description</div>
+                      <div class="learning-title">{{ tt('app.common.labels.description') }}</div>
                       <div class="learning-body">{{ item.description }}</div>
                     </div>
 
                     <div v-if="item.formula" class="learning-cell formula-cell">
-                      <div class="learning-title">Formula</div>
+                      <div class="learning-title">{{ tt('app.common.labels.formula') }}</div>
                       <div class="formula">{{ item.formula }}</div>
                     </div>
                   </div>
 
                   <div v-if="item.list.length" class="learning-cell list-cell">
-                    <div class="learning-title">Topics</div>
+                    <div class="learning-title">{{ tt('app.common.labels.topics') }}</div>
                     <q-list dense separator class="guide__list">
                       <q-item
                         v-for="(child, childIndex) in item.list"

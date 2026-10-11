@@ -4,7 +4,7 @@ import { ref, computed, onBeforeMount, onMounted, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import OrderTrading from 'src/components/crypto/OrderTrading.vue'
 // import FormulaView from 'src/components/FormulaView.vue'
-// import { useI18n } from 'vue-i18n'
+import { useLocalized } from 'src/composables/useLocalized'
 
 import { useUserStore } from 'src/stores/user'
 import { useBankStore } from 'src/stores/bank'
@@ -26,7 +26,7 @@ import { getEurUsdcPrice } from 'src/services/web/coingecko'
 const binanceStore = useBinanceStore()
 const $q = useQuasar()
 const $router = useRouter()
-// const { t } = useI18n()
+const { t } = useLocalized()
 
 const portfolioStore = usePortfolioStore()
 const userStore = useUserStore()
@@ -288,7 +288,9 @@ const watcherColumns = [
   // },
   {
     name: 'dt_insert',
-    label: 'Opened on',
+    get label() {
+      return t('app.common.labels.openedOn')
+    },
   },
   {
     name: 'order_type',
@@ -298,25 +300,35 @@ const watcherColumns = [
   },
   {
     name: 'amount',
-    label: 'Amount',
+    get label() {
+      return t('app.common.labels.amount')
+    },
     field: 'amount',
     type: 'number',
   },
   {
     name: 'current',
-    label: 'Current, $',
+    get label() {
+      return t('app.common.labels.currentUsd')
+    },
   },
   {
     name: 'watched',
-    label: 'Order, $',
+    get label() {
+      return t('app.common.labels.orderUsd')
+    },
   },
   {
     name: 'diff',
-    label: 'Diff., $',
+    get label() {
+      return t('app.common.labels.diffUsd')
+    },
   },
   {
     name: 'diff_percent',
-    label: 'Diff., %',
+    get label() {
+      return t('app.common.labels.diffPct')
+    },
   },
   // {
   //   name: 'curr_price',
@@ -458,8 +470,15 @@ const onSignal = (signal) => {
   lastNotifiedSignal.value = notificationKey
   $q.notify({
     type: signal.label === 'BUY' ? 'positive' : 'negative',
-    message: `${signal.label} signal for ${selectedSymbol.value}`,
-    caption: `${signal.buys} BUY / ${signal.sells} SELL from ${signal.total} active signals`,
+    message: t('app.crypto.signals.notifyTitle', {
+      signal: t(`app.crypto.signals.${String(signal.label).toLowerCase()}`),
+      symbol: selectedSymbol.value,
+    }),
+    caption: t('app.crypto.signals.notifyCaption', {
+      buys: signal.buys,
+      sells: signal.sells,
+      total: signal.total,
+    }),
     timeout: 6000,
     position: 'top-left',
   })
@@ -537,10 +556,10 @@ const updateStrategyCandles = (candles) => {
             indicator-color="primary"
             align="justify"
           >
-            <q-tab icon="currency_exchange" name="trader" label="Trader" />
-            <q-tab name="auto-trading" icon="smart_toy" label="Auto-trading" />
-            <q-tab name="scheduler" icon="schedule" label="Scheduler" />
-            <q-tab name="notes" icon="book" label="Notes" />
+            <q-tab icon="currency_exchange" name="trader" :label="t('app.common.labels.trader')" />
+            <q-tab name="auto-trading" icon="smart_toy" :label="t('app.crypto.auto.heading')" />
+            <q-tab name="scheduler" icon="schedule" :label="t('app.crypto.scheduler.tab')" />
+            <q-tab name="notes" icon="book" :label="t('app.common.labels.notes')" />
           </q-tabs>
 
           <q-separator />
@@ -561,7 +580,7 @@ const updateStrategyCandles = (candles) => {
                 <div class="row q-mb-md">
                   <div class="col q-pa-xs text-white">
                     <div class="text-green-5">
-                      Available:
+                      {{ t('app.common.labels.availableColon') }}
                       <strong>{{ availableUsdc.toFixed(4) }}</strong>
                       USDC
                     </div>
@@ -571,7 +590,7 @@ const updateStrategyCandles = (candles) => {
                   </div>
                   <div class="col q-pa-xs text-white">
                     <div class="text-red-5">
-                      In-crypto:
+                      {{ t('app.common.labels.inCryptoColon') }}
                       <strong>{{ inCryptoUsdc.toFixed(4) }}</strong>
                       USDC
                     </div>
@@ -581,7 +600,7 @@ const updateStrategyCandles = (candles) => {
                   </div>
                   <div class="col q-pa-xs text-white">
                     <div class="text-purple-5">
-                      Total:
+                      {{ t('app.common.labels.totalColon') }}
                       <strong>{{ (inCryptoUsdc + availableUsdc).toFixed(4) }}</strong>
                       USDC
                     </div>
@@ -602,7 +621,7 @@ const updateStrategyCandles = (candles) => {
                     >
                       {{ selectedSymbol?.replace('USDC', '') }}
                       <q-field
-                        label="Traded"
+                        :label="t('app.crypto.trader.traded')"
                         borderless
                         dark
                         stack-label
@@ -638,7 +657,7 @@ const updateStrategyCandles = (candles) => {
                               text-align: left;
                             "
                           >
-                            &nbsp;cur. price: {{ currPriceNumb?.toFixed(2) }}
+                            {{ t('app.crypto.trader.curPrice') }} {{ currPriceNumb?.toFixed(2) }}
                           </strong>
                           <strong
                             class="text-secondary"
@@ -648,7 +667,7 @@ const updateStrategyCandles = (candles) => {
                               text-align: left;
                             "
                           >
-                            &nbsp;avg. price: {{ avgPrice }}
+                            {{ t('app.crypto.trader.avgPrice') }} {{ avgPrice }}
                           </strong>
                         </span>
 
@@ -669,7 +688,8 @@ const updateStrategyCandles = (candles) => {
                               text-align: left;
                             "
                           >
-                            &nbsp;&nbsp;cur. amount: {{ (sumAmount * currPriceNumb).toFixed(2) }}
+                            {{ t('app.crypto.trader.curAmount') }}
+                            {{ (sumAmount * currPriceNumb).toFixed(2) }}
                           </strong>
                           <strong
                             class="text-secondary"
@@ -679,7 +699,7 @@ const updateStrategyCandles = (candles) => {
                               text-align: left;
                             "
                           >
-                            &nbsp;&nbsp;avg. amount: {{ sumTotal }}
+                            {{ t('app.crypto.trader.avgAmount') }} {{ sumTotal }}
                           </strong>
                         </span>
                       </div>
@@ -725,10 +745,12 @@ const updateStrategyCandles = (candles) => {
                       class="bg-grey-9"
                     >
                       <template #header>
-                        <q-item-section>ORDER</q-item-section>
+                        <q-item-section>{{ t('app.common.labels.order') }}</q-item-section>
                         <q-item-section side>
                           <span>
-                            <span class="text-secondary">Available: </span>
+                            <span class="text-secondary"
+                              >{{ t('app.common.labels.availableColon') }}
+                            </span>
                             <strong class="text-green-5">
                               {{ availableUsdc.toFixed(4) }} USDC
                             </strong>
@@ -756,10 +778,12 @@ const updateStrategyCandles = (candles) => {
                     <div v-if="currOrders?.length > 0">
                       <q-expansion-item dense v-model="openHistoryView" class="bg-grey-9">
                         <template #header>
-                          <q-item-section>HISTORY</q-item-section>
+                          <q-item-section>{{ t('app.common.labels.history') }}</q-item-section>
                           <q-item-section side>
                             <span>
-                              <span class="text-secondary">In-Crypto: </span>
+                              <span class="text-secondary"
+                                >{{ t('app.common.labels.inCryptoColon') }}
+                              </span>
                               <strong class="text-red-5">
                                 {{ inCryptoUsdc.toFixed(4) }} USDC
                               </strong>
@@ -789,13 +813,13 @@ const updateStrategyCandles = (candles) => {
                             <template #body-cell-watched="props">
                               <q-td :props="props">
                                 <div>
-                                  Price:
+                                  {{ t('app.common.labels.priceColon') }}
                                   <span class="text-blue-4">{{
                                     parseFloat(props.row.curr_price).toFixed(4)
                                   }}</span>
                                 </div>
                                 <div>
-                                  Total:
+                                  {{ t('app.common.labels.totalColon') }}
                                   <span class="text-blue-4">{{
                                     parseFloat(props.row.curr_total).toFixed(4)
                                   }}</span>
@@ -805,13 +829,13 @@ const updateStrategyCandles = (candles) => {
                             <template #body-cell-current="props">
                               <q-td :props="props">
                                 <div>
-                                  Price:
+                                  {{ t('app.common.labels.priceColon') }}
                                   <span class="text-purple-4">{{
                                     parseFloat(props.row.price_now).toFixed(4)
                                   }}</span>
                                 </div>
                                 <div>
-                                  Total:
+                                  {{ t('app.common.labels.totalColon') }}
                                   <span class="text-purple-4">{{
                                     parseFloat(props.row.total_now).toFixed(4)
                                   }}</span>
@@ -821,7 +845,7 @@ const updateStrategyCandles = (candles) => {
                             <template #body-cell-diff="props">
                               <q-td :props="props">
                                 <div v-if="props.row.order_type == 'buy'">
-                                  Price:
+                                  {{ t('app.common.labels.priceColon') }}
                                   <span
                                     :class="`text-${props.row.price_diff > 0 ? 'positive' : 'negative'}`"
                                   >
@@ -830,7 +854,7 @@ const updateStrategyCandles = (candles) => {
                                 </div>
 
                                 <div v-if="props.row.order_type == 'buy'">
-                                  Total:
+                                  {{ t('app.common.labels.totalColon') }}
                                   <span
                                     :class="`text-${props.row.total_diff > 0 ? 'positive' : 'negative'}`"
                                   >
@@ -889,7 +913,7 @@ const updateStrategyCandles = (candles) => {
                                 >
                                   <template v-if="col.name === 'watched'">
                                     <div>
-                                      Total:
+                                      {{ t('app.common.labels.totalColon') }}
                                       <span class="text-blue-4">{{
                                         parseFloat(totalField('curr_total')).toFixed(4)
                                       }}</span>
@@ -897,7 +921,7 @@ const updateStrategyCandles = (candles) => {
                                   </template>
                                   <template v-else-if="col.name === 'current'">
                                     <div>
-                                      Total:
+                                      {{ t('app.common.labels.totalColon') }}
                                       <span class="text-purple-4">{{
                                         parseFloat(totalField('total_now')).toFixed(4)
                                       }}</span>
@@ -905,7 +929,7 @@ const updateStrategyCandles = (candles) => {
                                   </template>
                                   <template v-else-if="col.name === 'diff'">
                                     <div>
-                                      Total:
+                                      {{ t('app.common.labels.totalColon') }}
                                       <span
                                         :class="`text-${totalField('total_diff') > 0 ? 'positive' : 'negative'}`"
                                       >

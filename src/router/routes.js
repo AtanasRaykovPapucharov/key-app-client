@@ -169,6 +169,17 @@ const routes = [
     ],
   },
   {
+    path: '/trading-size-calculator',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [
+      {
+        path: '',
+        component: () => import('pages/TradingPage.vue'),
+        props: { route: 'size-calculator' },
+      },
+    ],
+  },
+  {
     path: '/trading-resources',
     component: () => import('layouts/MainLayout.vue'),
     children: [

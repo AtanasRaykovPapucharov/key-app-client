@@ -1,6 +1,7 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { useQuasar } from 'quasar'
 
 const props = defineProps({
   modelValue: { type: Boolean, default: false },
@@ -15,6 +16,9 @@ const props = defineProps({
 
 const emit = defineEmits(['update:modelValue', 'hide'])
 const { t } = useI18n({ useScope: 'global' })
+const $q = useQuasar()
+/** Full-screen on phones when the requested width would not fit. */
+const fillScreen = computed(() => props.maximized || ($q.screen.lt.sm && props.width !== 'auto'))
 const dialog = ref(null)
 const isDialogOpen = ref(props.modelValue)
 const isOpen = computed({
@@ -49,11 +53,19 @@ defineExpose({
     :position="position"
     :persistent="persistent"
     :full-width="fullWidth"
-    :maximized="maximized"
+    :maximized="fillScreen"
     transition-duration="500"
     @hide="$emit('hide')"
   >
-    <q-card class="app-dialog bg-grey-10 text-secondary" :style="{ width, minWidth: '320px' }">
+    <q-card
+      class="app-dialog bg-grey-10 text-secondary"
+      :class="{ 'app-dialog--fill': fillScreen }"
+      :style="
+        fillScreen
+          ? undefined
+          : { width, maxWidth: 'calc(100vw - 32px)', minWidth: 'min(320px, 100%)' }
+      "
+    >
       <q-bar class="app-dialog__header">
         <img class="app-dialog__logo" alt="Key App" src="~assets/key-app-logo.svg" />
         <q-space />
@@ -111,5 +123,26 @@ defineExpose({
 .app-dialog__content {
   max-height: 70vh;
   overflow: auto;
+}
+
+.app-dialog--fill {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-dialog--fill .app-dialog__content {
+  flex: 1 1 auto;
+  max-height: none;
+}
+
+@media (max-width: 599px) {
+  .app-dialog__header {
+    height: 56px;
+  }
+
+  .app-dialog__logo {
+    width: 96px;
+    height: 48px;
+  }
 }
 </style>

@@ -65,7 +65,7 @@ function toggleDescription(index) {
       :content-inset-level="1"
       icon="link"
       :class="`text-${textColor}`"
-      label="Links"
+      :label="t('app.components.resources.links')"
       default-opened
     >
       <div class="link-row q-mt-sm">
@@ -101,7 +101,7 @@ function toggleDescription(index) {
       :content-inset-level="1"
       :icon="ICON.RESOURCES"
       :class="`text-${textColor}`"
-      label="Books"
+      :label="t('app.components.resources.books')"
       default-opened
     >
       <div class="resource-row q-mt-sm">

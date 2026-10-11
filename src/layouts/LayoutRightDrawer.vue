@@ -3,6 +3,7 @@ import { useQuasar } from 'quasar'
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia'
+import { useLocalized } from 'src/composables/useLocalized'
 
 import { useUserStore } from 'src/stores/user'
 import { signOut } from 'src/services/user'
@@ -14,6 +15,7 @@ import UserBank from './UserBank.vue'
 import UserSettings from './UserSettings.vue'
 
 const $q = useQuasar()
+const { t } = useLocalized()
 const $router = useRouter()
 const userStore = useUserStore()
 const { user } = storeToRefs(userStore)
@@ -21,7 +23,7 @@ const { user } = storeToRefs(userStore)
 const drawerRight = ref(!$q.screen.lt.sm)
 const miniStateRight = ref(true)
 const asideTab = ref('wallet')
-const drawerWidth = computed(() => ($q.screen.lt.sm ? Math.min($q.screen.width, 360) : 410))
+const drawerWidth = computed(() => ($q.screen.lt.sm ? $q.screen.width : 410))
 
 const closeDrawer = () => {
   drawerRight.value = !$q.screen.lt.sm
@@ -88,7 +90,7 @@ watch(
     mini-to-overlay
     :no-swipe-open="$q.screen.lt.sm"
     :width="drawerWidth"
-    :breakpoint="500"
+    :breakpoint="599"
     class="bg-black"
   >
     <q-btn
@@ -98,7 +100,7 @@ watch(
       dense
       icon="close"
       color="secondary"
-      aria-label="Close aside"
+      :aria-label="t('app.common.actions.closeAside')"
       class="mobile-aside-close"
       @click="drawerRight = false"
     />
@@ -116,29 +118,29 @@ watch(
             inline-label
             outside-arrows
             :mobile-arrows="false"
-            style="max-width: 400px"
+            style="max-width: 100%"
           >
-            <q-tab name="user">
+            <q-tab name="user" :aria-label="t('app.layout.drawer.user')">
               <template #default>
                 <q-icon name="person" size="lg" color="secondary" />
               </template>
             </q-tab>
-            <q-tab name="wallet">
+            <q-tab name="wallet" :aria-label="t('app.layout.drawer.wallet')">
               <template #default>
                 <q-icon name="wallet" size="lg" color="secondary" />
               </template>
             </q-tab>
-            <q-tab name="crypto">
+            <q-tab name="crypto" :aria-label="t('app.layout.drawer.crypto')">
               <template #default>
                 <q-icon name="currency_bitcoin" size="lg" color="secondary" />
               </template>
             </q-tab>
-            <q-tab name="bank">
+            <q-tab name="bank" :aria-label="t('app.layout.drawer.bank')">
               <template #default>
                 <q-icon name="account_balance" size="lg" color="secondary" />
               </template>
             </q-tab>
-            <q-tab name="settings">
+            <q-tab name="settings" :aria-label="t('app.layout.drawer.settings')">
               <template #default>
                 <q-icon name="settings" size="lg" color="secondary" />
               </template>
@@ -151,10 +153,10 @@ watch(
             transition-prev="slide-down"
             transition-next="slide-up"
             class="bg-grey-9 mobile-tab-panel"
-            style="min-height: 480px"
+            style="min-height: min(480px, 60vh)"
           >
             <q-tab-panel name="user">
-              <div class="text-h4 q-mb-md float-right" style="width: 100%">
+              <div class="aside-panel-head q-mb-md">
                 <div class="text-right">{{ user.username }}</div>
                 <q-separator color="primary" />
                 <q-btn
@@ -163,7 +165,7 @@ watch(
                   flat
                   icon="badge"
                   align="left"
-                  label="Profile"
+                  :label="t('app.layout.drawer.profile')"
                   size="xl"
                   color="secondary"
                   style="width: 100%"
@@ -174,7 +176,7 @@ watch(
                   flat
                   icon="event"
                   align="left"
-                  label="Daily PNL"
+                  :label="t('app.layout.drawer.dailyPnl')"
                   size="xl"
                   color="secondary"
                   style="width: 100%"
@@ -185,7 +187,7 @@ watch(
                   flat
                   icon="fa fa-award"
                   align="left"
-                  label="Achievements"
+                  :label="t('app.layout.drawer.achievements')"
                   size="xl"
                   color="secondary"
                   style="width: 100%"
@@ -194,32 +196,32 @@ watch(
             </q-tab-panel>
 
             <q-tab-panel name="wallet">
-              <div class="text-h4 q-mb-md float-right" style="width: 100%">
-                <div class="text-right">WALLET</div>
+              <div class="aside-panel-head q-mb-md">
+                <div class="text-right">{{ t('app.layout.drawer.wallet') }}</div>
                 <q-separator color="primary" />
               </div>
               <UserWallet />
             </q-tab-panel>
 
             <q-tab-panel name="crypto">
-              <div class="text-h4 q-mb-md float-right" style="width: 100%">
-                <div class="text-right">CRYPTO</div>
+              <div class="aside-panel-head q-mb-md">
+                <div class="text-right">{{ t('app.layout.drawer.crypto') }}</div>
                 <q-separator color="primary" />
                 <UserCrypto />
               </div>
             </q-tab-panel>
 
             <q-tab-panel name="bank">
-              <div class="text-h4 q-mb-md float-right" style="width: 100%">
-                <div class="text-right">BANK</div>
+              <div class="aside-panel-head q-mb-md">
+                <div class="text-right">{{ t('app.layout.drawer.bank') }}</div>
                 <q-separator color="primary" />
                 <UserBank />
               </div>
             </q-tab-panel>
 
             <q-tab-panel name="settings">
-              <div class="text-h4 q-mb-md float-right" style="width: 100%">
-                <div class="text-right">SETTINGS</div>
+              <div class="aside-panel-head q-mb-md">
+                <div class="text-right">{{ t('app.layout.drawer.settings') }}</div>
                 <q-separator color="primary" />
                 <UserSettings />
               </div>
@@ -234,6 +236,7 @@ watch(
             icon="person"
             size="xl"
             color="secondary"
+            :aria-label="t('app.layout.drawer.user')"
             @click="
               (() => {
                 miniStateRight = false
@@ -247,6 +250,7 @@ watch(
             icon="wallet"
             size="xl"
             color="secondary"
+            :aria-label="t('app.layout.drawer.wallet')"
             @click="
               (() => {
                 miniStateRight = false
@@ -260,6 +264,7 @@ watch(
             icon="currency_bitcoin"
             size="xl"
             color="secondary"
+            :aria-label="t('app.layout.drawer.crypto')"
             @click="
               (() => {
                 miniStateRight = false
@@ -275,6 +280,7 @@ watch(
             icon="account_balance"
             size="xl"
             color="secondary"
+            :aria-label="t('app.layout.drawer.bank')"
             @click="
               (() => {
                 miniStateRight = false
@@ -288,6 +294,7 @@ watch(
             icon="settings"
             size="xl"
             color="secondary"
+            :aria-label="t('app.layout.drawer.settings')"
             @click="
               (() => {
                 miniStateRight = false
@@ -295,7 +302,15 @@ watch(
               })()
             "
           />
-          <q-btn dense flat icon="logout" size="xl" color="secondary" @click="signOutHandler" />
+          <q-btn
+            dense
+            flat
+            icon="logout"
+            size="xl"
+            color="secondary"
+            :aria-label="t('app.layout.drawer.logOut')"
+            @click="signOutHandler"
+          />
         </div>
       </div>
       <div v-else>
@@ -311,6 +326,7 @@ watch(
             icon="login"
             size="xl"
             color="secondary"
+            :aria-label="t('app.layout.drawer.logIn')"
             @click="
               (() => {
                 miniStateRight = false
@@ -328,6 +344,7 @@ watch(
         round
         unelevated
         size="md"
+        :aria-label="t('app.layout.drawer.toggle')"
         @click="miniStateRight = !miniStateRight"
       >
         <q-icon
@@ -341,6 +358,12 @@ watch(
 </template>
 
 <style scoped>
+.aside-panel-head {
+  width: 100%;
+  font-size: clamp(1.4rem, 5vw, 2.125rem);
+  line-height: 1.2;
+}
+
 .mobile-aside-close {
   position: absolute;
   top: 8px;
@@ -351,7 +374,7 @@ watch(
 @media (max-width: 599px) {
   .mobile-aside-content {
     width: 100%;
-    max-width: 360px;
+    max-width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
     padding-top: 52px;
@@ -360,7 +383,7 @@ watch(
   .mobile-aside-tabs,
   .mobile-tab-panel {
     width: 100%;
-    max-width: 360px;
+    max-width: 100%;
     margin-right: auto;
     margin-left: auto;
   }

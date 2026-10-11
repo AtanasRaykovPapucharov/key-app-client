@@ -1,0 +1,28 @@
+{
+  "table": {
+    "addRow": "Добави ред"
+  },
+  "resources": {
+    "links": "Връзки",
+    "books": "Книги"
+  },
+  "art": {
+    "color": "Цвят",
+    "uploadedImage": "Качено изображение",
+    "pickerUnsupported": "Този браузър не поддържа избор на цвят от екрана."
+  },
+  "admin": {
+    "dataType": "Тип данни",
+    "tableName": "Име на таблица",
+    "refreshTables": "Обнови таблиците",
+    "createTable": "Създай таблица"
+  },
+  "forms": {
+    "doYouWant": "Искате ли да"
+  },
+  "bot": {
+    "dataWatcher": "Наблюдател на данни",
+    "analyzer": "Анализатор",
+    "cash": "Пари"
+  }
+}

@@ -6,6 +6,9 @@ import { useRoute, useRouter } from 'vue-router'
 import { api } from 'src/boot/axios'
 import { useUserStore } from 'src/stores/user'
 import { getLocalUser } from 'src/services/storage/local'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 Chart.register(...registerables)
 
@@ -268,7 +271,14 @@ loadStock()
     <q-card class="trader-card q-pa-md">
       <div class="row q-col-gutter-sm items-center">
         <div class="col-12 col-sm-2">
-          <q-input v-model="symbol" outlined dense dark label="Symbol" @keyup.enter="loadStock" />
+          <q-input
+            v-model="symbol"
+            outlined
+            dense
+            dark
+            :label="t('app.common.labels.symbol')"
+            @keyup.enter="loadStock"
+          />
         </div>
         <div class="col-12 col-sm-5">
           <q-input
@@ -276,7 +286,7 @@ loadStock()
             outlined
             dense
             dark
-            label="Search company or symbol"
+            :label="t('app.stocks.searchCompany')"
             @keyup.enter="searchSymbols"
             ><template #prepend
               ><q-btn
@@ -289,7 +299,7 @@ loadStock()
           ></q-input>
         </div>
         <div class="col text-right text-caption text-grey-5">
-          Paper account: {{ formatPrice(portfolioValue) }}
+          {{ t('app.stocks.paperAccount') }} {{ formatPrice(portfolioValue) }}
         </div>
       </div>
       <q-list v-if="searchResults.length" bordered class="search-results q-mt-sm"
@@ -306,9 +316,9 @@ loadStock()
           ></q-item
         ></q-list
       >
-      <q-banner v-else-if="hasSearched" class="bg-grey-9 text-grey-4 q-mt-sm"
-        >No matching companies found.</q-banner
-      >
+      <q-banner v-else-if="hasSearched" class="bg-grey-9 text-grey-4 q-mt-sm">{{
+        t('app.common.labels.noCompanies')
+      }}</q-banner>
       <q-banner v-if="errorMessage" class="bg-red-9 text-white q-mt-md">{{
         errorMessage
       }}</q-banner>
@@ -331,7 +341,9 @@ loadStock()
         <div class="row q-col-gutter-md q-mt-md">
           <div class="col-12 col-lg-8">
             <div class="row items-center justify-between q-mb-sm">
-              <div class="text-subtitle1 text-grey-3">Price history</div>
+              <div class="text-subtitle1 text-grey-3">
+                {{ t('app.common.labels.priceHistory') }}
+              </div>
               <q-btn-toggle
                 v-model="range"
                 dense
@@ -344,7 +356,7 @@ loadStock()
           </div>
           <div class="col-12 col-lg-4">
             <div class="trade-panel">
-              <div class="text-subtitle1 text-green-5">Order</div>
+              <div class="text-subtitle1 text-green-5">{{ t('app.common.labels.order') }}</div>
               <q-btn-toggle
                 v-model="side"
                 class="q-mt-sm"
@@ -352,8 +364,8 @@ loadStock()
                 unelevated
                 toggle-color="green-6"
                 :options="[
-                  { label: 'BUY', value: 'buy' },
-                  { label: 'SELL', value: 'sell' },
+                  { label: t('app.common.actions.buy'), value: 'buy' },
+                  { label: t('app.common.actions.sell'), value: 'sell' },
                 ]"
               /><q-input
                 v-model.number="amount"
@@ -363,14 +375,18 @@ loadStock()
                 outlined
                 dense
                 dark
-                label="Shares"
+                :label="t('app.common.labels.shares')"
                 class="q-mt-md"
               />
               <div class="row justify-between text-caption text-grey-5 q-mt-md">
-                <span>Available cash</span><span>{{ formatPrice(cashBalance) }}</span>
+                <span>{{ t('app.stocks.availableCash') }}</span
+                ><span>{{ formatPrice(cashBalance) }}</span>
               </div>
               <div class="row justify-between text-caption text-grey-5">
-                <span>Position</span><span>{{ formatNumber(position.shares, 4) }} shares</span>
+                <span>{{ t('app.stocks.position') }}</span
+                ><span
+                  >{{ formatNumber(position.shares, 4) }} {{ t('app.stocks.sharesLower') }}</span
+                >
               </div>
               <q-btn
                 class="full-width q-mt-md"
@@ -386,17 +402,19 @@ loadStock()
         <div class="row q-col-gutter-md q-mt-md">
           <div class="col-12 col-sm-4">
             <div class="metric-cell">
-              <span>Average price</span><strong>{{ formatPrice(averagePrice) }}</strong>
+              <span>{{ t('app.stocks.avgPrice') }}</span
+              ><strong>{{ formatPrice(averagePrice) }}</strong>
             </div>
           </div>
           <div class="col-12 col-sm-4">
             <div class="metric-cell">
-              <span>Market value</span><strong>{{ formatPrice(marketValue) }}</strong>
+              <span>{{ t('app.stocks.marketValue') }}</span
+              ><strong>{{ formatPrice(marketValue) }}</strong>
             </div>
           </div>
           <div class="col-12 col-sm-4">
             <div class="metric-cell">
-              <span>Unrealized P/L</span
+              <span>{{ t('app.stocks.unrealized') }}</span
               ><strong :class="unrealized >= 0 ? 'text-green-5' : 'text-red-4'">{{
                 formatPrice(unrealized)
               }}</strong>
@@ -407,7 +425,7 @@ loadStock()
           v-if="visibleOrders.length"
           default-opened
           class="bg-grey-9 q-mt-md"
-          label="Order history"
+          :label="t('app.stocks.orderHistory')"
           ><q-table
             dark
             flat
@@ -415,10 +433,10 @@ loadStock()
             row-key="id"
             :rows="visibleOrders"
             :columns="[
-              { name: 'createdAt', label: 'Date', field: 'createdAt' },
-              { name: 'side', label: 'Side', field: 'side' },
-              { name: 'amount', label: 'Shares', field: 'amount' },
-              { name: 'price', label: 'Price', field: 'price' },
+              { name: 'createdAt', label: t('app.common.labels.date'), field: 'createdAt' },
+              { name: 'side', label: t('app.common.labels.side'), field: 'side' },
+              { name: 'amount', label: t('app.common.labels.shares'), field: 'amount' },
+              { name: 'price', label: t('app.common.labels.price'), field: 'price' },
             ]"
             :rows-per-page-options="[0]"
             ><template #body-cell-createdAt="props"

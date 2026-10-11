@@ -1,5 +1,8 @@
 <script setup>
 import { ref, onBeforeUnmount } from 'vue'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const imageUrl = ref(null)
 let objectUrl = null
@@ -27,7 +30,7 @@ onBeforeUnmount(() => {
   <div class="q-gutter-md" style="height: 600px">
     <!-- File selector only -->
     <q-uploader
-      label="Upload image"
+      :label="t('app.common.actions.uploadImage')"
       accept="image/*"
       auto-upload="false"
       no-thumbnails
@@ -38,7 +41,7 @@ onBeforeUnmount(() => {
 
     <!-- Resizable image -->
     <div v-if="imageUrl" class="image-container">
-      <img :src="imageUrl" alt="Uploaded image" />
+      <img :src="imageUrl" :alt="t('app.components.art.uploadedImage')" />
     </div>
   </div>
 </template>

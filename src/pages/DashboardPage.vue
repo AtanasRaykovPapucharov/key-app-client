@@ -1,7 +1,7 @@
 <script setup>
 import { useQuasar } from 'quasar'
 import { ref, computed, watch, onMounted } from 'vue'
-// import { useI18n } from 'vue-i18n'
+import { useLocalized } from 'src/composables/useLocalized'
 
 import { addOrder, getOrdersByCrypto } from 'src/services/storage/crypto'
 import { useBinanceStore } from 'src/stores/binance'
@@ -13,7 +13,7 @@ import SetWatcherForm from 'src/components/forms/SetWatcherForm.vue'
 
 const binanceStore = useBinanceStore()
 const $q = useQuasar()
-// const { t } = useI18n()
+const { t } = useLocalized()
 
 const wanted = ref([
   'BTCUSDC',
@@ -91,7 +91,9 @@ async function rowClicked(ev, row) {
 const columns = [
   {
     name: 'symbol',
-    label: 'Pair',
+    get label() {
+      return t('app.common.labels.pair')
+    },
     field: 'symbol',
     align: 'left',
     format: (v) => `${v.replace('USDC', '/USDC')}`,
@@ -103,18 +105,36 @@ const columns = [
   //   align: 'left',
   //   format: (v) => `${v.toFixed(3)}`,
   // },
-  { name: 'high', label: '24h High, $', field: 'high', align: 'left' },
-  { name: 'low', label: '24h Low, $', field: 'low', align: 'left' },
+  {
+    name: 'high',
+    get label() {
+      return t('app.common.labels.high24Usd')
+    },
+    field: 'high',
+    align: 'left',
+  },
+  {
+    name: 'low',
+    get label() {
+      return t('app.common.labels.low24Usd')
+    },
+    field: 'low',
+    align: 'left',
+  },
   {
     name: 'change',
-    label: 'Change, %',
+    get label() {
+      return t('app.common.labels.changePct')
+    },
     field: 'change',
     align: 'left',
     format: (v) => `${v.toFixed(2)}`,
   },
   {
     name: 'price',
-    label: 'Price, $',
+    get label() {
+      return t('app.common.labels.priceUsd')
+    },
     field: 'price',
     align: 'left',
     format: (v) => `${v.toFixed(4)}`,
@@ -146,29 +166,41 @@ const watcherColumns = [
   },
   {
     name: 'amount',
-    label: 'Amount',
+    get label() {
+      return t('app.common.labels.amount')
+    },
     field: 'amount',
     type: 'number',
   },
   {
     name: 'watched',
-    label: 'Watched, $',
+    get label() {
+      return t('app.common.labels.watchedUsd')
+    },
   },
   {
     name: 'current',
-    label: 'Current, $',
+    get label() {
+      return t('app.common.labels.currentUsd')
+    },
   },
   {
     name: 'diff',
-    label: 'Diff., $',
+    get label() {
+      return t('app.common.labels.diffUsd')
+    },
   },
   {
     name: 'diff_percent',
-    label: 'Diff., %',
+    get label() {
+      return t('app.common.labels.diffPct')
+    },
   },
   {
     name: 'dt_insert',
-    label: 'Opened on',
+    get label() {
+      return t('app.common.labels.openedOn')
+    },
   },
   // {
   //   name: 'curr_price',
@@ -237,7 +269,7 @@ const editWatcher = (row) => {
 
   $q.notify({
     type: 'info',
-    message: ' Edit watcher - coming soon!',
+    message: t('app.common.notify.editWatcherSoon'),
     position: 'top-left',
   })
 }
@@ -249,8 +281,8 @@ const deleteWatcher = (row) => {
       component: () => `Are you sure you want to delete this watcher?`,
       persistent: true,
       close: false,
-      cancel: 'No',
-      ok: 'Yes',
+      cancel: t('app.common.labels.no'),
+      ok: t('app.common.labels.yes'),
       width: '380px',
     },
   }).onOk(() => {
@@ -258,7 +290,7 @@ const deleteWatcher = (row) => {
 
     $q.notify({
       type: 'info',
-      message: ' Delete watcher - coming soon!',
+      message: t('app.common.notify.deleteWatcherSoon'),
       position: 'top-left',
     })
   })
@@ -276,7 +308,7 @@ watch(
     if (newTickers['katusdc'.toUpperCase()]?.price > 0.011)
       $q.notify({
         type: 'positive',
-        message: 'KAT is above $0.011! Consider selling.',
+        message: t('app.common.notify.katAlert'),
         position: 'top-left',
       })
   },
@@ -372,14 +404,22 @@ watch(
                       <div class="row">
                         <span class="text-purple-4">
                           {{
-                            `${currOrders.length} order${currOrders.length > 1 ? 's' : ''} watched`
+                            currOrders.length === 0
+                              ? t('app.crypto.list.ordersWatched')
+                              : currOrders.length === 1
+                                ? t('app.crypto.list.ordersWatchedOne')
+                                : t('app.crypto.list.ordersWatchedMany', {
+                                    count: currOrders.length,
+                                  })
                           }}
                         </span>
                         <span class="q-mx-xs">|</span>
-                        <span class="text-blue-4">{{ `avg. price: ${avgPrice}` }}</span>
+                        <span class="text-blue-4">{{
+                          t('app.crypto.list.avgPrice', { price: avgPrice })
+                        }}</span>
                         <span class="q-mx-xs">|</span>
                         <span class="text-purple-4">
-                          {{ `curr. price:  ${currPrice}` }}
+                          {{ t('app.crypto.list.currPrice', { price: currPrice }) }}
                         </span>
                         <span class="q-mx-xs">|</span>
                         <span :class="`text-${isBull ? 'green' : 'red'}`">{{
@@ -430,13 +470,13 @@ watch(
                       <template #body-cell-watched="props">
                         <q-td :props="props">
                           <div>
-                            Price:
+                            {{ t('app.common.labels.priceColon') }}
                             <span class="text-blue-4">{{
                               parseFloat(props.row.curr_price).toFixed(4)
                             }}</span>
                           </div>
                           <div>
-                            Total:
+                            {{ t('app.common.labels.totalColon') }}
                             <span class="text-blue-4">{{
                               parseFloat(props.row.curr_total).toFixed(4)
                             }}</span>
@@ -446,13 +486,13 @@ watch(
                       <template #body-cell-current="props">
                         <q-td :props="props">
                           <div>
-                            Price:
+                            {{ t('app.common.labels.priceColon') }}
                             <span class="text-purple-4">{{
                               parseFloat(props.row.price_now).toFixed(4)
                             }}</span>
                           </div>
                           <div>
-                            Total:
+                            {{ t('app.common.labels.totalColon') }}
                             <span class="text-purple-4">{{
                               parseFloat(props.row.total_now).toFixed(4)
                             }}</span>
@@ -462,7 +502,7 @@ watch(
                       <template #body-cell-diff="props">
                         <q-td :props="props">
                           <div>
-                            Price:
+                            {{ t('app.common.labels.priceColon') }}
                             <span
                               :class="`text-${props.row.price_diff > 0 ? 'positive' : 'negative'}`"
                             >
@@ -470,7 +510,7 @@ watch(
                             </span>
                           </div>
                           <div>
-                            Total:
+                            {{ t('app.common.labels.totalColon') }}
                             <span
                               :class="`text-${props.row.total_diff > 0 ? 'positive' : 'negative'}`"
                             >
@@ -523,7 +563,7 @@ watch(
                           >
                             <template v-if="col.name === 'watched'">
                               <div>
-                                Total:
+                                {{ t('app.common.labels.totalColon') }}
                                 <span class="text-blue-4">{{
                                   parseFloat(totalField('curr_total')).toFixed(4)
                                 }}</span>
@@ -531,7 +571,7 @@ watch(
                             </template>
                             <template v-else-if="col.name === 'current'">
                               <div>
-                                Total:
+                                {{ t('app.common.labels.totalColon') }}
                                 <span class="text-purple-4">{{
                                   parseFloat(totalField('total_now')).toFixed(4)
                                 }}</span>
@@ -539,7 +579,7 @@ watch(
                             </template>
                             <template v-else-if="col.name === 'diff'">
                               <div>
-                                Total:
+                                {{ t('app.common.labels.totalColon') }}
                                 <span
                                   :class="`text-${totalField('total_diff') > 0 ? 'positive' : 'negative'}`"
                                 >
@@ -615,19 +655,19 @@ watch(
 
                     <div class="row q-mt-md text-caption text-grey-5">
                       <div class="col">
-                        <div>24h High</div>
+                        <div>{{ t('app.common.labels.high24') }}</div>
                         <div class="text-positive">
                           ${{ ticker.high.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}
                         </div>
                       </div>
                       <div class="col">
-                        <div>24h Low</div>
+                        <div>{{ t('app.common.labels.low24') }}</div>
                         <div class="text-negative">
                           ${{ ticker.low.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}
                         </div>
                       </div>
                       <div class="col">
-                        <div>Volume</div>
+                        <div>{{ t('app.common.labels.volume') }}</div>
                         <div class="text-grey-3">
                           ${{ (ticker.volume / 1_000_000).toFixed(1) }}M
                         </div>

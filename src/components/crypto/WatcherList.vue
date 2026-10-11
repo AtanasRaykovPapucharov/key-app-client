@@ -7,6 +7,9 @@ import SetWatcherForm from 'src/components/forms/SetWatcherForm.vue'
 import DialogForm from 'src/components/DialogForm.vue'
 import { addOrder, getOrdersByCrypto } from 'src/services/storage/crypto'
 import { getLocalUser } from 'src/services/storage/local'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t: tt } = useLocalized()
 
 const binanceStore = useBinanceStore()
 const $q = useQuasar()
@@ -85,29 +88,41 @@ const watcherColumns = [
   },
   {
     name: 'amount',
-    label: 'Amount',
+    get label() {
+      return tt('app.common.labels.amount')
+    },
     field: 'amount',
     type: 'number',
   },
   {
     name: 'watched',
-    label: 'Watched, $',
+    get label() {
+      return tt('app.common.labels.watchedUsd')
+    },
   },
   {
     name: 'current',
-    label: 'Current, $',
+    get label() {
+      return tt('app.common.labels.currentUsd')
+    },
   },
   {
     name: 'diff',
-    label: 'Diff., $',
+    get label() {
+      return tt('app.common.labels.diffUsd')
+    },
   },
   {
     name: 'diff_percent',
-    label: 'Diff., %',
+    get label() {
+      return tt('app.common.labels.diffPct')
+    },
   },
   {
     name: 'dt_insert',
-    label: 'Opened on',
+    get label() {
+      return tt('app.common.labels.openedOn')
+    },
   },
   // {
   //   name: 'curr_price',
@@ -178,7 +193,7 @@ const editWatcher = (row) => {
 
   $q.notify({
     type: 'info',
-    message: ' Edit watcher - coming soon!',
+    message: tt('app.common.notify.editWatcherSoon'),
     position: 'top-left',
   })
 }
@@ -190,8 +205,8 @@ const deleteWatcher = (row) => {
       component: () => `Are you sure you want to delete this watcher?`,
       persistent: true,
       close: false,
-      cancel: 'No',
-      ok: 'Yes',
+      cancel: tt('app.common.labels.no'),
+      ok: tt('app.common.labels.yes'),
       width: '380px',
     },
   }).onOk(() => {
@@ -199,7 +214,7 @@ const deleteWatcher = (row) => {
 
     $q.notify({
       type: 'info',
-      message: ' Delete watcher - coming soon!',
+      message: tt('app.common.notify.deleteWatcherSoon'),
       position: 'top-left',
     })
   })
@@ -217,7 +232,7 @@ watch(
     if (newTickers['katusdc'.toUpperCase()]?.price > 0.011)
       $q.notify({
         type: 'positive',
-        message: 'KAT is above $0.011! Consider selling.',
+        message: tt('app.common.notify.katAlert'),
         position: 'top-left',
       })
   },
@@ -253,13 +268,21 @@ watch(
           <q-item-section>
             <div class="row">
               <span class="text-purple-4">
-                {{ `${currOrders.length} order${currOrders.length > 1 ? 's' : ''} watched` }}
+                {{
+                  currOrders.length === 0
+                    ? tt('app.crypto.list.ordersWatched')
+                    : currOrders.length === 1
+                      ? tt('app.crypto.list.ordersWatchedOne')
+                      : tt('app.crypto.list.ordersWatchedMany', { count: currOrders.length })
+                }}
               </span>
               <span class="q-mx-xs">|</span>
-              <span class="text-blue-4">{{ `avg. price: ${avgPrice}` }}</span>
+              <span class="text-blue-4">{{
+                tt('app.crypto.list.avgPrice', { price: avgPrice })
+              }}</span>
               <span class="q-mx-xs">|</span>
               <span class="text-purple-4">
-                {{ `curr. price:  ${currPrice}` }}
+                {{ tt('app.crypto.list.currPrice', { price: currPrice }) }}
               </span>
               <span class="q-mx-xs">|</span>
               <span :class="`text-${isBull ? 'green' : 'red'}`">{{
@@ -308,11 +331,11 @@ watch(
             <template #body-cell-watched="props">
               <q-td :props="props">
                 <div>
-                  Price:
+                  {{ tt('app.common.labels.priceColon') }}
                   <span class="text-blue-4">{{ parseFloat(props.row.curr_price).toFixed(4) }}</span>
                 </div>
                 <div>
-                  Total:
+                  {{ tt('app.common.labels.totalColon') }}
                   <span class="text-blue-4">{{ parseFloat(props.row.curr_total).toFixed(4) }}</span>
                 </div>
               </q-td>
@@ -320,13 +343,13 @@ watch(
             <template #body-cell-current="props">
               <q-td :props="props">
                 <div>
-                  Price:
+                  {{ tt('app.common.labels.priceColon') }}
                   <span class="text-purple-4">{{
                     parseFloat(props.row.price_now).toFixed(4)
                   }}</span>
                 </div>
                 <div>
-                  Total:
+                  {{ tt('app.common.labels.totalColon') }}
                   <span class="text-purple-4">{{
                     parseFloat(props.row.total_now).toFixed(4)
                   }}</span>
@@ -336,13 +359,13 @@ watch(
             <template #body-cell-diff="props">
               <q-td :props="props">
                 <div>
-                  Price:
+                  {{ tt('app.common.labels.priceColon') }}
                   <span :class="`text-${props.row.price_diff > 0 ? 'positive' : 'negative'}`">
                     {{ parseFloat(props.row.price_diff).toFixed(4) }}
                   </span>
                 </div>
                 <div>
-                  Total:
+                  {{ tt('app.common.labels.totalColon') }}
                   <span :class="`text-${props.row.total_diff > 0 ? 'positive' : 'negative'}`">
                     {{ parseFloat(props.row.total_diff).toFixed(4) }}
                   </span>
@@ -386,7 +409,7 @@ watch(
                 >
                   <template v-if="col.name === 'watched'">
                     <div>
-                      Total:
+                      {{ tt('app.common.labels.totalColon') }}
                       <span class="text-blue-4">{{
                         parseFloat(totalField('curr_total')).toFixed(4)
                       }}</span>
@@ -394,7 +417,7 @@ watch(
                   </template>
                   <template v-else-if="col.name === 'current'">
                     <div>
-                      Total:
+                      {{ tt('app.common.labels.totalColon') }}
                       <span class="text-purple-4">{{
                         parseFloat(totalField('total_now')).toFixed(4)
                       }}</span>
@@ -402,7 +425,7 @@ watch(
                   </template>
                   <template v-else-if="col.name === 'diff'">
                     <div>
-                      Total:
+                      {{ tt('app.common.labels.totalColon') }}
                       <span
                         :class="`text-${totalField('total_diff') > 0 ? 'positive' : 'negative'}`"
                       >

@@ -1,7 +1,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useQuasar } from 'quasar'
-import { useI18n } from 'vue-i18n'
+import { useLocalized } from 'src/composables/useLocalized'
 import { getCoingeckoMarkets } from 'src/services/web/coingecko'
 
 const props = defineProps({
@@ -14,9 +14,7 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue'])
 
 const $q = useQuasar()
-const { locale } = useI18n({ useScope: 'global' })
-const bg = computed(() => locale.value === 'bg-BG')
-const t = (en, bgText) => (bg.value ? bgText : en)
+const { t: tt } = useLocalized()
 
 const SLOTS = ['a', 'b', 'c']
 const PERIODS_PER_YEAR = { daily: 365, weekly: 52, monthly: 12 }
@@ -49,16 +47,16 @@ const draftResult = ref(null)
 const isCustom = computed(() => draft.value.type === 'custom')
 
 const types = computed(() => [
-  { value: 'dca', label: t('DCA (recurring buy)', 'DCA (периодична покупка)') },
-  { value: 'grid', label: t('Grid', 'Мрежа') },
-  { value: 'hodl', label: t('Buy & hold', 'Купи и задръж') },
-  { value: 'custom', label: t('Custom condition', 'Персонално условие') },
+  { value: 'dca', label: tt('app.crypto.strategy.dcaRecurringBuy') },
+  { value: 'grid', label: tt('app.crypto.strategy.grid') },
+  { value: 'hodl', label: tt('app.crypto.strategy.buyHold') },
+  { value: 'custom', label: tt('app.crypto.strategy.customCondition') },
 ])
 
 const frequencies = computed(() => [
-  { value: 'daily', label: t('Daily', 'Дневно') },
-  { value: 'weekly', label: t('Weekly', 'Седмично') },
-  { value: 'monthly', label: t('Monthly', 'Месечно') },
+  { value: 'daily', label: tt('app.crypto.strategy.daily') },
+  { value: 'weekly', label: tt('app.crypto.strategy.weekly') },
+  { value: 'monthly', label: tt('app.crypto.strategy.monthly') },
 ])
 
 const preview = computed(() => {
@@ -93,22 +91,19 @@ function describe(strategy) {
 function statusOf(strategy) {
   const result = conditionResults.value[strategy.id]
   if (strategy.type !== 'custom' || !result) return null
-  if (!result.ok) return { color: 'negative', label: t('error', 'грешка') }
+  if (!result.ok) return { color: 'negative', label: tt('app.crypto.strategy.error') }
   return result.value
-    ? { color: 'positive', label: t('met', 'изпълнено') }
-    : { color: 'grey-8', label: t('waiting', 'чака') }
+    ? { color: 'positive', label: tt('app.crypto.strategy.met') }
+    : { color: 'grey-8', label: tt('app.crypto.strategy.waiting') }
 }
 
 // ── Condition engine ──────────────────────────────────────────────────────────
 function compileCondition(expression) {
   const source = String(expression || '').trim()
-  if (!source) return { error: t('Condition is empty', 'Условието е празно') }
+  if (!source) return { error: tt('app.crypto.strategy.conditionIsEmpty') }
   if (BLOCKED_TOKENS.test(source))
     return {
-      error: t(
-        'Only comparisons on a, b, c and Math are allowed',
-        'Разрешени са само сравнения по a, b, c и Math',
-      ),
+      error: tt('app.crypto.strategy.onlyComparisonsOnA'),
     }
   try {
     return { fn: new Function('a', 'b', 'c', 'Math', `"use strict"; return (${source});`) }
@@ -138,13 +133,12 @@ async function evaluateCondition(expression, assets) {
   if (compiled.error) return { ok: false, error: compiled.error }
 
   const ids = (assets || []).filter(Boolean).slice(0, 3)
-  if (ids.length < 2)
-    return { ok: false, error: t('Pick at least two assets', 'Изберете поне два актива') }
+  if (ids.length < 2) return { ok: false, error: tt('app.crypto.strategy.pickAtLeastTwo') }
 
   const rows = await getCoingeckoMarkets(ids)
   const context = ids.map((id) => toContext(rows.find((r) => r.id === id)))
   if (context.some((c) => !c))
-    return { ok: false, error: t('Market data unavailable', 'Няма пазарни данни') }
+    return { ok: false, error: tt('app.crypto.strategy.marketDataUnavailable') }
 
   try {
     const value = compiled.fn(context[0], context[1], context[2] ?? null, Math)
@@ -166,7 +160,7 @@ async function runCondition(strategy) {
 
   if (result.ok && result.value && !previous?.value) {
     $q.notify({
-      message: `${strategy.name}: ${t('condition met', 'условието е изпълнено')}`,
+      message: `${strategy.name}: ${tt('app.crypto.strategy.conditionMet')}`,
       icon: 'rule',
       color: 'positive',
       timeout: 8000,
@@ -183,7 +177,7 @@ async function runAll() {
 // ── CRUD ──────────────────────────────────────────────────────────────────────
 function save() {
   if (!draft.value.name.trim()) {
-    $q.notify({ message: t('Name your strategy', 'Дайте име на стратегията'), color: 'negative' })
+    $q.notify({ message: tt('app.crypto.strategy.nameYourStrategy'), color: 'negative' })
     return
   }
   if (isCustom.value) {
@@ -204,7 +198,7 @@ function save() {
   strategies.value = [...strategies.value, saved]
   draft.value = { ...draft.value, name: '' }
   $q.notify({
-    message: t('Strategy saved locally', 'Стратегията е запазена локално'),
+    message: tt('app.crypto.strategy.strategySavedLocally'),
     color: 'positive',
   })
   if (saved.type === 'custom') void runCondition(saved)
@@ -224,12 +218,7 @@ defineExpose({ runAll })
   <div class="column q-gutter-md">
     <q-banner dense rounded class="draft-banner">
       <template #avatar><q-icon name="info" color="cyan-5" /></template>
-      {{
-        t(
-          'Design only — strategies are stored locally and are not executed.',
-          'Само дизайн — стратегиите се пазят локално и не се изпълняват.',
-        )
-      }}
+      {{ tt('app.crypto.strategy.designOnlyStrategiesAre') }}
     </q-banner>
 
     <div class="setting-group column q-gutter-sm">
@@ -239,7 +228,7 @@ defineExpose({ runAll })
         outlined
         dark
         color="orange-6"
-        :label="t('Strategy name', 'Име на стратегията')"
+        :label="tt('app.crypto.strategy.strategyName')"
       />
       <q-select
         v-model="draft.type"
@@ -249,7 +238,7 @@ defineExpose({ runAll })
         emit-value
         map-options
         color="orange-6"
-        :label="t('Type', 'Тип')"
+        :label="tt('app.crypto.strategy.type')"
         :options="types"
       />
 
@@ -264,7 +253,7 @@ defineExpose({ runAll })
             outlined
             dark
             color="orange-6"
-            :label="`${t('Amount', 'Сума')} (USD)`"
+            :label="`${tt('app.crypto.strategy.amount')} (USD)`"
           />
           <q-select
             v-model="draft.frequency"
@@ -275,7 +264,7 @@ defineExpose({ runAll })
             emit-value
             map-options
             color="orange-6"
-            :label="t('Frequency', 'Честота')"
+            :label="tt('app.crypto.strategy.frequency')"
             :options="frequencies"
           />
         </div>
@@ -286,7 +275,7 @@ defineExpose({ runAll })
           outlined
           dark
           color="orange-6"
-          :label="t('Number of buys', 'Брой покупки')"
+          :label="tt('app.crypto.strategy.numberOfBuys')"
         />
         <div class="row">
           <q-input
@@ -297,7 +286,7 @@ defineExpose({ runAll })
             outlined
             dark
             color="orange-6"
-            :label="`${t('Take profit', 'Печалба')} %`"
+            :label="`${tt('app.crypto.strategy.takeProfit')} %`"
           />
           <q-input
             v-model.number="draft.stopLoss"
@@ -307,16 +296,16 @@ defineExpose({ runAll })
             outlined
             dark
             color="orange-6"
-            :label="`${t('Stop loss', 'Стоп загуба')} %`"
+            :label="`${tt('app.crypto.strategy.stopLoss')} %`"
           />
         </div>
 
         <q-card flat class="preview-card q-pa-sm">
-          <div class="text-caption text-grey-6">{{ t('Planned outlay', 'Планирана сума') }}</div>
+          <div class="text-caption text-grey-6">{{ tt('app.crypto.strategy.plannedOutlay') }}</div>
           <div class="text-subtitle1 text-white">{{ fmtMoney(preview.total) }}</div>
           <div class="text-caption text-grey-7">
             {{ preview.periods }} × {{ fmtMoney(draft.amount) }} · {{ preview.span.toFixed(1) }}
-            {{ t('yrs', 'г.') }}
+            {{ tt('app.crypto.strategy.yrs') }}
           </div>
         </q-card>
       </template>
@@ -336,7 +325,7 @@ defineExpose({ runAll })
             emit-value
             map-options
             color="orange-6"
-            :label="`${slot.toUpperCase()}${index === 2 ? ` (${t('optional', 'по избор')})` : ''}`"
+            :label="`${slot.toUpperCase()}${index === 2 ? ` (${tt('app.crypto.strategy.optional')})` : ''}`"
             :options="coinOptions"
           />
         </div>
@@ -350,11 +339,11 @@ defineExpose({ runAll })
           dark
           color="orange-6"
           class="condition-input"
-          :label="t('Condition (JavaScript)', 'Условие (JavaScript)')"
+          :label="tt('app.crypto.strategy.conditionJavascript')"
         />
 
         <div class="text-caption text-grey-6">
-          {{ t('Available fields', 'Налични полета') }}:
+          {{ tt('app.crypto.strategy.availableFields') }}:
           <code class="condition-inline">{{ CONTEXT_FIELDS }}</code> · Math
         </div>
         <div class="row q-gutter-sm">
@@ -370,7 +359,7 @@ defineExpose({ runAll })
           no-caps
           color="cyan-5"
           icon="play_arrow"
-          :label="t('Test condition', 'Тествай условието')"
+          :label="tt('app.crypto.strategy.testCondition')"
           @click="testCondition"
         />
 
@@ -388,7 +377,7 @@ defineExpose({ runAll })
               class="text-caption text-grey-6"
             >
               {{ SLOTS[index] }} · {{ ctx.symbol }} · {{ fmtMoney(ctx.price) }} ·
-              {{ t('30d', '30д') }} {{ fmtPct(ctx.change30d) }}
+              {{ tt('app.crypto.strategy.n30d') }} {{ fmtPct(ctx.change30d) }}
             </div>
           </template>
           <div v-else class="text-caption text-negative">{{ draftResult.error }}</div>
@@ -401,7 +390,7 @@ defineExpose({ runAll })
         color="orange-7"
         text-color="grey-10"
         icon="save"
-        :label="t('Save strategy', 'Запази стратегията')"
+        :label="tt('app.crypto.strategy.saveStrategy')"
         @click="save"
       />
     </div>
@@ -444,7 +433,7 @@ defineExpose({ runAll })
       </q-item>
     </q-list>
     <div v-else class="text-caption text-grey-7">
-      {{ t('No strategies yet.', 'Все още няма стратегии.') }}
+      {{ tt('app.crypto.strategy.noStrategiesYet') }}
     </div>
   </div>
 </template>

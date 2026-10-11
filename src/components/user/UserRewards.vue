@@ -11,6 +11,9 @@ import cardanoIcon from 'src/assets/icons/cardano.png'
 import chainlinkIcon from 'src/assets/icons/chainlink.png'
 import dogecoinIcon from 'src/assets/icons/dogecoin.png'
 import xrpIcon from 'src/assets/icons/xrp.png'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const sectionState = ref({
   crypto: true,
@@ -24,106 +27,178 @@ const toggleSection = (section) => {
 
 const cryptoRewards = ref([
   {
-    title: 'Self-Trader',
-    aim: 'Complete 1st trade',
-    details: 'Execute your first crypto buy or sell order.',
+    get title() {
+      return t('app.user.rewards.selfTrader.title')
+    },
+    get aim() {
+      return t('app.user.rewards.selfTrader.aim')
+    },
+    get details() {
+      return t('app.user.rewards.selfTrader.details')
+    },
     icon: bitcoinIcon,
     color: 'blue',
     unlocked: true,
     badge: 1,
   },
   {
-    title: 'BTC Boss',
-    aim: 'Hold 1 BTC',
-    details: 'Reach a full Bitcoin balance in your portfolio.',
+    get title() {
+      return t('app.user.rewards.btcBoss.title')
+    },
+    get aim() {
+      return t('app.user.rewards.btcBoss.aim')
+    },
+    get details() {
+      return t('app.user.rewards.btcBoss.details')
+    },
     icon: bitcoinIcon,
     color: 'orange',
     unlocked: true,
     badge: 7,
   },
   {
-    title: 'ETH Architect',
-    aim: 'Hold 10 ETH',
-    details: 'Build a strong Ethereum position.',
+    get title() {
+      return t('app.user.rewards.ethArchitect.title')
+    },
+    get aim() {
+      return t('app.user.rewards.ethArchitect.aim')
+    },
+    get details() {
+      return t('app.user.rewards.ethArchitect.details')
+    },
     icon: ethereumIcon,
     color: 'blue',
     unlocked: true,
     badge: 10,
   },
   {
-    title: 'Stable Captain',
-    aim: 'Save 10,000 USDC',
-    details: 'Keep a stable reserve ready for opportunities.',
+    get title() {
+      return t('app.user.rewards.stableCaptain.title')
+    },
+    get aim() {
+      return t('app.user.rewards.stableCaptain.aim')
+    },
+    get details() {
+      return t('app.user.rewards.stableCaptain.details')
+    },
     icon: usdcIcon,
     color: 'teal',
     unlocked: true,
     badge: 1,
   },
   {
-    title: 'Altcoin Scout',
-    aim: 'Own 5 crypto assets',
-    details: 'Diversify across multiple tracked coins.',
+    get title() {
+      return t('app.user.rewards.altcoinScout.title')
+    },
+    get aim() {
+      return t('app.user.rewards.altcoinScout.aim')
+    },
+    get details() {
+      return t('app.user.rewards.altcoinScout.details')
+    },
     icon: bnbIcon,
     color: 'purple',
     unlocked: true,
     badge: 5,
   },
   {
-    title: 'SOL Sprinter',
-    aim: 'Hold 25 SOL',
-    details: 'Grow a dedicated Solana position.',
+    get title() {
+      return t('app.user.rewards.solSprinter.title')
+    },
+    get aim() {
+      return t('app.user.rewards.solSprinter.aim')
+    },
+    get details() {
+      return t('app.user.rewards.solSprinter.details')
+    },
     icon: solanaIcon,
     color: 'green',
     unlocked: true,
     badge: 25,
   },
   {
-    title: 'BNB Builder',
-    aim: 'Hold 15 BNB',
-    details: 'Accumulate a Binance ecosystem stake.',
+    get title() {
+      return t('app.user.rewards.bnbBuilder.title')
+    },
+    get aim() {
+      return t('app.user.rewards.bnbBuilder.aim')
+    },
+    get details() {
+      return t('app.user.rewards.bnbBuilder.details')
+    },
     icon: bnbIcon,
     color: 'gold',
     unlocked: true,
     badge: 15,
   },
   {
-    title: 'ADA Scholar',
-    aim: 'Hold 1,000 ADA',
-    details: 'Commit to a long-term Cardano target.',
+    get title() {
+      return t('app.user.rewards.adaScholar.title')
+    },
+    get aim() {
+      return t('app.user.rewards.adaScholar.aim')
+    },
+    get details() {
+      return t('app.user.rewards.adaScholar.details')
+    },
     icon: cardanoIcon,
     color: 'indigo',
     unlocked: false,
   },
   {
-    title: 'LINK Oracle',
-    aim: 'Hold 100 LINK',
-    details: 'Reach a Chainlink oracle allocation.',
+    get title() {
+      return t('app.user.rewards.linkOracle.title')
+    },
+    get aim() {
+      return t('app.user.rewards.linkOracle.aim')
+    },
+    get details() {
+      return t('app.user.rewards.linkOracle.details')
+    },
     icon: chainlinkIcon,
     color: 'blue',
     unlocked: true,
     badge: 4,
   },
   {
-    title: 'Risk Tamer',
-    aim: 'Stay 7 days positive',
-    details: 'Finish a full week with positive daily PNL.',
+    get title() {
+      return t('app.user.rewards.riskTamer.title')
+    },
+    get aim() {
+      return t('app.user.rewards.riskTamer.aim')
+    },
+    get details() {
+      return t('app.user.rewards.riskTamer.details')
+    },
     icon: usdcIcon,
     color: 'green',
     unlocked: true,
     badge: 7,
   },
   {
-    title: 'Market Explorer',
-    aim: 'Watch 10 coins',
-    details: 'Create a wide crypto watchlist.',
+    get title() {
+      return t('app.user.rewards.marketExplorer.title')
+    },
+    get aim() {
+      return t('app.user.rewards.marketExplorer.aim')
+    },
+    get details() {
+      return t('app.user.rewards.marketExplorer.details')
+    },
     icon: dogecoinIcon,
     color: 'red',
     unlocked: false,
   },
   {
-    title: 'XRP Pioneer',
-    aim: 'Hold 500 XRP',
-    details: 'Build a solid cross-border payments position.',
+    get title() {
+      return t('app.user.rewards.xrpPioneer.title')
+    },
+    get aim() {
+      return t('app.user.rewards.xrpPioneer.aim')
+    },
+    get details() {
+      return t('app.user.rewards.xrpPioneer.details')
+    },
     icon: xrpIcon,
     color: 'teal',
     unlocked: false,
@@ -143,7 +218,7 @@ const cryptoUnlockedCount = computed(
         <div class="block-banner" @click="toggleSection('crypto')">
           <div class="banner-title row items-center no-wrap">
             <q-icon name="currency_bitcoin" size="22px" class="q-mr-xs text-orange-5" />
-            <span class="text-bold">Crypto Achievements</span>
+            <span class="text-bold">{{ t('app.user.achievements') }}</span>
             <span class="banner-count">({{ cryptoUnlockedCount }}/{{ cryptoRewards.length }})</span>
           </div>
           <q-icon

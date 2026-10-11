@@ -3,24 +3,62 @@ import { computed, onMounted, ref } from 'vue'
 import { useQuasar } from 'quasar'
 import { api } from 'boot/axios'
 import { useUserStore } from 'src/stores/user'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t } = useLocalized()
 
 const $q = useQuasar()
 const userStore = useUserStore()
 
 const cryptoOptions = ['BTC', 'ETH', 'BNB', 'SOL', 'LINK', 'ADA']
 const sellAmountTypes = [
-  { value: 'percent', label: '% of holdings' },
-  { value: 'fixed', label: 'Fixed amount' },
+  {
+    value: 'percent',
+    get label() {
+      return t('app.crypto.auto.pctHoldings')
+    },
+  },
+  {
+    value: 'fixed',
+    get label() {
+      return t('app.crypto.auto.fixedAmount')
+    },
+  },
 ]
 const triggerModes = [
-  { value: 'percent', label: 'Percent thresholds' },
-  { value: 'indicator', label: 'Technical indicator' },
+  {
+    value: 'percent',
+    get label() {
+      return t('app.crypto.auto.pctThresholds')
+    },
+  },
+  {
+    value: 'indicator',
+    get label() {
+      return t('app.crypto.auto.technical')
+    },
+  },
 ]
 const indicatorTypes = [
   { value: 'rsi', label: 'RSI' },
-  { value: 'macd', label: 'MACD crossover' },
-  { value: 'sma_cross', label: 'SMA crossover' },
-  { value: 'confluence', label: 'Confluence (MA/EMA/BB/SAR/SuperTrend)' },
+  {
+    value: 'macd',
+    get label() {
+      return t('app.crypto.auto.macdCross')
+    },
+  },
+  {
+    value: 'sma_cross',
+    get label() {
+      return t('app.crypto.auto.smaCross')
+    },
+  },
+  {
+    value: 'confluence',
+    get label() {
+      return t('app.crypto.auto.confluence')
+    },
+  },
 ]
 const indicatorDefaultParams = {
   rsi: { period: 14, oversold: 30, overbought: 70, interval: '1h' },
@@ -77,7 +115,7 @@ const loadRules = async () => {
     rules.value = []
     $q.notify({
       type: 'negative',
-      message: 'Unable to load auto-trading rules.',
+      message: t('app.crypto.auto.loadFailed'),
       position: 'top-left',
     })
   }
@@ -126,7 +164,7 @@ const requestSave = () => {
   if (!uid) {
     $q.notify({
       type: 'negative',
-      message: 'User session is required to save auto-trading rules.',
+      message: t('app.crypto.auto.sessionRequired'),
       position: 'top-left',
     })
     return
@@ -135,7 +173,7 @@ const requestSave = () => {
   if (!form.value.sell_enabled && !form.value.buy_enabled) {
     $q.notify({
       type: 'negative',
-      message: 'Enable at least one of auto-sell or auto-buy.',
+      message: t('app.crypto.auto.enableOne'),
       position: 'top-left',
     })
     return
@@ -263,7 +301,7 @@ onMounted(() => {
   <div class="auto-trading q-pa-md">
     <div class="auto-trading__intro q-mb-md">
       <div>
-        <div class="text-overline text-primary">AUTO-TRADING</div>
+        <div class="text-overline text-primary">{{ t('app.crypto.auto.heading') }}</div>
       </div>
       <q-chip
         dense
@@ -273,7 +311,7 @@ onMounted(() => {
         :icon="listOpen ? 'visibility' : 'visibility_off'"
         @click="listOpen = !listOpen"
       >
-        {{ activeCount }} active
+        {{ activeCount }} {{ t('app.common.labels.activeLower') }}
       </q-chip>
     </div>
 
@@ -285,7 +323,7 @@ onMounted(() => {
               {{ form.id ? 'Edit rule' : 'New auto-trading rule' }}
             </div>
             <div class="text-caption text-grey-5">
-              Automatically sell on profit or buy the dip for one asset.
+              {{ t('app.crypto.auto.intro') }}
             </div>
           </div>
           <q-icon name="auto_graph" color="primary" size="sm" />
@@ -295,7 +333,7 @@ onMounted(() => {
           <q-select
             v-model="form.crypto_id"
             :options="cryptoOptions"
-            label="Asset"
+            :label="t('app.crypto.auto.asset')"
             dense
             outlined
             dark
@@ -303,7 +341,11 @@ onMounted(() => {
           />
           <div class="col-12 col-md-6 flex items-center">
             <q-space />
-            <q-toggle v-model="form.enabled" label="Rule enabled" color="primary" />
+            <q-toggle
+              v-model="form.enabled"
+              :label="t('app.crypto.auto.ruleEnabled')"
+              color="primary"
+            />
           </div>
         </div>
 
@@ -312,7 +354,7 @@ onMounted(() => {
           :options="triggerModes"
           emit-value
           map-options
-          label="Trigger source"
+          :label="t('app.crypto.auto.triggerSource')"
           dense
           outlined
           dark
@@ -325,7 +367,7 @@ onMounted(() => {
             :options="indicatorTypes"
             emit-value
             map-options
-            label="Indicator"
+            :label="t('app.common.labels.indicator')"
             dense
             outlined
             dark
@@ -337,7 +379,7 @@ onMounted(() => {
             v-model.number="form.indicator_params.period"
             type="number"
             min="2"
-            label="RSI period"
+            :label="t('app.common.labels.rsiPeriod')"
             dense
             outlined
             dark
@@ -347,7 +389,7 @@ onMounted(() => {
             v-if="form.indicator_type === 'rsi'"
             v-model.number="form.indicator_params.oversold"
             type="number"
-            label="Oversold (buy) below"
+            :label="t('app.crypto.auto.oversold')"
             dense
             outlined
             dark
@@ -357,7 +399,7 @@ onMounted(() => {
             v-if="form.indicator_type === 'rsi'"
             v-model.number="form.indicator_params.overbought"
             type="number"
-            label="Overbought (sell) above"
+            :label="t('app.crypto.auto.overbought')"
             dense
             outlined
             dark
@@ -367,7 +409,7 @@ onMounted(() => {
             v-if="form.indicator_type === 'macd'"
             v-model.number="form.indicator_params.fastPeriod"
             type="number"
-            label="Fast period"
+            :label="t('app.common.labels.fastPeriod')"
             dense
             outlined
             dark
@@ -377,7 +419,7 @@ onMounted(() => {
             v-if="form.indicator_type === 'macd'"
             v-model.number="form.indicator_params.slowPeriod"
             type="number"
-            label="Slow period"
+            :label="t('app.common.labels.slowPeriod')"
             dense
             outlined
             dark
@@ -387,7 +429,7 @@ onMounted(() => {
             v-if="form.indicator_type === 'macd'"
             v-model.number="form.indicator_params.signalPeriod"
             type="number"
-            label="Signal period"
+            :label="t('app.common.labels.signalPeriod')"
             dense
             outlined
             dark
@@ -397,7 +439,7 @@ onMounted(() => {
             v-if="form.indicator_type === 'sma_cross'"
             v-model.number="form.indicator_params.fastPeriod"
             type="number"
-            label="Fast SMA period"
+            :label="t('app.crypto.auto.fastSma')"
             dense
             outlined
             dark
@@ -407,7 +449,7 @@ onMounted(() => {
             v-if="form.indicator_type === 'sma_cross'"
             v-model.number="form.indicator_params.slowPeriod"
             type="number"
-            label="Slow SMA period"
+            :label="t('app.crypto.auto.slowSma')"
             dense
             outlined
             dark
@@ -415,7 +457,7 @@ onMounted(() => {
           />
           <q-input
             v-model="form.indicator_params.interval"
-            label="Candle interval"
+            :label="t('app.crypto.auto.candleInterval')"
             hint="e.g. 15m, 1h, 4h"
             dense
             outlined
@@ -427,7 +469,7 @@ onMounted(() => {
         <q-separator class="q-my-md" color="grey-8" />
 
         <div class="row items-center justify-between">
-          <div class="text-subtitle2 text-white">Auto-sell on profit</div>
+          <div class="text-subtitle2 text-white">{{ t('app.crypto.auto.autoSell') }}</div>
           <q-toggle v-model="form.sell_enabled" color="positive" />
         </div>
         <div v-if="form.sell_enabled" class="row q-col-gutter-sm q-mt-xs">
@@ -437,7 +479,7 @@ onMounted(() => {
             type="number"
             min="0.1"
             step="0.1"
-            label="Take-profit %"
+            :label="t('app.crypto.auto.takeProfitPct')"
             dense
             outlined
             dark
@@ -448,7 +490,7 @@ onMounted(() => {
             :options="sellAmountTypes"
             emit-value
             map-options
-            label="Sell amount type"
+            :label="t('app.crypto.auto.sellAmountType')"
             dense
             outlined
             dark
@@ -474,7 +516,7 @@ onMounted(() => {
         <q-separator class="q-my-md" color="grey-8" />
 
         <div class="row items-center justify-between">
-          <div class="text-subtitle2 text-white">Auto-buy the dip</div>
+          <div class="text-subtitle2 text-white">{{ t('app.crypto.auto.autoBuy') }}</div>
           <q-toggle v-model="form.buy_enabled" color="warning" />
         </div>
         <div v-if="form.buy_enabled" class="row q-col-gutter-sm q-mt-xs">
@@ -484,7 +526,7 @@ onMounted(() => {
             type="number"
             min="0.1"
             step="0.1"
-            label="Buy on drop %"
+            :label="t('app.crypto.auto.buyOnDrop')"
             dense
             outlined
             dark
@@ -495,7 +537,7 @@ onMounted(() => {
             type="number"
             min="1"
             step="1"
-            label="Buy amount (USDC)"
+            :label="t('app.crypto.auto.buyAmount')"
             dense
             outlined
             dark
@@ -504,14 +546,14 @@ onMounted(() => {
         </div>
 
         <div class="row justify-end q-gutter-sm q-mt-md">
-          <q-btn flat label="Reset" color="secondary" @click="resetForm" />
+          <q-btn flat :label="t('app.common.actions.reset')" color="secondary" @click="resetForm" />
           <q-btn color="primary" :label="form.id ? 'Update' : 'Add rule'" @click="requestSave" />
         </div>
       </q-card>
 
       <q-card v-else class="auto-trading-card q-pa-md">
         <div class="text-subtitle1 text-weight-bold text-white q-mb-sm">
-          Your auto-trading rules
+          {{ t('app.crypto.auto.yourRules') }}
         </div>
 
         <q-list separator dark>
@@ -527,7 +569,8 @@ onMounted(() => {
                   </div>
                   <div class="text-caption text-grey-5 q-mt-xs">{{ describeRule(rule) }}</div>
                   <div v-if="rule.last_triggered_at" class="text-caption text-blue-3 q-mt-xs">
-                    Last triggered: {{ new Date(rule.last_triggered_at).toLocaleString() }}
+                    {{ t('app.crypto.auto.lastTriggered') }}
+                    {{ new Date(rule.last_triggered_at).toLocaleString() }}
                   </div>
                 </div>
                 <div class="row q-gutter-xs">
@@ -546,7 +589,7 @@ onMounted(() => {
           </q-item>
 
           <q-item v-if="!rules.length">
-            <q-item-section class="text-grey-5"> No auto-trading rules yet. </q-item-section>
+            <q-item-section class="text-grey-5"> {{ t('app.crypto.auto.empty') }} </q-item-section>
           </q-item>
         </q-list>
       </q-card>
@@ -566,7 +609,7 @@ onMounted(() => {
               {{ form.id ? 'Update auto-trading rule?' : 'Create auto-trading rule?' }}
             </div>
             <div class="text-body2 text-grey-5 q-mt-xs">
-              This rule will trade automatically once enabled.
+              {{ t('app.crypto.auto.willTrade') }}
             </div>
           </div>
           <q-btn flat round dense icon="close" color="grey-5" v-close-popup />
@@ -578,7 +621,7 @@ onMounted(() => {
         </q-card-section>
 
         <q-card-actions align="right" class="q-px-md q-pb-md q-gutter-sm">
-          <q-btn flat label="Cancel" color="grey-4" v-close-popup />
+          <q-btn flat :label="t('app.common.actions.cancel')" color="grey-4" v-close-popup />
           <q-btn
             unelevated
             :label="form.id ? 'Confirm update' : 'Confirm rule'"
@@ -600,14 +643,24 @@ onMounted(() => {
         <q-card-section class="row items-start no-wrap q-gutter-md">
           <q-icon name="delete_forever" color="negative" size="24px" />
           <div class="col">
-            <div class="text-h6 text-white text-weight-bold">Delete rule?</div>
-            <div class="text-body2 text-grey-5 q-mt-xs">This action cannot be undone.</div>
+            <div class="text-h6 text-white text-weight-bold">
+              {{ t('app.crypto.auto.deleteRule') }}
+            </div>
+            <div class="text-body2 text-grey-5 q-mt-xs">
+              {{ t('app.common.confirm.deleteMessage') }}
+            </div>
           </div>
           <q-btn flat round dense icon="close" color="grey-5" v-close-popup />
         </q-card-section>
         <q-card-actions align="right" class="q-px-md q-pb-md q-gutter-sm">
-          <q-btn flat label="Keep rule" color="grey-4" v-close-popup />
-          <q-btn unelevated label="Delete" color="negative" icon="delete" @click="confirmDelete" />
+          <q-btn flat :label="t('app.crypto.auto.keepRule')" color="grey-4" v-close-popup />
+          <q-btn
+            unelevated
+            :label="t('app.common.actions.delete')"
+            color="negative"
+            icon="delete"
+            @click="confirmDelete"
+          />
         </q-card-actions>
       </q-card>
     </q-dialog>

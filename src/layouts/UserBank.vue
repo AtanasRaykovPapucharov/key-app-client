@@ -1,13 +1,22 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue'
-import { useI18n } from 'vue-i18n'
+import { useLocalized } from 'src/composables/useLocalized'
 import { useBankStore } from 'src/stores/bank'
 
-const { t } = useI18n({ useScope: 'global' })
+const { t, d, n } = useLocalized()
 const bankStore = useBankStore()
 
 const pagination = ref({ rowsPerPage: 5 })
 const isOpen = ref(false)
+
+const columns = computed(() => [
+  { name: 'date', label: t('app.layout.bank.date'), field: 'date', align: 'left' },
+  { name: 'amount', label: t('app.layout.bank.fee'), field: 'amount', align: 'left' },
+  { name: 'crypto_id', label: t('app.layout.bank.crypto'), field: 'crypto_id' },
+  { name: 'curr_amount', label: t('app.layout.bank.amount'), field: 'curr_amount', align: 'left' },
+  { name: 'curr_price', label: t('app.layout.bank.price'), field: 'curr_price', align: 'left' },
+  { name: 'curr_usdc', label: t('app.layout.bank.total'), field: 'curr_usdc', align: 'left' },
+])
 
 const feeSum = computed(() => {
   return bankStore?.bank?.transactions?.reduce((acc, transaction) => {
@@ -22,12 +31,12 @@ onMounted(() => {
 
 <template>
   <div class="text-h6 text-red-5 q-mt-md q-ml-md">
-    {{ t('transactions_fee') }} {{ bankStore?.bank?.fee || 0 }} %
+    {{ t('app.layout.bank.feeLabel') }} {{ bankStore?.bank?.fee || 0 }} %
   </div>
   <q-expansion-item
     v-model="isOpen"
     :content-inset-level="1"
-    :label="`${t('fee_accumulated')} ${feeSum?.toFixed(2)} $`"
+    :label="`${t('app.layout.bank.accumulated')} ${n(feeSum || 0, { minimumFractionDigits: 2, maximumFractionDigits: 2 })} $`"
     caption=""
     class="text-purple-5 text-h6 q-mb-xs"
     expand-icon-class="text-purple-5"
@@ -40,19 +49,7 @@ onMounted(() => {
     dark
     class="bank-table"
     :rows="bankStore?.bank?.transactions || []"
-    :columns="[
-      { name: 'date', label: 'Date', field: 'date', align: 'left' },
-      // { name: 'order_id', label: 'Order', field: 'order_id', hide: true },
-      { name: 'amount', label: 'Fee, USDC', field: 'amount', align: 'left' },
-      {
-        name: 'crypto_id',
-        label: 'Crypto',
-        field: 'crypto_id',
-      },
-      { name: 'curr_amount', label: 'Amount', field: 'curr_amount', align: 'left' },
-      { name: 'curr_price', label: 'Price, USDC', field: 'curr_price', align: 'left' },
-      { name: 'curr_usdc', label: 'Total, USDC', field: 'curr_usdc', align: 'left' },
-    ]"
+    :columns="columns"
     row-key="bank_fee_id"
     v-model:pagination="pagination"
     :rows-per-page-options="[5, 10, 20, 0]"
@@ -60,18 +57,11 @@ onMounted(() => {
     <template #body-cell-date="props">
       <q-td :props="props">
         <div>
-          <!-- <span>{{ new Date(props.row.date)?.toDateString()?.split(' ')?.[0] }}</span>
-          <br /> -->
-          <span>{{ new Date(props.row.date).getFullYear() }}</span>
+          <span>{{ d(props.row.date, { year: 'numeric' }) }}</span>
           <br />
-          <span
-            >{{ new Date(props.row.date)?.toDateString()?.split(' ')?.[1] }}
-            {{ new Date(props.row.date)?.toDateString()?.split(' ')?.[2] }}</span
-          >
+          <span>{{ d(props.row.date, { month: 'short', day: 'numeric' }) }}</span>
           <br />
-          <span>{{
-            new Date(props.row.date).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-          }}</span>
+          <span>{{ d(props.row.date, { hour: '2-digit', minute: '2-digit' }) }}</span>
         </div>
       </q-td>
     </template>

@@ -1,7 +1,6 @@
 <script setup>
 import { useQuasar } from 'quasar'
 import { ref, computed, onBeforeUnmount, onMounted, watch } from 'vue'
-import { useI18n } from 'vue-i18n'
 import PageTitle from 'src/components/PageTitleFactory.vue'
 import DialogForm from 'src/components/DialogForm.vue'
 import ConfirmForm from 'src/components/forms/ConfirmForm.vue'
@@ -9,8 +8,10 @@ import { api } from 'src/boot/axios'
 import { useUserStore } from 'src/stores/user'
 import { getLocalUser } from 'src/services/storage/local'
 import tabsArr from '../../helpers/stocks-analisis-data'
+import { useLocalized } from 'src/composables/useLocalized'
 
-const { locale } = useI18n({ useScope: 'global' })
+const { t: tt, field } = useLocalized()
+
 const $q = useQuasar()
 const userStore = useUserStore()
 
@@ -333,7 +334,7 @@ function confirmAction(title, message, okLabel) {
         modelValue: { message },
         persistent: true,
         close: true,
-        cancel: locale.value !== 'bg-BG' ? 'Cancel' : 'Отказ',
+        cancel: tt('app.stocks.analysis.cancel'),
         ok: okLabel,
         width: '380px',
         title,
@@ -353,8 +354,7 @@ async function saveAnalysis() {
     $q.notify({
       type: 'warning',
       position: 'top-left',
-      message:
-        locale.value !== 'bg-BG' ? 'User session is required' : 'Изисква се потребителска сесия',
+      message: tt('app.stocks.analysis.userSessionIsRequired'),
     })
     return
   }
@@ -362,20 +362,15 @@ async function saveAnalysis() {
     $q.notify({
       type: 'warning',
       position: 'top-left',
-      message:
-        locale.value !== 'bg-BG'
-          ? 'Company and symbol are required'
-          : 'Компанията и символът са задължителни',
+      message: tt('app.stocks.analysis.companyAndSymbolAre'),
     })
     return
   }
 
   const confirmed = await confirmAction(
-    locale.value !== 'bg-BG' ? 'Confirm save' : 'Потвърждение за запис',
-    locale.value !== 'bg-BG'
-      ? `Save the ${normalizedSymbol} stock analysis?`
-      : `Да се запази ли анализът за ${normalizedSymbol}?`,
-    locale.value !== 'bg-BG' ? 'Save' : 'Запази',
+    tt('app.stocks.analysis.confirmSave'),
+    tt('app.stocks.analysis.saveQuestion', { symbol: normalizedSymbol }),
+    tt('app.stocks.analysis.save'),
   )
   if (!confirmed) return
 
@@ -402,16 +397,14 @@ async function saveAnalysis() {
     $q.notify({
       type: 'positive',
       position: 'top-left',
-      message: locale.value !== 'bg-BG' ? 'Analysis saved' : 'Анализът е записан',
+      message: tt('app.stocks.analysis.analysisSaved'),
     })
   } catch (error) {
     console.error('Failed to save stocks analysis:', error)
     $q.notify({
       type: 'negative',
       position: 'top-left',
-      message:
-        error?.response?.data?.error ||
-        (locale.value !== 'bg-BG' ? 'Failed to save analysis' : 'Неуспешен запис на анализа'),
+      message: error?.response?.data?.error || tt('app.stocks.analysis.failedToSaveAnalysis'),
     })
   } finally {
     isSaving.value = false
@@ -535,7 +528,7 @@ function qRadioColor(i, max) {
             options-dense
             filled
             hide-bottom-space
-            :label="locale !== 'bg-BG' ? 'Symbol' : 'Символ'"
+            :label="tt('app.stocks.analysis.symbol')"
             @update:model-value="loadCompanyMetrics"
           />
           <q-input
@@ -547,7 +540,7 @@ function qRadioColor(i, max) {
             filled
             readonly
             hide-bottom-space
-            :label="locale !== 'bg-BG' ? 'Symbol' : 'Символ'"
+            :label="tt('app.stocks.analysis.symbol')"
           />
         </div>
 
@@ -571,7 +564,7 @@ function qRadioColor(i, max) {
             filled
             hide-bottom-space
             :loading="companiesLoading || metricsLoading"
-            :label="locale !== 'bg-BG' ? 'Company' : 'Компания'"
+            :label="tt('app.stocks.analysis.company')"
             @filter="filterCompanies"
             @update:model-value="onCompanySelected"
           />
@@ -584,7 +577,7 @@ function qRadioColor(i, max) {
             filled
             hide-bottom-space
             readonly
-            :label="locale !== 'bg-BG' ? 'Company' : 'Компания'"
+            :label="tt('app.stocks.analysis.company')"
           />
         </div>
 
@@ -596,7 +589,7 @@ function qRadioColor(i, max) {
             dense
             filled
             hide-bottom-space
-            :label="locale !== 'bg-BG' ? 'Search' : 'Търсене'"
+            :label="tt('app.stocks.analysis.search')"
             @keyup.enter="searchSymbols"
           >
             <template #prepend>
@@ -632,13 +625,13 @@ function qRadioColor(i, max) {
             </q-item>
           </q-list>
           <q-banner v-else-if="hasSearched" rounded class="bg-grey-9 text-grey-4 q-mt-sm">
-            {{ locale !== 'bg-BG' ? 'No matching companies found.' : 'Няма намерени компании.' }}
+            {{ tt('app.stocks.analysis.noMatchingCompaniesFound') }}
           </q-banner>
         </div>
 
         <div class="col-12 col-md-2 text-right">
           <div class="text-caption text-secondary">
-            {{ locale !== 'bg-BG' ? 'Total points' : 'Общо точки' }}
+            {{ tt('app.stocks.analysis.totalPoints') }}
           </div>
           <div class="text-h5 text-green-5">{{ totalVote }} / {{ totalMax }}</div>
         </div>
@@ -648,7 +641,7 @@ function qRadioColor(i, max) {
             square
             stack
             icon="save"
-            label="Save"
+            :label="tt('app.common.actions.save')"
             color="secondary"
             :disable="isSaving || noChanges || !projectName.trim() || !symbol.trim()"
             @click="saveAnalysis"
@@ -660,12 +653,7 @@ function qRadioColor(i, max) {
     <q-splitter v-model="splitterModel" style="height: 750px">
       <template #before>
         <q-tabs v-model="tab" vertical class="text-green-5" dense no-caps>
-          <q-tab
-            v-for="t in tabs"
-            :key="t.id"
-            :name="t.name"
-            :label="locale !== 'bg-BG' ? t.label : t.labelBg"
-          />
+          <q-tab v-for="t in tabs" :key="t.id" :name="t.name" :label="field(t, 'label')" />
         </q-tabs>
       </template>
 
@@ -694,39 +682,38 @@ function qRadioColor(i, max) {
               <template #header-cell-label="props">
                 <q-th :props="props">
                   <div class="text-h6 text-green-5 q-mb-sm">
-                    {{ locale !== 'bg-BG' ? t.label : t.labelBg }}
+                    {{ field(t, 'label') }}
                   </div>
                 </q-th>
               </template>
               <template #header-cell-formula="props">
                 <q-th :props="props">
                   <div>
-                    {{ locale !== 'bg-BG' ? 'Formula' : 'Формула' }}
+                    {{ tt('app.stocks.analysis.formula') }}
                   </div>
                 </q-th>
               </template>
               <template #header-cell-description="props">
                 <q-th :props="props">
                   <div>
-                    {{ locale !== 'bg-BG' ? 'Description' : 'Описание' }}
+                    {{ tt('app.stocks.analysis.description') }}
                   </div>
                 </q-th>
               </template>
               <template #header-cell-wanted="props">
                 <q-th :props="props">
-                  <div>{{ locale !== 'bg-BG' ? 'Wanted' : 'Желателно' }}</div>
+                  <div>{{ tt('app.stocks.analysis.wanted') }}</div>
                 </q-th>
               </template>
               <template #header-cell-real="props">
                 <q-th :props="props">
-                  <div>{{ locale !== 'bg-BG' ? 'Real value' : 'Реална стойност' }}</div>
+                  <div>{{ tt('app.stocks.analysis.realValue') }}</div>
                 </q-th>
               </template>
               <template #header-cell-vote="props">
                 <q-th :props="props">
                   <strong
-                    >{{ sumVote }} / {{ sumMax }}
-                    {{ locale !== 'bg-BG' ? 'points' : 'точки' }}</strong
+                    >{{ sumVote }} / {{ sumMax }} {{ tt('app.stocks.analysis.points') }}</strong
                   >
                 </q-th>
               </template>
@@ -749,7 +736,7 @@ function qRadioColor(i, max) {
                           class="bg-grey-9"
                           v-model="props.row.real"
                           #default="scope"
-                          :title="locale !== 'bg-BG' ? 'Edit value:' : 'Редактирай:'"
+                          :title="tt('app.stocks.analysis.editValue')"
                         >
                           <q-btn
                             dense
@@ -771,7 +758,7 @@ function qRadioColor(i, max) {
                               <q-btn
                                 flat
                                 color="secondary"
-                                label="SET"
+                                :label="tt('app.common.actions.apply')"
                                 class="cursor-pointer"
                                 @click="scope.set"
                               />
@@ -807,14 +794,14 @@ function qRadioColor(i, max) {
                   style="max-width: 360px; white-space: pre-wrap; /* overflow-wrap: break-word; */"
                 >
                   <span class="text-secondary">
-                    {{ locale !== 'bg-BG' ? props.row.formula : props.row.formulaBg }}
+                    {{ field(props.row, 'formula') }}
                   </span>
                 </q-td>
               </template>
               <template #body-cell-label="props">
                 <q-td :props="props" class="text-white">
                   <span class="text-secondary">
-                    {{ locale !== 'bg-BG' ? props.row.label : props.row.labelBg }}
+                    {{ field(props.row, 'label') }}
                   </span>
                   <span v-if="props.row.required" class="text-red-5 q-ml-sm">!!!</span>
                 </q-td>
@@ -825,16 +812,14 @@ function qRadioColor(i, max) {
                   class="text-white"
                   style="max-width: 360px; white-space: pre-wrap; overflow-wrap: break-word"
                 >
-                  <span class="text-secondary">{{
-                    locale !== 'bg-BG' ? props.row.description : props.row.descriptionBg
-                  }}</span>
+                  <span class="text-secondary">{{ field(props.row, 'description') }}</span>
                 </q-td>
               </template>
 
               <template #bottom>
                 <div>
                   <span class="text-secondary">
-                    {{ locale !== 'bg-BG' ? 'Resources: ' : 'Източници: ' }}
+                    {{ tt('app.stocks.analysis.resources') }}
                   </span>
                   <q-btn
                     v-for="(s, i) in t.sources"

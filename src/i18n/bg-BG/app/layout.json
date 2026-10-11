@@ -1,0 +1,99 @@
+{
+  "header": {
+    "logoAlt": "Key App — начало",
+    "learn": "Обучение",
+    "apps": "Приложения",
+    "faq": "Помощ",
+    "about": "Информация",
+    "language": "Език",
+    "live": "На живо",
+    "connecting": "Свързване…"
+  },
+  "drawer": {
+    "menu": "Навигация",
+    "profile": "Профил",
+    "dailyPnl": "Дневна печалба/загуба",
+    "achievements": "Постижения",
+    "wallet": "Портфейл",
+    "crypto": "Крипто",
+    "bank": "Банка",
+    "settings": "Настройки",
+    "user": "Профил",
+    "logIn": "Вход",
+    "logOut": "Изход",
+    "toggle": "Покажи или скрий панела"
+  },
+  "settings": {
+    "crypto": "Крипто",
+    "watchList": "Списък за наблюдение",
+    "user": "Профил",
+    "logOut": "Изход",
+    "deleteAccount": "Изтрий профила",
+    "deleteConfirmTitle": "Да изтрием ли профила ви?",
+    "deleteConfirmMessage": "Портфейлът, поръчките и историята ви ще бъдат изтрити завинаги."
+  },
+  "userCrypto": {
+    "overview": "Обзор",
+    "earn": "Доход",
+    "spot": "Спот",
+    "comingSoon": "Очаквайте скоро",
+    "empty": "Все още нямате активи. Купете USDC от портфейла, за да започнете."
+  },
+  "bank": {
+    "feeLabel": "Такса за транзакция:",
+    "accumulated": "Събрано от такси:",
+    "date": "Дата",
+    "fee": "Такса, USDC",
+    "crypto": "Крипто",
+    "amount": "Количество",
+    "price": "Цена, USDC",
+    "total": "Общо, USDC"
+  },
+  "wallet": {
+    "euro": "Евро",
+    "buyUsdc": "Купи USDC",
+    "buyEur": "Купи EUR",
+    "available": "Налично",
+    "totalInAssets": "Общо в активи",
+    "totalWithFiat": "Общо с фиат",
+    "inCrypto": "В крипто",
+    "loginToBuyUsdc": "Влезте, за да купите USDC.",
+    "loginToBuyEur": "Влезте, за да купите EUR.",
+    "eurPositive": "Сумата в EUR трябва да е по-голяма от 0.",
+    "usdcPositive": "Сумата в USDC трябва да е по-голяма от 0.",
+    "eurExceeds": "Сумата надвишава наличните ви {balance} EUR.",
+    "usdcExceeds": "Сумата надвишава наличните ви {balance} USDC.",
+    "rateUnavailable": "Цената EUR/USDC в момента не е налична. Опитайте след минута.",
+    "buyUsdcFailed": "Неуспешна покупка на USDC",
+    "buyEurFailed": "Неуспешна покупка на EUR",
+    "missingUser": "Сесията ви е изтекла. Влезте отново."
+  },
+  "auth": {
+    "registrationUnavailable": "Регистрацията в момента не е достъпна. Опитайте по-късно.",
+    "showPassword": "Покажи паролата",
+    "hidePassword": "Скрий паролата"
+  },
+  "nav": {
+    "schoolMath": "Математика",
+    "stocks": "Акции",
+    "top100": "Топ 100",
+    "bonds": "Облигации",
+    "crypto": "Крипто",
+    "unlockCalendar": "Календар Отключване",
+    "realEstate": "Недвижими имоти",
+    "trading": "Търговия",
+    "fundamentals": "Фундаменти",
+    "analysis": "Анализ",
+    "resources": "Ресурси",
+    "probabilityStatistics": "Вероятности & Статистика",
+    "examer": "Изпитвач",
+    "trader": "Търговец",
+    "watcher": "Наблюдател",
+    "longTerm": "Дългосрочен анализатор",
+    "mechanics": "Механика и астрофизика",
+    "thermo": "Термодинамика и статистика",
+    "electro": "Електродинамика и оптика",
+    "atomic": "Атомна и ядрена физика",
+    "sizeCalculator": "Размер на позицията"
+  }
+}

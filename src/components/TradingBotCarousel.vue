@@ -181,7 +181,7 @@
         <div class="slide-grid" :key="animKey">
           <div class="slide-left">
             <div class="big-num text-positive-dim">03</div>
-            <div class="slide-title">Trader</div>
+            <div class="slide-title">{{ tt('app.common.labels.trader') }}</div>
             <div class="slide-sub">Acting</div>
             <div class="slide-facts">
               <div class="slide-fact"><span class="fact-dot dot-positive"></span>Market orders</div>
@@ -224,6 +224,9 @@
 
 <script setup>
 import { ref, computed, watch } from 'vue'
+import { useLocalized } from 'src/composables/useLocalized'
+
+const { t: tt } = useLocalized()
 
 const slide = ref('data')
 const animKey = ref(0)
@@ -234,9 +237,27 @@ watch(slide, () => {
 })
 
 const phases = [
-  { name: 'data', label: 'Data watcher', color: 'info' },
-  { name: 'analyzer', label: 'Analyzer', color: 'warning' },
-  { name: 'trader', label: 'Trader', color: 'positive' },
+  {
+    name: 'data',
+    get label() {
+      return tt('app.components.bot.dataWatcher')
+    },
+    color: 'info',
+  },
+  {
+    name: 'analyzer',
+    get label() {
+      return tt('app.components.bot.analyzer')
+    },
+    color: 'warning',
+  },
+  {
+    name: 'trader',
+    get label() {
+      return tt('app.common.labels.trader')
+    },
+    color: 'positive',
+  },
 ]
 
 const currentPhase = computed(() => phases.find((p) => p.name === slide.value))
@@ -265,7 +286,13 @@ const signals = [
 const assets = [
   { label: 'BTC', pct: 42, color: 'positive' },
   { label: 'ETH', pct: 28, color: 'info' },
-  { label: 'CASH', pct: 30, color: 'neutral' },
+  {
+    get label() {
+      return tt('app.components.bot.cash')
+    },
+    pct: 30,
+    color: 'neutral',
+  },
 ]
 </script>
 
