@@ -142,43 +142,92 @@
       </q-card-section>
     </q-card>
 
-    <q-dialog v-model="showHelp" transition-duration="500">
-      <q-card class="psc-help-card">
-        <q-card-section>
-          <div class="text-h6">{{ t('app.trading.calculator.help.title') }}</div>
-        </q-card-section>
+    <!-- ── Help dialog ─────────────────────────────────────────────────────── -->
+    <q-dialog
+      v-model="showHelp"
+      transition-show="scale"
+      transition-hide="fade"
+      :transition-duration="250"
+      :maximized="$q.screen.lt.sm"
+    >
+      <q-card class="psc-help-card" :class="{ 'psc-help-card--full': $q.screen.lt.sm }">
+        <!-- Header: always visible -->
+        <div class="psc-help-header">
+          <q-icon name="calculate" size="26px" class="psc-help-header-icon" />
+          <div class="psc-help-title">{{ t('app.trading.calculator.help.title') }}</div>
+          <q-btn
+            flat
+            round
+            dense
+            icon="close"
+            class="psc-help-close"
+            :aria-label="t('app.common.actions.close')"
+            v-close-popup
+          />
+        </div>
 
-        <q-card-section class="q-pt-none">
-          <div class="psc-help-subtitle">{{ t('app.trading.calculator.help.ideaTitle') }}</div>
-          <p>{{ t('app.trading.calculator.help.idea') }}</p>
+        <!-- Scrollable body -->
+        <div class="psc-help-body">
+          <section class="psc-help-block">
+            <div class="psc-help-subtitle">
+              <q-icon name="lightbulb_outline" size="18px" />
+              {{ t('app.trading.calculator.help.ideaTitle') }}
+            </div>
+            <p class="psc-help-lead">{{ t('app.trading.calculator.help.idea') }}</p>
+          </section>
 
-          <div class="psc-help-subtitle">{{ t('app.trading.calculator.help.formulaTitle') }}</div>
-          <p class="psc-formula">{{ t('app.trading.calculator.help.formula') }}</p>
-          <p>{{ t('app.trading.calculator.help.formulaExplain') }}</p>
+          <section class="psc-help-block">
+            <div class="psc-help-subtitle">
+              <q-icon name="functions" size="18px" />
+              {{ t('app.trading.calculator.help.formulaTitle') }}
+            </div>
+            <div class="psc-formula">{{ t('app.trading.calculator.help.formula') }}</div>
+            <p class="psc-help-text">{{ t('app.trading.calculator.help.formulaExplain') }}</p>
+          </section>
 
-          <div class="psc-help-subtitle">{{ t('app.trading.calculator.help.stepsTitle') }}</div>
-          <ol class="psc-steps">
-            <li>{{ t('app.trading.calculator.help.step1') }}</li>
-            <li>{{ t('app.trading.calculator.help.step2') }}</li>
-            <li>{{ t('app.trading.calculator.help.step3') }}</li>
-            <li>{{ t('app.trading.calculator.help.step4') }}</li>
-          </ol>
+          <section class="psc-help-block">
+            <div class="psc-help-subtitle">
+              <q-icon name="format_list_numbered" size="18px" />
+              {{ t('app.trading.calculator.help.stepsTitle') }}
+            </div>
+            <ol class="psc-steps">
+              <li v-for="n in 4" :key="n" class="psc-step">
+                <span class="psc-step-num">{{ n }}</span>
+                <span class="psc-step-text">{{ t(`app.trading.calculator.help.step${n}`) }}</span>
+              </li>
+            </ol>
+          </section>
 
-          <div class="psc-help-subtitle">
-            {{ t('app.trading.calculator.help.principlesTitle') }}
+          <section class="psc-help-block">
+            <div class="psc-help-subtitle">
+              <q-icon name="verified_user" size="18px" />
+              {{ t('app.trading.calculator.help.principlesTitle') }}
+            </div>
+            <ul class="psc-principles">
+              <li v-for="n in 3" :key="n" class="psc-principle">
+                <q-icon name="check_circle" size="18px" class="psc-principle-icon" />
+                <span>{{ t(`app.trading.calculator.help.principle${n}`) }}</span>
+              </li>
+            </ul>
+          </section>
+
+          <div class="psc-disclaimer">
+            <q-icon name="warning_amber" size="18px" class="psc-disclaimer-icon" />
+            <span>{{ t('app.trading.calculator.help.disclaimer') }}</span>
           </div>
-          <ul class="psc-principles">
-            <li>{{ t('app.trading.calculator.help.principle1') }}</li>
-            <li>{{ t('app.trading.calculator.help.principle2') }}</li>
-            <li>{{ t('app.trading.calculator.help.principle3') }}</li>
-          </ul>
+        </div>
 
-          <p class="psc-disclaimer">{{ t('app.trading.calculator.help.disclaimer') }}</p>
-        </q-card-section>
-
-        <q-card-actions align="right">
-          <q-btn flat :label="t('app.common.actions.close')" color="primary" v-close-popup />
-        </q-card-actions>
+        <!-- Footer: always visible -->
+        <div class="psc-help-actions">
+          <q-btn
+            unelevated
+            no-caps
+            color="primary"
+            class="psc-help-ok"
+            :label="t('app.common.actions.close')"
+            v-close-popup
+          />
+        </div>
       </q-card>
     </q-dialog>
   </q-page>
@@ -186,9 +235,11 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { useQuasar } from 'quasar'
 import { useLocalized } from 'src/composables/useLocalized'
 
 const { t, locale } = useLocalized()
+const $q = useQuasar()
 
 /**
  * Position Sizing Calculator
@@ -360,35 +411,206 @@ const showHelp = ref(false)
   text-align: center;
 }
 
+/* ── Help dialog ──────────────────────────────────────────────────────────
+   Colours are set explicitly (not inherited) so the dialog stays readable
+   even when Quasar Dark mode is on or the page background is dark.        */
 .psc-help-card {
-  max-width: 560px;
+  --help-bg: #ffffff;
+  --help-text: #2b3440;
+  --help-muted: #5f6b7a;
+  --help-heading: #14202e;
+  --help-accent: var(--q-primary, #1976d2);
+  --help-accent-soft: #e8f1fd;
+  --help-border: #e3e8ef;
+
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  max-width: 560px;
+  max-height: 85vh;
+  border-radius: 16px;
+  background: var(--help-bg) !important;
+  color: var(--help-text) !important;
+  overflow: hidden;
+}
+
+.psc-help-card--full {
+  max-height: 100%;
+  border-radius: 0;
+}
+
+.psc-help-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 12px 16px 20px;
+  background: var(--help-accent-soft);
+  border-bottom: 1px solid var(--help-border);
+  flex-shrink: 0;
+}
+
+.psc-help-header-icon {
+  color: var(--help-accent);
+}
+
+.psc-help-title {
+  flex: 1;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--help-heading);
+}
+
+.psc-help-close {
+  color: var(--help-muted);
+}
+
+.psc-help-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 20px 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.psc-help-block {
+  padding: 14px 0;
+  border-bottom: 1px solid var(--help-border);
+}
+
+.psc-help-block:last-of-type {
+  border-bottom: none;
 }
 
 .psc-help-subtitle {
-  font-weight: 700;
-  margin-top: 14px;
-  margin-bottom: 4px;
-  color: #1d2733;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--help-heading);
+  margin-bottom: 8px;
+}
+
+.psc-help-subtitle .q-icon {
+  color: var(--help-accent);
+}
+
+.psc-help-lead,
+.psc-help-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--help-text);
 }
 
 .psc-formula {
+  font-family: 'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 14px;
   font-weight: 600;
-  background: #eaf2fe;
-  padding: 8px 12px;
-  border-radius: 8px;
-  display: inline-block;
+  line-height: 1.5;
+  color: var(--help-heading);
+  background: var(--help-accent-soft);
+  border-left: 4px solid var(--help-accent);
+  padding: 10px 14px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 10px;
+  overflow-x: auto;
 }
 
-.psc-steps li,
-.psc-principles li {
-  margin-bottom: 6px;
+.psc-steps,
+.psc-principles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.psc-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.psc-step:last-child {
+  margin-bottom: 0;
+}
+
+.psc-step-num {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--help-accent);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.psc-step-text {
   font-size: 14px;
+  line-height: 1.55;
+  padding-top: 2px;
+  color: var(--help-text);
+}
+
+.psc-principle {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--help-text);
+}
+
+.psc-principle:last-child {
+  margin-bottom: 0;
+}
+
+.psc-principle-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #2e9e5b;
 }
 
 .psc-disclaimer {
-  margin-top: 16px;
-  font-size: 12px;
-  color: #9aa3b1;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fff6e6;
+  color: #7a4a00;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+.psc-disclaimer-icon {
+  flex-shrink: 0;
+  color: #c27c00;
+}
+
+.psc-help-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 20px;
+  border-top: 1px solid var(--help-border);
+  background: var(--help-bg);
+  flex-shrink: 0;
+}
+
+.psc-help-ok {
+  min-width: 120px;
+  border-radius: 8px;
+}
+
+@media (max-width: 599px) {
+  .psc-help-ok {
+    width: 100%;
+  }
 }
 </style>
