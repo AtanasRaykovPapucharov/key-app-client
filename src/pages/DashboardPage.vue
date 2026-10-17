@@ -13,7 +13,7 @@ import SetWatcherForm from 'src/components/forms/SetWatcherForm.vue'
 
 const binanceStore = useBinanceStore()
 const $q = useQuasar()
-const { t } = useLocalized()
+const { t, n: fmtNum, d: fmtDate } = useLocalized()
 
 const wanted = ref([
   'BTCUSDC',
@@ -54,7 +54,7 @@ const avgPriceNumb = computed(() => {
 
 const currPrice = computed(
   () =>
-    `$${tickersArray.value?.find((t) => t?.symbol === onFocus.value)?.price.toLocaleString('en-US', { minimumFractionDigits: 4 })}`,
+    `$${fmtNum(tickersArray.value?.find((tk) => tk?.symbol === onFocus.value)?.price, { minimumFractionDigits: 4 })}`,
 )
 
 const avgPrice = computed(() => {
@@ -536,15 +536,11 @@ watch(
                         <q-td :props="props">
                           <div>
                             <span class="text-secondary">
-                              {{
-                                new Date(props.row.dt_insert).toLocaleString().split(',')[0].trim()
-                              }}
+                              {{ fmtDate(props.row.dt_insert, { dateStyle: 'short' }) }}
                             </span>
                             <br />
                             <span class="text-secondary">
-                              {{
-                                new Date(props.row.dt_insert).toLocaleString().split(',')[1].trim()
-                              }}
+                              {{ fmtDate(props.row.dt_insert, { timeStyle: 'short' }) }}
                             </span>
                           </div>
                         </q-td>
@@ -646,20 +642,20 @@ watch(
                       class="text-h5 text-weight-bold q-mt-sm"
                       :class="ticker.change >= 0 ? 'text-positive' : 'text-negative'"
                     >
-                      ${{ ticker.price.toLocaleString('en-US', { minimumFractionDigits: 4 }) }}
+                      ${{ fmtNum(ticker.price, { minimumFractionDigits: 4 }) }}
                     </div>
 
                     <div class="row q-mt-md text-caption text-grey-5">
                       <div class="col">
                         <div>{{ t('app.common.labels.high24') }}</div>
                         <div class="text-positive">
-                          ${{ ticker.high.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}
+                          ${{ fmtNum(ticker.high, { minimumFractionDigits: 2 }) }}
                         </div>
                       </div>
                       <div class="col">
                         <div>{{ t('app.common.labels.low24') }}</div>
                         <div class="text-negative">
-                          ${{ ticker.low.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}
+                          ${{ fmtNum(ticker.low, { minimumFractionDigits: 2 }) }}
                         </div>
                       </div>
                       <div class="col">

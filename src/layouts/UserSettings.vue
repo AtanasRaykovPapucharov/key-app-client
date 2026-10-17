@@ -2,11 +2,21 @@
 import { useQuasar } from 'quasar'
 import { useRouter } from 'vue-router'
 import { signOut, deleteAccount } from 'src/services/user'
+import { computed } from 'vue'
 import { useLocalized } from 'src/composables/useLocalized'
+import { useUserStore } from 'src/stores/user'
+import { useAccountActions } from 'src/composables/useAccountActions'
 
 const $q = useQuasar()
 const router = useRouter()
 const { t } = useLocalized()
+const userStore = useUserStore()
+const { openEmailDialog, openPasswordDialog } = useAccountActions()
+const emailCaption = computed(() => {
+  const u = userStore.user || {}
+  if (!u.email) return t('app.auth.dialog.none')
+  return `${u.email} · ${u.emailVerified ? t('app.auth.dialog.verified') : t('app.auth.dialog.unverified')}`
+})
 
 const signOutHandler = async () => {
   const success = await signOut()
@@ -61,6 +71,37 @@ const deleteHandler = () => {
       dense-toggle
       default-opened
     >
+      <q-btn
+        dense
+        flat
+        no-caps
+        icon="alternate_email"
+        align="left"
+        color="secondary"
+        class="full-width"
+        @click="openEmailDialog"
+      >
+        <div class="column items-start q-ml-sm text-left">
+          <span>{{
+            userStore.user?.email
+              ? t('app.auth.actions.changeEmail')
+              : t('app.auth.actions.addEmail')
+          }}</span>
+          <span class="text-caption text-grey-5 ellipsis" style="max-width: 260px">{{
+            emailCaption
+          }}</span>
+        </div>
+      </q-btn>
+      <q-btn
+        dense
+        flat
+        icon="password"
+        :label="t('app.auth.actions.changePassword')"
+        align="left"
+        color="secondary"
+        class="full-width"
+        @click="openPasswordDialog"
+      />
       <q-btn
         dense
         flat

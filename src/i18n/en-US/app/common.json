@@ -197,5 +197,17 @@
   "confirm": {
     "deleteTitle": "Delete?",
     "deleteMessage": "This action cannot be undone."
+  },
+  "codes": {
+    "INSUFFICIENT_FIAT": "You don’t have enough EUR for this.",
+    "INSUFFICIENT_STABLE": "You don’t have enough USDC for this.",
+    "INSUFFICIENT_CRYPTO": "You don’t have enough of this coin to sell.",
+    "PRICE_UNAVAILABLE": "The live price is unavailable right now. Try again in a moment.",
+    "INVALID_AMOUNT": "Enter an amount greater than 0.",
+    "INVALID_PRICE": "Enter a valid price.",
+    "INVALID_ASSET": "This asset can’t be traded.",
+    "INVALID_ORDER_TYPE": "Unknown order type.",
+    "PORTFOLIO_NOT_FOUND": "Your portfolio wasn’t found. Log out and in again.",
+    "SERVER_ERROR": "Server error. Please try again later."
   }
 }

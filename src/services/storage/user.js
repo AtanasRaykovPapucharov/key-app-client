@@ -3,16 +3,6 @@ import { api } from 'boot/axios'
 // sign in/sign up
 // Credentials (Authorization / x-auth-token) are attached by the axios interceptor.
 
-export const login = async (username, password) => {
-  const res = await api.post('/login', { username, password })
-  return res.data
-}
-
-export const register = async (username, password) => {
-  const res = await api.post('/register', { username, password })
-  return res.data
-}
-
 export const logout = async () => {
   const res = await api.post('/logout', {})
   return res.data

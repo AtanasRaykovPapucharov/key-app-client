@@ -5,7 +5,7 @@ import { api } from 'boot/axios'
 import { useUserStore } from 'src/stores/user'
 import { useLocalized } from 'src/composables/useLocalized'
 
-const { t } = useLocalized()
+const { t, d: fmtDate } = useLocalized()
 
 const $q = useQuasar()
 const userStore = useUserStore()
@@ -570,7 +570,9 @@ onMounted(() => {
                   <div class="text-caption text-grey-5 q-mt-xs">{{ describeRule(rule) }}</div>
                   <div v-if="rule.last_triggered_at" class="text-caption text-blue-3 q-mt-xs">
                     {{ t('app.crypto.auto.lastTriggered') }}
-                    {{ new Date(rule.last_triggered_at).toLocaleString() }}
+                    {{
+                      fmtDate(rule.last_triggered_at, { dateStyle: 'short', timeStyle: 'short' })
+                    }}
                   </div>
                 </div>
                 <div class="row q-gutter-xs">

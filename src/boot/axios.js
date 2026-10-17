@@ -61,6 +61,8 @@ api.interceptors.response.use(
   (error) => {
     error.kind = classify(error)
     error.serverMessage = error.response?.data?.message || error.response?.data?.error || null
+    // Machine-readable reason from the API (e.g. EMAIL_TAKEN, INSUFFICIENT_STABLE)
+    error.serverCode = error.response?.data?.code || null
 
     const url = error.config?.url || ''
     const isAuthCall = AUTH_ENDPOINTS.some((p) => url.endsWith(p))

@@ -22,7 +22,7 @@ import CryptoGameRow from './CryptoGameRow.vue'
 
 const binanceStore = useBinanceStore()
 const $q = useQuasar()
-const { t } = useLocalized()
+const { t, n: fmtNum, d: fmtDate } = useLocalized()
 
 const userStore = useUserStore()
 
@@ -501,7 +501,9 @@ const updateStrategyCandles = (candles) => {
                     </template>
                     <template #body-cell-dt_insert="props">
                       <q-td :props="props">
-                        {{ new Date(props.row.dt_insert).toLocaleString() }}
+                        {{
+                          fmtDate(props.row.dt_insert, { dateStyle: 'short', timeStyle: 'short' })
+                        }}
                       </q-td>
                     </template>
                     <template #bottom-row>
@@ -560,20 +562,20 @@ const updateStrategyCandles = (candles) => {
                     class="text-h5 text-weight-bold q-mt-sm"
                     :class="ticker.change >= 0 ? 'text-positive' : 'text-negative'"
                   >
-                    ${{ ticker.price.toLocaleString('en-US', { minimumFractionDigits: 4 }) }}
+                    ${{ fmtNum(ticker.price, { minimumFractionDigits: 4 }) }}
                   </div>
 
                   <div class="row q-mt-md text-caption text-grey-5">
                     <div class="col">
                       <div>{{ t('app.common.labels.high24') }}</div>
                       <div class="text-positive">
-                        ${{ ticker.high.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}
+                        ${{ fmtNum(ticker.high, { minimumFractionDigits: 2 }) }}
                       </div>
                     </div>
                     <div class="col">
                       <div>{{ t('app.common.labels.low24') }}</div>
                       <div class="text-negative">
-                        ${{ ticker.low.toLocaleString('en-US', { minimumFractionDigits: 2 }) }}
+                        ${{ fmtNum(ticker.low, { minimumFractionDigits: 2 }) }}
                       </div>
                     </div>
                     <div class="col">

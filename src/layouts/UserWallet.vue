@@ -12,6 +12,7 @@ import CryptoConverter from 'src/components/crypto/CryptoConverter.vue'
 import { getEurUsdcPrice } from 'src/services/web/coingecko'
 import euroIcon from 'src/assets/icons/euro.png'
 import { useLocalized } from 'src/composables/useLocalized'
+import { apiErrorMessage } from 'src/services/auth/errors'
 
 const $q = useQuasar()
 const { t, n } = useLocalized()
@@ -175,8 +176,9 @@ async function handleOrderConfirmed() {
   } catch (error) {
     $q.notify({
       type: 'negative',
-      message:
-        error?.response?.data?.error || error?.message || t('app.layout.wallet.buyUsdcFailed'),
+      message: error?.kind
+        ? apiErrorMessage(t, error, { fallback: 'app.layout.wallet.buyUsdcFailed' })
+        : error?.message || t('app.layout.wallet.buyUsdcFailed'),
       position: 'top-left',
     })
   } finally {
@@ -289,8 +291,9 @@ async function handleSellConfirmed() {
   } catch (error) {
     $q.notify({
       type: 'negative',
-      message:
-        error?.response?.data?.error || error?.message || t('app.layout.wallet.buyEurFailed'),
+      message: error?.kind
+        ? apiErrorMessage(t, error, { fallback: 'app.layout.wallet.buyEurFailed' })
+        : error?.message || t('app.layout.wallet.buyEurFailed'),
       position: 'top-left',
     })
   } finally {

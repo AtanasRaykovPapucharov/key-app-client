@@ -5,7 +5,7 @@ import cryptoMapper from 'src/helpers/crypto-mapper'
 import { getEurUsdcPrice } from 'src/services/web/coingecko'
 import { useLocalized } from 'src/composables/useLocalized'
 
-const { t } = useLocalized()
+const { t, n: fmtNum } = useLocalized()
 
 const emit = defineEmits(['update:amount', 'swap'])
 
@@ -157,7 +157,7 @@ const rate = computed(() => {
 //     if (result.value === null) return '—'
 //     // Use more decimals for small values
 //     const decimals = result.value < 0.01 ? 8 : result.value < 1 ? 6 : 0
-//     return result.value.toLocaleString('en-US', {
+//     return fmtNum(result.value, {
 //       minimumFractionDigits: decimals,
 //       maximumFractionDigits: decimals,
 //     })
@@ -249,7 +249,7 @@ onMounted(async () => {
       <div v-if="!hidePrice">
         <div class="text-caption text-secondary text-right" v-if="rate !== null">
           1 {{ from }} =
-          {{ rate.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 6 }) }}
+          {{ fmtNum(rate, { minimumFractionDigits: 2, maximumFractionDigits: 6 }) }}
           {{ to }}
         </div>
       </div>

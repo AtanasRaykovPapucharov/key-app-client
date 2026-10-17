@@ -14,7 +14,7 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue'])
 
 const $q = useQuasar()
-const { t: tt } = useLocalized()
+const { t: tt, locale } = useLocalized()
 
 const SLOTS = ['a', 'b', 'c']
 const PERIODS_PER_YEAR = { daily: 365, weekly: 52, monthly: 12 }
@@ -69,7 +69,7 @@ const preview = computed(() => {
 const fmtMoney = (v) =>
   v == null
     ? '—'
-    : new Intl.NumberFormat('en-US', {
+    : new Intl.NumberFormat(locale.value, {
         style: 'currency',
         currency: 'USD',
         maximumFractionDigits: v >= 1000 ? 0 : v >= 1 ? 2 : 6,

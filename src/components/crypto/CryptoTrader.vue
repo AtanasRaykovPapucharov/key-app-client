@@ -26,7 +26,7 @@ import { getEurUsdcPrice } from 'src/services/web/coingecko'
 const binanceStore = useBinanceStore()
 const $q = useQuasar()
 const $router = useRouter()
-const { t } = useLocalized()
+const { t, d: fmtDate } = useLocalized()
 
 const portfolioStore = usePortfolioStore()
 const userStore = useUserStore()
@@ -883,21 +883,11 @@ const updateStrategyCandles = (candles) => {
                               <q-td :props="props">
                                 <div>
                                   <span class="text-secondary">
-                                    {{
-                                      new Date(props.row.dt_insert)
-                                        .toLocaleString()
-                                        .split(',')[0]
-                                        .trim()
-                                    }}
+                                    {{ fmtDate(props.row.dt_insert, { dateStyle: 'short' }) }}
                                   </span>
                                   <br />
                                   <span class="text-secondary">
-                                    {{
-                                      new Date(props.row.dt_insert)
-                                        .toLocaleString()
-                                        .split(',')[1]
-                                        .trim()
-                                    }}
+                                    {{ fmtDate(props.row.dt_insert, { timeStyle: 'short' }) }}
                                   </span>
                                 </div>
                               </q-td>

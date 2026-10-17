@@ -9,7 +9,7 @@ import { addOrder, getOrdersByCrypto } from 'src/services/storage/crypto'
 import { getLocalUser } from 'src/services/storage/local'
 import { useLocalized } from 'src/composables/useLocalized'
 
-const { t: tt } = useLocalized()
+const { t: tt, n: fmtNum, d: fmtDate } = useLocalized()
 
 const binanceStore = useBinanceStore()
 const $q = useQuasar()
@@ -39,7 +39,7 @@ const avgPriceNumb = computed(() => {
 
 const currPrice = computed(
   () =>
-    `$${tickersArray.value?.find((t) => t?.symbol === onFocus.value)?.price.toLocaleString('en-US', { minimumFractionDigits: 4 })}`,
+    `$${fmtNum(tickersArray.value?.find((tk) => tk?.symbol === onFocus.value)?.price, { minimumFractionDigits: 4 })}`,
 )
 
 const avgPrice = computed(() => {
@@ -384,11 +384,11 @@ watch(
               <q-td :props="props">
                 <div>
                   <span class="text-secondary">
-                    {{ new Date(props.row.dt_insert).toLocaleString().split(',')[0].trim() }}
+                    {{ fmtDate(props.row.dt_insert, { dateStyle: 'short' }) }}
                   </span>
                   <br />
                   <span class="text-secondary">
-                    {{ new Date(props.row.dt_insert).toLocaleString().split(',')[1].trim() }}
+                    {{ fmtDate(props.row.dt_insert, { timeStyle: 'short' }) }}
                   </span>
                 </div>
               </q-td>

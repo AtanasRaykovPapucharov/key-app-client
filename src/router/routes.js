@@ -1,9 +1,10 @@
 const hasLocalAuth = () => {
   try {
     const user = JSON.parse(localStorage.getItem('user') || 'null')
-    return Boolean(localStorage.getItem('token') || user?.isAuthenticated || user?.uid || user?.id)
+    const token = localStorage.getItem('keyapp:token') || localStorage.getItem('token')
+    return Boolean(token || user?.isAuthenticated || user?.uid || user?.id)
   } catch {
-    return Boolean(localStorage.getItem('token'))
+    return Boolean(localStorage.getItem('keyapp:token') || localStorage.getItem('token'))
   }
 }
 
@@ -399,6 +400,17 @@ const routes = [
     ],
   },
 
+  // Links from emails (public pages)
+  {
+    path: '/verify-email',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/VerifyEmailPage.vue') }],
+  },
+  {
+    path: '/reset-password',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/ResetPasswordPage.vue') }],
+  },
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue'),

@@ -317,7 +317,7 @@ const compositeColor = computed(
 const fmtMoney = (v) =>
   v == null
     ? '—'
-    : new Intl.NumberFormat('en-US', {
+    : new Intl.NumberFormat(locale.value, {
         style: 'currency',
         currency: 'USD',
         maximumFractionDigits: v >= 1000 ? 0 : v >= 1 ? 2 : 6,

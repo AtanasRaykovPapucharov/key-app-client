@@ -10,6 +10,7 @@ import CryptoConverter from './CryptoConverter.vue'
 import CryptoConverterToggle from './CryptoConverterToggle.vue'
 import { fee } from 'src/services/storage/calc'
 import { useLocalized } from 'src/composables/useLocalized'
+import { apiErrorMessage } from 'src/services/auth/errors'
 import { usePortfolioStore } from 'src/stores/portfolio'
 import { sizePosition, maxAffordable } from 'src/helpers/positionSizing'
 
@@ -214,9 +215,12 @@ async function handleOrderConfirmed() {
       throw new Error(t('app.common.notify.noServerMessage'))
     }
   } catch (err) {
-    console.error('Order submission error:', err)
-    const errorMsg =
-      err?.response?.data?.error || err?.message || t('app.crypto.order.unknownError')
+    // Known reasons (not enough USDC, price unavailable…) are translated
+    const errorMsg = err?.serverCode
+      ? apiErrorMessage(t, err)
+      : err?.kind
+        ? apiErrorMessage(t, err, { fallback: 'app.crypto.order.unknownError' })
+        : err?.message || t('app.crypto.order.unknownError')
     $q.notify({
       type: 'negative',
       message: t('app.crypto.order.failed', { error: errorMsg }),

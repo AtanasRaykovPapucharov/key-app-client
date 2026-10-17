@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref, watch } from 'vue'
 import { useQuasar } from 'quasar'
 import { useRoute } from 'vue-router'
 
@@ -18,6 +18,9 @@ import { useBankStore } from 'src/stores/bank'
 import { SESSION_EXPIRED_EVENT } from 'src/boot/axios'
 import { expireSession } from 'src/services/user'
 import { useLocalized } from 'src/composables/useLocalized'
+import { getToken } from 'src/services/auth/token'
+import { fetchMe, saveLocale } from 'src/services/auth/account'
+import EmailStatusBanner from 'src/components/user/EmailStatusBanner.vue'
 
 const leftDrawer = ref(false)
 const rightDrawerRef = ref(null)
@@ -26,7 +29,7 @@ const appHeaderClick = ref(0)
 const faqHeaderClick = ref(0)
 const route = useRoute()
 const $q = useQuasar()
-const { t } = useLocalized()
+const { t, locale } = useLocalized()
 
 // A 401 from any API call means the stored session is no longer valid
 let expiring = false
@@ -70,29 +73,40 @@ const hideDrawers = () => {
   rightDrawerRef.value?.closeDrawer()
 }
 
-const init = async () => {
-  const usr = getLocalUser()
-  if (usr && (usr.id || usr.uid)) {
-    useUserStore().setUser(usr)
-    await usePortfolioStore().initializePortfolio()
-  }
-
-  const cryptoData = await getCrypto()
-  useCryptoStore().setCrypto(cryptoData)
-
-  const bankData = await getBank()
-  const bankStore = useBankStore()
-  bankStore.setBank(bankData)
-  await bankStore.loadTransactions()
+/** Refresh the stored profile (email status, admin flag…) from the server. */
+async function refreshProfile() {
+  if (!getToken()) return
+  const data = await fetchMe()
+  const userStore = useUserStore()
+  if (data?.user) userStore.setUser({ ...userStore.user, ...data.user, isAuthenticated: true })
 }
 
-onMounted(async () => {
-  try {
-    await init()
-  } catch (err) {
-    // The page stays usable offline; the API layer already classified the error
-    console.warn('[init] could not load startup data:', err?.kind || err?.message)
+const init = async () => {
+  const usr = getLocalUser()
+  const loggedIn = Boolean(usr && (usr.id || usr.uid))
+  if (loggedIn) useUserStore().setUser(usr)
+
+  // Independent requests run in parallel; one failing doesn't block the others
+  const bankStore = useBankStore()
+  const results = await Promise.allSettled([
+    loggedIn ? usePortfolioStore().initializePortfolio() : null,
+    loggedIn ? refreshProfile() : null,
+    getCrypto().then((data) => useCryptoStore().setCrypto(data)),
+    getBank().then((data) => {
+      bankStore.setBank(data)
+      return loggedIn ? bankStore.loadTransactions() : null
+    }),
+  ])
+  for (const r of results) {
+    if (r.status === 'rejected') console.warn('[init]', r.reason?.kind || r.reason?.message)
   }
+}
+
+onMounted(init)
+
+// Emails (verification, reset) follow the app language
+watch(locale, (code) => {
+  if (useUserStore().user?.isAuthenticated) saveLocale(code).catch(() => {})
 })
 </script>
 
@@ -108,6 +122,7 @@ onMounted(async () => {
     />
     <layout-right-drawer v-if="route.path !== '/'" ref="rightDrawerRef" />
     <q-page-container class="bg-dark main-page-container" @click="hideDrawers">
+      <EmailStatusBanner />
       <router-view />
     </q-page-container>
   </q-layout>

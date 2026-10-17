@@ -8,7 +8,7 @@ import { useUserStore } from 'src/stores/user'
 import { getLocalUser } from 'src/services/storage/local'
 import { useLocalized } from 'src/composables/useLocalized'
 
-const { t } = useLocalized()
+const { t, d: fmtDate } = useLocalized()
 
 Chart.register(...registerables)
 
@@ -441,7 +441,7 @@ loadStock()
             :rows-per-page-options="[0]"
             ><template #body-cell-createdAt="props"
               ><q-td :props="props">{{
-                new Date(props.row.createdAt).toLocaleString()
+                fmtDate(props.row.createdAt, { dateStyle: 'short', timeStyle: 'short' })
               }}</q-td></template
             ><template #body-cell-side="props"
               ><q-td
