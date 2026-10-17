@@ -4,17 +4,20 @@ import { computed, ref } from 'vue'
 import { useUserStore } from 'src/stores/user'
 import { useLocalized } from 'src/composables/useLocalized'
 import { useAccountActions } from 'src/composables/useAccountActions'
+import { useServerConfig } from 'src/composables/useServerConfig'
 
 const DISMISS_KEY = 'keyapp:email-banner-dismissed'
 const { t } = useLocalized()
 const userStore = useUserStore()
 const { openEmailDialog, resend } = useAccountActions()
+const serverConfig = useServerConfig()
 
 const dismissed = ref(sessionStorage.getItem(DISMISS_KEY) === '1')
 const user = computed(() => userStore.user || {})
 
 const status = computed(() => {
-  if (!user.value.isAuthenticated || dismissed.value) return null
+  // Nothing to confirm or recover while the server can't send email
+  if (!serverConfig.emailEnabled || !user.value.isAuthenticated || dismissed.value) return null
   if (!user.value.email) return 'missing'
   if (!user.value.emailVerified) return 'unverified'
   return null

@@ -21,6 +21,7 @@ import { useLocalized } from 'src/composables/useLocalized'
 import { getToken } from 'src/services/auth/token'
 import { fetchMe, saveLocale } from 'src/services/auth/account'
 import EmailStatusBanner from 'src/components/user/EmailStatusBanner.vue'
+import { loadServerConfig } from 'src/composables/useServerConfig'
 
 const leftDrawer = ref(false)
 const rightDrawerRef = ref(null)
@@ -89,6 +90,7 @@ const init = async () => {
   // Independent requests run in parallel; one failing doesn't block the others
   const bankStore = useBankStore()
   const results = await Promise.allSettled([
+    loadServerConfig(),
     loggedIn ? usePortfolioStore().initializePortfolio() : null,
     loggedIn ? refreshProfile() : null,
     getCrypto().then((data) => useCryptoStore().setCrypto(data)),

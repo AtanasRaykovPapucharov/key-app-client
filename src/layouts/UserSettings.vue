@@ -6,15 +6,18 @@ import { computed } from 'vue'
 import { useLocalized } from 'src/composables/useLocalized'
 import { useUserStore } from 'src/stores/user'
 import { useAccountActions } from 'src/composables/useAccountActions'
+import { useServerConfig } from 'src/composables/useServerConfig'
 
 const $q = useQuasar()
 const router = useRouter()
 const { t } = useLocalized()
 const userStore = useUserStore()
 const { openEmailDialog, openPasswordDialog } = useAccountActions()
+const serverConfig = useServerConfig()
 const emailCaption = computed(() => {
   const u = userStore.user || {}
   if (!u.email) return t('app.auth.dialog.none')
+  if (!serverConfig.emailEnabled) return u.email
   return `${u.email} · ${u.emailVerified ? t('app.auth.dialog.verified') : t('app.auth.dialog.unverified')}`
 })
 

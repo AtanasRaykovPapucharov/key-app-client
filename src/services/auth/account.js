@@ -33,3 +33,6 @@ export const changePassword = (currentPassword, newPassword) =>
   data(api.put('/me/password', { currentPassword, newPassword }))
 
 export const saveLocale = (locale) => data(api.put('/me/locale', { locale }))
+
+/** Public server settings, e.g. { emailEnabled, emailVerificationRequired }. */
+export const fetchConfig = () => data(api.get('/config'))

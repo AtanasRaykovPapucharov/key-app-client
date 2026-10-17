@@ -6,12 +6,14 @@ import { useUserStore } from 'src/stores/user'
 import { useLocalized } from 'src/composables/useLocalized'
 import { changeEmail } from 'src/services/auth/account'
 import { apiErrorMessage, EMAIL_RE } from 'src/services/auth/errors'
+import { useServerConfig } from 'src/composables/useServerConfig'
 
 defineEmits([...useDialogPluginComponent.emits])
 const { dialogRef, onDialogHide, onDialogOK, onDialogCancel } = useDialogPluginComponent()
 const { t } = useLocalized()
 const $q = useQuasar()
 const userStore = useUserStore()
+const serverConfig = useServerConfig()
 
 const current = computed(() => userStore.user || {})
 const email = ref(current.value.email || '')
@@ -34,7 +36,9 @@ async function save() {
     userStore.setUser({ ...userStore.user, ...data.user, isAuthenticated: true })
     $q.notify({
       type: 'positive',
-      message: t('app.auth.notify.emailChanged', { email: data.user.email }),
+      message: data.emailSent
+        ? t('app.auth.notify.emailChanged', { email: data.user.email })
+        : t('app.auth.notify.emailSaved'),
       position: 'top',
     })
     onDialogOK(data.user)
@@ -53,14 +57,21 @@ async function save() {
       <q-form greedy @submit.prevent="save">
         <q-card-section>
           <div class="text-h6">{{ t('app.auth.dialog.emailTitle') }}</div>
-          <div v-if="current.email" class="text-caption text-grey-5 q-mt-xs">
+          <div
+            v-if="current.email && serverConfig.emailEnabled"
+            class="text-caption text-grey-5 q-mt-xs"
+          >
             {{ current.email }} · {{ t('app.auth.dialog.status') }}:
             <span :class="current.emailVerified ? 'text-positive' : 'text-warning'">{{
               statusLabel
             }}</span>
           </div>
           <p class="text-body2 text-grey-5 q-mt-sm q-mb-none">
-            {{ t('app.auth.dialog.emailIntro') }}
+            {{
+              serverConfig.emailEnabled
+                ? t('app.auth.dialog.emailIntro')
+                : t('app.auth.dialog.emailIntroNoMail')
+            }}
           </p>
         </q-card-section>
         <q-card-section class="q-pt-none">
