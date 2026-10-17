@@ -40,7 +40,7 @@ export async function getBTCPrice() {
     'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd',
   )
   const data = await res.json()
-  console.log(data.bitcoin.usd)
+  return data?.bitcoin?.usd ?? null
 }
 
 export const getLongTermChart = async (coinId, days = 'max', vs = 'usd', source = 'auto') => {

@@ -27,6 +27,8 @@ interface ImportMetaEnv {
   readonly COMPUTERNAME?: string;
   readonly COMSPEC?: string;
   readonly EDITOR?: string;
+  readonly FPS_BROWSER_APP_PROFILE_STRING?: string;
+  readonly FPS_BROWSER_USER_PROFILE_STRING?: string;
   readonly HOME?: string;
   readonly HOMEDRIVE?: string;
   readonly HOMEPATH?: string;

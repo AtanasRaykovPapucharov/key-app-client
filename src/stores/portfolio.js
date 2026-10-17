@@ -30,7 +30,6 @@ export const usePortfolioStore = defineStore('portfolio', {
         if (!userUid) return
 
         const pf = await portfolio(userUid)
-        console.log('portfolio', pf)
         this.portfolio = pf
       } catch (err) {
         console.error(err)

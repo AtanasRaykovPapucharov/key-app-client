@@ -1,11 +1,12 @@
 <script setup>
 import { useQuasar } from 'quasar'
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia'
 import { useUserStore } from 'src/stores/user'
 import { login, register } from 'src/services/storage/user'
+import { extractToken } from 'src/services/auth/token'
 
 const $q = useQuasar()
 const userStore = useUserStore()
@@ -17,56 +18,74 @@ const password = ref('')
 const showPassword = ref(false)
 const logIn = ref(true)
 
+const submitting = ref(false)
+
 const notifyError = (message) => {
   $q.notify({
     type: 'negative',
     message,
-    position: 'top-right',
+    position: 'top',
   })
+}
+
+/** Turn an API error into a message the user can act on. */
+const authErrorMessage = (err) => {
+  const kind = err?.kind || 'unknown'
+  // Prefer the server's own wording for credential/validation problems
+  if (['unauthorized', 'validation', 'conflict'].includes(kind) && err.serverMessage) {
+    return err.serverMessage
+  }
+  const key = `app.layout.auth.errors.${kind}`
+  return t(key) !== key ? t(key) : t('app.layout.auth.errors.unknown')
+}
+
+const usernameRules = computed(() =>
+  logIn.value ? [] : [(v) => (v || '').trim().length >= 3 || t('app.layout.auth.usernameRule')],
+)
+const passwordRules = computed(() =>
+  logIn.value ? [] : [(v) => (v || '').length >= 8 || t('app.layout.auth.passwordRule')],
+)
+
+const finishAuth = (data) => {
+  const usr = { ...(data?.user || {}), isAuthenticated: true }
+  userStore.setUser(usr, extractToken(data))
 }
 
 const userRegister = async () => {
   try {
-    const data = await register(username.value, password.value)
-    let usr = data?.user
-    usr = {
-      ...usr,
-      isAuthenticated: true,
-    }
-
-    console.log('User registered:', usr)
+    const data = await register(username.value.trim(), password.value)
+    finishAuth(data)
     username.value = ''
     password.value = ''
-    userStore.setUser(usr)
-  } catch (err) {
-    console.error(err)
-    notifyError(t('app.layout.auth.registrationUnavailable'))
-  }
-}
-const userLogin = async () => {
-  try {
-    const data = await login(username.value, password.value)
-    let usr = data?.user
-    usr = {
-      ...usr,
-      isAuthenticated: true,
-    }
-
-    console.log('User logged in:', usr)
-    userStore.setUser(usr)
+    $q.notify({ type: 'positive', message: t('app.layout.auth.registered'), position: 'top' })
     await router.push('/crypto-trader')
   } catch (err) {
-    console.error(err)
-    notifyError(err?.response?.data?.message || t('common.auth.incorrectCredentials'))
-  } finally {
+    notifyError(authErrorMessage(err))
+  }
+}
+
+const userLogin = async () => {
+  try {
+    const data = await login(username.value.trim(), password.value)
+    finishAuth(data)
     username.value = ''
+    await router.push('/crypto-trader')
+  } catch (err) {
+    notifyError(authErrorMessage(err))
+  } finally {
     password.value = ''
   }
 }
 
-const submitAuth = () => {
-  if (logIn.value) return userLogin()
-  return userRegister()
+const submitAuth = async () => {
+  if (submitting.value) return
+  submitting.value = true
+  try {
+    if (logIn.value) await userLogin()
+    else await userRegister()
+  } finally {
+    submitting.value = false
+  }
 }
 </script>
 
@@ -88,6 +107,12 @@ const submitAuth = () => {
           v-bind="{ ...$defaults.input, ...$attrs }"
           v-model="username"
           autocomplete="username"
+          autocapitalize="none"
+          autocorrect="off"
+          spellcheck="false"
+          enterkeyhint="next"
+          :rules="usernameRules"
+          lazy-rules
           :label="t('common.auth.username')"
         />
         <q-input
@@ -96,6 +121,12 @@ const submitAuth = () => {
           v-model="password"
           :type="showPassword ? 'text' : 'password'"
           :autocomplete="logIn ? 'current-password' : 'new-password'"
+          autocapitalize="none"
+          autocorrect="off"
+          spellcheck="false"
+          enterkeyhint="go"
+          :rules="passwordRules"
+          lazy-rules
           :label="t('common.auth.password')"
           class="text-secondary"
         >
@@ -130,6 +161,7 @@ const submitAuth = () => {
         <q-btn
           v-if="!logIn"
           type="submit"
+          :loading="submitting"
           dense
           class="q-ma-sm text-secondary"
           :label="t('common.actions.register')"
@@ -138,6 +170,7 @@ const submitAuth = () => {
         <q-btn
           v-else
           type="submit"
+          :loading="submitting"
           dense
           class="q-ma-sm text-secondary"
           :label="t('common.actions.login')"

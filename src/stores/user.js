@@ -1,5 +1,6 @@
 import { defineStore, acceptHMRUpdate } from 'pinia'
 import { setLocalUser, deleteLocalUser } from 'src/services/storage/local'
+import { setToken, clearToken } from 'src/services/auth/token'
 
 export const useUserStore = defineStore('user', {
   state: () => ({
@@ -13,10 +14,17 @@ export const useUserStore = defineStore('user', {
   }),
 
   actions: {
-    setUser(user) {
-      this.user = user
-      setLocalUser(user)
-      localStorage.setItem('token', user.uid)
+    /**
+     * @param user  profile returned by the server (never contains the token)
+     * @param token auth token from login/register; omit when restoring a session
+     */
+    setUser(user, token) {
+      // never persist a token or password inside the profile object
+      const profile = { ...(user || {}) }
+      for (const key of ['token', 'accessToken', 'access_token', 'password']) delete profile[key]
+      this.user = profile
+      setLocalUser(profile)
+      if (token) setToken(token)
     },
 
     signOut() {
@@ -29,6 +37,7 @@ export const useUserStore = defineStore('user', {
       }
 
       deleteLocalUser()
+      clearToken()
     },
   },
 })

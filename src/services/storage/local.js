@@ -40,6 +40,7 @@ export const deleteLocalUser = () => {
   try {
     localStorage.removeItem('user')
     localStorage.removeItem('token')
+    localStorage.removeItem('keyapp:token')
   } catch (err) {
     console.error(err)
   }

@@ -172,8 +172,6 @@ async function saveList() {
   try {
     const watch_list = selected.value?.map((item) => `${item?.symbol?.toLowerCase()}usdc`)
 
-    console.log(userStore.user?.id, watch_list)
-
     const res = await updatePortfolioWatchList(userStore.user?.uid, watch_list)
     portfolioStore.setPortfolio(res)
     hasChanged.value = false

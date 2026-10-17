@@ -31,6 +31,14 @@ export default defineConfig((ctx) => {
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file#build
     build: {
+      // Hosting providers (Vercel, Netlify, CI) pass settings as process
+      // environment variables, which Quasar does not forward to client code
+      // on its own (only .env files are read). Forward the API address
+      // explicitly so a dashboard setting reaches the build.
+      env: {
+        SERVER_URL: process.env.QCLI_SERVER_URL || process.env.QCLI_API_URL || '',
+      },
+
       // @quasar/app-vite v3 only provides '@' (-> src) and '#q-app' by default,
       // so the classic Quasar aliases are restored here
       alias: {

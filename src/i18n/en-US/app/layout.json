@@ -3,7 +3,7 @@
     "logoAlt": "Key App — home",
     "learn": "Learn",
     "apps": "Apps",
-    "faq": "Help",
+    "faq": "FAQ",
     "about": "About",
     "language": "Language",
     "live": "Live",
@@ -71,7 +71,22 @@
   "auth": {
     "registrationUnavailable": "Registration isn’t available right now. Try again later.",
     "showPassword": "Show password",
-    "hidePassword": "Hide password"
+    "hidePassword": "Hide password",
+    "errors": {
+      "config": "The app isn’t connected to a server. Please try again later.",
+      "network": "Can’t reach the server. Check your internet connection and try again.",
+      "timeout": "The server took too long to respond. Try again.",
+      "unauthorized": "Incorrect username or password.",
+      "conflict": "This username is already taken.",
+      "rateLimited": "Too many attempts. Wait a minute and try again.",
+      "validation": "Check your username and password.",
+      "server": "Server error. Please try again later.",
+      "unknown": "Something went wrong. Please try again."
+    },
+    "usernameRule": "At least 3 characters",
+    "passwordRule": "At least 8 characters",
+    "sessionExpired": "Your session has expired. Please log in again.",
+    "registered": "Account created. Welcome!"
   },
   "nav": {
     "schoolMath": "School Math",

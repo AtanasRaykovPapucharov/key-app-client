@@ -235,6 +235,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { sizePosition } from 'src/helpers/positionSizing'
 import { useQuasar } from 'quasar'
 import { useLocalized } from 'src/composables/useLocalized'
 
@@ -270,10 +271,16 @@ const stopDistance = computed(() =>
 
 const riskAmount = computed(() => (Number(accountSize.value) || 0) * riskPercent.value)
 
-const positionSize = computed(() => {
-  if (stopDistance.value === 0) return 0
-  return Math.floor(riskAmount.value / stopDistance.value)
-})
+// Shared with the order form's "size by risk" helper (whole units here)
+const positionSize = computed(
+  () =>
+    sizePosition({
+      account: accountSize.value,
+      riskPct: riskPercentInput.value,
+      entry: entryPrice.value,
+      stop: stopPrice.value,
+    })?.units ?? 0,
+)
 
 const positionValue = computed(() => {
   if (stopDistance.value === 0) return 0

@@ -186,11 +186,7 @@ const addWatcher = () => {
   })
 }
 
-console.log(addWatcher)
-
-const editWatcher = (row) => {
-  console.log('Edit watcher clicked for row:', row)
-
+const editWatcher = () => {
   $q.notify({
     type: 'info',
     message: tt('app.common.notify.editWatcherSoon'),
@@ -198,7 +194,7 @@ const editWatcher = (row) => {
   })
 }
 
-const deleteWatcher = (row) => {
+const deleteWatcher = () => {
   $q.dialog({
     component: DialogForm,
     componentProps: {
@@ -210,8 +206,6 @@ const deleteWatcher = (row) => {
       width: '380px',
     },
   }).onOk(() => {
-    console.log('Delete watcher confirmed for row:', row)
-
     $q.notify({
       type: 'info',
       message: tt('app.common.notify.deleteWatcherSoon'),

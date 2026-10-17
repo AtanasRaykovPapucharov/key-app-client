@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import { useQuasar } from 'quasar'
 import { useRoute } from 'vue-router'
 
@@ -15,6 +15,9 @@ import { useUserStore } from 'src/stores/user'
 import { usePortfolioStore } from 'src/stores/portfolio'
 import { useCryptoStore } from 'src/stores/crypto'
 import { useBankStore } from 'src/stores/bank'
+import { SESSION_EXPIRED_EVENT } from 'src/boot/axios'
+import { expireSession } from 'src/services/user'
+import { useLocalized } from 'src/composables/useLocalized'
 
 const leftDrawer = ref(false)
 const rightDrawerRef = ref(null)
@@ -23,6 +26,20 @@ const appHeaderClick = ref(0)
 const faqHeaderClick = ref(0)
 const route = useRoute()
 const $q = useQuasar()
+const { t } = useLocalized()
+
+// A 401 from any API call means the stored session is no longer valid
+let expiring = false
+const onSessionExpired = () => {
+  if (expiring || !useUserStore().user?.isAuthenticated) return
+  expiring = true
+  expireSession()
+  $q.notify({ type: 'warning', message: t('app.layout.auth.sessionExpired'), position: 'top' })
+  window.dispatchEvent(new Event('cryptool:open-aside'))
+  setTimeout(() => (expiring = false), 3000)
+}
+window.addEventListener(SESSION_EXPIRED_EVENT, onSessionExpired)
+onUnmounted(() => window.removeEventListener(SESSION_EXPIRED_EVENT, onSessionExpired))
 
 const btnClicked = (ev) => {
   // console.log('Button clicked event:', ev)
@@ -70,7 +87,12 @@ const init = async () => {
 }
 
 onMounted(async () => {
-  await init()
+  try {
+    await init()
+  } catch (err) {
+    // The page stays usable offline; the API layer already classified the error
+    console.warn('[init] could not load startup data:', err?.kind || err?.message)
+  }
 })
 </script>
 

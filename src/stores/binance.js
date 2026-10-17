@@ -1,9 +1,16 @@
 import { defineStore } from 'pinia'
 
 import { getLocalUser } from 'src/services/storage/local'
+import { getToken, numericIdOf } from 'src/services/auth/token'
+import { WS_URL, isServerConfigured } from 'src/config'
 
-const server = import.meta.env.QCLI_SERVER_URL || 'http://localhost:3000'
-const MAX_CONNECTION_ATTEMPTS = 5
+// Reconnect with exponential backoff: 1s, 2s, 4s … capped at 30s.
+const BASE_DELAY = 1000
+const MAX_DELAY = 30000
+const backoff = (attempt) => Math.min(MAX_DELAY, BASE_DELAY * 2 ** Math.max(0, attempt - 1))
+
+// Phones drop sockets when the tab is backgrounded or the network changes.
+let lifecycleBound = false
 
 export const useBinanceStore = defineStore('binance', {
   state: () => ({
@@ -29,39 +36,54 @@ export const useBinanceStore = defineStore('binance', {
 
   actions: {
     connect(isReconnect = false) {
+      if (!isServerConfigured) return
       if (!isReconnect) {
         this.shouldReconnect = true
         this.connectionAttempts = 0
       }
+      this.bindLifecycle()
 
-      if (!this.shouldReconnect || this.connectionAttempts >= MAX_CONNECTION_ATTEMPTS) return
+      if (!this.shouldReconnect) return
+      if (
+        this.ws &&
+        (this.ws.readyState === WebSocket.OPEN || this.ws.readyState === WebSocket.CONNECTING)
+      )
+        return
+      // Don't burn attempts while offline or hidden; lifecycle events resume us
+      if (typeof navigator !== 'undefined' && navigator.onLine === false) return
+      if (typeof document !== 'undefined' && document.visibilityState === 'hidden') return
 
+      clearTimeout(this.reconnectTimer)
+      this.reconnectTimer = null
       this.connectionAttempts += 1
-      const wsUrl = `${server.replace(/^http/, 'ws')}`
-      this.ws = new WebSocket(wsUrl)
 
-      this.ws.onopen = () => {
+      let ws
+      try {
+        ws = new WebSocket(WS_URL)
+      } catch {
+        this.scheduleReconnect()
+        return
+      }
+      this.ws = ws
+
+      ws.onopen = () => {
         this.connected = true
         this.connectionAttempts = 0
-        this.ws.send(JSON.stringify({ type: 'auth', userId: getLocalUser()?.id || null }))
+        const user = getLocalUser()
+        ws.send(JSON.stringify({ type: 'auth', userId: numericIdOf(user), token: getToken() }))
       }
-      this.ws.onclose = () => {
+
+      ws.onclose = () => {
+        if (this.ws === ws) this.ws = null
         this.connected = false
-        if (!this.shouldReconnect) return
-        if (this.connectionAttempts >= MAX_CONNECTION_ATTEMPTS) {
-          console.error('Server is not available.')
-          console.log('Server is not available.')
-          return
-        }
-
-        this.reconnectTimer = setTimeout(() => this.connect(true), 3000)
+        this.scheduleReconnect()
       }
-      this.ws.onerror = () => this.ws.close()
 
-      this.ws.onmessage = ({ data }) => {
-        const msg = JSON.parse(data)
+      ws.onerror = () => ws.close()
 
+      ws.onmessage = ({ data }) => {
         try {
+          const msg = JSON.parse(data)
           if (msg.type === 'tickers') {
             for (const m of msg.data) {
               if (m)
@@ -80,9 +102,32 @@ export const useBinanceStore = defineStore('binance', {
             this.balanceLoaded = true
           }
         } catch (error) {
-          console.log(error)
+          console.warn('[ws] ignored malformed message', error)
         }
       }
+    },
+
+    scheduleReconnect() {
+      if (!this.shouldReconnect || this.reconnectTimer) return
+      this.reconnectTimer = setTimeout(() => {
+        this.reconnectTimer = null
+        this.connect(true)
+      }, backoff(this.connectionAttempts))
+    },
+
+    /** Reconnect right away when the phone comes back online or the tab is shown again. */
+    bindLifecycle() {
+      if (lifecycleBound || typeof window === 'undefined') return
+      lifecycleBound = true
+      const resume = () => {
+        if (!this.shouldReconnect || this.connected) return
+        this.connectionAttempts = 0
+        this.connect(true)
+      }
+      window.addEventListener('online', resume)
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'visible') resume()
+      })
     },
 
     setCryptoSymbol(asset) {

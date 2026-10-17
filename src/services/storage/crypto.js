@@ -24,8 +24,6 @@ export const getOrdersByCrypto = async (cryptoId, uid, watched = false) => {
       },
     })
 
-    console.log('Fetched orders for crypto:', cryptoId, res?.data)
-
     return res?.data || []
   } catch (error) {
     console.error('Error fetching orders by crypto:', error)

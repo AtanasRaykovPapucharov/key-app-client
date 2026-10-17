@@ -166,7 +166,10 @@ async function deleteAnalysis() {
     $q.notify({
       type: 'negative',
       position: 'top-left',
-      message: tt('app.crypto.analysis.failedToDeleteAnalysis'),
+      message:
+        error?.kind === 'notFound' || error?.kind === 'forbidden'
+          ? tt('app.crypto.analysis.notFoundOrNotYours')
+          : tt('app.crypto.analysis.failedToDeleteAnalysis'),
     })
   }
 }
@@ -245,7 +248,10 @@ async function saveAnalysis() {
     $q.notify({
       type: 'negative',
       position: 'top-left',
-      message: tt('app.crypto.analysis.failedToSaveAnalysis'),
+      message:
+        error?.kind === 'forbidden'
+          ? tt('app.crypto.analysis.notYours')
+          : tt('app.crypto.analysis.failedToSaveAnalysis'),
     })
   }
 }

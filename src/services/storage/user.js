@@ -1,26 +1,25 @@
 import { api } from 'boot/axios'
 
 // sign in/sign up
+// Credentials (Authorization / x-auth-token) are attached by the axios interceptor.
+
 export const login = async (username, password) => {
-  const res = await api.post('/login', { username, password }, { withCredentials: true })
+  const res = await api.post('/login', { username, password })
   return res.data
 }
 
 export const register = async (username, password) => {
-  const res = await api.post('/register', { username, password }, { withCredentials: true })
+  const res = await api.post('/register', { username, password })
   return res.data
 }
 
 export const logout = async () => {
-  const res = await api.post('/logout', {}, { withCredentials: true })
+  const res = await api.post('/logout', {})
   return res.data
 }
 
 export const deleteUser = async (id) => {
-  const res = await api.delete(`/user/${id}`, {
-    withCredentials: true,
-    headers: { 'x-auth-token': localStorage.getItem('token') },
-  })
+  const res = await api.delete(`/user/${id}`)
   return res.data
 }
 
@@ -29,7 +28,6 @@ export const portfolio = async (uid) => {
     withCredentials: true,
     headers: { 'x-uid': uid },
   })
-  console.log('portfolio res.data:', res.data)
   return res.data
 }
 

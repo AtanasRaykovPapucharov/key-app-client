@@ -485,7 +485,6 @@ const onSignal = (signal) => {
 }
 
 const newOrder = async (orderData) => {
-  console.log('New Order Event Received:', orderData)
   const confirmedOrder = orderData?.data
   if (confirmedOrder?.order_type === 'buy' || confirmedOrder?.order_type === 'sell') {
     portfolioStore.applyTrade(confirmedOrder)

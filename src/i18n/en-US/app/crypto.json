@@ -303,7 +303,9 @@
     "resources": "Resources: ",
     "deleteQuestion": "Delete the {symbol} analysis?",
     "confirmUpdate": "Confirm update",
-    "existsUpdate": "This crypto already exists. Update the existing analysis?"
+    "existsUpdate": "This crypto already exists. Update the existing analysis?",
+    "notYours": "This analysis was created by another user, so you can’t change or delete it.",
+    "notFoundOrNotYours": "This analysis no longer exists or belongs to another user."
   },
   "strategy": {
     "dcaRecurringBuy": "DCA (recurring buy)",
@@ -354,5 +356,20 @@
     "hold": "Hold",
     "notifyTitle": "{signal} signal for {symbol}",
     "notifyCaption": "{buys} buy / {sells} sell from {total} active signals"
+  },
+  "sizing": {
+    "title": "Size by risk",
+    "caption": "Let your stop-loss decide the amount",
+    "riskPct": "Risk per trade (%)",
+    "riskHint": "Disciplined range: 0.25% – 1.5%",
+    "stop": "Stop-loss price",
+    "account": "Account value",
+    "riskAmount": "At risk",
+    "size": "Size",
+    "use": "Use this amount",
+    "stopAboveEntry": "For a buy, the stop-loss must be below the current price.",
+    "capped": "Limited to {amount} {asset} by your available USDC.",
+    "noBalance": "Your portfolio hasn’t loaded yet.",
+    "openCalculator": "Open the full calculator"
   }
 }
